@@ -2,7 +2,7 @@
 
 import Script from 'next/script'
 
-const GA_MEASUREMENT_ID = 'G-MJGXL5MMKV'
+const GA_MEASUREMENT_ID: string = 'G-MJGXL5MMKV'
 
 export default function GoogleAnalytics() {
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return null
