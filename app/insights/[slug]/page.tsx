@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/lib/insights'
 import CTABanner from '@/components/CTABanner'
+import ReadingProgress from '@/components/ReadingProgress'
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }))
@@ -23,6 +24,10 @@ export async function generateMetadata({
       description: article.metaDescription,
       type: 'article',
       publishedTime: article.date,
+      modifiedTime: article.date,
+    },
+    alternates: {
+      canonical: `https://lumii-advisory.com/insights/${article.slug}`,
     },
   }
 }
@@ -41,8 +46,42 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   const otherArticles = articles.filter((a) => a.slug !== article.slug).slice(0, 3)
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.metaDescription,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      '@type': 'Person',
+      name: 'Agata Adamczak',
+      url: 'https://lumii-advisory.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Lumii Advisory',
+      url: 'https://lumii-advisory.com',
+    },
+    url: `https://lumii-advisory.com/insights/${article.slug}`,
+    mainEntityOfPage: `https://lumii-advisory.com/insights/${article.slug}`,
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumii-advisory.com' },
+      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://lumii-advisory.com/insights' },
+      { '@type': 'ListItem', position: 3, name: article.title, item: `https://lumii-advisory.com/insights/${article.slug}` },
+    ],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <ReadingProgress />
       {/* Hero */}
       <section className="bg-near-black pt-40 pb-20 px-8 lg:px-12">
         <div className="max-w-[860px] mx-auto">
@@ -86,15 +125,37 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
         <div className="max-w-[720px] mx-auto">
           {article.content.map((block, i) => (
-            <div key={i} className="mb-8">
-              {block.heading && (
-                <h2 className="font-display font-light text-[clamp(22px,2.5vw,30px)] text-near-black leading-[1.3] mb-4 mt-12 first:mt-0">
-                  {block.heading}
-                </h2>
+            <div key={i}>
+              <div className="mb-8">
+                {block.heading && (
+                  <h2 className="font-display font-light text-[clamp(22px,2.5vw,30px)] text-near-black leading-[1.3] mb-4 mt-12 first:mt-0">
+                    {block.heading}
+                  </h2>
+                )}
+                <p className="font-body text-[16px] leading-[1.9] text-slate-warm font-light">
+                  {block.body}
+                </p>
+              </div>
+              {/* Inline related links after 3rd block */}
+              {i === 2 && otherArticles.length > 0 && (
+                <div className="my-10 bg-ivory border border-parchment p-6">
+                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-3">
+                    Related Reading
+                  </p>
+                  <ul className="space-y-2 list-none p-0 m-0">
+                    {otherArticles.slice(0, 2).map((a) => (
+                      <li key={a.slug}>
+                        <Link
+                          href={`/insights/${a.slug}`}
+                          className="font-body text-[14px] text-near-black hover:text-gold transition-colors duration-200 font-light"
+                        >
+                          → {a.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
-              <p className="font-body text-[16px] leading-[1.9] text-slate-warm font-light">
-                {block.body}
-              </p>
             </div>
           ))}
 
@@ -112,25 +173,38 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Resource CTA */}
-          <div className="mt-12 bg-ivory border border-parchment p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div>
-              <p className="font-body text-[11px] tracking-[0.2em] uppercase text-gold mb-2">
-                Free Resource
-              </p>
-              <p className="font-display text-[20px] font-light text-near-black leading-snug">
-                AI Readiness Checklist
-              </p>
-              <p className="font-body text-[13px] text-slate-warm font-light mt-1">
-                Assess your organisation across 7 dimensions in 15 minutes.
-              </p>
-            </div>
-            <Link
-              href="/resources/ai-readiness-checklist"
-              className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-6 py-3 hover:bg-near-black hover:text-warm-white transition-all duration-200 whitespace-nowrap flex-shrink-0"
-            >
-              Get the Checklist →
-            </Link>
-          </div>
+          {(() => {
+            const cta = article.cta ?? {
+              label: 'Free Resource',
+              title: 'AI Readiness Checklist',
+              description: 'Assess your organisation across 7 dimensions in 15 minutes.',
+              href: '/resources/ai-readiness-checklist',
+            }
+            const btnText = cta.href.startsWith('/resources') && cta.href !== '/resources/ai-readiness-checklist'
+              ? 'View the Guide →'
+              : 'Get the Checklist →'
+            return (
+              <div className="mt-12 bg-ivory border border-parchment p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                <div>
+                  <p className="font-body text-[11px] tracking-[0.2em] uppercase text-gold mb-2">
+                    {cta.label}
+                  </p>
+                  <p className="font-display text-[20px] font-light text-near-black leading-snug">
+                    {cta.title}
+                  </p>
+                  <p className="font-body text-[13px] text-slate-warm font-light mt-1">
+                    {cta.description}
+                  </p>
+                </div>
+                <Link
+                  href={cta.href}
+                  className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-3 hover:bg-near-black hover:text-warm-white transition-all duration-200 whitespace-nowrap flex-shrink-0"
+                >
+                  {btnText}
+                </Link>
+              </div>
+            )
+          })()}
         </div>
       </section>
 

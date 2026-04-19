@@ -7,6 +7,19 @@ import CTABanner from '@/components/CTABanner'
 
 const categories = ['All', ...Array.from(new Set(faqs.map((f) => f.category)))]
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.answer,
+    },
+  })),
+}
+
 export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState('All')
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -15,6 +28,7 @@ export default function FAQPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero */}
       <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
@@ -105,7 +119,7 @@ export default function FAQPage() {
             </p>
             <Link
               href="/contact"
-              className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-6 py-3 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
+              className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-3 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
             >
               Book a Discovery Call →
             </Link>
@@ -122,7 +136,7 @@ export default function FAQPage() {
             </p>
             <Link
               href="/resources/ai-readiness-checklist"
-              className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-6 py-3 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
+              className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-3 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
             >
               Start the Checklist →
             </Link>

@@ -21,7 +21,7 @@ export default function PhilosophySection() {
             <div className="absolute inset-0 overflow-hidden">
               <Image
                 src="/images/agata-about-main.png"
-                alt="Agata Adamczak"
+                alt="Agata Adamczak, AI Strategy Consultant and Founder of Lumii Advisory"
                 fill
                 className="object-cover object-top"
               />
@@ -51,7 +51,7 @@ export default function PhilosophySection() {
             <div className="mt-10">
               <p className="font-display text-[28px] italic font-light text-charcoal">Agata Adamczak</p>
               <p className="font-body text-[11px] tracking-[0.15em] uppercase text-ash mt-1.5">
-                Founder, Lumii Advisory · Sydney, Australia
+                Founder, Lumii Advisory
               </p>
             </div>
           </motion.div>

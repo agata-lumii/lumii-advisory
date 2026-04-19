@@ -15,7 +15,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
-            AI Strategy · Digital Transformation · Sydney
+            AI Strategy · Digital Transformation
           </p>
           <h1 className="font-display font-light text-[clamp(48px,5vw,76px)] leading-[1.08] text-warm-white mb-8 tracking-[-0.01em]">
             I help businesses<br />put AI to <em className="italic text-gold">work.</em>

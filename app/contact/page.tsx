@@ -60,19 +60,26 @@ export default function ContactPage() {
                     Working with clients across Australia and APAC
                   </p>
                 </div>
+
                 <div>
-                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-2">Availability</p>
-                  <p className="font-display text-[20px] font-light text-near-black">
-                    Currently accepting new clients
-                  </p>
-                  <p className="font-body text-[13px] text-slate-warm font-light mt-1">
-                    Discovery calls available Monday to Friday, AEST
+                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-2">Book Directly</p>
+                  <a
+                    href="https://calendly.com/agata-lumiiadvisory"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display text-[20px] font-light text-near-black hover:text-gold transition-colors duration-200"
+                  >
+                    Schedule a 30-min Discovery Call ↗
+                  </a>
+                  <p className="font-body text-[12px] text-slate-warm/60 font-light mt-1">
+                    Free, no obligation — pick a time that works for you
                   </p>
                 </div>
+
                 <div>
                   <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-2">Connect</p>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/agata-adamczak"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-display text-[20px] font-light text-near-black hover:text-gold transition-colors duration-200"

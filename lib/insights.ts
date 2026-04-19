@@ -9,9 +9,66 @@ export interface Article {
   category: string
   content: { heading?: string; body: string }[]
   tags: string[]
+  cta?: { label: string; title: string; description: string; href: string }
 }
 
 export const articles: Article[] = [
+  {
+    slug: 'emerging-ai-roles-future',
+    title: 'The New AI Org: Roles Being Created Right Now — and the Jobs Coming in the Next Five Years',
+    metaTitle: 'AI Roles of the Future: CAIO, AI Architect, Prompt Engineer & More',
+    metaDescription:
+      'The AI org chart is changing fast. Explore the new roles reshaping businesses — Chief AI Officer, AI Architect, AI Product Manager, Prompt Engineer — and what your team needs to look like in 2–5 years.',
+    excerpt:
+      'The org chart is changing. Not in five years — right now. As AI moves from experiment to infrastructure, a new class of roles is emerging inside forward-thinking businesses. Some are entirely new. Some are reinventions of titles that existed decades ago. And a handful are appearing so quietly that most organisations will not notice they need them until the gap is already expensive.',
+    date: '2026-04-15',
+    readTime: '8 min read',
+    category: 'Leadership',
+    tags: ['AI Team', 'Future of Work', 'CAIO', 'AI Architect', 'Hiring'],
+    cta: {
+      label: 'Free Resource',
+      title: 'AI Team Structure Guide',
+      description: 'Every AI role mapped out — what it does, when to hire it, and how your team evolves over 5 years.',
+      href: '/resources/ai-team-structure',
+    },
+    content: [
+      {
+        body: "The org chart is changing. Not in five years — right now. As AI moves from experiment to infrastructure, a new class of roles is emerging inside forward-thinking businesses. Some are entirely new. Some are reinventions of titles that existed in earlier technology cycles. And a handful are appearing so quietly that most organisations will not notice they need them until the gap is already expensive.",
+      },
+      {
+        heading: 'The Role That Did Not Exist Three Years Ago: Chief AI Officer',
+        body: "The Chief AI Officer — or CAIO — is becoming one of the fastest-growing C-suite titles globally. LinkedIn reported a 73% increase in CAIO and Head of AI postings between 2022 and 2024. Unlike the CTO, who owns technology infrastructure, the CAIO owns the AI strategy: where the organisation places its AI bets, how AI governance is structured, and how AI capability is built across the business. Companies including Walmart, Airbnb, and Johnson & Johnson have appointed CAIOs in the past 18 months. For mid-market businesses, the nearest equivalent is a Head of AI or AI Director — a dedicated leader with a mandate that spans technology, operations, and culture. The title matters less than the accountability. Someone needs to own this.",
+      },
+      {
+        heading: 'The AI Architect: The Role That Makes AI Actually Scale',
+        body: "If the CAIO decides what AI the business should build, the AI Architect decides how. This is a technical role — part solutions architect, part data engineer, part ML specialist — responsible for designing the systems and infrastructure that make AI work at scale. AI Architects evaluate tooling, define integration patterns, set standards for how AI models are trained, monitored, and retired, and ensure that what gets built in a pilot can actually reach production. Most businesses discover they need this role about six months into a scaling programme, when they realise that a dozen disconnected AI pilots do not add up to an AI capability. As AI systems become more complex and interconnected, the AI Architect becomes the connective tissue between strategy and execution.",
+      },
+      {
+        heading: 'AI Product Manager: A New Kind of PM',
+        body: "The AI Product Manager sits at the intersection of business and technology — translating commercial problems into AI use cases, prioritising the roadmap, and ensuring that AI tools actually get adopted by the people they are built for. This is a distinct role from a traditional product manager. AI PMs need to understand model capabilities and limitations, manage the expectation gap between what AI promises and what it delivers, and handle the unique challenge of products that can fail in ways traditional software cannot. The role is appearing first inside technology companies but is spreading rapidly into retail, financial services, and professional services as AI programmes mature.",
+      },
+      {
+        heading: 'Prompt Engineer: The Most Misunderstood New Role',
+        body: "The prompt engineer is perhaps the most misunderstood role in the emerging AI org — and the one most likely to evolve fastest. At its core, it is about getting the best possible outputs from AI systems by designing the inputs: the prompts, the context structures, the constraints, the guardrails. In enterprise settings, this means building prompt libraries, designing AI workflows, and ensuring AI tools produce consistent, high-quality outputs across the business. The title will likely shift — AI Interaction Designer and AI UX Specialist are emerging alternatives — but the function is here to stay. Every business that deploys AI at scale needs people who understand, systematically, how to direct it effectively.",
+      },
+      {
+        heading: 'AI Ethics & Governance Officer: No Longer Optional',
+        body: "Regulatory pressure is building globally. The EU AI Act came into effect in 2025. Australia is actively developing its AI governance framework. For businesses operating in regulated industries — finance, healthcare, legal, education — the AI Ethics and Governance Officer is no longer optional. This role oversees how AI is used responsibly: what data it is trained on, where bias could emerge, how decisions made by AI are documented and auditable, and what the incident response process looks like when things go wrong. In smaller organisations, this function often sits with the General Counsel or Chief Risk Officer. As AI use scales, it typically becomes a dedicated role. The businesses that wait for a regulatory incident to make this hire will find the lesson an expensive one.",
+      },
+      {
+        heading: 'The Jobs Being Born Right Now',
+        body: "Beyond the roles above, a second wave of AI-adjacent titles is beginning to appear in job boards and org charts. AI Operations Manager — responsible for the day-to-day running of AI systems in production, monitoring performance, managing the tooling stack, handling incidents. AI Trainer or RLHF Specialist — responsible for curating the training data and human feedback loops that determine how well a custom AI model performs. Human-AI Interaction Designer — designing the experience of working alongside AI, not just the prompts but the entire workflow, the handoffs, the trust signals. These roles do not yet have standard titles or descriptions. In three years, they will.",
+      },
+      {
+        heading: 'What AI Teams Look Like in 2–5 Years',
+        body: "The trajectory is becoming clear. In two to three years, most organisations above 200 people will have a dedicated AI function — typically a Head of AI with a team of four to eight, covering engineering, product, and governance. In five years, AI will be embedded across every department, with local AI champions in marketing, operations, finance, and customer service, all reporting up to a CAIO who sits at board level. The businesses building this capability now — even in a modest, pragmatic way — will have a significant structural advantage over those that wait for the function to become standard practice.",
+      },
+      {
+        heading: 'The First Practical Step',
+        body: "You do not need a full AI function to get started. Most businesses at the early stages of AI adoption need one thing above all else: an internal owner. A single person — whether that is an existing head of technology, a senior operations leader, or a newly hired Head of AI — who has the mandate, the time, and the accountability to drive the programme forward. From that foundation, the team grows as the programme grows. The mistake is not moving too slowly. The mistake is having no one responsible at all. See our full AI Team Structure guide for a role-by-role breakdown of every position, when to hire it, and what the AI org looks like at each stage of maturity.",
+      },
+    ],
+  },
   {
     slug: 'ai-readiness-gap',
     title: 'The AI Readiness Gap: Why Most Businesses Get Stuck at Pilot Stage',

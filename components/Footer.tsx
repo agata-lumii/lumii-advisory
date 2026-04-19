@@ -71,10 +71,26 @@ export default function Footer() {
             <ul className="space-y-4 list-none p-0 m-0">
               <li>
                 <Link
+                  href="/resources/ai-team-structure"
+                  className="font-body text-[13px] text-warm-white/55 font-light hover:text-warm-white transition-colors duration-200"
+                >
+                  AI Team Structure
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources/ai-tools"
+                  className="font-body text-[13px] text-warm-white/55 font-light hover:text-warm-white transition-colors duration-200"
+                >
+                  AI Tools Directory
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/learn"
                   className="font-body text-[13px] text-warm-white/55 font-light hover:text-warm-white transition-colors duration-200"
                 >
-                  AI Tools Guide
+                  AI Platform Guides
                 </Link>
               </li>
               <li>
@@ -169,6 +185,12 @@ export default function Footer() {
               className="font-body text-[12px] text-warm-white/30 font-light hover:text-warm-white/60 transition-colors"
             >
               Terms of Service
+            </Link>
+            <Link
+              href="/site-map"
+              className="font-body text-[12px] text-warm-white/30 font-light hover:text-warm-white/60 transition-colors"
+            >
+              Site Map
             </Link>
           </div>
         </div>

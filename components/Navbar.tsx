@@ -6,6 +6,18 @@ import { verticals } from '@/lib/verticals'
 
 const resourceLinks = [
   {
+    href: '/resources/ai-team-structure',
+    label: 'New',
+    title: 'AI Team Structure',
+    description: 'Every AI role explained — CAIO, AI Architect, AI Product Manager and more. When to hire, who owns what, and the 5-year roadmap.',
+  },
+  {
+    href: '/resources/ai-tools',
+    label: 'New',
+    title: 'AI Tools Directory',
+    description: '60+ AI tools organised by category — writing, video, coding, research, data and more. With pricing and direct links.',
+  },
+  {
     href: '/learn',
     label: 'AI Tools Guide',
     title: 'AI Platform Guides',
@@ -122,6 +134,16 @@ export default function Navbar() {
             className="font-body text-[12px] tracking-[0.12em] uppercase font-semibold text-charcoal hover:text-near-black transition-colors duration-200 leading-none"
           >
             Services
+          </Link>
+        </li>
+
+        {/* How We Work */}
+        <li>
+          <Link
+            href="/how-we-work"
+            className="font-body text-[12px] tracking-[0.12em] uppercase font-semibold text-charcoal hover:text-near-black transition-colors duration-200 leading-none"
+          >
+            How We Work
           </Link>
         </li>
 
@@ -269,12 +291,14 @@ export default function Navbar() {
       </ul>
 
       {/* CTA */}
-      <Link
-        href="/contact"
+      <a
+        href="https://calendly.com/agata-lumiiadvisory"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hidden md:inline-block font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-6 py-2.5 hover:bg-near-black hover:text-warm-white transition-all duration-200"
       >
         Book a Call
-      </Link>
+      </a>
 
       {/* Hamburger */}
       <button
@@ -295,6 +319,10 @@ export default function Navbar() {
             Services
           </Link>
 
+          <Link href="/how-we-work" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
+            How We Work
+          </Link>
+
           {/* Who We Help accordion */}
           <div>
             <button
@@ -306,10 +334,7 @@ export default function Navbar() {
             </button>
             {mobileWhoOpen && (
               <div className="pl-4 mb-2 border-l border-parchment flex flex-col gap-1">
-                <Link href="/who-we-help" onClick={closeAll} className="font-body text-[11px] tracking-[0.15em] uppercase text-gold py-2">
-                  View all →
-                </Link>
-                {verticals.map((v) => (
+                {verticals.slice(0, 4).map((v) => (
                   <Link
                     key={v.slug}
                     href={`/who-we-help/${v.slug}`}
@@ -319,6 +344,9 @@ export default function Navbar() {
                     {v.heading}
                   </Link>
                 ))}
+                <Link href="/who-we-help" onClick={closeAll} className="font-body text-[11px] tracking-[0.15em] uppercase text-gold py-2">
+                  See all →
+                </Link>
               </div>
             )}
           </div>
@@ -338,10 +366,7 @@ export default function Navbar() {
             </button>
             {mobileResourcesOpen && (
               <div className="pl-4 mb-2 border-l border-parchment flex flex-col gap-1">
-                <Link href="/resources" onClick={closeAll} className="font-body text-[11px] tracking-[0.15em] uppercase text-gold py-2">
-                  View all →
-                </Link>
-                {resourceLinks.map((r) => (
+                {resourceLinks.slice(0, 4).map((r) => (
                   <Link
                     key={r.href}
                     href={r.href}
@@ -351,11 +376,8 @@ export default function Navbar() {
                     {r.title}
                   </Link>
                 ))}
-                <Link href="/learn" onClick={closeAll} className="font-body text-[11px] tracking-[0.1em] uppercase text-slate-warm hover:text-near-black transition-colors py-2">
-                  AI Tools Guide
-                </Link>
-                <Link href="/how-we-work" onClick={closeAll} className="font-body text-[11px] tracking-[0.1em] uppercase text-slate-warm hover:text-near-black transition-colors py-2">
-                  How We Work
+                <Link href="/resources" onClick={closeAll} className="font-body text-[11px] tracking-[0.15em] uppercase text-gold py-2">
+                  See all →
                 </Link>
               </div>
             )}
@@ -367,13 +389,15 @@ export default function Navbar() {
           <Link href="/contact" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
             Contact
           </Link>
-          <Link
-            href="/contact"
+          <a
+            href="https://calendly.com/agata-lumiiadvisory"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={closeAll}
             className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-6 py-3 text-center hover:bg-near-black hover:text-warm-white transition-all mt-4"
           >
             Book a Call
-          </Link>
+          </a>
         </div>
       )}
     </nav>

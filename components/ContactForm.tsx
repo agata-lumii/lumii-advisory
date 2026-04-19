@@ -3,6 +3,9 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
+// ← Paste your Formspree form ID here after signing up at formspree.io
+const FORMSPREE_ID = 'xqeweeaz'
+
 type FormData = {
   firstName: string
   lastName: string
@@ -14,15 +17,40 @@ type FormData = {
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(false)
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>()
 
-  const onSubmit = (data: FormData) => {
-    console.log(data)
-    setSubmitted(true)
+  const onSubmit = async (data: FormData) => {
+    setSubmitting(true)
+    setError(false)
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: `${data.firstName} ${data.lastName}`,
+          email: data.email,
+          company: data.company,
+          interest: data.interest,
+          message: data.message,
+        }),
+      })
+      const result = await res.json()
+      if (result.ok) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -120,11 +148,17 @@ export default function ContactForm() {
           <p className="font-body text-[11px] text-red-500 mt-1">Required</p>
         )}
       </div>
+      {error && (
+        <p className="font-body text-[13px] text-red-500 font-light">
+          Something went wrong — please try again or email us directly at hello@lumii.com.au
+        </p>
+      )}
       <button
         type="submit"
-        className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 mt-4"
+        disabled={submitting}
+        className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 mt-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
       >
-        Send Message
+        {submitting ? 'Sending…' : 'Send Message'}
       </button>
     </form>
   )

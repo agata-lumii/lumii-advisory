@@ -59,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/faq`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.75,
     },
     {
       url: `${BASE_URL}/about`,
@@ -89,6 +89,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  const resourcesRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/resources/ai-tools`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/resources/ai-team-structure`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+  ]
+
   const learnRoutes: MetadataRoute.Sitemap = [
     {
       url: `${BASE_URL}/learn`,
@@ -104,5 +119,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]
 
-  return [...staticRoutes, ...verticalRoutes, ...articleRoutes, ...learnRoutes]
+  return [...staticRoutes, ...verticalRoutes, ...articleRoutes, ...learnRoutes, ...resourcesRoutes]
 }

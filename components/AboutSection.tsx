@@ -29,7 +29,7 @@ export default function AboutSection() {
               <div className="absolute bottom-0 left-0 right-0 bg-near-black/90 px-7 py-5">
                 <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-2">Expertise</p>
                 <p className="font-body text-[12px] text-warm-white/80 font-light leading-[1.7]">
-                  Enterprise SaaS &amp; Pre-Sales Leadership · APAC · Digital Transformation · eCommerce · MarTech · AI Enablement · Generative AI Strategy · Based in Sydney, Australia
+                  Enterprise SaaS &amp; Pre-Sales Leadership · APAC · Digital Transformation · eCommerce · MarTech · AI Enablement · Generative AI Strategy
                 </p>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function AboutSection() {
             {/* Stats row */}
             <div className="grid grid-cols-3 gap-8 mt-12 pt-10 border-t border-parchment">
               {[
-                { stat: '10+', label: 'Years in Digital & Tech' },
+                { stat: '15+', label: 'Years in Digital & Tech' },
                 { stat: 'APAC', label: 'Regional Expertise' },
                 { stat: '50+', label: 'Enterprise Projects' },
               ].map((s) => (
