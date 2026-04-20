@@ -73,7 +73,7 @@ const jsonLd = [
       name: 'Agata Adamczak',
       jobTitle: 'Founder',
       url: 'https://lumii-advisory.com/about',
-      sameAs: ['https://www.linkedin.com/in/agata-adamczak'],
+      sameAs: ['https://www.linkedin.com/in/agata-a-47295a24/'],
     },
     sameAs: ['https://www.linkedin.com/company/lumii-advisory'],
     serviceType: [
@@ -95,7 +95,7 @@ const jsonLd = [
       url: 'https://lumii-advisory.com',
     },
     url: 'https://lumii-advisory.com/about',
-    sameAs: ['https://www.linkedin.com/in/agata-adamczak'],
+    sameAs: ['https://www.linkedin.com/in/agata-a-47295a24/'],
     knowsAbout: [
       'AI Strategy',
       'Digital Transformation',

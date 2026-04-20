@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-2">Connect</p>
                   <a
-                    href="https://www.linkedin.com/in/agata-adamczak"
+                    href="https://www.linkedin.com/in/agata-a-47295a24/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-display text-[20px] font-light text-near-black hover:text-gold transition-colors duration-200"
