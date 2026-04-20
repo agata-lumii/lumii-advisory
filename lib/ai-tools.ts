@@ -41,37 +41,37 @@ export const platforms: Platform[] = [
     tagline: 'The platform that started the modern AI era',
     brandColor: '#10A37F',
     overview:
-      'OpenAI is the company behind ChatGPT and the GPT series of models — the most widely adopted AI platform in the world. With over 100 million weekly users, it spans consumer chat, creative tools, developer APIs, and enterprise deployment. For businesses, the combination of GPT-4o\'s broad capability, o1\'s advanced reasoning, and the Custom GPTs ecosystem makes it the most versatile starting point for AI adoption.',
+      'OpenAI is the company behind ChatGPT and the GPT series of models — the most widely adopted AI platform in the world. With hundreds of millions of weekly users, it spans consumer chat, creative tools, developer APIs, and enterprise deployment. For businesses, the combination of GPT-5\'s broad capability, the o-series reasoning models, the Custom GPTs ecosystem, and Operator for agentic work makes it the most versatile starting point for AI adoption.',
     overviewPoints: [
       'Largest AI ecosystem with the widest third-party integrations and plugin library',
-      'o1 reasoning model excels at multi-step logic, legal analysis, and financial modelling',
+      'GPT-5 and the o-series reasoning models lead general-purpose reasoning benchmarks',
       'Custom GPTs let anyone build a tailored AI tool — no coding required',
-      'ChatGPT Enterprise delivers SOC 2 compliance, admin controls, and data isolation',
+      'Operator and ChatGPT Agents deliver autonomous task completion across the web',
     ],
     toolCategories: [
       {
         category: 'Reason & Chat',
         tools: [
           {
-            name: 'GPT-4o',
+            name: 'GPT-5',
             tier: 'free',
             bestFor: 'Everyday text, vision, and voice tasks',
             description:
-              'OpenAI\'s flagship multimodal model handles text, images, files, and real-time voice with strong all-round performance. It\'s the best default starting point for most business tasks — drafting, summarising, explaining, and analysing content across any format. Available on the free tier and via Pro with higher limits.',
+              'OpenAI\'s flagship multimodal model handles text, images, files, and real-time voice with strong all-round performance. It\'s the best default starting point for most business tasks — drafting, summarising, explaining, and analysing content across any format. Available on the free tier with limits and via Pro with higher usage.',
           },
           {
-            name: 'o1',
+            name: 'o3',
             tier: 'pro',
             bestFor: 'Complex, multi-step reasoning and analysis',
             description:
-              'o1 thinks step-by-step before responding, making it significantly better than GPT-4o on tasks requiring careful logical deduction. Ideal for legal analysis, financial modelling logic, and research where accuracy matters far more than response speed. The reasoning trace makes its conclusions verifiable.',
+              'o3 is OpenAI\'s most capable reasoning model — thinking step-by-step before responding to deliver significantly better results on tasks requiring careful logical deduction. Ideal for legal analysis, financial modelling logic, and research where accuracy matters more than response speed. The reasoning trace makes conclusions verifiable.',
           },
           {
-            name: 'o3-mini',
+            name: 'o4-mini',
             tier: 'pro',
             bestFor: 'Fast, accurate coding and technical tasks',
             description:
-              'A smaller, faster reasoning model optimised for coding, mathematics, and structured technical tasks. Delivers o1-level reasoning quality at a fraction of the cost and latency — ideal for development teams embedding reasoning capabilities into automated workflows and pipelines.',
+              'A smaller, faster reasoning model optimised for coding, mathematics, and structured technical tasks. Delivers near-frontier reasoning quality at a fraction of the cost and latency — ideal for development teams embedding reasoning capabilities into automated workflows and pipelines.',
           },
         ],
       },
@@ -152,7 +152,7 @@ export const platforms: Platform[] = [
         industry: 'Financial Services',
         scenario:
           'An asset management firm receives 50+ analyst reports weekly. Research associates spend 40% of their day reading and summarising before material reaches portfolio managers.',
-        toolsUsed: ['GPT-4o', 'Custom GPTs'],
+        toolsUsed: ['GPT-5', 'Custom GPTs'],
         outcome:
           'A Custom GPT built on the firm\'s investment thesis and sector criteria reviews each incoming report, produces a structured one-page brief, and flags relevance to current positions. Research review time drops from two hours to 20 minutes per analyst per day.',
       },
@@ -160,7 +160,7 @@ export const platforms: Platform[] = [
         industry: 'Marketing',
         scenario:
           'A brand needs to produce 200+ creative assets per quarter across social, digital, and print formats in multiple markets. The creative team is at capacity with no budget for additional headcount.',
-        toolsUsed: ['GPT-4o', 'DALL-E 3', 'Custom GPTs'],
+        toolsUsed: ['GPT-5', 'DALL-E 3', 'Custom GPTs'],
         outcome:
           'A Custom GPT loaded with brand guidelines generates copy variations instantly. DALL-E 3 produces on-brand concept visuals for review. Campaign production time per brief reduces by 65%, enabling the team to run three times more campaigns without increasing headcount.',
       },
@@ -168,9 +168,9 @@ export const platforms: Platform[] = [
         industry: 'Professional Services',
         scenario:
           'Associates at a commercial law firm spend six to eight hours reviewing commercial agreements for risk before escalating to senior review — a significant cost for routine, standard-form contracts.',
-        toolsUsed: ['o1', 'GPT-4o'],
+        toolsUsed: ['o3', 'GPT-5'],
         outcome:
-          'o1\'s step-by-step reasoning flags unusual clauses, missing protections, and jurisdiction-specific risks across standard agreements. First-pass review time drops to under 90 minutes. Senior partner escalations for routine contracts reduce significantly, freeing capacity for complex matters.',
+          'o3\'s step-by-step reasoning flags unusual clauses, missing protections, and jurisdiction-specific risks across standard agreements. First-pass review time drops to under 90 minutes. Senior partner escalations for routine contracts reduce significantly, freeing capacity for complex matters.',
       },
       {
         industry: 'Retail',
@@ -181,49 +181,49 @@ export const platforms: Platform[] = [
           'A Custom GPT trained on product catalogues, returns policy, and FAQs resolves 60% of queries instantly. The Assistants API surfaces relevant information mid-conversation for remaining queries. Average handling time falls 40% and the escalation rate drops across all product categories.',
       },
     ],
-    metaTitle: 'ChatGPT & OpenAI Tools Guide — GPT-4o, o1, DALL-E 3 & More',
+    metaTitle: 'ChatGPT & OpenAI Tools Guide — GPT-5, o3, DALL-E, Operator & More',
     metaDescription:
-      'A practical guide to the full OpenAI product suite — GPT-4o, o1, DALL-E 3, Sora, Custom GPTs, and ChatGPT Enterprise — with tool-by-tool breakdowns and industry use cases.',
+      'A practical guide to the full OpenAI product suite — GPT-5, o3, o4-mini, DALL-E, Sora, Custom GPTs, Operator, and ChatGPT Enterprise — with tool-by-tool breakdowns and industry use cases.',
   },
 
   {
     slug: 'claude',
     name: 'Claude & Anthropic',
     brand: 'Anthropic',
-    tagline: 'The AI built for nuanced, long-form thinking',
+    tagline: 'The AI built for nuanced thinking, code, and design',
     brandColor: '#C07045',
     overview:
-      'Anthropic is the AI safety company behind Claude — widely regarded as the best AI model for nuanced writing, careful reasoning, and long-document analysis. Claude\'s industry-leading 200,000-token context window means it can process entire contracts, reports, or research bundles in a single conversation. Its Projects feature makes it exceptional for ongoing work that requires persistent memory and consistent voice.',
+      'Anthropic is the AI safety company behind Claude — widely regarded as the best AI model for nuanced writing, careful reasoning, and long-document analysis. The current Claude 4 family (Opus, Sonnet, Haiku) leads independent benchmarks for reasoning, coding, and agentic task completion. Claude\'s ecosystem has grown well beyond the chat window: Claude Code turns the terminal into a full-stack engineering partner, Claude Design produces production-quality web prototypes from plain-English briefs, and the Agent SDK + MCP let teams build their own AI agents with access to internal systems.',
     overviewPoints: [
-      '200,000-token context window — process entire contracts or document bundles at once',
-      'Best-in-class for writing with consistent tone, nuance, and brand voice',
-      'Projects provide persistent memory and context for ongoing engagements',
-      'Built by an AI safety company — conservative, reliable outputs with minimal hallucination',
+      'Claude Opus 4 leads industry benchmarks for coding, reasoning, and long-horizon agentic work',
+      'Claude Code turns plain-English instructions into shipped software — used by engineering teams worldwide',
+      'Claude Design generates fully styled, interactive web prototypes in minutes — not days',
+      'Projects, MCP, and the Agent SDK let teams build custom AI tools grounded in their own data',
     ],
     toolCategories: [
       {
         category: 'Models',
         tools: [
           {
-            name: 'Claude 3.5 Sonnet',
+            name: 'Claude Sonnet 4.5',
             tier: 'free',
-            bestFor: 'Writing, analysis, coding, and reasoning',
+            bestFor: 'Writing, analysis, and everyday reasoning',
             description:
-              'Anthropic\'s flagship model and the best all-round performer in the Claude family. Consistently ranks at the top of independent benchmarks for writing quality and instruction-following. Available free with limits and via Pro for higher usage — the right default for most professional tasks.',
+              'Anthropic\'s flagship general-purpose model and the best all-round performer in the Claude family. Consistently ranks at the top of independent benchmarks for writing quality, instruction-following, and nuanced reasoning. Available free with limits and via Pro for higher usage — the right default for most professional tasks.',
           },
           {
-            name: 'Claude 3.5 Haiku',
+            name: 'Claude Opus 4.5',
             tier: 'pro',
-            bestFor: 'Fast, high-volume processing tasks',
+            bestFor: 'Deepest reasoning, coding, and agentic work',
             description:
-              'The fastest and most cost-efficient Claude model, designed for tasks that need scale rather than depth — bulk document tagging, content classification, first-pass drafting, and API-integrated workflows requiring speed. Available via the Pro plan and API.',
+              'Claude Opus 4.5 is Anthropic\'s most capable model — purpose-built for complex, long-running tasks including multi-file coding, multi-step research, and agentic workflows that require sustained reasoning. The model behind Claude Code\'s most demanding workloads and the default choice for tasks where quality and depth outweigh cost.',
           },
           {
-            name: 'Claude 3 Opus',
+            name: 'Claude Haiku 4.5',
             tier: 'pro',
-            bestFor: 'Deepest reasoning on complex problems',
+            bestFor: 'Fast, high-volume processing at scale',
             description:
-              'Anthropic\'s most capable model for tasks requiring sustained, nuanced reasoning across very long documents or complex, multi-layered problems. Best used when quality and depth are the primary constraints rather than cost or speed.',
+              'The fastest and most cost-efficient Claude model, designed for tasks that need scale rather than depth — bulk document tagging, content classification, first-pass drafting, and API-integrated workflows requiring sub-second response times. Available via the Pro plan and the Anthropic API.',
           },
         ],
       },
@@ -236,6 +236,13 @@ export const platforms: Platform[] = [
             bestFor: 'Persistent memory for ongoing work',
             description:
               'Projects give Claude persistent memory across conversations — upload documents, style guides, templates, and prior outputs that Claude retains throughout the project. Ideal for ongoing client engagements, content programmes, and any work that requires consistent context across multiple sessions.',
+          },
+          {
+            name: 'Claude Design',
+            tier: 'pro',
+            bestFor: 'Rapid web prototyping and design mockups',
+            description:
+              'Claude Design turns plain-English descriptions into fully styled, interactive web prototypes — complete with typography, layout, imagery, and responsive behaviour. Designers, founders, and marketers use it to mock up landing pages, pitch decks, and full marketing sites in minutes. Outputs can be exported as HTML or handed to developers as a visual specification.',
           },
           {
             name: 'Artifacts',
@@ -257,6 +264,20 @@ export const platforms: Platform[] = [
         category: 'Developer',
         tools: [
           {
+            name: 'Claude Code',
+            tier: 'pro',
+            bestFor: 'Agentic coding in the terminal and IDE',
+            description:
+              'Claude Code is Anthropic\'s flagship agentic coding tool — a command-line companion that understands entire codebases, edits multiple files simultaneously, runs tests, commits to Git, and ships real software. Engineering teams use it to accelerate delivery on bug fixes, feature builds, refactors, and migrations while keeping a human in the loop. Integrates directly with GitHub, VS Code, and most modern development environments.',
+          },
+          {
+            name: 'Claude Agent SDK',
+            tier: 'enterprise',
+            bestFor: 'Building custom AI agents on Claude',
+            description:
+              'The Claude Agent SDK is the same framework that powers Claude Code — now available to developers and product teams building their own agents. It handles tool calls, memory, subagents, and long-running task loops out of the box. Used by organisations building internal AI assistants that can read from their systems, take actions, and deliver end-to-end workflows.',
+          },
+          {
             name: 'Claude API',
             tier: 'enterprise',
             bestFor: 'Integrating Claude into products and workflows',
@@ -266,9 +287,9 @@ export const platforms: Platform[] = [
           {
             name: 'Claude MCP',
             tier: 'enterprise',
-            bestFor: 'Connecting Claude to your data sources',
+            bestFor: 'Connecting Claude to your data and tools',
             description:
-              'Model Context Protocol (MCP) is Anthropic\'s open standard for connecting AI models to external data sources, tools, and APIs. MCP integrations allow Claude to read from databases, query internal systems, and take actions in connected tools — moving beyond conversation into genuine workflow automation.',
+              'Model Context Protocol (MCP) is Anthropic\'s open standard for connecting AI models to external data sources, tools, and APIs. MCP integrations allow Claude to read from databases, query internal systems, and take actions in connected tools — moving beyond conversation into genuine workflow automation. Rapidly becoming the industry default, with major vendors shipping native MCP support.',
           },
           {
             name: 'Workbench',
@@ -294,7 +315,7 @@ export const platforms: Platform[] = [
             tier: 'enterprise',
             bestFor: 'Secure enterprise deployment with full control',
             description:
-              'Claude Enterprise adds SSO, advanced admin controls, usage analytics, a 500,000-token context window, and a guaranteed zero data retention policy. Designed for regulated industries and large organisations requiring audit trails, role-based access, and contractual data protection.',
+              'Claude Enterprise adds SSO, advanced admin controls, usage analytics, expanded context windows, and a guaranteed zero data retention policy. Designed for regulated industries and large organisations requiring audit trails, role-based access, and contractual data protection.',
           },
         ],
       },
@@ -304,12 +325,36 @@ export const platforms: Platform[] = [
         industry: 'Financial Services',
         scenario:
           'A private equity firm needs board-level quarterly reports for 12 portfolio companies, each requiring consistent regulatory language and the firm\'s house formatting style. Writing each report takes a senior analyst four hours.',
-        toolsUsed: ['Projects', 'Claude 3.5 Sonnet'],
+        toolsUsed: ['Projects', 'Claude Sonnet 4.5'],
         outcome:
           'A Project configured with the firm\'s style guide, regulatory requirements, and prior report examples generates first drafts for each portfolio company in minutes. Each report requires 45 minutes of editing rather than four hours of writing. Consistency across reports improves significantly, reducing compliance review time.',
       },
       {
-        industry: 'Marketing',
+        industry: 'Marketing & Agency',
+        scenario:
+          'A boutique branding agency wins a pitch and needs to show a prospective client three distinct landing page concepts within 48 hours. Traditional mockup production would take their design team five days and push the pitch past the deadline.',
+        toolsUsed: ['Claude Design', 'Projects'],
+        outcome:
+          'The strategist briefs Claude Design on the client\'s positioning and three creative directions. Within four hours, three fully styled, responsive landing pages are mocked up — typography, imagery placeholders, copy, and micro-interactions included. The client picks a direction on the call and signs the engagement on the same day. Pitch-to-concept time reduces by 80%.',
+      },
+      {
+        industry: 'Technology & SaaS',
+        scenario:
+          'A mid-market SaaS company\'s 15-person engineering team has a backlog of 40+ small bugs, UI polish items, and dependency upgrades that never reach the top of sprint planning. The accumulated debt is slowing delivery on bigger features.',
+        toolsUsed: ['Claude Code', 'Claude Opus 4.5'],
+        outcome:
+          'Engineers pair with Claude Code in the terminal — scoping each backlog ticket, letting Claude implement the change across affected files, running the test suite, and opening a PR for human review. The 40-item backlog is cleared in three sprints instead of three quarters. Senior engineering time is redirected from small fixes to architecture and hard technical problems.',
+      },
+      {
+        industry: 'Professional Services',
+        scenario:
+          'Partners at a management consulting firm must review 600-page due diligence bundles before client meetings — a process that takes five hours and limits how many engagements can run simultaneously.',
+        toolsUsed: ['Claude Sonnet 4.5', 'Analysis Tool'],
+        outcome:
+          'The entire document bundle is uploaded in a single conversation. Claude identifies key risk areas, cross-references inconsistencies across documents, and produces a structured executive summary with specific page references. Partner preparation time drops from five hours to under one hour.',
+      },
+      {
+        industry: 'Creative Services',
         scenario:
           'A creative agency manages 12 brand accounts, each with a distinct tone of voice. Copywriters spend 30–45 minutes re-reading brand guidelines before starting each new brief.',
         toolsUsed: ['Projects', 'Artifacts'],
@@ -317,25 +362,17 @@ export const platforms: Platform[] = [
           'Each brand has its own Claude Project loaded with guidelines, sample copy, and tone rules. Writers begin any task with the brand\'s full context immediately active. Output quality improves measurably and client revision requests drop by 40% in the quarter following implementation.',
       },
       {
-        industry: 'Professional Services',
-        scenario:
-          'Partners at a management consulting firm must review 600-page due diligence bundles before client meetings — a process that takes five hours and limits how many engagements can run simultaneously.',
-        toolsUsed: ['Claude 3.5 Sonnet', 'Analysis Tool'],
-        outcome:
-          'The entire document bundle is uploaded in a single conversation. Claude identifies key risk areas, cross-references inconsistencies across documents, and produces a structured executive summary with specific page references. Partner preparation time drops from five hours to under one hour.',
-      },
-      {
         industry: 'Real Estate',
         scenario:
           'A commercial property agency produces 30–40 property marketing reports monthly. Each takes three to four hours to write from scratch using raw sales data and location research.',
-        toolsUsed: ['Claude 3.5 Sonnet', 'Artifacts'],
+        toolsUsed: ['Claude Sonnet 4.5', 'Artifacts'],
         outcome:
           'Property data, comparables, and location notes are pasted into Claude. A first draft — including investment thesis, location analysis, and comparable sales narrative — is generated in minutes. Artifacts renders a structured, shareable version ready for client delivery. Production time drops to under 45 minutes per report.',
       },
     ],
-    metaTitle: 'Claude & Anthropic Tools Guide — Projects, Artifacts, API & More',
+    metaTitle: 'Claude & Anthropic Tools Guide — Claude Code, Claude Design, Projects & More',
     metaDescription:
-      'A practical guide to Anthropic\'s Claude platform — Claude 3.5 Sonnet, Haiku, Opus, Projects, Artifacts, and Claude Enterprise — with tool-by-tool breakdowns and industry use cases.',
+      'A practical guide to Anthropic\'s full Claude platform — Claude Sonnet 4.5, Opus 4.5, Claude Code, Claude Design, Projects, Agent SDK, and MCP — with tool-by-tool breakdowns and real industry use cases.',
   },
 
   {
@@ -345,10 +382,10 @@ export const platforms: Platform[] = [
     tagline: 'AI woven into the tools your organisation already uses',
     brandColor: '#4285F4',
     overview:
-      'Google\'s Gemini platform is the most deeply integrated AI ecosystem for organisations already running Google Workspace. Gemini models power AI features across Gmail, Docs, Sheets, and Meet — as well as standalone research tools like NotebookLM and Deep Research. With a one-million-token context window in Gemini 1.5 Pro, it handles document volumes no other consumer platform can match.',
+      'Google\'s Gemini platform is the most deeply integrated AI ecosystem for organisations already running Google Workspace. Gemini models power AI features across Gmail, Docs, Sheets, and Meet — as well as standalone research tools like NotebookLM and Deep Research. With a two-million-token context window in Gemini 2.5 Pro, it handles document volumes no other consumer platform can match.',
     overviewPoints: [
       'Native integration with Google Workspace — Gmail, Docs, Sheets, Meet, and Drive',
-      '1M token context window in Gemini 1.5 Pro — process entire report libraries at once',
+      '2M token context window in Gemini 2.5 Pro — process entire report libraries at once',
       'NotebookLM is the best AI research tool for document-heavy knowledge work',
       'Deep Research produces comprehensive, cited research reports autonomously',
     ],
@@ -357,21 +394,21 @@ export const platforms: Platform[] = [
         category: 'Models',
         tools: [
           {
-            name: 'Gemini 1.5 Pro',
+            name: 'Gemini 2.5 Pro',
             tier: 'pro',
             bestFor: 'Massive document analysis and reasoning',
             description:
-              'Gemini 1.5 Pro\'s one-million-token context window is its defining capability — it can process entire codebases, legal archives, or report libraries in a single conversation. Strong at reasoning, multimodal inputs, and tasks requiring sustained attention across very large documents. Available via Google One AI Premium.',
+              'Gemini 2.5 Pro\'s two-million-token context window is its defining capability — it can process entire codebases, legal archives, or report libraries in a single conversation. Strong at reasoning, multimodal inputs, and tasks requiring sustained attention across very large documents. Available via Google One AI Premium.',
           },
           {
-            name: 'Gemini 1.5 Flash',
+            name: 'Gemini 2.5 Flash',
             tier: 'free',
             bestFor: 'Fast, efficient everyday tasks',
             description:
               'A lighter, faster model optimised for speed and cost efficiency. Gemini Flash handles the majority of everyday tasks — summarising, drafting, translating, and classifying — at a fraction of the compute cost of Pro. Available free and embedded in most Workspace features.',
           },
           {
-            name: 'Gemini 2.0 Ultra',
+            name: 'Gemini 2.5 Ultra',
             tier: 'enterprise',
             bestFor: 'Google\'s most capable frontier model',
             description:
@@ -456,7 +493,7 @@ export const platforms: Platform[] = [
         industry: 'Financial Services',
         scenario:
           'Equity analysts at a funds management firm need to cross-reference 10–15 company annual reports to build comparative investment analyses. Current process: 2–3 days of reading and tabulation per report set.',
-        toolsUsed: ['NotebookLM', 'Gemini 1.5 Pro'],
+        toolsUsed: ['NotebookLM', 'Gemini 2.5 Pro'],
         outcome:
           'All annual reports are uploaded to NotebookLM. The team queries the collection as a single interactive document — pulling revenue figures, management commentary, and risk disclosures instantly, with citations. Comparative analysis built in two hours versus two days. Analyst time redirected to investment conclusions rather than data extraction.',
       },
@@ -480,14 +517,14 @@ export const platforms: Platform[] = [
         industry: 'Professional Services',
         scenario:
           'Management consultants need comprehensive market entry reports for clients entering new geographies — typically requiring three to four days of desktop research before primary research begins.',
-        toolsUsed: ['Deep Research', 'Gemini 1.5 Pro'],
+        toolsUsed: ['Deep Research', 'Gemini 2.5 Pro'],
         outcome:
           'Deep Research autonomously synthesises 40–60 web sources into a structured market entry brief covering the competitive landscape, regulatory environment, and go-to-market landscape with full citations. First draft produced in under four hours. Consultants focus their time on interpretation, client context, and primary interviews.',
       },
     ],
     metaTitle: 'Gemini & Google AI Tools Guide — NotebookLM, Deep Research & Workspace',
     metaDescription:
-      'A practical guide to Google\'s Gemini AI platform — Gemini 1.5 Pro, NotebookLM, Deep Research, and Gemini for Workspace — with tool-by-tool breakdowns and industry use cases.',
+      'A practical guide to Google\'s Gemini AI platform — Gemini 2.5 Pro, NotebookLM, Deep Research, and Gemini for Workspace — with tool-by-tool breakdowns and industry use cases.',
   },
 
   {

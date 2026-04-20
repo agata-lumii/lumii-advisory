@@ -172,9 +172,10 @@ export default function LearnPage() {
             </h2>
             <p className="font-body text-[16px] leading-[1.85] text-warm-white/60 font-light mb-6">
               Every major AI platform has real strengths — and real limitations. ChatGPT leads on
-              ecosystem and integrations. Claude leads on long-form writing and document analysis.
-              Gemini leads on Workspace integration and research tools. Copilot leads for
-              Microsoft-heavy organisations. Perplexity leads on real-time information.
+              ecosystem depth and integrations. Claude leads on coding, design prototyping, and
+              nuanced long-form writing. Gemini leads on Workspace integration and research tools.
+              Copilot leads for Microsoft-heavy organisations. Perplexity leads on real-time
+              information with citations.
             </p>
             <p className="font-body text-[16px] leading-[1.85] text-warm-white/60 font-light">
               Most businesses should be using two or three of these — not one. The question is
@@ -185,8 +186,8 @@ export default function LearnPage() {
             <div className="w-10 h-px bg-gold mb-8" />
             <div className="space-y-6">
               {[
-                { label: 'Long-form writing & document analysis', winner: 'Claude' },
-                { label: 'Ecosystem depth & reasoning', winner: 'OpenAI' },
+                { label: 'Coding, design & long-form writing', winner: 'Claude' },
+                { label: 'Ecosystem depth & general reasoning', winner: 'OpenAI' },
                 { label: 'Google Workspace integration', winner: 'Gemini' },
                 { label: 'Microsoft 365 integration', winner: 'Copilot' },
                 { label: 'Real-time research with citations', winner: 'Perplexity' },
