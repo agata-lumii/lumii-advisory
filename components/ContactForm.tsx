@@ -150,7 +150,7 @@ export default function ContactForm() {
       </div>
       {error && (
         <p className="font-body text-[13px] text-red-500 font-light">
-          Something went wrong — please try again or email us directly at hello@lumii.com.au
+          Something went wrong — please try again or email us directly at hello@lumiiadvisory.com
         </p>
       )}
       <button

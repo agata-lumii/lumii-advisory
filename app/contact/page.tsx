@@ -45,10 +45,10 @@ export default function ContactPage() {
                 <div>
                   <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-2">Email</p>
                   <a
-                    href="mailto:hello@lumii.com.au"
+                    href="mailto:hello@lumiiadvisory.com"
                     className="font-display text-[20px] font-light text-near-black hover:text-gold transition-colors duration-200"
                   >
-                    hello@lumii.com.au
+                    hello@lumiiadvisory.com
                   </a>
                 </div>
                 <div>

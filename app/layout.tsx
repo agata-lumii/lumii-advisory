@@ -80,7 +80,7 @@ const jsonLd = [
     image: `${SITE_URL}/og-image.jpg`,
     description:
       'Specialist AI strategy and digital transformation consultancy helping ambitious mid-market businesses adopt AI with clarity and measurable results.',
-    email: 'hello@lumii.com.au',
+    email: 'hello@lumiiadvisory.com',
     founder: { '@id': `${SITE_URL}/#agata` },
     foundingDate: '2025',
     foundingLocation: {
@@ -123,7 +123,7 @@ const jsonLd = [
     logo: `${SITE_URL}/og-image.jpg`,
     description:
       'Independent AI strategy and digital transformation consultancy based in Sydney, working with mid-market businesses across Australia and APAC.',
-    email: 'hello@lumii.com.au',
+    email: 'hello@lumiiadvisory.com',
     priceRange: '$$$',
     address: {
       '@type': 'PostalAddress',
