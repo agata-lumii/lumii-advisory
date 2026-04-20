@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   description:
     'Lumii Advisory is a specialist AI strategy and digital transformation consultancy based in Sydney, Australia. We help ambitious mid-market businesses adopt AI with clarity, rigour, and measurable commercial results.',
-  metadataBase: new URL('https://lumii-advisory.com'),
+  metadataBase: new URL('https://lumiiadvisory.com'),
   openGraph: {
     title: 'Lumii Advisory — AI Strategy & Digital Transformation',
     description:
@@ -37,64 +37,145 @@ export const metadata: Metadata = {
     locale: 'en_AU',
     images: [
       {
-        url: 'https://lumii-advisory.com/og-image.jpg',
+        url: 'https://lumiiadvisory.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Lumii Advisory ��� AI Strategy & Digital Transformation',
+        alt: 'Lumii Advisory — AI Strategy & Digital Transformation',
       },
     ],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
   alternates: {
-    canonical: 'https://lumii-advisory.com',
+    canonical: 'https://lumiiadvisory.com',
   },
 }
 
+const SITE_URL = 'https://lumiiadvisory.com'
+
 const jsonLd = [
+  // ── Organization ──
   {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
     name: 'Lumii Advisory',
+    legalName: 'Lumii Advisory',
+    url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/og-image.jpg`,
+      width: 1200,
+      height: 630,
+    },
+    image: `${SITE_URL}/og-image.jpg`,
     description:
       'Specialist AI strategy and digital transformation consultancy helping ambitious mid-market businesses adopt AI with clarity and measurable results.',
-    url: 'https://lumii-advisory.com',
+    email: 'hello@lumii.com.au',
+    founder: { '@id': `${SITE_URL}/#agata` },
+    foundingDate: '2025',
+    foundingLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Sydney',
+        addressRegion: 'NSW',
+        addressCountry: 'AU',
+      },
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Place', name: 'Asia-Pacific' },
+    ],
+    knowsAbout: [
+      'AI Strategy',
+      'Digital Transformation',
+      'AI Enablement',
+      'Customer Experience',
+      'MarTech',
+      'Ecommerce',
+      'AI Adoption',
+      'AI Governance',
+    ],
+    sameAs: [
+      'https://www.linkedin.com/company/lumii-advisory',
+      'https://www.linkedin.com/in/agata-a-47295a24/',
+    ],
+  },
+
+  // ── LocalBusiness ──
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_URL}/#localbusiness`,
+    name: 'Lumii Advisory',
+    url: SITE_URL,
+    image: `${SITE_URL}/og-image.jpg`,
+    logo: `${SITE_URL}/og-image.jpg`,
+    description:
+      'Independent AI strategy and digital transformation consultancy based in Sydney, working with mid-market businesses across Australia and APAC.',
+    email: 'hello@lumii.com.au',
+    priceRange: '$$$',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Sydney',
       addressRegion: 'NSW',
       addressCountry: 'AU',
     },
-    areaServed: 'AU',
-    founder: {
-      '@type': 'Person',
-      name: 'Agata Adamczak',
-      jobTitle: 'Founder',
-      url: 'https://lumii-advisory.com/about',
-      sameAs: ['https://www.linkedin.com/in/agata-a-47295a24/'],
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: -33.8688,
+      longitude: 151.2093,
     },
-    sameAs: ['https://www.linkedin.com/company/lumii-advisory'],
+    areaServed: [
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Place', name: 'Asia-Pacific' },
+    ],
     serviceType: [
       'AI Strategy Consulting',
       'Digital Transformation',
       'Customer Experience',
       'MarTech Advisory',
       'AI Enablement',
+      'AI Readiness Assessment',
+    ],
+    parentOrganization: { '@id': `${SITE_URL}/#organization` },
+    founder: { '@id': `${SITE_URL}/#agata` },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+    sameAs: [
+      'https://www.linkedin.com/company/lumii-advisory',
+      'https://www.linkedin.com/in/agata-a-47295a24/',
     ],
   },
+
+  // ── Person (Founder) ──
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${SITE_URL}/#agata`,
     name: 'Agata Adamczak',
+    givenName: 'Agata',
+    familyName: 'Adamczak',
     jobTitle: 'Founder & AI Strategy Consultant',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Lumii Advisory',
-      url: 'https://lumii-advisory.com',
-    },
-    url: 'https://lumii-advisory.com/about',
+    description:
+      'Founder of Lumii Advisory. AI strategy and digital transformation consultant helping mid-market businesses translate AI into measurable commercial outcomes.',
+    url: `${SITE_URL}/about`,
+    image: `${SITE_URL}/og-image.jpg`,
+    worksFor: { '@id': `${SITE_URL}/#organization` },
     sameAs: ['https://www.linkedin.com/in/agata-a-47295a24/'],
     knowsAbout: [
       'AI Strategy',
@@ -103,13 +184,27 @@ const jsonLd = [
       'MarTech',
       'Customer Experience',
       'Ecommerce',
+      'AI Readiness',
+      'AI Adoption',
     ],
+    knowsLanguage: ['English', 'Polish'],
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Sydney',
       addressRegion: 'NSW',
       addressCountry: 'AU',
     },
+  },
+
+  // ── WebSite (enables sitelinks searchbox) ──
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: 'Lumii Advisory',
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    inLanguage: 'en-AU',
   },
 ]
 
@@ -118,14 +213,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body>
         <GoogleAnalytics />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd[0]) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd[1]) }}
-        />
+        {jsonLd.map((schema, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
         <Navbar />
         <main>{children}</main>
         <Footer />

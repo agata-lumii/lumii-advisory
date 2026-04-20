@@ -249,7 +249,7 @@ export default function EcosystemDiagram({ platform, tagline, brandColor, catego
         fontSize={10}
         fill="#B4AFA8"
       >
-        lumii-advisory.com
+        lumiiadvisory.com
       </text>
     </svg>
   )

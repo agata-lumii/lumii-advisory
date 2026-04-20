@@ -3,7 +3,7 @@ import { verticals } from '@/lib/verticals'
 import { articles } from '@/lib/insights'
 import { platforms } from '@/lib/ai-tools'
 
-const BASE_URL = 'https://lumii-advisory.com'
+const BASE_URL = 'https://lumiiadvisory.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

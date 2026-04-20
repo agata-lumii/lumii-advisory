@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   description:
     'Lumii Advisory is an independent AI strategy consultancy. We help ambitious mid-market businesses identify where AI creates real value and implement it — with clarity, no vendor bias, and measurable results.',
   alternates: {
-    canonical: 'https://lumii-advisory.com',
+    canonical: 'https://lumiiadvisory.com',
   },
   openGraph: {
     title: 'AI Strategy Consultant — Lumii Advisory',
     description:
       'Independent AI strategy consulting for mid-market businesses. Identify where AI creates real value and implement it — clearly, practically, and without vendor bias.',
-    url: 'https://lumii-advisory.com',
+    url: 'https://lumiiadvisory.com',
   },
 }
 

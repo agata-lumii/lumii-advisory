@@ -27,7 +27,7 @@ export async function generateMetadata({
       modifiedTime: article.date,
     },
     alternates: {
-      canonical: `https://lumii-advisory.com/insights/${article.slug}`,
+      canonical: `https://lumiiadvisory.com/insights/${article.slug}`,
     },
   }
 }
@@ -56,24 +56,24 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     author: {
       '@type': 'Person',
       name: 'Agata Adamczak',
-      url: 'https://lumii-advisory.com/about',
+      url: 'https://lumiiadvisory.com/about',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Lumii Advisory',
-      url: 'https://lumii-advisory.com',
+      url: 'https://lumiiadvisory.com',
     },
-    url: `https://lumii-advisory.com/insights/${article.slug}`,
-    mainEntityOfPage: `https://lumii-advisory.com/insights/${article.slug}`,
+    url: `https://lumiiadvisory.com/insights/${article.slug}`,
+    mainEntityOfPage: `https://lumiiadvisory.com/insights/${article.slug}`,
   }
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumii-advisory.com' },
-      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://lumii-advisory.com/insights' },
-      { '@type': 'ListItem', position: 3, name: article.title, item: `https://lumii-advisory.com/insights/${article.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumiiadvisory.com' },
+      { '@type': 'ListItem', position: 2, name: 'Insights', item: 'https://lumiiadvisory.com/insights' },
+      { '@type': 'ListItem', position: 3, name: article.title, item: `https://lumiiadvisory.com/insights/${article.slug}` },
     ],
   }
 

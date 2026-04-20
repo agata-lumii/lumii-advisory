@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Practical insights on AI strategy, digital transformation, and business leadership in the age of AI. No hype — clear thinking for executives and founders navigating real decisions.',
   alternates: {
-    canonical: 'https://lumii-advisory.com/insights',
+    canonical: 'https://lumiiadvisory.com/insights',
   },
 }
 
