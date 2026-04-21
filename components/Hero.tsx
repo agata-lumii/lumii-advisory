@@ -21,10 +21,10 @@ export default function Hero() {
             I help businesses<br />put AI to <em className="italic text-gold">work.</em>
           </h1>
           <p className="font-body text-[17px] leading-[1.8] text-warm-white/80 max-w-[480px] mb-5 font-light">
-            Lumii Advisory is an independent AI strategy consultancy. I work with mid-market businesses to identify where AI creates real value — then implement it.
+            Lumii Advisory is an independent AI strategy consultancy for mid-market businesses. I help leadership teams identify where AI creates real value — and implement it with confidence.
           </p>
           <p className="font-body text-[15px] leading-[1.75] text-warm-white/50 max-w-[460px] mb-12 font-light">
-            No generic playbooks. No vendor bias. Just clear thinking, practical tools, and measurable results — from someone who has done it across industries.
+            Eighteen years inside global technology businesses taught me how these decisions should be made. Lumii exists to do that properly — senior-led, vendor-neutral, and accountable to outcomes.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
             <Link

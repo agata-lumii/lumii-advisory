@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
 import ProcessStrip from '@/components/ProcessStrip'
-import MarqueeStrip from '@/components/MarqueeStrip'
-import PhilosophySection from '@/components/PhilosophySection'
-import PillarsSection from '@/components/PillarsSection'
+import ExperienceStrip from '@/components/ExperienceStrip'
 import ServicesSection from '@/components/ServicesSection'
 import VerticalsSection from '@/components/VerticalsSection'
 import AboutSection from '@/components/AboutSection'
@@ -13,14 +11,14 @@ import CTABanner from '@/components/CTABanner'
 export const metadata: Metadata = {
   title: 'AI Strategy Consultant — Lumii Advisory',
   description:
-    'Lumii Advisory is an independent AI strategy consultancy. We help ambitious mid-market businesses identify where AI creates real value and implement it — with clarity, no vendor bias, and measurable results.',
+    'Lumii Advisory is an independent AI strategy consultancy led by Agata Adamczak. Eighteen years inside global technology businesses, now advising ambitious mid-market leaders on where AI creates real value — senior-led, vendor-neutral, outcome-accountable.',
   alternates: {
     canonical: 'https://lumiiadvisory.com',
   },
   openGraph: {
     title: 'AI Strategy Consultant — Lumii Advisory',
     description:
-      'Independent AI strategy consulting for mid-market businesses. Identify where AI creates real value and implement it — clearly, practically, and without vendor bias.',
+      'Independent AI strategy consulting for mid-market businesses. Senior-led, vendor-neutral, outcome-accountable — from a consultant with eighteen years inside global technology businesses.',
     url: 'https://lumiiadvisory.com',
   },
 }
@@ -29,10 +27,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <MarqueeStrip />
+      <ExperienceStrip />
       <ProcessStrip />
-      <PhilosophySection />
-      <PillarsSection />
       <ServicesSection />
 
       {/* Work With Us callout */}

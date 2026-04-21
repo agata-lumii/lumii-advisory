@@ -14,7 +14,7 @@ export default function VerticalsSection() {
                 Built for the <em className="italic text-gold">ambitious.</em>
               </>
             }
-            lead="We work with growth-stage businesses and established teams across a range of sectors — wherever digital complexity is creating friction or opportunity."
+            lead="I work with growth-stage businesses and established teams across a range of sectors — wherever digital complexity is creating friction or opportunity."
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

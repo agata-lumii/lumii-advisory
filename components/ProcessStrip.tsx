@@ -34,7 +34,7 @@ export default function ProcessStrip() {
             <div className="flex items-center gap-5 mb-3">
               <span className="w-8 h-px bg-gold block" />
               <p className="font-body text-[11px] tracking-[0.3em] uppercase text-ash">
-                How We Work
+                How I Work
               </p>
             </div>
             <h2 className="font-display font-light text-[clamp(40px,4.5vw,64px)] leading-[1.08] text-near-black tracking-[-0.01em]">
