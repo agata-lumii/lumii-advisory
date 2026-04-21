@@ -154,16 +154,56 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
             ))}
           </div>
           <div className="mt-16 p-10 lg:p-14 bg-near-black">
-            <p className="font-body text-[11px] tracking-[0.25em] uppercase text-ash mb-4">Not sure where to start?</p>
-            <p className="font-display text-[clamp(22px,2.5vw,32px)] font-light text-warm-white leading-[1.4] mb-8 max-w-[540px]">
-              Every engagement starts with a conversation. Tell us where you are and where you want to get to.
+            <p className="font-body text-[11px] tracking-[0.25em] uppercase text-gold mb-4">Ways to Engage</p>
+            <p className="font-display text-[clamp(22px,2.5vw,32px)] font-light text-warm-white leading-[1.4] mb-10 max-w-[560px]">
+              Three shapes to engage with Lumii — chosen around where you are.
             </p>
-            <Link
-              href="/contact"
-              className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block"
-            >
-              Book a Discovery Call
-            </Link>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-10">
+              {[
+                {
+                  title: 'Workshops',
+                  description: 'A half or full day to align leadership on what AI means for your business.',
+                  href: '/work-with-us#workshops',
+                },
+                {
+                  title: 'Project Sprints',
+                  description: 'A fixed-scope engagement to deliver one measurable outcome in 6–12 weeks.',
+                  href: '/work-with-us#projects',
+                },
+                {
+                  title: 'Advisory Retainer',
+                  description: 'Ongoing senior counsel as your AI and digital strategy evolves.',
+                  href: '/work-with-us#retainer',
+                },
+              ].map((opt) => (
+                <Link
+                  key={opt.title}
+                  href={opt.href}
+                  className="group block p-6 border border-warm-white/15 hover:border-gold/50 hover:bg-warm-white/[0.03] transition-all duration-200"
+                >
+                  <p className="font-display text-[19px] font-light text-warm-white mb-3 group-hover:text-gold transition-colors duration-200">
+                    {opt.title}
+                  </p>
+                  <p className="font-body text-[13px] text-warm-white/55 font-light leading-[1.7]">
+                    {opt.description}
+                  </p>
+                  <span className="inline-block mt-4 font-body text-[10px] tracking-[0.2em] uppercase text-gold/70 group-hover:text-gold group-hover:translate-x-0.5 transition-all duration-200">
+                    Learn more →
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-8 border-t border-warm-white/10">
+              <p className="font-body text-[13px] text-warm-white/55 font-light flex-1">
+                Not sure which fits? Every engagement starts with a conversation.
+              </p>
+              <Link
+                href="/contact"
+                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-3.5 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
+              >
+                Book a Discovery Call
+              </Link>
+            </div>
           </div>
         </div>
       </section>

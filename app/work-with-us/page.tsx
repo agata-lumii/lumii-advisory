@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 
 type Tier = {
   number: string
+  anchor: string
   title: string
   tagline: string
   summary: string
@@ -36,6 +37,7 @@ type Tier = {
 const tiers: Tier[] = [
   {
     number: '01',
+    anchor: 'workshops',
     title: 'Workshops',
     tagline: 'A single day to align leadership on what AI means for your business.',
     summary:
@@ -67,6 +69,7 @@ const tiers: Tier[] = [
   },
   {
     number: '02',
+    anchor: 'projects',
     title: 'Project Sprints',
     tagline: 'A defined outcome, delivered in 6–12 weeks.',
     summary:
@@ -98,6 +101,7 @@ const tiers: Tier[] = [
   },
   {
     number: '03',
+    anchor: 'retainer',
     title: 'Advisory Retainer',
     tagline: 'Ongoing counsel as your AI and digital strategy evolves.',
     summary:
@@ -177,7 +181,8 @@ export default function WorkWithUsPage() {
           {tiers.map((tier) => (
             <article
               key={tier.number}
-              className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-16 pb-[clamp(60px,8vw,100px)] border-b border-parchment last:border-b-0 last:pb-0"
+              id={tier.anchor}
+              className="scroll-mt-32 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-16 pb-[clamp(60px,8vw,100px)] border-b border-parchment last:border-b-0 last:pb-0"
             >
               {/* Left — tier header */}
               <div>
