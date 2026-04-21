@@ -132,6 +132,16 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+
+          {/* Link to full engagements page */}
+          <div className="mt-16 text-center">
+            <Link
+              href="/work-with-us"
+              className="inline-block font-body text-[12px] tracking-[0.12em] uppercase text-near-black border border-near-black px-10 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200"
+            >
+              Explore ways to work with us →
+            </Link>
+          </div>
         </div>
       </section>
 

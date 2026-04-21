@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useForm } from 'react-hook-form'
+import { useSearchParams } from 'next/navigation'
 
 // ← Paste your Formspree form ID here after signing up at formspree.io
 const FORMSPREE_ID = 'xqeweeaz'
@@ -15,15 +16,39 @@ type FormData = {
   message: string
 }
 
-export default function ContactForm() {
+// Valid interest values — keep in sync with the <select> options below
+const VALID_INTERESTS = [
+  'workshop',
+  'project',
+  'retainer',
+  'digital-strategy',
+  'cx',
+  'ecommerce',
+  'martech',
+  'ai',
+  'multiple',
+  'not-sure',
+]
+
+function ContactFormInner() {
+  const searchParams = useSearchParams()
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState(false)
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<FormData>()
+
+  // Pre-fill interest from ?interest= URL param (e.g. /contact?interest=workshop)
+  useEffect(() => {
+    const raw = searchParams?.get('interest')
+    if (raw && VALID_INTERESTS.includes(raw)) {
+      setValue('interest', raw)
+    }
+  }, [searchParams, setValue])
 
   const onSubmit = async (data: FormData) => {
     setSubmitting(true)
@@ -124,11 +149,18 @@ export default function ContactForm() {
           className={`${inputClass} cursor-pointer`}
         >
           <option value="">Select an area...</option>
-          <option value="digital-strategy">Digital Strategy</option>
-          <option value="cx">Customer Experience</option>
-          <option value="ecommerce">Ecommerce</option>
-          <option value="martech">MarTech Advisory</option>
-          <option value="ai">AI Enablement</option>
+          <optgroup label="Ways to Engage">
+            <option value="workshop">Workshop (Half-Day or Full-Day)</option>
+            <option value="project">Project Sprint</option>
+            <option value="retainer">Advisory Retainer</option>
+          </optgroup>
+          <optgroup label="Discipline">
+            <option value="digital-strategy">Digital Strategy</option>
+            <option value="cx">Customer Experience</option>
+            <option value="ecommerce">Ecommerce</option>
+            <option value="martech">MarTech Advisory</option>
+            <option value="ai">AI Enablement</option>
+          </optgroup>
           <option value="multiple">Multiple Areas</option>
           <option value="not-sure">Not Sure Yet</option>
         </select>
@@ -161,5 +193,14 @@ export default function ContactForm() {
         {submitting ? 'Sending…' : 'Send Message'}
       </button>
     </form>
+  )
+}
+
+// useSearchParams requires a Suspense boundary in Next.js App Router
+export default function ContactForm() {
+  return (
+    <Suspense fallback={<div className="py-12 font-body text-[13px] text-ash">Loading form…</div>}>
+      <ContactFormInner />
+    </Suspense>
   )
 }

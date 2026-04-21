@@ -137,6 +137,16 @@ export default function Navbar() {
           </Link>
         </li>
 
+        {/* Work With Us */}
+        <li>
+          <Link
+            href="/work-with-us"
+            className="font-body text-[12px] tracking-[0.12em] uppercase font-semibold text-charcoal hover:text-near-black transition-colors duration-200 leading-none"
+          >
+            Work With Us
+          </Link>
+        </li>
+
         {/* How We Work */}
         <li>
           <Link
@@ -317,6 +327,10 @@ export default function Navbar() {
 
           <Link href="/services" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
             Services
+          </Link>
+
+          <Link href="/work-with-us" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
+            Work With Us
           </Link>
 
           <Link href="/how-we-work" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">

@@ -191,11 +191,11 @@ export default function HowWeWorkPage() {
               <em className="italic text-gold">your situation.</em>
             </h2>
             <p className="font-body text-[15px] leading-[1.8] text-warm-white/55 font-light mt-4 max-w-[480px]">
-              We offer Strategy Sprints, Transformation Partnerships, and Advisory Retainers — each designed for a different stage of the journey.
+              We offer Workshops, Project Sprints, and Advisory Retainers — each designed for a different stage of the journey.
             </p>
           </div>
           <Link
-            href="/services"
+            href="/work-with-us"
             className="font-body text-[12px] tracking-[0.12em] uppercase text-warm-white border border-warm-white/30 px-8 py-4 hover:border-warm-white hover:bg-warm-white hover:text-near-black transition-all duration-200 whitespace-nowrap"
           >
             View Engagement Models →

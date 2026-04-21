@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/work-with-us`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
       url: `${BASE_URL}/who-we-help`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

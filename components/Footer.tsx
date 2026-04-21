@@ -158,6 +158,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/work-with-us"
+                  className="font-body text-[13px] text-warm-white/55 font-light hover:text-warm-white transition-colors duration-200"
+                >
+                  Work With Us
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="font-body text-[13px] text-warm-white/55 font-light hover:text-warm-white transition-colors duration-200"
                 >

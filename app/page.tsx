@@ -35,8 +35,31 @@ export default function HomePage() {
       <PillarsSection />
       <ServicesSection />
 
+      {/* Work With Us callout */}
+      <section className="bg-warm-white pt-[clamp(60px,8vw,100px)] pb-[clamp(30px,4vw,50px)] px-8 lg:px-12">
+        <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border border-parchment p-10 lg:p-14 hover:border-gold/40 transition-colors duration-300">
+          <div>
+            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-3">
+              Ways to Engage
+            </p>
+            <h2 className="font-display font-light text-[clamp(24px,2.5vw,36px)] text-near-black leading-[1.2] mb-3">
+              Workshops, projects, or ongoing counsel.
+            </h2>
+            <p className="font-body text-[15px] text-slate-warm font-light leading-[1.8] max-w-[560px]">
+              Whether you need a single day of clarity, a focused sprint, or a long-term advisor alongside your leadership team — three clear ways to work with us, each shaped around your business.
+            </p>
+          </div>
+          <Link
+            href="/work-with-us"
+            className="font-body text-[12px] tracking-[0.1em] uppercase text-warm-white bg-near-black px-8 py-4 hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
+          >
+            Work With Us →
+          </Link>
+        </div>
+      </section>
+
       {/* Case Studies callout */}
-      <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
+      <section className="bg-warm-white pt-[clamp(30px,4vw,50px)] pb-[clamp(60px,8vw,100px)] px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border border-parchment p-10 lg:p-14 hover:border-gold/40 transition-colors duration-300">
           <div>
             <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-3">
