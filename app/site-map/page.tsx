@@ -16,6 +16,7 @@ const sections = [
     links: [
       { href: '/', label: 'Home' },
       { href: '/services', label: 'Services' },
+      { href: '/work-with-us', label: 'Work With Us' },
       { href: '/how-we-work', label: 'How We Work' },
       { href: '/about', label: 'About Agata' },
       { href: '/contact', label: 'Contact' },

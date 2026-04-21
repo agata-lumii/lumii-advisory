@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Brand Guidelines — Lumii Advisory',
   description: 'Lumii Advisory design system: colour palette, typography, components, and usage guidelines.',
+  robots: { index: false, follow: false },
 }
 
 const colours = [
