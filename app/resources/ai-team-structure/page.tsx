@@ -3,9 +3,14 @@ import Link from 'next/link'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'AI Team Structure: Every Role, When to Hire & How to Organise Your AI Function',
+  title: {
+    absolute: 'AI Team Structure: Roles, Org Charts & Hiring Order (2026)',
+  },
   description:
-    'A complete guide to building your AI team — from the first hire to a full AI function. Covers every role, when to bring them in, reporting lines, and what AI teams look like in 2, 3, and 5 years.',
+    'The 8 roles every AI-capable business needs, the 5 you hire first, and where they sit in the org. A practical guide for CEOs and HR leaders.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/resources/ai-team-structure',
+  },
 }
 
 // ── Role data ────────────────────────────────────────────────────────

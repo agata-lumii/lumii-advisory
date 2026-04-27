@@ -9,16 +9,18 @@ import AboutSection from '@/components/AboutSection'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'AI Strategy Consultant — Lumii Advisory',
+  title: {
+    absolute: 'AI Strategy Consultant Sydney | Mid-Market AI Advisory',
+  },
   description:
-    'Lumii Advisory is an independent AI strategy consultancy led by Agata Adamczak. Eighteen years inside global technology businesses, now advising ambitious mid-market leaders on where AI creates real value — senior-led, vendor-neutral, outcome-accountable.',
+    'Independent AI strategy consulting for mid-market businesses in Sydney & APAC. 18+ years’ enterprise expertise. Book a free 30-min discovery call.',
   alternates: {
     canonical: 'https://lumiiadvisory.com',
   },
   openGraph: {
-    title: 'AI Strategy Consultant — Lumii Advisory',
+    title: 'AI Strategy Consultant Sydney | Mid-Market AI Advisory | Lumii',
     description:
-      'Independent AI strategy consulting for mid-market businesses. Senior-led, vendor-neutral, outcome-accountable — from a consultant with eighteen years inside global technology businesses.',
+      'Independent AI strategy consulting for mid-market businesses in Sydney & APAC. 18+ years’ enterprise expertise. Book a free 30-min discovery call.',
     url: 'https://lumiiadvisory.com',
   },
 }

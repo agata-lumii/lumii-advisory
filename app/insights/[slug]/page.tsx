@@ -17,7 +17,7 @@ export async function generateMetadata({
   const article = getArticleBySlug(params.slug)
   if (!article) return {}
   return {
-    title: article.metaTitle,
+    title: { absolute: article.metaTitle },
     description: article.metaDescription,
     openGraph: {
       title: article.metaTitle,

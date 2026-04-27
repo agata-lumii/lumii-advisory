@@ -63,6 +63,13 @@ const sections = [
       })),
     ],
   },
+  {
+    title: 'Legal',
+    links: [
+      { href: '/privacy-policy', label: 'Privacy Policy' },
+      { href: '/terms-of-service', label: 'Terms of Service' },
+    ],
+  },
 ]
 
 export default function SiteMapPage() {

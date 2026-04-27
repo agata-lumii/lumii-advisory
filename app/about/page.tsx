@@ -4,9 +4,14 @@ import CTABanner from '@/components/CTABanner'
 import SectionHeader from '@/components/SectionHeader'
 
 export const metadata: Metadata = {
-  title: 'About Agata Adamczak — AI Strategy Consultant, Sydney',
+  title: {
+    absolute: 'Agata Adamczak — AI Strategy Consultant, Sydney | Lumii',
+  },
   description:
-    'Agata Adamczak is the founder of Lumii Advisory. A specialist AI strategy and digital transformation consultant with a decade of experience across enterprise SaaS, marketing technology, and AI enablement in the APAC region.',
+    '18+ years in digital, MarTech & AI. Ex-Botify, BrightEdge, Dotdigital, Performics. Now leading AI advisory for mid-market businesses across APAC.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/about',
+  },
 }
 
 export default function AboutPage() {

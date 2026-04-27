@@ -5,9 +5,14 @@ import SectionTag from '@/components/SectionTag'
 import CompanyLogo from '@/components/CompanyLogo'
 
 export const metadata: Metadata = {
-  title: 'Real AI Case Studies: Klarna, Goldman Sachs, Microsoft & More',
+  title: {
+    absolute: 'AI Case Studies: Klarna, Goldman Sachs, Microsoft & More',
+  },
   description:
-    'Real-world AI case studies from Klarna, Morgan Stanley, Walmart, Duolingo, Goldman Sachs, IBM, Coca-Cola, and Microsoft. See how leading businesses are using AI to reduce costs, increase productivity, and grow revenue.',
+    'Real AI implementations from Klarna, Goldman Sachs, Microsoft and others — strategies, timelines, ROI. Curated for mid-market relevance.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/ai-case-studies',
+  },
 }
 
 const stats = [

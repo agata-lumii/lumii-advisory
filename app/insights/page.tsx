@@ -4,9 +4,11 @@ import CTABanner from '@/components/CTABanner'
 import InsightsGrid from '@/components/InsightsGrid'
 
 export const metadata: Metadata = {
-  title: 'AI Strategy Insights & Digital Transformation Articles',
+  title: {
+    absolute: 'AI Strategy Insights for Mid-Market Leaders | Lumii Advisory',
+  },
   description:
-    'Practical insights on AI strategy, digital transformation, and business leadership in the age of AI. No hype — clear thinking for executives and founders navigating real decisions.',
+    'No hype, no vendor agenda. Practical perspectives on AI strategy, readiness, business cases & implementation — written for mid-market CEOs and CMOs.',
   alternates: {
     canonical: 'https://lumiiadvisory.com/insights',
   },

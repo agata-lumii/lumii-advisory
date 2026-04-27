@@ -4,9 +4,14 @@ import { platforms } from '@/lib/ai-tools'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'AI Platform Guides — ChatGPT, Claude, Gemini, Copilot & Perplexity',
+  title: {
+    absolute: 'AI Platform Guides: ChatGPT, Claude, Gemini, Copilot | Lumii',
+  },
   description:
-    'Practical guides to the five major AI platforms reshaping business. Tool-by-tool breakdowns of OpenAI, Anthropic Claude, Google Gemini, Microsoft Copilot, and Perplexity — with ecosystem maps and real industry use cases.',
+    'Honest, plain-English guides to the major AI platforms — strengths, weaknesses, business use cases, and where each one actually wins.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/learn',
+  },
 }
 
 const platformOrder = ['openai', 'claude', 'gemini', 'microsoft-copilot', 'perplexity']

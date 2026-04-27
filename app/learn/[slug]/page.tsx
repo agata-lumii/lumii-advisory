@@ -17,8 +17,11 @@ export async function generateMetadata({
   const platform = getPlatformBySlug(params.slug)
   if (!platform) return {}
   return {
-    title: platform.metaTitle,
+    title: { absolute: platform.metaTitle },
     description: platform.metaDescription,
+    alternates: {
+      canonical: `https://lumiiadvisory.com/learn/${platform.slug}`,
+    },
   }
 }
 

@@ -54,8 +54,9 @@ export const verticals: Vertical[] = [
       'Create measurement frameworks that prove ROI',
     ],
     services: ['Digital Strategy', 'MarTech Advisory', 'AI Enablement', 'Customer Experience'],
-    metaTitle: 'AI Strategy for Marketers & Growth Teams',
-    metaDescription: 'AI-powered martech strategy for marketing teams. Rationalise your tech stack, automate customer journeys, and build attribution that proves marketing ROI. Lumii Advisory, Sydney.',
+    metaTitle: 'AI Consulting for Marketing Teams & CMOs Australia | Lumii',
+    metaDescription:
+      'Cut through the MarTech noise. AI tools, automation & measurement frameworks that genuinely save hours per week and prove ROI to your CFO.',
   },
   {
     number: '02',
@@ -72,8 +73,9 @@ export const verticals: Vertical[] = [
       'Personalised communication at scale',
     ],
     services: ['Digital Strategy', 'Customer Experience', 'MarTech Advisory', 'AI Enablement'],
-    metaTitle: 'AI for Real Estate Agents & Property Firms',
-    metaDescription: 'AI-powered lead nurturing, CRM automation, and digital strategy for real estate agencies and property groups. Win more listings with Lumii Advisory, Sydney, Australia.',
+    metaTitle: 'AI Consulting for Real Estate Agencies Australia | Lumii',
+    metaDescription:
+      'AI lead qualification, listing automation & CRM strategy for Australian estate agents and property groups. Convert more leads. Retain more clients.',
   },
   {
     number: '03',
@@ -90,8 +92,9 @@ export const verticals: Vertical[] = [
       'Customer data strategy to improve conversions',
     ],
     services: ['Digital Strategy', 'AI Enablement', 'MarTech Advisory', 'Customer Experience'],
-    metaTitle: 'AI Consulting for Sales & Revenue Teams',
-    metaDescription: 'AI tools for sales teams. Shorten sales cycles, sharpen CRM forecasting, and automate outreach. Revenue enablement and AI strategy consulting from Lumii Advisory.',
+    metaTitle: 'AI for Sales Teams: Prospecting, CRM & Pipeline | Lumii',
+    metaDescription:
+      'AI-assisted prospecting, CRM optimisation & sales enablement for revenue leaders. Shorten cycles, improve forecasting, close more — with less friction.',
   },
   {
     number: '04',
@@ -108,8 +111,9 @@ export const verticals: Vertical[] = [
       'Loyalty and retention programme design',
     ],
     services: ['Ecommerce', 'Customer Experience', 'Digital Strategy', 'MarTech Advisory'],
-    metaTitle: 'AI for Retailers & D2C Ecommerce Brands',
-    metaDescription: 'AI personalisation, conversion rate optimisation, and ecommerce platform strategy for retailers and D2C brands. Grow revenue and reduce churn with Lumii Advisory.',
+    metaTitle: 'AI Consulting for Retail & D2C Brands Australia | Lumii',
+    metaDescription:
+      'Platform strategy, CRO, personalisation & loyalty for Australian retailers and D2C brands. Grow profitably across DTC, marketplace & omnichannel.',
   },
   {
     number: '05',
@@ -126,8 +130,9 @@ export const verticals: Vertical[] = [
       'AI tools for research, reporting, and delivery',
     ],
     services: ['Digital Strategy', 'AI Enablement', 'Customer Experience', 'MarTech Advisory'],
-    metaTitle: 'AI for B2B Professional Services Firms',
-    metaDescription: 'AI strategy and automation for B2B consultancies, agencies, and professional services firms. Scale delivery, automate business development, and build AI capability.',
+    metaTitle: 'AI for Consultancies, Law & Accounting Firms | Lumii',
+    metaDescription:
+      'AI tools for research, reporting & delivery. Digital brand, BD automation & client experience for B2B professional services firms across Australia.',
   },
   {
     number: '06',
@@ -144,8 +149,9 @@ export const verticals: Vertical[] = [
       'Personalised guest communication programmes',
     ],
     services: ['Customer Experience', 'Digital Strategy', 'MarTech Advisory', 'AI Enablement'],
-    metaTitle: 'AI Strategy for Hospitality & Experience Brands',
-    metaDescription: 'Digital booking optimisation, guest loyalty CRM, and AI-powered personalisation for hotels, restaurants, and hospitality brands. Lumii Advisory, Australia.',
+    metaTitle: 'AI Consulting for Hospitality & Hotels Australia | Lumii',
+    metaDescription:
+      'Booking optimisation, reputation management, loyalty & guest CRM for Australian hotels, restaurants and experience brands. Build the digital your offer deserves.',
   },
   {
     number: '07',
@@ -162,8 +168,9 @@ export const verticals: Vertical[] = [
       'Compliance-aware automation and workflow design',
     ],
     services: ['Digital Strategy', 'AI Enablement', 'Customer Experience', 'MarTech Advisory'],
-    metaTitle: 'AI Strategy for Financial Services & FinTech',
-    metaDescription: 'Compliant AI strategy and digital transformation for banks, wealth managers, super funds, and fintech companies. Navigate regulation and lead in the AI era with Lumii Advisory.',
+    metaTitle: 'AI Consulting for Financial Services & FinTech Australia | Lumii',
+    metaDescription:
+      'AI strategy, customer onboarding, MarTech & compliance-aware automation for Australian banks, super funds, wealth managers and challenger fintechs.',
   },
   {
     number: '08',
@@ -180,8 +187,9 @@ export const verticals: Vertical[] = [
       'CRM and patient relationship management strategy',
     ],
     services: ['Customer Experience', 'Digital Strategy', 'AI Enablement', 'MarTech Advisory'],
-    metaTitle: 'AI for Healthcare & Allied Health Providers',
-    metaDescription: 'AI-powered patient scheduling, clinical admin automation, and digital patient experience design for private clinics and allied health practices. Lumii Advisory, Australia.',
+    metaTitle: 'AI Consulting for Healthcare & Allied Health Australia | Lumii',
+    metaDescription:
+      'Patient journey design, online booking, AI admin tools & CRM for private clinics, specialist practices and allied health providers across Australia.',
   },
   {
     number: '09',
@@ -198,8 +206,9 @@ export const verticals: Vertical[] = [
       'MarTech stack selection for your stage and category',
     ],
     services: ['Digital Strategy', 'AI Enablement', 'Customer Experience', 'Ecommerce'],
-    metaTitle: 'AI Strategy for Startups & Scale-ups',
-    metaDescription: 'Build AI-ready data, martech, and digital infrastructure from day one. AI strategy and digital transformation consulting for pre-Series B founders and fast-growing scale-ups.',
+    metaTitle: 'AI Consulting for Startups & Scale-ups Australia | Lumii',
+    metaDescription:
+      'Pre-Series B founders: build the right digital, data & AI foundations from year one. MarTech, automation & growth strategy for ambitious teams.',
   },
   {
     number: '10',
@@ -216,8 +225,9 @@ export const verticals: Vertical[] = [
       'Content and thought leadership strategy for lead generation',
     ],
     services: ['Customer Experience', 'Digital Strategy', 'AI Enablement', 'MarTech Advisory'],
-    metaTitle: 'AI for Education Providers, RTOs & Training Organisations',
-    metaDescription: 'AI-powered enrolment journeys, student lifecycle CRM, and digital strategy for RTOs, private colleges, and corporate learning providers. Lumii Advisory, Australia.',
+    metaTitle: 'AI Consulting for RTOs & Education Providers Australia | Lumii',
+    metaDescription:
+      'AI for enrolment journeys, student lifecycle CRM, learner support & lead-gen content. For RTOs, private colleges and corporate learning providers.',
   },
 ]
 

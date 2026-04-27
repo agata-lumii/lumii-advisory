@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI Consulting FAQ: Costs, Process & Getting Started',
+  title: {
+    absolute: 'AI Consulting FAQ: Costs, Process & Getting Started | Lumii',
+  },
   description:
-    'Answers to the questions business leaders ask most about AI adoption: how much does it cost, where to start, how to measure ROI, data readiness, and what working with Lumii Advisory looks like.',
+    'Honest answers on AI consulting costs, timelines, data privacy & process. 12 questions mid-market leadership teams ask before engaging Lumii Advisory.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/faq',
+  },
 }
 
 export default function FAQLayout({ children }: { children: React.ReactNode }) {

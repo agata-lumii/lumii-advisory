@@ -4,9 +4,14 @@ import AiToolsDirectory from '@/components/AiToolsDirectory'
 import { AI_TOOLS, CATEGORIES } from '@/lib/ai-tools-directory'
 
 export const metadata: Metadata = {
-  title: 'AI Tools Directory — By Category & Use Case | Lumii Advisory',
+  title: {
+    absolute: 'AI Tools Directory for Mid-Market Businesses (2026)',
+  },
   description:
-    'Browse 60+ AI tools organised by use case: writing, video, coding, research, meetings, data, and more. Pricing tiers, best-for summaries, and direct links to every tool.',
+    'The AI tools we actually recommend — by use case, by stack, by budget. Vendor-neutral, hands-on reviews. Updated quarterly.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/resources/ai-tools',
+  },
 }
 
 const STAT_ROWS = [

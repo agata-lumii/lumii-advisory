@@ -3,9 +3,14 @@ import Link from 'next/link'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Free AI Strategy Resources, Tools & Checklists',
+  title: {
+    absolute: 'Free AI Resources, Tools & Frameworks | Lumii Advisory',
+  },
   description:
-    'Free AI strategy resources for business leaders. Download the AI Readiness Checklist, access prioritisation frameworks, and governance templates. Built for executives, not technologists.',
+    'Free AI readiness checklists, tool directories, frameworks and case studies for mid-market leaders. Built from real client engagements — not theory.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/resources',
+  },
 }
 
 const resources = [

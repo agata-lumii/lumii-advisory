@@ -6,9 +6,14 @@ import ProcessSection from '@/components/ProcessSection'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'AI Consulting & Digital Strategy Services',
+  title: {
+    absolute: 'AI Consulting & Digital Strategy Services Sydney | Lumii',
+  },
   description:
-    'Digital Strategy, AI Enablement, Customer Experience, Ecommerce, and MarTech Advisory services for ambitious mid-market businesses in Australia. Expert AI consulting with measurable commercial results.',
+    'AI strategy, MarTech, ecommerce & CX consulting for Australian mid-market businesses. Sprint, project & retainer engagements. Book a free call.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/services',
+  },
 }
 
 const services = [

@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free AI Readiness Assessment — 35 Questions, 7 Dimensions',
+  title: {
+    absolute: 'Free AI Readiness Checklist — 35 Questions in 15 Minutes',
+  },
   description:
-    'Is your business ready for AI? This free interactive assessment scores your organisation across 7 dimensions — strategy, data, technology, people, process, governance, and culture — and tells you exactly where to focus first.',
+    'Score your business across 7 dimensions of AI readiness in 15 minutes. Get a benchmarked report and a prioritised next-step roadmap. Free.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/resources/ai-readiness-checklist',
+  },
 }
 
 export default function ChecklistLayout({ children }: { children: React.ReactNode }) {

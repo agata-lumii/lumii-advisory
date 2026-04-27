@@ -183,13 +183,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-8">
             <Link
-              href="/brand"
+              href="/privacy-policy"
               className="font-body text-[12px] text-warm-white/30 font-light hover:text-warm-white/60 transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/brand"
+              href="/terms-of-service"
               className="font-body text-[12px] text-warm-white/30 font-light hover:text-warm-white/60 transition-colors"
             >
               Terms of Service

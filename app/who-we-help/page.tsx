@@ -4,9 +4,14 @@ import CTABanner from '@/components/CTABanner'
 import SectionHeader from '@/components/SectionHeader'
 
 export const metadata: Metadata = {
-  title: 'Who We Help: AI Strategy by Industry & Business Type',
+  title: {
+    absolute: 'Who We Help — AI Consulting by Industry | Lumii Advisory',
+  },
   description:
-    'AI strategy and digital transformation consulting for marketers, sales teams, retailers, financial services, healthcare, professional services, hospitality, startups, education, and real estate. Sydney, Australia.',
+    'AI strategy & implementation consulting for 10 sectors: marketing, retail, financial services, healthcare, real estate, hospitality & more. Find your industry.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/who-we-help',
+  },
 }
 
 export default function WhoWeHelpPage() {

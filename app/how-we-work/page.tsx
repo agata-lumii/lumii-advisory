@@ -3,9 +3,14 @@ import Link from 'next/link'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Our AI Consulting Process: From Readiness to Scale',
+  title: {
+    absolute: 'AI Consulting Process: Discovery to Scale in 16 Weeks | Lumii',
+  },
   description:
-    'A transparent, four-phase AI consulting methodology — Discovery, Strategy, Pilot, and Scale. See how Lumii Advisory helps businesses reduce implementation risk and accelerate AI time-to-value.',
+    'Our 4-phase AI consulting methodology: Discovery, Strategy, Pilot & Scale. Designed to eliminate the most common AI failure modes. See the process.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/how-we-work',
+  },
 }
 
 const phases = [

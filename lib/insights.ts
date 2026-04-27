@@ -16,9 +16,9 @@ export const articles: Article[] = [
   {
     slug: 'emerging-ai-roles-future',
     title: 'The New AI Org: Roles Being Created Right Now — and the Jobs Coming in the Next Five Years',
-    metaTitle: 'AI Roles of the Future: CAIO, AI Architect, Prompt Engineer & More',
+    metaTitle: 'The New AI Org Chart: Roles Being Hired Right Now (2026)',
     metaDescription:
-      'The AI org chart is changing fast. Explore the new roles reshaping businesses — Chief AI Officer, AI Architect, AI Product Manager, Prompt Engineer — and what your team needs to look like in 2–5 years.',
+      'From CAIO to AI Architect: 8 new roles forward-thinking businesses are hiring for now — and the 5-year roadmap for what comes next. 8-min read.',
     excerpt:
       'The org chart is changing. Not in five years — right now. As AI moves from experiment to infrastructure, a new class of roles is emerging inside forward-thinking businesses. Some are entirely new. Some are reinventions of titles that existed decades ago. And a handful are appearing so quietly that most organisations will not notice they need them until the gap is already expensive.',
     date: '2026-04-15',
@@ -72,8 +72,9 @@ export const articles: Article[] = [
   {
     slug: 'ai-readiness-gap',
     title: 'The AI Readiness Gap: Why Most Businesses Get Stuck at Pilot Stage',
-    metaTitle: 'Why AI Pilots Fail to Scale — The AI Readiness Gap Explained',
-    metaDescription: 'Most organisations use AI in one area but can\'t scale it. Learn the three failure modes — tech-first thinking, data debt, capability gaps — and how to close them. Lumii Advisory.',
+    metaTitle: 'The AI Readiness Gap: Why 78% of AI Pilots Stall',
+    metaDescription:
+      '78% of organisations now use AI — but few have moved past pilot. The 5 gaps that block scale, and how mid-market leaders close them. 7-min read.',
     excerpt:
       'Seventy-eight percent of organisations now use AI in at least one function. Yet only a fraction have moved beyond isolated pilots to enterprise-wide value. Why does the gap exist — and how do you close it?',
     date: '2026-03-12',
@@ -110,8 +111,9 @@ export const articles: Article[] = [
   {
     slug: 'ceo-questions-ai-investment',
     title: '5 Questions Every CEO Should Ask Before Investing in AI',
-    metaTitle: '5 Questions CEOs Must Ask Before Investing in AI',
-    metaDescription: 'Before committing AI budget, every CEO needs clear answers on ROI, data readiness, ownership, and people impact. A practical leadership guide from Lumii Advisory.',
+    metaTitle: '5 Questions Every CEO Should Ask Before Investing in AI',
+    metaDescription:
+      'The 5 questions that separate AI investments that compound from those that disappear. A framework for CEOs and boards before signing the budget. 5-min read.',
     excerpt:
       "AI investment is accelerating across every sector. But the businesses seeing the highest returns aren't the ones moving fastest — they're the ones moving with clarity. Before committing budget, ask these five questions.",
     date: '2026-03-24',
@@ -150,8 +152,9 @@ export const articles: Article[] = [
   {
     slug: 'ai-business-case-board',
     title: 'How to Build an AI Business Case Your Board Will Approve',
-    metaTitle: 'How to Build an AI Business Case for Board Approval',
-    metaDescription: 'A step-by-step guide to building a board-ready AI investment case. Cover financial ROI, risk mitigation, phased investment, and accountability. Lumii Advisory.',
+    metaTitle: 'How to Build an AI Business Case Your Board Will Approve',
+    metaDescription:
+      "Most AI business cases fail not because boards are sceptical — but because they don't speak the board's language. The 6-part template that does. 6-min read.",
     excerpt:
       "Board approval for AI investment is harder to secure than most expect. Not because boards are sceptical of AI — but because most business cases fail to speak the board's language. Here's how to change that.",
     date: '2026-02-18',
@@ -192,8 +195,9 @@ export const articles: Article[] = [
   {
     slug: 'cost-of-delayed-ai-adoption',
     title: "The Hidden Cost of Waiting: What Delayed AI Adoption Is Costing Your Business",
-    metaTitle: 'The Cost of Delayed AI Adoption for Mid-Market Businesses',
-    metaDescription: 'Waiting on AI has a real, compounding cost — in talent, productivity, and competitive position. Quantify what inaction is costing your business and what to do instead.',
+    metaTitle: 'The Hidden Cost of Delayed AI Adoption (And How to Quantify It)',
+    metaDescription:
+      "'Wait and see' on AI feels prudent. For most mid-market businesses it's the most expensive decision of the decade. Here's how to size the cost. 5-min read.",
     excerpt:
       "Deciding to 'wait and see' on AI feels like prudence. But for many businesses, it is the most expensive strategic decision they will make this decade. The cost of delay is real, compounding, and largely invisible until it's too late.",
     date: '2026-02-05',
@@ -231,8 +235,9 @@ export const articles: Article[] = [
   {
     slug: 'ai-professional-services',
     title: 'AI in Professional Services: Beyond the Hype',
-    metaTitle: 'AI in Professional Services: Practical Use Cases Beyond the Hype',
-    metaDescription: 'Law firms, consultancies, and agencies are sitting on high-value AI use cases. Learn where to start with AI in professional services without risking client trust.',
+    metaTitle: 'AI in Professional Services: 6 High-Value Use Cases That Work',
+    metaDescription:
+      'Law firms, consultancies & accountancies have some of the highest-value AI use cases of any sector — without disrupting client trust. Where to start. 6-min read.',
     excerpt:
       "Law firms, consultancies, accountancies, and agencies are sitting on some of the highest-value AI use cases of any sector. The challenge isn't the technology — it's knowing where to start and how to implement without disrupting the trust that defines the business.",
     date: '2026-01-22',
@@ -266,8 +271,9 @@ export const articles: Article[] = [
   {
     slug: 'data-readiness-ai',
     title: 'From Data Chaos to AI-Ready: A Practical Guide for Mid-Market Businesses',
-    metaTitle: 'How to Make Your Data AI-Ready: A Practical Guide',
-    metaDescription: 'Data silos, inconsistent definitions, and inaccessible systems are the #1 reason AI fails. A practical data readiness guide for mid-market businesses. Lumii Advisory.',
+    metaTitle: 'Data Readiness for AI: A Practical Guide for Mid-Market',
+    metaDescription:
+      '9 in 10 mid-market businesses fail their first AI project because of data — not the model. The diagnostic, the fix, and the order of operations. 8-min read.',
     excerpt:
       "Ask most mid-market businesses if their data is AI-ready, and 9 in 10 will say no — or worse, say yes when it isn't. Poor data is the single most common reason AI programmes fail. Here's how to diagnose and fix it before you invest further.",
     date: '2026-01-08',

@@ -4,16 +4,18 @@ import SectionHeader from '@/components/SectionHeader'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Work With Us — Workshops, Projects & Advisory Retainers',
+  title: {
+    absolute: 'AI Workshops, Sprints & Advisory Retainers Sydney | Lumii',
+  },
   description:
-    'Three ways to work with Lumii Advisory — executive workshops, project-based sprints, and ongoing advisory retainers. For ambitious mid-market businesses across Australia and APAC.',
+    'Three ways to engage: AI workshops (1 day), project sprints (6–12 weeks), or advisory retainers. Senior-led, vendor-neutral. Get a fixed proposal.',
   alternates: {
     canonical: 'https://lumiiadvisory.com/work-with-us',
   },
   openGraph: {
-    title: 'Work With Us — Lumii Advisory',
+    title: 'AI Workshops, Sprints & Advisory Retainers Sydney | Lumii',
     description:
-      'Three ways to engage — workshops, projects, and retainers. Pick the shape that fits your business.',
+      'Three ways to engage: AI workshops, project sprints, or advisory retainers. Senior-led, vendor-neutral. Pick the shape that fits your business.',
     url: 'https://lumiiadvisory.com/work-with-us',
   },
 }

@@ -181,9 +181,9 @@ export const platforms: Platform[] = [
           'A Custom GPT trained on product catalogues, returns policy, and FAQs resolves 60% of queries instantly. The Assistants API surfaces relevant information mid-conversation for remaining queries. Average handling time falls 40% and the escalation rate drops across all product categories.',
       },
     ],
-    metaTitle: 'ChatGPT & OpenAI Tools Guide — GPT-5, o3, DALL-E, Operator & More',
+    metaTitle: 'ChatGPT for Business: Use Cases, Pricing & Setup Guide',
     metaDescription:
-      'A practical guide to the full OpenAI product suite — GPT-5, o3, o4-mini, DALL-E, Sora, Custom GPTs, Operator, and ChatGPT Enterprise — with tool-by-tool breakdowns and industry use cases.',
+      "A practical guide to ChatGPT and OpenAI's products for mid-market businesses — what to use, what to avoid, and how to deploy responsibly.",
   },
 
   {
@@ -370,9 +370,9 @@ export const platforms: Platform[] = [
           'Property data, comparables, and location notes are pasted into Claude. A first draft — including investment thesis, location analysis, and comparable sales narrative — is generated in minutes. Artifacts renders a structured, shareable version ready for client delivery. Production time drops to under 45 minutes per report.',
       },
     ],
-    metaTitle: 'Claude & Anthropic Tools Guide — Claude Code, Claude Design, Projects & More',
+    metaTitle: 'Claude AI for Business: Use Cases, Pricing & Setup Guide',
     metaDescription:
-      'A practical guide to Anthropic\'s full Claude platform — Claude Sonnet 4.5, Opus 4.5, Claude Code, Claude Design, Projects, Agent SDK, and MCP — with tool-by-tool breakdowns and real industry use cases.',
+      'What Claude (by Anthropic) does best for businesses — long documents, careful reasoning, code & enterprise data. With pricing, setup and use cases.',
   },
 
   {
@@ -522,9 +522,9 @@ export const platforms: Platform[] = [
           'Deep Research autonomously synthesises 40–60 web sources into a structured market entry brief covering the competitive landscape, regulatory environment, and go-to-market landscape with full citations. First draft produced in under four hours. Consultants focus their time on interpretation, client context, and primary interviews.',
       },
     ],
-    metaTitle: 'Gemini & Google AI Tools Guide — NotebookLM, Deep Research & Workspace',
+    metaTitle: 'Google Gemini for Business: Use Cases, Pricing & Setup',
     metaDescription:
-      'A practical guide to Google\'s Gemini AI platform — Gemini 2.5 Pro, NotebookLM, Deep Research, and Gemini for Workspace — with tool-by-tool breakdowns and industry use cases.',
+      'A practical guide to Google Gemini for businesses — Workspace integration, multimodal use cases, pricing tiers, and where it beats ChatGPT.',
   },
 
   {
@@ -674,9 +674,9 @@ export const platforms: Platform[] = [
           'GitHub Copilot Enterprise understands the full ecommerce codebase — answering architecture questions, reviewing PRs against existing patterns, and generating code consistent with internal conventions. Sprint velocity increases by 22% and new developer onboarding time halves from three weeks to ten days.',
       },
     ],
-    metaTitle: 'Microsoft Copilot Tools Guide — 365 Copilot, GitHub Copilot & Azure OpenAI',
+    metaTitle: 'Microsoft Copilot for Business: Pricing, Use Cases & ROI',
     metaDescription:
-      'A practical guide to Microsoft\'s Copilot AI platform — Copilot in Word, Excel, Teams, GitHub Copilot, Copilot Studio, and Azure OpenAI — with tool breakdowns and industry use cases.',
+      'Honest analysis of Microsoft Copilot for mid-market businesses — what it costs, where it pays back, and which licence tier is actually worth it.',
   },
 
   {
@@ -819,9 +819,9 @@ export const platforms: Platform[] = [
           'Deep Research pulls suburb history, recent sales, infrastructure pipeline, demographic trends, and school data from multiple sources simultaneously. Pages formats the output into a client-ready report with citations throughout. Research time drops from five hours to 45 minutes, and agents can serve three times more clients with the same team.',
       },
     ],
-    metaTitle: 'Perplexity AI Tools Guide — Deep Research, Spaces, Sonar & Enterprise',
+    metaTitle: 'Perplexity AI for Business: Use Cases, Pricing & ROI',
     metaDescription:
-      'A practical guide to Perplexity AI — Deep Research, Spaces, Pages, Sonar, and Enterprise Pro — with tool-by-tool breakdowns and real industry use cases for business professionals.',
+      'Where Perplexity AI wins for business research and competitive intelligence — and where it falls short. With pricing and recommended use cases.',
   },
 ]
 

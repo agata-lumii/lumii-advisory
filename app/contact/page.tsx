@@ -2,9 +2,14 @@ import type { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Book an AI Strategy Discovery Call',
+  title: {
+    absolute: 'Book an AI Strategy Discovery Call Sydney | Lumii Advisory',
+  },
   description:
-    'Book a free discovery call with Lumii Advisory. Talk to an AI strategy and digital transformation consultant about your business. Based in Sydney — working across Australia and APAC.',
+    'Free 30-minute AI strategy call with founder Agata Adamczak. No pitch, no slide deck — just an honest conversation. Sydney-based, working APAC-wide.',
+  alternates: {
+    canonical: 'https://lumiiadvisory.com/contact',
+  },
 }
 
 export default function ContactPage() {

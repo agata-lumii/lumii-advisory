@@ -13,8 +13,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const vertical = getVerticalBySlug(params.slug)
   if (!vertical) return {}
   return {
-    title: vertical.metaTitle,
+    title: { absolute: vertical.metaTitle },
     description: vertical.metaDescription,
+    alternates: {
+      canonical: `https://lumiiadvisory.com/who-we-help/${vertical.slug}`,
+    },
   }
 }
 
