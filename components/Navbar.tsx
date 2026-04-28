@@ -6,40 +6,40 @@ import { verticals } from '@/lib/verticals'
 
 const resourceLinks = [
   {
+    number: '01',
     href: '/resources/ai-team-structure',
     label: 'New',
     title: 'AI Team Structure',
-    description: 'Every AI role explained — CAIO, AI Architect, AI Product Manager and more. When to hire, who owns what, and the 5-year roadmap.',
   },
   {
+    number: '02',
     href: '/resources/ai-tools',
     label: 'New',
     title: 'AI Tools Directory',
-    description: '60+ AI tools organised by category — writing, video, coding, research, data and more. With pricing and direct links.',
   },
   {
+    number: '03',
     href: '/learn',
     label: 'AI Tools Guide',
     title: 'AI Platform Guides',
-    description: 'ChatGPT, Claude, Gemini, Copilot & Perplexity — every tool explained with ecosystem maps and industry use cases.',
   },
   {
+    number: '04',
     href: '/resources/ai-readiness-checklist',
     label: 'Free Assessment',
     title: 'AI Readiness Checklist',
-    description: '35 questions across 7 dimensions. Get a scored maturity result in 15 minutes.',
   },
   {
+    number: '05',
     href: '/ai-case-studies',
     label: 'Case Studies',
     title: 'AI in Action',
-    description: 'How Klarna, Goldman Sachs, Microsoft and others achieved measurable AI results.',
   },
   {
+    number: '06',
     href: '/faq',
     label: 'FAQ',
     title: 'Common Questions',
-    description: 'Costs, timelines, data readiness, ROI — the questions leaders ask most.',
   },
 ]
 
@@ -232,12 +232,11 @@ export default function Navbar() {
           </button>
 
           {resourcesDropdownOpen && (
-            <div className="absolute top-full right-0 w-[360px] pt-3 z-50" onMouseEnter={openResources} onMouseLeave={closeResources}>
+            <div className="absolute top-full right-0 w-[680px] pt-3 z-50" onMouseEnter={openResources} onMouseLeave={closeResources}>
             <div
               className="bg-warm-white border border-parchment shadow-[0_8px_40px_rgba(30,28,26,0.10)]"
             >
-              {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-parchment">
+              <div className="flex items-center justify-between px-8 py-5 border-b border-parchment">
                 <span className="font-body text-[10px] tracking-[0.25em] uppercase text-ash">Resources</span>
                 <Link
                   href="/resources"
@@ -247,30 +246,25 @@ export default function Navbar() {
                   View all →
                 </Link>
               </div>
-
-              {/* Resource links */}
-              <div className="divide-y divide-parchment">
+              <div className="grid grid-cols-2 gap-px bg-parchment/40 p-px">
                 {resourceLinks.map((r) => (
                   <Link
                     key={r.href}
                     href={r.href}
                     onClick={() => setResourcesDropdownOpen(false)}
-                    className="group flex items-start gap-4 px-6 py-5 hover:bg-ivory transition-colors duration-150"
+                    className="group flex items-start gap-4 bg-warm-white px-6 py-4 hover:bg-ivory transition-colors duration-150"
                   >
-                    <div className="min-w-0 flex-1">
-                      <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-1 group-hover:text-charcoal transition-colors duration-150">
+                    <span className="font-display text-[11px] text-gold/60 tracking-[0.08em] flex-shrink-0 mt-0.5 group-hover:text-gold transition-colors duration-150">
+                      {r.number}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-body text-[11px] tracking-[0.2em] uppercase text-ash mb-0.5 group-hover:text-gold transition-colors duration-150">
                         {r.label}
                       </p>
-                      <p className="font-display text-[16px] font-normal text-near-black leading-snug mb-1">
+                      <p className="font-display text-[15px] font-normal text-near-black group-hover:text-charcoal leading-snug truncate">
                         {r.title}
                       </p>
-                      <p className="font-body text-[12px] text-charcoal/70 font-light leading-[1.6]">
-                        {r.description}
-                      </p>
                     </div>
-                    <span className="font-body text-[12px] text-gold/50 group-hover:text-gold group-hover:translate-x-0.5 transition-all duration-150 mt-1 flex-shrink-0">
-                      →
-                    </span>
                   </Link>
                 ))}
               </div>
