@@ -7,101 +7,108 @@ import Link from 'next/link'
 
 const DIMENSIONS = [
   {
-    id: 'strategy',
+    id: 'commercial',
     number: '01',
-    title: 'Leadership & Strategy',
+    title: 'Commercial Clarity',
     description:
-      'AI programmes without executive alignment and a clear strategy rarely survive first contact with implementation. This dimension assesses whether your leadership team has the vision, mandate, and plan to lead AI adoption effectively.',
+      'Leaders care about return, risk, and accountability — not technology. This dimension assesses whether AI is tied to specific commercial outcomes your leadership team can quantify and own.',
+    consequence: 'If this is weak, you don’t have an AI strategy — you have experiments.',
     questions: [
-      'Our leadership team has a defined AI strategy that is aligned to our business goals.',
+      'We have defined the specific business outcomes (revenue, cost, time saved, error reduction) we expect AI to deliver in the next 12–24 months.',
+      'We can quantify a conservative 12-month commercial impact for at least one AI use case.',
+      'AI is tied to existing strategic priorities, not run as a side project.',
+      'Our leadership team has agreed on the level of risk we are willing to take with AI deployment.',
       'We have allocated a dedicated budget for AI initiatives in the next 12 months.',
-      'There is active executive sponsorship for AI adoption at board or C-suite level.',
-      'We have conducted a formal review of AI opportunities specific to our industry.',
-      'We track competitor AI adoption and benchmark our progress against peers.',
+    ],
+  },
+  {
+    id: 'use-cases',
+    number: '02',
+    title: 'Use Case Discipline',
+    description:
+      'AI fails most often from too many use cases and no sequencing. The businesses that succeed pick the few high-leverage opportunities, attach numbers to them, and execute one at a time.',
+    consequence: 'If this is weak, you’ll stay in exploration. You won’t reach impact.',
+    questions: [
+      'We have mapped the business processes that are most repetitive, time-consuming, or error-prone.',
+      'We have a prioritised list of 3–5 high-impact AI use cases with estimated business value attached to each.',
+      'Each AI use case is tied to a specific team and measurable metric (time saved, revenue, error rate).',
+      'We have documented standard operating procedures that could be used to configure or train AI tools.',
+      'We have run at least one AI pilot with defined success criteria and measured results.',
+    ],
+  },
+  {
+    id: 'ownership',
+    number: '03',
+    title: 'Execution Ownership',
+    description:
+      'Programmes without a single accountable owner stall at pilot stage. Ownership is the single biggest predictor of whether AI moves from experiment to embedded capability.',
+    consequence: 'If this is weak, you will stall at pilot stage.',
+    questions: [
+      'We have a single, named accountable owner for AI outcomes — not a committee.',
+      'We have active executive sponsorship for AI adoption at board or C-suite level.',
+      'Our teams know what changes in their workflow over the next 30–60 days.',
+      'AI is embedded in how work gets done, not just which tools sit on the desktop.',
+      'Our leadership actively communicates AI goals and progress to the wider team.',
     ],
   },
   {
     id: 'data',
-    number: '02',
-    title: 'Data & Infrastructure',
+    number: '04',
+    title: 'Data & Systems',
     description:
-      'AI is only as good as the data that powers it. Organisations with siloed, inconsistent, or inaccessible data consistently underperform in AI adoption — regardless of the tools they invest in.',
+      'AI is only as good as the data that powers it. Mid-market businesses with siloed, inconsistent, or inaccessible data consistently underperform — regardless of the tools they invest in.',
+    consequence: 'If this is weak, AI will produce output, not impact.',
     questions: [
-      'Our core business data is centrally stored and accessible (not siloed across spreadsheets and legacy systems).',
+      'Our core business data is centrally stored and accessible — not siloed across spreadsheets and legacy systems.',
+      'We have a single, unified view of our customer or operational data — not multiple disconnected versions across systems.',
       'We have documented data governance policies covering quality, ownership, and privacy.',
       'Our data is regularly cleaned, labelled, and structured in a consistent format.',
-      'We have the infrastructure to collect and process data in near real-time.',
-      'We are compliant with relevant data privacy regulations (GDPR, Australian Privacy Act, etc.).',
+      'We have a clear understanding of which data we can and cannot use to train or feed AI systems.',
     ],
   },
   {
     id: 'technology',
-    number: '03',
+    number: '05',
     title: 'Technology & Tools',
     description:
-      'The right technology foundation does not mean the most advanced stack — it means a stack that is integrated, cloud-capable, and maintainable. This dimension assesses your current technical readiness for AI integration.',
+      'The right technology foundation is not the most advanced stack — it is one that is integrated, cloud-capable, and maintainable. Without it, AI tools either fail to deploy or fail to scale.',
+    consequence: 'If this is weak, AI tools will get stuck in pilot, not move into production.',
     questions: [
       'Our current tech stack includes cloud infrastructure (AWS, Azure, or Google Cloud).',
-      'We already use AI-powered tools today, even off-the-shelf products like Microsoft Copilot or Salesforce Einstein.',
+      'We have evaluated and deployed at least one AI tool with measurable adoption beyond casual experimentation.',
       'Our key systems are integrated via APIs rather than requiring manual data transfer between platforms.',
       'We have a structured process for evaluating and onboarding new technology.',
       'Our IT team or external partner is capable of supporting AI tool deployment and maintenance.',
     ],
   },
   {
-    id: 'people',
-    number: '04',
-    title: 'People & Skills',
+    id: 'capability',
+    number: '06',
+    title: 'Capability & Skills',
     description:
-      'Technology is the easy part. People are where most AI programmes succeed or fail. This dimension assesses AI literacy, capability, ownership, and your approach to reskilling across the organisation.',
+      'Technology is the easy part. People are where AI programmes succeed or fail. Capability is not the same as buying training — it is whether AI changes how work gets done, supported by ongoing learning and structured rollout.',
+    consequence: 'If this is weak, you’re renting intelligence, not building it.',
     questions: [
-      'Our team includes someone with AI, data science, or machine learning expertise.',
-      'We have provided AI literacy training to non-technical staff in the last 12 months.',
-      'Employees understand how AI can assist their specific roles and day-to-day work.',
-      'There is a clear owner or internal champion for AI initiatives within the business.',
-      'We have a structured approach to reskilling staff whose roles may change as a result of AI.',
-    ],
-  },
-  {
-    id: 'process',
-    number: '05',
-    title: 'Process & Operations',
-    description:
-      'AI delivers the highest ROI when applied to processes that are well-defined, measurable, and genuinely time-consuming or error-prone. This dimension assesses how well you have identified and documented those opportunities.',
-    questions: [
-      'We have mapped the business processes that are most repetitive, time-consuming, or error-prone.',
-      'We have identified specific processes where AI automation could deliver measurable ROI.',
-      'We have documented standard operating procedures (SOPs) that could be used to configure or train AI tools.',
-      'We measure operational KPIs (productivity, error rates, turnaround time) that AI could improve.',
-      'We have run at least one AI pilot or proof-of-concept project, even informally.',
+      'We have access to AI or data expertise — internal or external — that we can call on for advice and implementation.',
+      'AI literacy training is part of our regular learning programme, not a one-off event.',
+      'Our employees understand how AI can assist their specific roles and day-to-day work.',
+      'We have involved frontline staff in identifying AI use cases and testing solutions.',
+      'We have a structured approach to rolling out new tools and processes — training, communication, ongoing support — not just announcing and hoping for the best.',
     ],
   },
   {
     id: 'governance',
-    number: '06',
-    title: 'Ethics & Governance',
+    number: '07',
+    title: 'Risk & Governance',
     description:
-      'As AI becomes embedded in business decisions, the risk of bias, error, and regulatory exposure increases. This dimension assesses whether your organisation has the frameworks to deploy AI responsibly.',
+      'AI risk is not just a compliance question — it is a business-continuity question. The biggest governance issue in mid-market today is shadow AI: employees using tools and inputting data without anyone knowing what is happening or where the data goes.',
+    consequence: 'If this is weak, risk will slow your adoption more than regulation will.',
     questions: [
       'Our organisation has an AI ethics policy or guidelines for responsible use.',
-      'There are processes to review AI outputs for bias, accuracy, and fairness before acting on them.',
+      'We have clear policies on which AI tools employees are permitted to use, and what company or customer data they can input into them.',
+      'We have processes to review AI outputs for bias, accuracy, and fairness before acting on them.',
       'We have a risk register that includes AI-specific risks such as hallucinations, data misuse, or reputational harm.',
-      'Customer data used in AI systems is protected with appropriate consent and security controls.',
       'We have a process to explain AI-driven decisions to customers or regulators if required.',
-    ],
-  },
-  {
-    id: 'culture',
-    number: '07',
-    title: 'Culture & Change',
-    description:
-      'Organisations that successfully scale AI have one thing in common: a culture that embraces learning, tolerates experimentation, and communicates openly about change. Technology without cultural readiness rarely lands.',
-    questions: [
-      'There is a culture of experimentation and learning from failure in our organisation.',
-      'Employees generally see AI as an opportunity rather than a threat to their jobs.',
-      'Leadership actively communicates AI goals and progress to the wider team.',
-      'We have involved frontline staff in identifying AI use cases and testing solutions.',
-      'We celebrate and share early AI wins internally to build momentum and confidence.',
     ],
   },
 ]
@@ -120,13 +127,19 @@ const MATURITY_BANDS = [
     colour: 'text-red-600',
     barColour: 'bg-red-400',
     description:
-      'Few AI foundations are in place across your organisation. This is not a failing — it is a starting point. The risk lies in inaction: the businesses that begin building AI capability now will have a significant and compounding advantage over those that wait. The priority at this stage is leadership alignment, a data audit, and identifying one high-value AI use case to pilot.',
-    actions: [
-      'Commission an AI readiness assessment to establish a clear baseline',
-      'Appoint an internal AI champion with mandate and time',
-      'Conduct a data audit before committing to AI tooling',
-      'Begin AI literacy conversations at leadership level',
-    ],
+      'You are not AI-ready. Any investment now will underperform — and the gap to your peers is widening every quarter you delay. This is not a failing; it is a starting point. The decision in front of you is whether to begin building capability deliberately or keep paying the compounding cost of inaction.',
+    whatThisMeans: {
+      startNow: [
+        'Commission a 4-week AI readiness assessment to establish a clear baseline.',
+        'Appoint a single accountable internal owner — name, mandate, time.',
+      ],
+      stopDoing: [
+        'Stop running uncoordinated tool experiments across teams.',
+        'Stop waiting for "the right time" — the technology is mature; the gap is not closing on its own.',
+      ],
+      costOfInaction:
+        '12 months from now you will be 18 months behind any competitor who started today. The gap compounds — capability, talent, customer expectations, and operating cost all move against you.',
+    },
   },
   {
     label: 'AI Aware',
@@ -134,13 +147,19 @@ const MATURITY_BANDS = [
     colour: 'text-amber-600',
     barColour: 'bg-amber-400',
     description:
-      'You understand the potential of AI and have begun exploring the landscape, but the infrastructure, skills, and strategy to move beyond exploration are not yet fully in place. This is a pivotal stage — organisations that invest in the right foundations now will accelerate rapidly. The priority is closing the gaps between awareness and action.',
-    actions: [
-      'Develop a prioritised AI use case register with business cases',
-      'Invest in data governance and infrastructure before scaling AI tooling',
-      'Build a structured AI training programme for key teams',
-      'Define and commit to success metrics for your first AI deployment',
-    ],
+      'You will get isolated wins, but you will not reach scale. The risk at this stage is mistaking activity for progress — broad AI access mistaken for an AI strategy, training mistaken for capability, pilots mistaken for production. The priority now is sequencing.',
+    whatThisMeans: {
+      startNow: [
+        'Pick one high-value use case, attach a number to it, and run it as a focused 12-week pilot with defined success metrics.',
+        'Invest in data governance and a single source of truth before scaling AI tooling further.',
+      ],
+      stopDoing: [
+        'Stop generating new ideas. Stop training without changing workflows.',
+        'Stop pretending broad ChatGPT access is an AI strategy.',
+      ],
+      costOfInaction:
+        '12 months of "exploring" will leave you with nothing to show your board. Your peers will move from awareness to active deployment — and the gap will not close on its own.',
+    },
   },
   {
     label: 'AI Active',
@@ -148,13 +167,19 @@ const MATURITY_BANDS = [
     colour: 'text-blue-600',
     barColour: 'bg-blue-500',
     description:
-      'Strong foundations are in place. You are implementing AI in pockets of the business and seeing early results, but you have not yet achieved consistent, enterprise-wide adoption. The priority now is scaling what is working, addressing the governance and capability gaps that are slowing you down, and building the measurement systems that will sustain momentum.',
-    actions: [
-      'Scale proven pilots across additional teams and functions',
-      'Strengthen AI governance and ethics frameworks',
-      'Implement a capability-building programme to elevate the whole organisation',
-      'Establish a formal AI Centre of Excellence or steering group',
-    ],
+      'You can drive measurable impact, if execution is focused. Strong foundations are in place and pilots are showing results, but enterprise-wide adoption is still ahead of you. The biggest risk now is too many use cases and not enough sequencing.',
+    whatThisMeans: {
+      startNow: [
+        'Scale your highest-performing pilots into production with formal measurement and governance.',
+        'Establish an AI Centre of Excellence (or steering group) with a clear remit and reporting line.',
+      ],
+      stopDoing: [
+        'Stop scaling without measurement. Stop adding new pilots before existing ones reach production.',
+        'Stop assuming culture follows tooling — it does not.',
+      ],
+      costOfInaction:
+        'Your existing pilots will plateau. The team that built early momentum will move on. New pilots will inherit the governance gaps the first ones revealed — and so will the next ones.',
+    },
   },
   {
     label: 'AI Leader',
@@ -162,13 +187,19 @@ const MATURITY_BANDS = [
     colour: 'text-green-700',
     barColour: 'bg-green-500',
     description:
-      'You are ahead of most peers. AI is embedded in your strategy, your operations, and your culture — and you are seeing measurable returns. The priority now is optimisation, governance at scale, and staying ahead as the technology and competitive landscape continue to evolve. The risk at this stage is complacency: the organisations that sustain AI leadership are those that treat it as a continuous capability, not a project to complete.',
-    actions: [
-      'Optimise and measure AI programmes against strategic KPIs',
-      'Invest in advanced governance, bias monitoring, and auditability',
-      'Explore emerging AI capabilities relevant to your sector',
-      'Share learnings externally to build brand and attract AI talent',
-    ],
+      'You are positioned to compound advantage. AI is embedded in your strategy, your operations, and your culture, and you are seeing measurable returns. The only thing that takes that away from you now is complacency.',
+    whatThisMeans: {
+      startNow: [
+        'Treat AI as a continuous capability, not a programme — invest in advanced governance, bias monitoring, and emerging-capability scanning.',
+        'Use your AI lead to attract talent and build external authority — case studies, published thinking, sector leadership.',
+      ],
+      stopDoing: [
+        'Stop assuming current advantage is permanent. Stop under-investing in talent retention.',
+        'Stop letting AI reporting become routine — keep board engagement live.',
+      ],
+      costOfInaction:
+        '18 months is the half-life of an AI advantage. Without active investment, your lead becomes parity. The organisations that sustain leadership treat it as a continuous capability, not a project to complete.',
+    },
   },
 ]
 
@@ -287,7 +318,10 @@ export default function AIReadinessChecklist() {
                   <span className="font-display text-[13px] text-gold/50 tracking-[0.08em] flex-shrink-0 mt-0.5">{d.number}</span>
                   <div>
                     <p className="font-body text-[12px] tracking-[0.15em] uppercase text-near-black font-medium mb-2">{d.title}</p>
-                    <p className="font-body text-[13px] text-slate-warm font-light leading-[1.7]">{d.description}</p>
+                    <p className="font-body text-[13px] text-slate-warm font-light leading-[1.7] mb-3">{d.description}</p>
+                    <p className="font-display text-[13px] italic font-light text-gold leading-[1.55]">
+                      {d.consequence}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -330,6 +364,9 @@ export default function AIReadinessChecklist() {
                     </h2>
                     <p className="font-body text-[14px] text-slate-warm font-light leading-[1.75] mt-2">
                       {dim.description}
+                    </p>
+                    <p className="font-display text-[14px] italic font-light text-gold leading-[1.6] mt-3">
+                      {dim.consequence}
                     </p>
                   </div>
                 </div>
@@ -455,26 +492,76 @@ export default function AIReadinessChecklist() {
             </div>
           </section>
 
-          {/* Priority actions */}
+          {/* What this means for your business */}
           <section className="bg-ivory py-[clamp(60px,8vw,100px)] px-8 lg:px-12 print:py-12">
             <div className="max-w-[1180px] mx-auto">
               <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-4">
-                Recommended Next Steps
+                The Decision in Front of You
               </p>
               <h2 className="font-display font-light text-[clamp(28px,3vw,40px)] text-near-black leading-[1.2] mb-10">
-                Where to focus first
+                What this means for your business
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-                {maturity.actions.map((action, idx) => (
-                  <div key={idx} className="bg-warm-white border border-parchment p-6 flex items-start gap-4">
-                    <span className="font-display text-[22px] text-gold/30 leading-none flex-shrink-0 font-light">
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    <p className="font-body text-[14px] text-near-black font-light leading-[1.75]">
-                      {action}
-                    </p>
-                  </div>
-                ))}
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+                {/* Start now */}
+                <div className="bg-warm-white border border-parchment p-7 flex flex-col">
+                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-4 flex items-center gap-3">
+                    <span className="w-6 h-px bg-gold block" />
+                    Start Now
+                  </p>
+                  <p className="font-display text-[18px] font-light text-near-black leading-[1.3] mb-5">
+                    Your highest-leverage moves
+                  </p>
+                  <ul className="space-y-3 list-none p-0 m-0">
+                    {maturity.whatThisMeans.startNow.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="font-display text-[12px] text-gold/60 tracking-[0.08em] flex-shrink-0 mt-1">
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
+                        <p className="font-body text-[14px] text-near-black font-light leading-[1.7]">
+                          {item}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Stop doing */}
+                <div className="bg-warm-white border border-parchment p-7 flex flex-col">
+                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-charcoal mb-4 flex items-center gap-3">
+                    <span className="w-6 h-px bg-charcoal block" />
+                    Stop Doing
+                  </p>
+                  <p className="font-display text-[18px] font-light text-near-black leading-[1.3] mb-5">
+                    The behaviours holding you back
+                  </p>
+                  <ul className="space-y-3 list-none p-0 m-0">
+                    {maturity.whatThisMeans.stopDoing.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="font-body text-[14px] text-charcoal/60 flex-shrink-0 mt-0.5">
+                          ×
+                        </span>
+                        <p className="font-body text-[14px] text-near-black font-light leading-[1.7]">
+                          {item}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Cost of inaction */}
+                <div className="bg-near-black border border-near-black p-7 flex flex-col">
+                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-4 flex items-center gap-3">
+                    <span className="w-6 h-px bg-gold block" />
+                    Cost of Inaction
+                  </p>
+                  <p className="font-display text-[18px] font-light text-warm-white leading-[1.3] mb-5">
+                    What 12 months of doing nothing looks like
+                  </p>
+                  <p className="font-body text-[14px] text-warm-white/75 font-light leading-[1.7]">
+                    {maturity.whatThisMeans.costOfInaction}
+                  </p>
+                </div>
               </div>
 
               {/* Weak dimensions */}
