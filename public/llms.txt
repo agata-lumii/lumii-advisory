@@ -45,6 +45,11 @@
 
 ## Insights
 
+- [Shadow AI: The Mid-Market Governance Crisis](https://lumiiadvisory.com/insights/shadow-ai-mid-market): Why employees are already using AI you don't know about, why bans backfire, and the 5-part governance framework — sanctioned tool list, data classification, training, monitoring, incident response
+- [ChatGPT vs Claude for Business](https://lumiiadvisory.com/insights/chatgpt-vs-claude-business): Honest comparison — where each platform genuinely wins and how to pick
+- [Microsoft Copilot vs ChatGPT Enterprise for Mid-Market](https://lumiiadvisory.com/insights/copilot-vs-chatgpt-enterprise): Embedded vs standalone AI, pricing maths, and the dual-deployment pattern that actually works
+- [Google Gemini vs Microsoft Copilot for Workspace Teams](https://lumiiadvisory.com/insights/gemini-vs-copilot-workspace): Mirror products on different stacks — and why the answer is usually the AI in the suite you already run
+- [AI Workshops vs Sprints vs Retainers](https://lumiiadvisory.com/insights/ai-engagement-models-compared): Which AI engagement model fits your stage — workshops for alignment, sprints for delivery, retainers for ongoing capability
 - [The New AI Org Chart: Roles Being Hired Right Now](https://lumiiadvisory.com/insights/emerging-ai-roles-future): CAIO, AI Architect, AI Product Manager, Prompt Engineer — 8 new roles forward-thinking businesses are hiring for now
 - [The AI Readiness Gap: Why 78% of AI Pilots Stall](https://lumiiadvisory.com/insights/ai-readiness-gap): The five gaps that block scale and how mid-market leaders close them
 - [5 Questions Every CEO Should Ask Before Investing in AI](https://lumiiadvisory.com/insights/ceo-questions-ai-investment): The framework for CEOs and boards before signing the AI budget

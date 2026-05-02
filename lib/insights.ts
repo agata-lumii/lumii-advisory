@@ -15,6 +15,114 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'shadow-ai-mid-market',
+    title: 'Shadow AI: The Governance Crisis Every Mid-Market Business Already Has',
+    metaTitle: 'Shadow AI: The Mid-Market Governance Crisis (And How to Fix It)',
+    metaDescription:
+      'Your employees are already using AI tools you don’t know about. The honest guide to shadow AI risk, why bans backfire, and the 5-part response framework.',
+    excerpt:
+      'Right now, in your business, employees are pasting customer data into ChatGPT, uploading contracts to Claude, and summarising board papers in Gemini — on personal accounts, on personal devices, from networks IT cannot see. This is shadow AI, and it is the single biggest governance issue facing mid-market businesses in 2026.',
+    date: '2026-04-28',
+    readTime: '9 min read',
+    category: 'Governance',
+    keyTakeaways: [
+      'The leadership perception gap is the clearest signal that shadow AI is at scale: most leaders dramatically underestimate how many staff are using AI tools, and on which data, every day.',
+      'Banning shadow AI fails within 90 days every time — employees route around the ban, productivity visibly drops, and the underlying need is not addressed. The right response is to convert shadow AI into governed AI.',
+      'A workable governance framework has five components: a sanctioned tool list, a data classification policy, all-staff training, usage monitoring, and incident response. For most mid-market businesses, this is a 90-day programme.',
+    ],
+    tags: ['Shadow AI', 'Governance', 'AI Risk', 'Data Privacy', 'Compliance'],
+    cta: {
+      label: 'Free Assessment',
+      title: 'AI Readiness Diagnostic',
+      description: 'Test your current governance posture across 7 dimensions in 15 minutes — including shadow AI.',
+      href: '/resources/ai-readiness-checklist',
+    },
+    content: [
+      {
+        body: 'Right now, in your business, employees are pasting customer data into ChatGPT. They are uploading contracts to Claude. They are summarising board papers in Gemini. They are doing it on personal accounts, on personal devices, from networks IT cannot see. This is shadow AI — and it is the single biggest AI governance issue facing mid-market businesses in 2026. It is also the one most leadership teams genuinely do not know is happening.',
+      },
+      {
+        heading: 'What shadow AI actually is',
+        body: 'Shadow AI is the use of AI tools by employees outside the company\'s sanctioned, governed AI deployment. It is the unsanctioned cousin of shadow IT, and it scales faster because the barrier to entry is lower. To use a new SaaS tool, an employee usually has to expense it, get IT approval, or go through procurement. To use ChatGPT they sign up with their personal Gmail in 60 seconds and start pasting in whatever they need help with.',
+      },
+      {
+        body: 'The category includes consumer ChatGPT and Claude, free Perplexity, Microsoft Copilot accessed via personal accounts, browser extensions powered by AI, AI features baked into other SaaS tools, and increasingly the agentic AI products that take actions on the user\'s behalf. None of these are inherently bad — but none of them are governed when used outside sanctioned deployment.',
+      },
+      {
+        heading: 'The scale of the problem',
+        body: 'Industry surveys consistently show that the majority of knowledge-work employees use AI tools at work, and that the majority of that use happens outside any IT-sanctioned deployment. In organisations that have not yet rolled out enterprise AI, the figure is essentially 100% — the AI is being used; it is just not being governed.',
+      },
+      {
+        body: 'The disconnect between leadership perception and ground reality is striking. Surveys of executives at the same organisations consistently show much lower estimates of AI usage. Leadership thinks a fraction of staff use AI; the actual figure is dramatically higher. This perception gap is the single biggest signal that shadow AI is at scale: if leaders knew, they would already be acting.',
+      },
+      {
+        heading: 'The four real risks',
+        body: 'Data leakage. Pasting customer information, financial data, contracts, internal strategy, or employee data into a consumer AI tool means that data has now left your environment. For consumer ChatGPT, that data may be retained for training (unless the user has explicitly opted out, which most have not). For organisations under data privacy regulations — GDPR, the Australian Privacy Act, HIPAA in healthcare — this is potentially a regulatory event. For organisations with confidential client data, it is potentially a contractual breach.',
+      },
+      {
+        body: 'IP exposure. Trade secrets, source code, proprietary methodologies, draft strategy, unpublished financial results, and internal product roadmaps are the kind of content employees regularly upload to AI tools without thinking. The original Samsung incident — where engineers pasted proprietary semiconductor source code into ChatGPT to help debug — is now industry shorthand for what shadow AI looks like in practice. That happened in 2023. It has not stopped happening; it has just become harder to see.',
+      },
+      {
+        body: 'Hallucinated output reaching the wild. AI tools hallucinate. Every leader knows this in theory. In practice, employees take AI output and use it directly — in legal advice, in customer-facing communication, in financial analysis, in technical recommendations. Without governance to identify which outputs need human review and what review looks like, hallucinated content makes it into the wild. The reputational risk here scales with the seniority of the user: a junior analyst using AI-generated legal language is one thing; a partner doing the same is another.',
+      },
+      {
+        body: 'Regulatory exposure. The regulatory environment for AI is moving quickly. The EU AI Act came into effect in 2025. Australia is actively building its AI governance framework. Industry regulators in financial services, healthcare, and legal are publishing guidance on AI usage. Organisations using AI without an inventory of what is being used, where, and on which data have no defensible position when a regulator asks. "We didn\'t know our staff were doing that" is not a regulatory defence.',
+      },
+      {
+        heading: 'Why traditional IT bans don\'t work',
+        body: 'The instinct of IT and security teams when they discover the scale of shadow AI is to ban it. Block ChatGPT at the network. Restrict the browser. Prohibit personal AI accounts in the policy. Every business I have worked with that has tried this approach has failed within 90 days, for one of three reasons.',
+      },
+      {
+        body: 'First, employees route around the ban. They use personal devices on mobile networks. They use AI features baked into SaaS tools the ban did not catch. They use browser extensions. They paste into AI tools at home and bring the output back to work. The ban does not stop the behaviour — it drives it further out of view.',
+      },
+      {
+        body: 'Second, the ban damages productivity in a way employees notice. Knowledge workers using AI tools are measurably more productive on many tasks. Banning AI without providing a sanctioned alternative tells them you are willing to make their work harder rather than govern the behaviour. This breeds resentment, accelerates departures, and makes the ban politically costly.',
+      },
+      {
+        body: 'Third, the ban does not address the underlying need. Employees are using AI because the work demands it. The competitive landscape now assumes AI usage; their professional networks use AI; the tools are too useful to give up. A ban without alternatives is a request to do the job worse.',
+      },
+      {
+        heading: 'What good governance actually looks like',
+        body: 'The right response is not to ban shadow AI but to convert it into governed AI. This requires five components — none individually difficult, but each non-negotiable.',
+      },
+      {
+        body: 'A sanctioned tool list. Define which AI tools your business explicitly permits, at which licence tier, and for which use cases. The list should be reviewed quarterly because the AI landscape moves quickly. Without a sanctioned list, employees default to whatever tool they hear about — which is exactly the situation you are trying to fix.',
+      },
+      {
+        body: 'A data classification policy. Define what data is permissible to input into which tools. Public information goes to any sanctioned tool. Internal information goes to enterprise-tier tools with zero data retention. Sensitive customer data, financial data, and regulated data either does not go into AI at all or only goes into specific, contractually protected enterprise deployments. This policy needs to be readable in five minutes — most existing data policies are not.',
+      },
+      {
+        body: 'Training. Most employees using AI today have had no formal training on what is and is not safe to do with it. The fastest single-action lift in governance is a one-hour training session for the whole organisation on the sanctioned tool list, the data policy, and the consequences of breaches. This compounds: the training itself surfaces use cases leadership did not know were happening.',
+      },
+      {
+        body: 'Monitoring. Use available tooling to monitor AI usage across your sanctioned deployments — and where possible, the use of unsanctioned consumer tools from corporate networks. Most organisations are surprised by what monitoring reveals. The point is not to catch and punish individual employees; it is to understand what is happening so you can adjust the sanctioned list and the policy in response.',
+      },
+      {
+        body: 'Incident response. Define what happens when something goes wrong. An employee pastes confidential data into ChatGPT — what is the response? Who needs to know? What is the remediation? What is reported externally? Most organisations discover during an incident that they have no plan, and the response gets made up under pressure. Designing this in advance turns a crisis into a managed event.',
+      },
+      {
+        heading: 'The first 30, 60, 90 days',
+        body: 'For mid-market businesses where shadow AI is unmanaged today, the practical sequence is straightforward.',
+      },
+      {
+        body: 'In the first 30 days, conduct a usage audit. Survey staff anonymously about which AI tools they use, on which devices, with which data. The results inform everything else. In parallel, start drafting the sanctioned tool list and data classification policy.',
+      },
+      {
+        body: 'In days 30 to 60, publish the sanctioned tool list and data policy, and run all-staff training. Set a clear expectation that from a defined date, AI usage outside the sanctioned list and policy is no longer acceptable. Provide a process for staff to request additions to the sanctioned list — many shadow AI tools become sanctioned tools once leadership understands the use case.',
+      },
+      {
+        body: 'In days 60 to 90, implement monitoring and the incident response process. Conduct a follow-up audit to measure shift in behaviour. Most organisations see a substantial migration to sanctioned tools within this window. The remaining holdouts require leadership conversation rather than additional policy.',
+      },
+      {
+        heading: 'The bigger point',
+        body: 'Shadow AI is not a security issue with a security solution. It is a governance issue with a leadership solution. The businesses that handle it well treat it as an opportunity to formalise what is already happening rather than a threat to suppress. The ones that handle it badly will pay for it — through a regulatory event, an IP leak, a hallucinated output that became public, or a reputational incident.',
+      },
+      {
+        body: 'If you do not know what shadow AI looks like in your business right now, you are in the majority. Run an honest usage audit this month. The results will surprise you — and they will be the foundation of every other AI governance decision you make.',
+      },
+    ],
+  },
+  {
     slug: 'ai-engagement-models-compared',
     title: 'AI Workshops vs Sprints vs Retainers: Which Engagement Model is Right for You?',
     metaTitle: 'AI Workshops vs Sprints vs Retainers: Comparing AI Engagement Models',
