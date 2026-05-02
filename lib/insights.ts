@@ -1,3 +1,9 @@
+export interface ArticleImage {
+  src: string
+  alt: string
+  caption?: string
+}
+
 export interface Article {
   slug: string
   title: string
@@ -8,7 +14,8 @@ export interface Article {
   readTime: string
   category: string
   keyTakeaways?: string[]
-  content: { heading?: string; body: string }[]
+  heroImage?: ArticleImage
+  content: { heading?: string; body?: string; image?: ArticleImage }[]
   tags: string[]
   cta?: { label: string; title: string; description: string; href: string }
 }
@@ -30,6 +37,10 @@ export const articles: Article[] = [
       'Banning shadow AI fails within 90 days every time — employees route around the ban, productivity visibly drops, and the underlying need is not addressed. The right response is to convert shadow AI into governed AI.',
       'A workable governance framework has five components: a sanctioned tool list, a data classification policy, all-staff training, usage monitoring, and incident response. For most mid-market businesses, this is a 90-day programme.',
     ],
+    heroImage: {
+      src: '/images/insights/shadow-ai-hero.png',
+      alt: 'Sketch of an employee working on a laptop with a large shadow figure looming behind her — illustrating shadow AI in the workplace',
+    },
     tags: ['Shadow AI', 'Governance', 'AI Risk', 'Data Privacy', 'Compliance'],
     cta: {
       label: 'Free Assessment',
@@ -80,6 +91,13 @@ export const articles: Article[] = [
       },
       {
         body: 'Third, the ban does not address the underlying need. Employees are using AI because the work demands it. The competitive landscape now assumes AI usage; their professional networks use AI; the tools are too useful to give up. A ban without alternatives is a request to do the job worse.',
+      },
+      {
+        image: {
+          src: '/images/insights/shadow-ai-diagram.png',
+          alt: 'Diagram contrasting Shadow AI (unseen, unmanaged, uncontrolled — unknown tools, data leaving, no visibility) with Controlled AI (visible, governed, useful — clear oversight, data protected, outcomes driven). Caption: The risk isn’t AI. It’s AI you can’t see.',
+          caption: 'The shift from shadow AI to governed AI — the same tools, made visible.',
+        },
       },
       {
         heading: 'What good governance actually looks like',

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/lib/insights'
 import CTABanner from '@/components/CTABanner'
@@ -25,6 +26,14 @@ export async function generateMetadata({
       type: 'article',
       publishedTime: article.date,
       modifiedTime: article.date,
+      ...(article.heroImage && {
+        images: [
+          {
+            url: `https://lumiiadvisory.com${article.heroImage.src}`,
+            alt: article.heroImage.alt,
+          },
+        ],
+      }),
     },
     alternates: {
       canonical: `https://lumiiadvisory.com/insights/${article.slug}`,
@@ -65,6 +74,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     },
     url: `https://lumiiadvisory.com/insights/${article.slug}`,
     mainEntityOfPage: `https://lumiiadvisory.com/insights/${article.slug}`,
+    ...(article.heroImage && { image: `https://lumiiadvisory.com${article.heroImage.src}` }),
   }
 
   const breadcrumbSchema = {
@@ -121,8 +131,31 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
+      {/* Hero image (optional) */}
+      {article.heroImage && (
+        <section className="bg-warm-white pt-[clamp(40px,5vw,72px)] px-8 lg:px-12">
+          <div className="max-w-[1080px] mx-auto">
+            <figure className="relative w-full aspect-[3/2] overflow-hidden bg-ivory">
+              <Image
+                src={article.heroImage.src}
+                alt={article.heroImage.alt}
+                fill
+                priority
+                sizes="(max-width: 1080px) 100vw, 1080px"
+                className="object-cover"
+              />
+            </figure>
+            {article.heroImage.caption && (
+              <figcaption className="font-body text-[12px] text-ash font-light italic mt-3 text-center">
+                {article.heroImage.caption}
+              </figcaption>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* Article body */}
-      <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
+      <section className={`bg-warm-white px-8 lg:px-12 ${article.heroImage ? 'pt-[clamp(40px,5vw,72px)] pb-[clamp(60px,8vw,100px)]' : 'py-[clamp(60px,8vw,100px)]'}`}>
         <div className="max-w-[720px] mx-auto">
           {/* TL;DR — Key Takeaways */}
           {article.keyTakeaways && article.keyTakeaways.length > 0 && (
@@ -147,16 +180,37 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           )}
           {article.content.map((block, i) => (
             <div key={i}>
-              <div className="mb-8">
-                {block.heading && (
-                  <h2 className="font-display font-light text-[clamp(22px,2.5vw,30px)] text-near-black leading-[1.3] mb-4 mt-12 first:mt-0">
-                    {block.heading}
-                  </h2>
-                )}
-                <p className="font-body text-[16px] leading-[1.9] text-slate-warm font-light">
-                  {block.body}
-                </p>
-              </div>
+              {block.image ? (
+                <figure className="my-12">
+                  <div className="relative w-full aspect-[3/2] overflow-hidden bg-ivory border border-parchment">
+                    <Image
+                      src={block.image.src}
+                      alt={block.image.alt}
+                      fill
+                      sizes="(max-width: 720px) 100vw, 720px"
+                      className="object-contain"
+                    />
+                  </div>
+                  {block.image.caption && (
+                    <figcaption className="font-body text-[12px] text-ash font-light italic mt-3 text-center">
+                      {block.image.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ) : (
+                <div className="mb-8">
+                  {block.heading && (
+                    <h2 className="font-display font-light text-[clamp(22px,2.5vw,30px)] text-near-black leading-[1.3] mb-4 mt-12 first:mt-0">
+                      {block.heading}
+                    </h2>
+                  )}
+                  {block.body && (
+                    <p className="font-body text-[16px] leading-[1.9] text-slate-warm font-light">
+                      {block.body}
+                    </p>
+                  )}
+                </div>
+              )}
               {/* Inline related links after 3rd block */}
               {i === 2 && otherArticles.length > 0 && (
                 <div className="my-10 bg-ivory border border-parchment p-6">
