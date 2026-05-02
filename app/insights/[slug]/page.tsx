@@ -295,17 +295,30 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 <Link
                   key={a.slug}
                   href={`/insights/${a.slug}`}
-                  className="group flex flex-col bg-warm-white border border-parchment hover:border-gold/40 transition-colors duration-300 p-8"
+                  className="group flex flex-col bg-warm-white border border-parchment hover:border-gold/40 transition-colors duration-300 overflow-hidden"
                 >
-                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-3">
-                    {a.category}
-                  </p>
-                  <h3 className="font-display font-light text-[20px] leading-[1.35] text-near-black flex-1 group-hover:text-charcoal transition-colors">
-                    {a.title}
-                  </h3>
-                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-parchment">
-                    <span className="font-body text-[11px] text-ash">{a.readTime}</span>
-                    <span className="font-body text-[11px] uppercase tracking-[0.12em] text-gold group-hover:tracking-[0.2em] transition-all duration-300">→</span>
+                  {a.heroImage && (
+                    <div className="relative w-full aspect-[3/2] bg-ivory overflow-hidden border-b border-parchment">
+                      <Image
+                        src={a.heroImage.src}
+                        alt={a.heroImage.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 360px"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  )}
+                  <div className="p-8 flex flex-col flex-1">
+                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-3">
+                      {a.category}
+                    </p>
+                    <h3 className="font-display font-light text-[20px] leading-[1.35] text-near-black flex-1 group-hover:text-charcoal transition-colors">
+                      {a.title}
+                    </h3>
+                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-parchment">
+                      <span className="font-body text-[11px] text-ash">{a.readTime}</span>
+                      <span className="font-body text-[11px] uppercase tracking-[0.12em] text-gold group-hover:tracking-[0.2em] transition-all duration-300">→</span>
+                    </div>
                   </div>
                 </Link>
               ))}

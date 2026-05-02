@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Article } from '@/lib/insights'
 
@@ -75,20 +76,32 @@ export default function InsightsGrid({ articles }: { articles: Article[] }) {
                     </span>
                   </div>
                 </div>
-                <div className="bg-near-black p-10 flex items-center justify-center min-h-[240px]">
-                  <div className="text-center">
-                    <p className="font-display font-light text-[80px] leading-none text-gold/20 select-none">
-                      {featured.title.charAt(0)}
-                    </p>
-                    <div className="flex flex-wrap gap-2 justify-center mt-6">
-                      {featured.tags.map((tag) => (
-                        <span key={tag} className="font-body text-[10px] tracking-[0.15em] uppercase text-warm-white/40 border border-warm-white/10 px-3 py-1">
-                          {tag}
-                        </span>
-                      ))}
+                {featured.heroImage ? (
+                  <div className="relative bg-ivory min-h-[280px] lg:min-h-full overflow-hidden">
+                    <Image
+                      src={featured.heroImage.src}
+                      alt={featured.heroImage.alt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 540px"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="bg-near-black p-10 flex items-center justify-center min-h-[240px]">
+                    <div className="text-center">
+                      <p className="font-display font-light text-[80px] leading-none text-gold/20 select-none">
+                        {featured.title.charAt(0)}
+                      </p>
+                      <div className="flex flex-wrap gap-2 justify-center mt-6">
+                        {featured.tags.map((tag) => (
+                          <span key={tag} className="font-body text-[10px] tracking-[0.15em] uppercase text-warm-white/40 border border-warm-white/10 px-3 py-1">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </Link>
           </div>
@@ -107,8 +120,19 @@ export default function InsightsGrid({ articles }: { articles: Article[] }) {
                 <Link
                   key={article.slug}
                   href={`/insights/${article.slug}`}
-                  className="group flex flex-col bg-ivory border border-parchment hover:border-gold/40 transition-colors duration-300"
+                  className="group flex flex-col bg-ivory border border-parchment hover:border-gold/40 transition-colors duration-300 overflow-hidden"
                 >
+                  {article.heroImage && (
+                    <div className="relative w-full aspect-[3/2] bg-warm-white overflow-hidden border-b border-parchment">
+                      <Image
+                        src={article.heroImage.src}
+                        alt={article.heroImage.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 360px"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  )}
                   <div className="p-8 flex flex-col flex-1">
                     <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-3">
                       {article.category}
