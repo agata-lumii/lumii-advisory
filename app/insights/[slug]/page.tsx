@@ -124,6 +124,27 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       {/* Article body */}
       <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
         <div className="max-w-[720px] mx-auto">
+          {/* TL;DR — Key Takeaways */}
+          {article.keyTakeaways && article.keyTakeaways.length > 0 && (
+            <aside className="mb-14 bg-ivory border-l-2 border-gold p-7 lg:p-8" aria-label="Key takeaways">
+              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-5 flex items-center gap-3">
+                <span className="w-6 h-px bg-gold block" />
+                Key Takeaways
+              </p>
+              <ul className="space-y-3 list-none p-0 m-0">
+                {article.keyTakeaways.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="font-display text-[12px] text-gold/70 tracking-[0.08em] flex-shrink-0 mt-1.5">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <p className="font-body text-[15px] text-near-black font-light leading-[1.7]">
+                      {point}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
           {article.content.map((block, i) => (
             <div key={i}>
               <div className="mb-8">

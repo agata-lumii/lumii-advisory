@@ -1,0 +1,60 @@
+# Lumii Advisory
+
+> Lumii Advisory is an independent AI strategy consultancy for mid-market businesses, led by founder Agata Adamczak from Sydney, Australia. We help leadership teams identify where AI creates real commercial value and implement it with clarity — vendor-neutral, senior-led, outcome-accountable. Eighteen years inside global technology businesses including Botify (first ANZ employee), Dotdigital, BrightEdge, Performics, and iCrossing.
+
+## About
+
+- [About Agata Adamczak](https://lumiiadvisory.com/about): Founder credentials, career history, and brands advised — Canva, MYER, Optus, Harvey Norman, Medibank, Nike, Adidas, ASOS, Net-a-Porter, Australia Post, David Jones, Avis Budget Group, Reckitt
+- [How We Work](https://lumiiadvisory.com/how-we-work): Our four-phase AI consulting methodology — Discovery, Strategy, Pilot, Scale
+- [Contact](https://lumiiadvisory.com/contact): Book a free 30-minute discovery call
+
+## Services
+
+- [Services Overview](https://lumiiadvisory.com/services): Five disciplines — Digital Strategy, Customer Experience, Ecommerce, MarTech Advisory, AI Enablement
+- [Work With Us](https://lumiiadvisory.com/work-with-us): Three engagement tiers — AI Workshops (1 day), Project Sprints (6–12 weeks), Advisory Retainers (ongoing)
+
+## Industries Served
+
+- [Marketing Teams & CMOs](https://lumiiadvisory.com/who-we-help/marketers): AI tools, automation, and measurement frameworks for marketing leaders
+- [Real Estate Agencies](https://lumiiadvisory.com/who-we-help/estate-agents): AI lead qualification, listing automation, and CRM strategy
+- [Sales Teams & Revenue Leaders](https://lumiiadvisory.com/who-we-help/sales-teams): AI-assisted prospecting, CRM optimisation, and sales enablement
+- [Retailers & D2C Brands](https://lumiiadvisory.com/who-we-help/retailers): Platform strategy, CRO, personalisation, and loyalty
+- [Professional Services Firms](https://lumiiadvisory.com/who-we-help/professional-services): AI for consultancies, law firms, and accounting practices
+- [Hospitality & Hotels](https://lumiiadvisory.com/who-we-help/hospitality): Booking optimisation, reputation management, and guest CRM
+- [Financial Services & FinTech](https://lumiiadvisory.com/who-we-help/financial-services): AI strategy, customer onboarding, and compliance-aware automation
+- [Healthcare & Allied Health](https://lumiiadvisory.com/who-we-help/healthcare): Patient journeys, online booking, AI admin tools, and CRM
+- [Startups & Scale-ups](https://lumiiadvisory.com/who-we-help/startups): Pre-Series B foundations for digital, data, and AI
+- [RTOs & Education Providers](https://lumiiadvisory.com/who-we-help/education): Enrolment journeys, student lifecycle CRM, and lead-gen content
+
+## Resources
+
+- [AI Readiness Diagnostic](https://lumiiadvisory.com/resources/ai-readiness-checklist): Free 35-question assessment across 7 dimensions — commercial clarity, use case discipline, execution ownership, data, technology, capability, and governance. Returns a scored maturity band (AI Unaware, AI Aware, AI Active, AI Leader) and prioritised next-step guidance
+- [AI Tools Directory](https://lumiiadvisory.com/resources/ai-tools): 60+ AI tools organised by category — writing, video, coding, research, meetings, data — with pricing and direct links
+- [AI Team Structure Guide](https://lumiiadvisory.com/resources/ai-team-structure): Every role explained — CAIO, AI Architect, AI Product Manager, Prompt Engineer — when to hire, who owns what, and the 5-year roadmap
+- [AI Case Studies](https://lumiiadvisory.com/ai-case-studies): Real AI implementations from Klarna, Goldman Sachs, Microsoft, Walmart, Morgan Stanley, Duolingo, IBM, and Coca-Cola
+- [FAQ](https://lumiiadvisory.com/faq): Honest answers on AI consulting costs, timelines, data privacy, and process
+
+## AI Platform Guides
+
+- [All AI Platform Guides](https://lumiiadvisory.com/learn): Honest, plain-English guides to the major AI platforms
+- [ChatGPT for Business](https://lumiiadvisory.com/learn/openai): GPT-5, o3, DALL-E, Custom GPTs, Operator, ChatGPT Enterprise — use cases, pricing, and setup
+- [Claude AI for Business](https://lumiiadvisory.com/learn/claude): Claude Sonnet 4.5, Opus 4.5, Claude Code, Claude Design, Projects, Agent SDK, MCP — long documents, careful reasoning, and code
+- [Google Gemini for Business](https://lumiiadvisory.com/learn/gemini): Gemini 2.5 Pro, NotebookLM, Deep Research, Workspace integration — multimodal use cases and Workspace integration
+- [Microsoft Copilot for Business](https://lumiiadvisory.com/learn/microsoft-copilot): 365 Copilot, GitHub Copilot, Copilot Studio, Azure OpenAI — what it costs, where it pays back, and which tier
+- [Perplexity AI for Business](https://lumiiadvisory.com/learn/perplexity): Deep Research, Spaces, Pages, Sonar — research and competitive intelligence
+
+## Insights
+
+- [The New AI Org Chart: Roles Being Hired Right Now](https://lumiiadvisory.com/insights/emerging-ai-roles-future): CAIO, AI Architect, AI Product Manager, Prompt Engineer — 8 new roles forward-thinking businesses are hiring for now
+- [The AI Readiness Gap: Why 78% of AI Pilots Stall](https://lumiiadvisory.com/insights/ai-readiness-gap): The five gaps that block scale and how mid-market leaders close them
+- [5 Questions Every CEO Should Ask Before Investing in AI](https://lumiiadvisory.com/insights/ceo-questions-ai-investment): The framework for CEOs and boards before signing the AI budget
+- [How to Build an AI Business Case Your Board Will Approve](https://lumiiadvisory.com/insights/ai-business-case-board): The six-part template that speaks the board's language — risk, return, accountability
+- [The Hidden Cost of Delayed AI Adoption](https://lumiiadvisory.com/insights/cost-of-delayed-ai-adoption): How to quantify what 12 months of "wait and see" actually costs your business
+- [AI in Professional Services: 6 High-Value Use Cases](https://lumiiadvisory.com/insights/ai-professional-services): Where law firms, consultancies, and accountancies should start with AI
+- [Data Readiness for AI: A Practical Guide for Mid-Market](https://lumiiadvisory.com/insights/data-readiness-ai): The diagnostic, the fix, and the order of operations for getting data AI-ready
+
+## Optional
+
+- [Privacy Policy](https://lumiiadvisory.com/privacy-policy): How Lumii collects, uses, and protects data — Australian Privacy Act compliant
+- [Terms of Service](https://lumiiadvisory.com/terms-of-service): Plain-English terms governing use of the website and services
+- [Site Map](https://lumiiadvisory.com/site-map): Complete page directory

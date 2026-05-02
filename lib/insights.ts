@@ -7,12 +7,236 @@ export interface Article {
   date: string
   readTime: string
   category: string
+  keyTakeaways?: string[]
   content: { heading?: string; body: string }[]
   tags: string[]
   cta?: { label: string; title: string; description: string; href: string }
 }
 
 export const articles: Article[] = [
+  {
+    slug: 'ai-engagement-models-compared',
+    title: 'AI Workshops vs Sprints vs Retainers: Which Engagement Model is Right for You?',
+    metaTitle: 'AI Workshops vs Sprints vs Retainers: Comparing AI Engagement Models',
+    metaDescription:
+      'Three ways to engage external AI strategy support — workshops, project sprints, and advisory retainers. The honest guide to which fits your stage and need.',
+    excerpt:
+      'External AI strategy support comes in three shapes — workshops, project sprints, and advisory retainers — each suited to a different stage of the journey. Picking the right one matters more than picking the right consultant.',
+    date: '2026-04-27',
+    readTime: '6 min read',
+    category: 'Comparison',
+    keyTakeaways: [
+      'Workshops are the right choice when leadership alignment is the primary blocker — typically a single day, fixed scope, with a clear outcome and modest commitment.',
+      'Project Sprints suit organisations with one specific high-value AI use case and a 6–12 week window to deliver it — fixed scope, fixed price, clear deliverable.',
+      'Advisory Retainers are for organisations running an active AI programme who want senior counsel embedded across multiple decisions over time — typically monthly engagement.',
+    ],
+    tags: ['Engagement Models', 'AI Consulting', 'Comparison', 'Workshops', 'Retainer'],
+    cta: {
+      label: 'Ways to Engage',
+      title: 'Three ways to work with Lumii',
+      description: 'Workshops, project sprints, and advisory retainers — pick the shape that fits your stage.',
+      href: '/work-with-us',
+    },
+    content: [
+      {
+        body: 'Most businesses considering external AI support default to one of two assumptions: a one-off project ("we need someone to come in and do X") or a full-time hire ("we need an AI lead"). The reality is that a structured external engagement usually fits between these two. Three engagement shapes cover almost every situation: workshops, project sprints, and advisory retainers. Picking the right shape matters more than picking the right consultant — the wrong shape will fail no matter who delivers it.',
+      },
+      {
+        heading: 'Workshops: when leadership alignment is the blocker',
+        body: 'A workshop is the right choice when the primary issue is that your leadership team has not aligned on what AI means for the business, where it fits, or how to think about it. Symptoms include divergent views in the C-suite, confusion about what AI can and cannot do, no shared framework for evaluating AI opportunities, or paralysis caused by too many vendor pitches. Workshops are typically a single day, in person where possible. Output: a shared baseline understanding, an agreed prioritisation framework, and a clear next step. Workshops do not solve implementation problems — they solve clarity problems. For organisations that have not yet aligned on direction, the rest of the work is unstartable.',
+      },
+      {
+        heading: 'Project Sprints: when you have a use case and need to ship it',
+        body: 'A project sprint is the right choice when you have identified a specific, high-value AI use case and need focused external support to deliver it within a defined window — typically 6 to 12 weeks. Sprints have a fixed scope, a fixed price, and a clear deliverable. Examples include implementing a Custom GPT for a specific business unit, conducting an AI readiness assessment with a phased roadmap, evaluating and selecting an AI platform, or running a focused pilot with measured outcomes. The key constraint is scope — sprints fail when the brief is "do AI for us" rather than "implement this specific thing by this date." Successful sprints have one or two clearly named deliverables, a defined success metric, and a hard end date. They are the right choice when you know what you need.',
+      },
+      {
+        heading: 'Advisory Retainers: when AI is a continuous capability',
+        body: 'An advisory retainer is the right choice when AI is no longer a project but a continuous part of how your business operates. Symptoms include an active AI programme with multiple workstreams, ongoing decisions to make about tools, vendors, and use cases, an internal team building AI capability who would benefit from senior external counsel, and a board or leadership team who want senior advisory support across quarters — not just at point-in-time decisions. Retainers are typically monthly, with a fixed time commitment per month and the relationship adjusted up or down as needs evolve. Retainers do not work as a substitute for an internal AI lead — they work as a multiplier for one. The most successful retainer engagements pair an internal AI champion with external senior counsel. Both are needed; neither replaces the other.',
+      },
+      {
+        heading: 'How to choose',
+        body: 'The decision is not primarily about budget — it is about where you are in the AI journey. If you do not yet have leadership alignment on what AI means for the business, run a workshop first. Spending project budget before alignment is the most common cause of failed AI engagements I see. If you have alignment and a specific use case but no internal capacity to deliver it, run a project sprint. If you have alignment, capacity, and an active programme but want senior strategic counsel embedded across multiple decisions, take a retainer. Most organisations move through these in sequence — workshop in month one, sprint in months two through four, retainer from month five onwards as the programme matures.',
+      },
+      {
+        heading: 'The wrong shapes for the wrong situations',
+        body: 'A retainer with no clarity on what AI means for the business burns money — there is nothing to advise on. A sprint with no defined use case becomes scope creep. A workshop with no decision authority in the room produces consensus but no action. The most expensive engagement model is whichever one does not match your stage. Picking the right shape is the highest-leverage decision in the relationship — it is more important than picking the right firm.',
+      },
+      {
+        heading: 'How Lumii structures these',
+        body: 'At Lumii these are the three ways we engage. Workshops are typically one day with the executive team, fixed scope, fixed price. Project sprints are 6 to 12 weeks with a clear deliverable, fixed scope, fixed price. Advisory retainers are monthly engagements at a defined time commitment, with the relationship adjusted as the programme evolves. Every engagement starts with a 30-minute discovery call to make sure we are matching the right shape to the right situation — because the shape decision is what determines whether the work compounds or burns.',
+      },
+    ],
+  },
+  {
+    slug: 'gemini-vs-copilot-workspace',
+    title: 'Google Gemini vs Microsoft Copilot for Workspace Teams',
+    metaTitle: 'Gemini vs Copilot: Which AI for Google Workspace or Microsoft 365?',
+    metaDescription:
+      'Gemini for Workspace and Copilot for Microsoft 365 are mirror products on different stacks. The honest answer to which is better is "the one in the platform you already run".',
+    excerpt:
+      'Gemini for Workspace and Microsoft 365 Copilot are mirror products on different stacks. For most teams the answer to "which is better" is the one in the platform you already run.',
+    date: '2026-04-26',
+    readTime: '7 min read',
+    category: 'Comparison',
+    keyTakeaways: [
+      'Gemini for Workspace and Microsoft 365 Copilot solve the same problem inside different software stacks — neither makes sense to deploy independently of the underlying productivity suite.',
+      'Gemini\'s standout differentiators are the 2-million-token context window in Gemini 2.5 Pro and NotebookLM for document-heavy research; Copilot\'s standout is the depth of integration across the Microsoft enterprise stack including SharePoint and Teams.',
+      'For organisations running both Workspace and 365 (more common than people think), the practical guidance is to deploy each AI in the suite where most of that team\'s work happens — not pick one centrally.',
+    ],
+    tags: ['Gemini', 'Microsoft Copilot', 'Comparison', 'Workspace', 'Productivity'],
+    cta: {
+      label: 'AI Platform Guides',
+      title: 'Tool-by-tool guides to every AI platform',
+      description: 'Honest, plain-English guides to ChatGPT, Claude, Gemini, Copilot, and Perplexity.',
+      href: '/learn',
+    },
+    content: [
+      {
+        body: 'Gemini for Workspace and Microsoft 365 Copilot are not really competing for the same buyer. They are mirror products embedded in two different productivity ecosystems, and the honest answer to "which is better" is almost always "the one in the platform you already run." But there are real differences worth understanding — particularly for the growing number of organisations that run both Workspace and Microsoft 365 in different parts of the business.',
+      },
+      {
+        heading: 'Identical promise, different homes',
+        body: 'Both products promise the same thing: AI assistance inside the apps your team already uses. Gemini drafts in Google Docs, builds formulas in Sheets, summarises Gmail threads, and generates meeting notes in Meet. Copilot drafts in Word, builds formulas in Excel, summarises Outlook threads, and generates meeting notes in Teams. Both cost around $30 per user per month at the enterprise tier. Both have enterprise governance, data residency options, and SSO. At the surface, they are mirror products.',
+      },
+      {
+        heading: 'Where Gemini wins',
+        body: 'Gemini\'s standout capability is context window — Gemini 2.5 Pro handles two million tokens, which is large enough to drop in entire codebases, multi-year contract archives, or full report libraries in a single conversation. Nothing in the Copilot family matches this. NotebookLM is the second standout: a free tool that turns any uploaded document collection into a queryable AI research assistant grounded only in those sources. For document-heavy knowledge work — legal research, due diligence, academic synthesis, regulatory monitoring — NotebookLM is genuinely best-in-class. Deep Research, Google\'s autonomous research agent, is also significantly more polished than equivalent Microsoft tooling. If your work is research-heavy, Gemini has real advantages.',
+      },
+      {
+        heading: 'Where Copilot wins',
+        body: 'Copilot wins on enterprise integration depth. Microsoft Graph gives Copilot contextual access to your SharePoint, OneDrive, prior emails, prior meetings, and prior documents in a way Google has not yet replicated for the enterprise. The Microsoft 365 Copilot ecosystem — Copilot Studio for custom agents, Power Platform integration, Azure OpenAI for governed deployments, GitHub Copilot for engineering teams — is significantly broader than Google\'s equivalent. For organisations heavily invested in Microsoft Cloud, Copilot inherits the security, compliance, and governance posture you have already built. Gemini for Workspace requires its own administration layer.',
+      },
+      {
+        heading: 'The cost of switching',
+        body: 'Neither product makes sense to deploy independently of the underlying suite. If your business runs Microsoft 365, deploying Gemini means buying it standalone (which you can do, but you lose the integration advantage that justifies the price). Same in reverse. The decision is rarely "Gemini vs Copilot" — it is "which productivity suite, with the AI included." For most organisations the productivity suite was decided years ago, and switching is significantly more expensive than the AI tier on top.',
+      },
+      {
+        heading: 'When to deploy both',
+        body: 'A growing pattern in mid-market and enterprise organisations is running Workspace in some parts of the business (often marketing, design, and creative teams) and Microsoft 365 in others (often finance, operations, and IT). When this is the reality, the right approach is to deploy the relevant AI in each suite — Gemini where Workspace lives, Copilot where 365 lives — rather than trying to standardise on one. Forcing a Microsoft team to do their work in Google Docs or vice versa creates more friction than the AI saves. AI follows the productivity stack; it should not redirect it.',
+      },
+      {
+        heading: 'How to choose',
+        body: 'Three questions in order: Which productivity suite does the team already use most? Which suite is your security and identity infrastructure most integrated with? Which suite are your most important workflows already living in? The AI choice follows from those answers. If you are genuinely starting from zero (rare in mid-market), the broader question is which suite better fits your business — and the AI is one factor among many. If you already have a suite, deploy its AI. The "should we switch suites for the AI" question is almost never worth asking.',
+      },
+    ],
+  },
+  {
+    slug: 'copilot-vs-chatgpt-enterprise',
+    title: 'Microsoft Copilot vs ChatGPT Enterprise: Which One for Mid-Market?',
+    metaTitle: 'Microsoft Copilot vs ChatGPT Enterprise: Mid-Market Comparison',
+    metaDescription:
+      'Microsoft 365 Copilot is embedded in your existing apps. ChatGPT Enterprise is a standalone AI workspace. The honest comparison for mid-market buyers.',
+    excerpt:
+      'Both cost roughly $30 per user per month. Both have enterprise-grade governance. But they solve fundamentally different problems — and the right choice depends almost entirely on where your team already lives.',
+    date: '2026-04-25',
+    readTime: '8 min read',
+    category: 'Comparison',
+    keyTakeaways: [
+      'Copilot lives inside your existing Microsoft 365 apps — Word, Excel, Teams, Outlook. ChatGPT Enterprise is a standalone AI workspace your team visits.',
+      'Copilot wins for in-app assistance: drafting in Word, analysis in Excel, meeting notes in Teams. ChatGPT Enterprise wins for general-purpose AI capability: broader reasoning, larger context window, more flexible custom AI tooling.',
+      'Most well-designed AI strategies use both — Copilot for in-app productivity, ChatGPT Enterprise (or Claude Enterprise) for the deeper reasoning work — at roughly $50–60 per user per month combined.',
+    ],
+    tags: ['Microsoft Copilot', 'ChatGPT Enterprise', 'Comparison', 'Mid-Market', 'AI Platforms'],
+    cta: {
+      label: 'Engagement Models',
+      title: 'Three ways to work with Lumii',
+      description: 'Workshops, project sprints, and advisory retainers — pick the shape that fits your AI rollout.',
+      href: '/work-with-us',
+    },
+    content: [
+      {
+        body: 'The two questions I get asked most often by mid-market CIOs are "should we deploy Microsoft 365 Copilot?" and "should we deploy ChatGPT Enterprise?" Often, both. The two products are frequently positioned as alternatives, but they are not — they solve different problems, and the best AI strategies use both. Here is the honest comparison.',
+      },
+      {
+        heading: 'The fundamental difference',
+        body: 'Microsoft 365 Copilot lives inside the apps your team already uses. It drafts in Word, builds formulas in Excel, summarises Teams meetings, and triages your Outlook inbox. ChatGPT Enterprise is a standalone AI workspace — your team opens a browser tab and works inside ChatGPT. One is embedded; the other is destination. Both are around $30 per user per month at the enterprise tier. Both have SSO, admin controls, and zero data retention. The choice is not about price or governance — it is about where you want AI to live in your workflow.',
+      },
+      {
+        heading: 'Where Copilot wins',
+        body: 'Copilot wins decisively when AI assistance happens inside the work itself. Drafting a board paper in Word with the Copilot pane open is faster than copying text into ChatGPT and back. Building a financial model in Excel and asking Copilot to generate the formula in plain English is faster than describing the model to ChatGPT. Summarising a Teams meeting where Copilot was already attending is faster than uploading a transcript to ChatGPT. The Microsoft Graph integration also gives Copilot context the standalone alternative cannot match — it can pull from your SharePoint, your OneDrive, your previous emails, your previous meetings. That contextual awareness is genuinely valuable for organisations deeply invested in Microsoft 365.',
+      },
+      {
+        heading: 'Where ChatGPT Enterprise wins',
+        body: 'ChatGPT Enterprise wins for general-purpose AI capability. The 128K context window is significantly larger than what Copilot exposes. Custom GPTs let you build tailored AI tools without engineering involvement. DALL-E 3 image generation, voice mode, and Operator agent are all available — none of which exist in Copilot. For complex, multi-step reasoning tasks — legal analysis, research synthesis, strategic planning — ChatGPT Enterprise will outperform Copilot every time. It is also significantly more flexible: you can connect to anything via the API, build your own assistants, and extend it in ways Copilot does not allow.',
+      },
+      {
+        heading: 'The honest pricing maths',
+        body: 'Microsoft 365 Copilot is around $30 per user per month, but it requires an existing Microsoft 365 E3 or E5 licence (which already costs $36–57 per user per month). ChatGPT Enterprise is also around $30 per user per month, and it is genuinely standalone — no other licence required. For a 200-person business already running Microsoft 365 E5: Copilot costs $30 per user; ChatGPT Enterprise costs $30 per user. Running both costs $60 per user per month — meaningful but not enormous, and the capability gain is real. Most mid-market businesses I work with end up running both.',
+      },
+      {
+        heading: 'Governance and data residency',
+        body: 'Both platforms offer enterprise-grade governance: SSO, audit logs, no training on company data, and regional data residency options. Microsoft has the edge if your IT team is already deeply integrated with Microsoft Defender, Purview, and the broader Microsoft compliance suite — Copilot inherits that posture automatically. ChatGPT Enterprise has its own governance stack but it is a separate set of tools your IT team has to manage. For regulated industries, the integration advantage Copilot has with the rest of Microsoft Cloud is non-trivial.',
+      },
+      {
+        heading: 'The adoption pattern that actually works',
+        body: 'Across the mid-market businesses I have worked with, the most successful AI rollout pattern is this: start with Copilot for the productivity layer (drafting, formulas, meeting notes), and add ChatGPT Enterprise (or Claude Enterprise) for the deeper work. Train your team on both. Measure adoption per tool per role. Most teams settle into a pattern within 90 days where Copilot handles 60–70% of daily AI use and the standalone platform handles the heavy reasoning and creation work. This dual approach is more expensive than picking one — but it is dramatically more capable, and the per-user cost is still small relative to the productivity uplift.',
+      },
+      {
+        heading: 'How to decide if you can only pick one',
+        body: 'If your team lives in Microsoft 365 all day and your AI use cases are dominated by drafting, light analysis, and meeting management — Copilot. If your team needs deep reasoning, custom AI tools, image generation, voice, or work that happens outside Microsoft 365 — ChatGPT Enterprise. If your dominant cost concern is licence sprawl rather than capability — Copilot, because it adds to a stack you already have. If your dominant concern is being on the leading edge of AI capability — ChatGPT Enterprise, because OpenAI ships new model capabilities to the standalone product before they reach Copilot.',
+      },
+    ],
+  },
+  {
+    slug: 'chatgpt-vs-claude-business',
+    title: 'ChatGPT vs Claude for Business: Which Should You Actually Use?',
+    metaTitle: 'ChatGPT vs Claude for Business: An Honest Comparison (2026)',
+    metaDescription:
+      'GPT-5 and Claude Sonnet 4.5 are both excellent — but they win at different things. An honest, tool-by-tool comparison for business buyers in 2026.',
+    excerpt:
+      'GPT-5 and Claude Sonnet 4.5 sit at the top of independent benchmarks — but they win at different things. The honest answer to "which one" depends on what you need them to do.',
+    date: '2026-04-22',
+    readTime: '10 min read',
+    category: 'Comparison',
+    keyTakeaways: [
+      'Claude leads independent benchmarks for coding, long-document analysis, and nuanced writing; ChatGPT leads for general-purpose multimodal work, real-time web search, and the broadest third-party integration ecosystem.',
+      'For most mid-market businesses the right answer is "both" — different tools for different jobs — but if you must pick one, the choice depends on whether your dominant use case is reasoning over long documents (Claude) or general-purpose productivity (ChatGPT).',
+      'Both offer enterprise-grade governance with SSO, admin controls, and zero data retention; pricing for the professional tier is essentially identical at around $20 per month.',
+    ],
+    tags: ['ChatGPT', 'Claude', 'Comparison', 'AI Platforms', 'Business AI'],
+    cta: {
+      label: 'AI Platform Guides',
+      title: 'Honest guides to every AI platform',
+      description: 'Tool-by-tool breakdowns of ChatGPT, Claude, Gemini, Copilot, and Perplexity — with industry use cases.',
+      href: '/learn',
+    },
+    content: [
+      {
+        body: 'GPT-5 from OpenAI and Claude Sonnet 4.5 from Anthropic both sit at the top of independent benchmarks. Both have enterprise-grade security. Both cost roughly $20 a month at the professional tier. So when a business asks me which one to deploy, the honest answer is rarely "this one." It is "depends on what you need them to do." This piece breaks down where each genuinely wins, where each loses, and how to pick.',
+      },
+      {
+        heading: 'The high-level positioning',
+        body: 'OpenAI built ChatGPT to be the default AI for everyone — broad, integrated, multimodal, with a vast ecosystem of plugins and connections. Anthropic built Claude as the AI for nuanced thinking, careful reasoning, and long-document analysis — narrower in surface area, deeper in capability per task. Both are excellent. They are excellent at different things.',
+      },
+      {
+        heading: 'Where Claude wins',
+        body: 'Claude leads independent benchmarks for coding (Claude Code is the most-deployed agentic coding tool in engineering teams globally), nuanced writing (consistently scores higher on instruction-following and tone), and long-document analysis (a 200,000-token context window handles entire contract bundles or annual reports in one conversation). It also leads for careful, multi-step reasoning where accuracy outweighs speed — legal review, compliance analysis, due diligence synthesis. The Projects feature gives Claude persistent memory across conversations, which is particularly valuable for ongoing client work or any task requiring consistent context.',
+      },
+      {
+        heading: 'Where ChatGPT wins',
+        body: 'ChatGPT is the better default for general-purpose business productivity. Its multimodal capability is broader (voice mode is the leading real-time conversational AI; DALL-E 3 produces high-quality images natively). Its real-time web search is more polished than Claude\'s research workflows. The Custom GPTs ecosystem and the plugin library mean there are off-the-shelf tools for almost anything. Operator and ChatGPT Agents are further ahead than equivalent Claude features for autonomous web tasks. And the third-party integration ecosystem — Zapier, Microsoft, Google, Salesforce — is significantly broader.',
+      },
+      {
+        heading: 'Pricing and tiers',
+        body: 'At the consumer tier the products are essentially identical: $20 per month for the professional plan, free tier with limits, enterprise plans starting around $30 per user per month. Claude Team starts at five users and scales to 50 with shared workspaces; ChatGPT Team scales to 149 users. Both enterprise plans add SSO, admin controls, usage analytics, and data isolation. Anthropic is slightly more generous on enterprise context window. OpenAI has a more granular pricing structure for API usage, which matters if you are building products on top of the platform.',
+      },
+      {
+        heading: 'Enterprise governance and data privacy',
+        body: 'Both platforms now offer SOC 2 Type II compliance, data residency options, no training on enterprise conversations, and granular admin controls. Claude has historically led on a "constitutional AI" approach to safety; ChatGPT has caught up significantly. For regulated industries — finance, healthcare, legal — the practical difference is often integration with your existing identity provider and your existing audit infrastructure. Both are now mature enough that the differentiator is rarely the security model itself.',
+      },
+      {
+        heading: 'How to choose',
+        body: 'For most mid-market businesses the real answer is "both, for different jobs." Use ChatGPT as the default for general productivity, drafting, multimodal work, and broad integration. Use Claude for the heavy reasoning tasks — long documents, careful analysis, code, anything where the cost of being wrong is high. If you must pick one because of procurement or licence constraints, the question becomes: what dominates your team\'s daily work? If it is general writing, customer-facing content, multimodal creation, and integration with the broader software ecosystem — ChatGPT. If it is document-heavy analysis, technical work, and structured reasoning — Claude.',
+      },
+      {
+        heading: 'Practical buying advice',
+        body: 'Run a 30-day pilot with both. Pick five high-frequency tasks across your team — an email draft, a contract review, a financial analysis, a code review, a customer support response. Run each task through both platforms. The right answer becomes obvious within three weeks. Do not rely on benchmarks alone — the gap between top-line benchmark scores and actual fit for your team is large enough that benchmarks should never be the deciding factor.',
+      },
+      {
+        body: 'One final point on vendor strategy: a healthy AI tooling strategy at mid-market scale typically includes both, plus at least one specialist (Perplexity for research, Copilot if you are heavy in Microsoft 365, NotebookLM if you have document libraries to interrogate). Picking one platform and pretending it does everything is a false economy. The marginal cost of running both is small; the marginal capability gained is significant.',
+      },
+    ],
+  },
   {
     slug: 'emerging-ai-roles-future',
     title: 'The New AI Org: Roles Being Created Right Now — and the Jobs Coming in the Next Five Years',
@@ -24,6 +248,11 @@ export const articles: Article[] = [
     date: '2026-04-15',
     readTime: '8 min read',
     category: 'Leadership',
+    keyTakeaways: [
+      'Chief AI Officer postings rose 73% between 2022 and 2024 — the role is becoming a permanent C-suite fixture, not a passing trend.',
+      'AI Architects are the missing connective tissue between strategy and scale; most organisations realise they need one about six months into a programme.',
+      'Within five years, AI will be embedded across every department with local champions reporting to a CAIO at board level — the businesses building this capability now have a compounding structural advantage.',
+    ],
     tags: ['AI Team', 'Future of Work', 'CAIO', 'AI Architect', 'Hiring'],
     cta: {
       label: 'Free Resource',
@@ -80,6 +309,11 @@ export const articles: Article[] = [
     date: '2026-03-12',
     readTime: '7 min read',
     category: 'AI Strategy',
+    keyTakeaways: [
+      '78% of organisations now use AI in at least one business function — but most stay stuck at pilot, never reaching enterprise-wide value.',
+      'Three failure modes repeat across every stalled programme: technology-first thinking, data debt, and the capability gap.',
+      'Scaling AI is not a technology problem — it is an organisational problem solved by active sponsorship, fit-for-purpose data, and ongoing capability building.',
+    ],
     tags: ['AI Readiness', 'Pilot to Scale', 'Transformation'],
     content: [
       {
@@ -119,6 +353,11 @@ export const articles: Article[] = [
     date: '2026-03-24',
     readTime: '5 min read',
     category: 'Leadership',
+    keyTakeaways: [
+      'Gartner reports an average return of $3.70 for every $1 invested in AI — but the variance is enormous, and the businesses winning are those moving with clarity, not speed.',
+      'Vague objectives produce vague results — every successful AI programme begins with a specific, measurable business problem, not "we need AI".',
+      'AI programmes without a single accountable internal owner fail; the technology rarely is the issue.',
+    ],
     tags: ['AI Strategy', 'C-Suite', 'Investment'],
     content: [
       {
@@ -160,6 +399,11 @@ export const articles: Article[] = [
     date: '2026-02-18',
     readTime: '6 min read',
     category: 'AI Strategy',
+    keyTakeaways: [
+      'Boards do not reject AI investment cases because they doubt AI — 91% of senior executives believe AI is critical to success within five years. They reject cases that don\'t speak board language: risk, return, accountability.',
+      'Conservative financial modelling is the most-approved approach: a board that approves a 20% gain and gets 25% becomes an advocate; one that approves 40% and gets 25% feels misled.',
+      'Phasing the investment in three gates — focused pilot, scaled deployment, enterprise rollout — reduces commitment at each decision point and dramatically improves approval rates.',
+    ],
     tags: ['Business Case', 'Board', 'ROI', 'AI Investment'],
     content: [
       {
@@ -203,6 +447,11 @@ export const articles: Article[] = [
     date: '2026-02-05',
     readTime: '5 min read',
     category: 'AI Strategy',
+    keyTakeaways: [
+      'PwC research shows industries deploying AI are seeing 4x the productivity growth of those that are not — the gap is widening every quarter, not closing.',
+      'A mid-market professional services firm of 200 staff at $200/hour where AI saves three hours per person per week leaves around $6.2M in annual productivity value on the table for every year it waits.',
+      '"Wait and see" is not the safe option — capability, talent, customer expectations, and operating cost all compound against businesses that delay.',
+    ],
     tags: ['AI Adoption', 'Competitive Advantage', 'Strategy'],
     content: [
       {
@@ -243,6 +492,11 @@ export const articles: Article[] = [
     date: '2026-01-22',
     readTime: '6 min read',
     category: 'Industry',
+    keyTakeaways: [
+      'Professional services firms — law, consulting, accounting — sit on some of the highest-value AI use cases of any sector: knowledge-intensive, document-heavy, and billed by the hour.',
+      'The strongest ROI consistently comes from four areas: document analysis, research and precedent, proposal and content generation, and financial analysis.',
+      'Successful firms position AI as a force multiplier for expertise — not a replacement for it. Internal efficiency wins beat client-facing applications when starting out.',
+    ],
     tags: ['Professional Services', 'Legal', 'Consulting', 'AI Implementation'],
     content: [
       {
@@ -279,6 +533,11 @@ export const articles: Article[] = [
     date: '2026-01-08',
     readTime: '8 min read',
     category: 'Implementation',
+    keyTakeaways: [
+      '9 in 10 mid-market businesses fail their first AI project because of data — not the model. Poor data is the single most common reason AI programmes fail.',
+      'AI-ready data has four properties: it is accessible (not siloed), consistent (standardised), accurate (quality-controlled), and sufficient (in volume) for the use case.',
+      'Data readiness is not a prerequisite to starting AI — it is a parallel workstream. The businesses that progress fastest scope first use cases to data they already have in reasonable shape, not perfect.',
+    ],
     tags: ['Data Strategy', 'Data Governance', 'AI Readiness', 'Implementation'],
     content: [
       {
