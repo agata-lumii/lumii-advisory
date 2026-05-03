@@ -374,6 +374,10 @@ export const articles: Article[] = [
     date: '2026-04-15',
     readTime: '8 min read',
     category: 'Leadership',
+    heroImage: {
+      src: '/images/insights/team-hero.png',
+      alt: 'Illustration of a professional casting multiple shadows representing different emerging AI roles — CAIO, AI Architect, Prompt Engineer, and more',
+    },
     keyTakeaways: [
       'Chief AI Officer postings rose 73% between 2022 and 2024 — the role is becoming a permanent C-suite fixture, not a passing trend.',
       'AI Architects are the missing connective tissue between strategy and scale; most organisations realise they need one about six months into a programme.',
@@ -413,6 +417,13 @@ export const articles: Article[] = [
       {
         heading: 'The Jobs Being Born Right Now',
         body: "Beyond the roles above, a second wave of AI-adjacent titles is beginning to appear in job boards and org charts. AI Operations Manager — responsible for the day-to-day running of AI systems in production, monitoring performance, managing the tooling stack, handling incidents. AI Trainer or RLHF Specialist — responsible for curating the training data and human feedback loops that determine how well a custom AI model performs. Human-AI Interaction Designer — designing the experience of working alongside AI, not just the prompts but the entire workflow, the handoffs, the trust signals. These roles do not yet have standard titles or descriptions. In three years, they will.",
+      },
+      {
+        image: {
+          src: '/images/insights/role-expansion.png',
+          alt: 'Diagram showing role evolution from Single Role to Augmented Role to Expanded Role, with interconnected nodes illustrating how AI expands individual scope and team structure',
+          caption: 'The AI effect on roles: individual jobs become augmented, then expanded into new team structures.',
+        },
       },
       {
         heading: 'What AI Teams Look Like in 2–5 Years',
