@@ -45,6 +45,7 @@
 
 ## Insights
 
+- [Codex vs Claude Code vs OpenHands: AI Coding Agents Compared](https://lumiiadvisory.com/insights/ai-coding-agents-compared): Strengths, weaknesses, and business fit for the three leading AI coding agents — cloud-based Codex, local-CLI Claude Code, and open-source self-hostable OpenHands
 - [Shadow AI: The Mid-Market Governance Crisis](https://lumiiadvisory.com/insights/shadow-ai-mid-market): Why employees are already using AI you don't know about, why bans backfire, and the 5-part governance framework — sanctioned tool list, data classification, training, monitoring, incident response
 - [ChatGPT vs Claude for Business](https://lumiiadvisory.com/insights/chatgpt-vs-claude-business): Honest comparison — where each platform genuinely wins and how to pick
 - [Microsoft Copilot vs ChatGPT Enterprise for Mid-Market](https://lumiiadvisory.com/insights/copilot-vs-chatgpt-enterprise): Embedded vs standalone AI, pricing maths, and the dual-deployment pattern that actually works

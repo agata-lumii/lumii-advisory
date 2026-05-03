@@ -22,6 +22,75 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'ai-coding-agents-compared',
+    title: 'Codex vs Claude Code vs OpenHands: The Honest Comparison for Business',
+    metaTitle: 'Codex vs Claude Code vs OpenHands: AI Coding Agents Compared (2026)',
+    metaDescription:
+      'OpenAI Codex, Claude Code, and OpenHands solve different coding problems for business. Strengths, weaknesses, data privacy implications, and which fits your team.',
+    excerpt:
+      'Three AI coding agents dominate the conversation in 2026 — OpenAI Codex, Claude Code, and the open-source OpenHands. Each solves a genuinely different problem. Picking the wrong one for your team, your stack, and your data obligations is an expensive lesson.',
+    date: '2026-05-03',
+    readTime: '9 min read',
+    category: 'Comparison',
+    heroImage: {
+      src: '/images/insights/coding-hero.png',
+      alt: 'Developer working at a laptop with three floating panels representing different AI coding tools — structured code, an AI model diagram, and a terminal interface',
+    },
+    keyTakeaways: [
+      'Codex runs in OpenAI\'s sandboxed cloud — minimal setup, strong for greenfield tasks, but all code leaves your environment and compliance needs careful review in regulated industries.',
+      'Claude Code runs locally with a 200,000-token context window — the strongest performer on complex, interconnected codebases, but requires comfort with the command line.',
+      'OpenHands is the open-source alternative: self-hostable, no vendor lock-in, and free beyond API costs — but requires meaningful technical investment to configure and maintain.',
+    ],
+    tags: ['Codex', 'Claude Code', 'OpenHands', 'AI Coding', 'Developer Tools', 'Comparison'],
+    cta: {
+      label: 'AI Tools Directory',
+      title: '60+ AI tools mapped for business',
+      description: 'Every major AI platform assessed by category — with pricing, use cases, and direct links.',
+      href: '/resources/ai-tools',
+    },
+    content: [
+      {
+        body: 'The AI coding agent market has compressed years of developer tooling evolution into 18 months. What began as autocomplete — an AI suggestion you could tab to accept — has become something categorically different: autonomous agents that read your codebase, understand the problem, write code, run it, catch the errors, fix them, and commit the result. Three tools have emerged as the most discussed in business settings: OpenAI\'s Codex, Anthropic\'s Claude Code, and OpenHands — the most capable open-source alternative. They are not interchangeable. The differences between them affect data security, developer productivity, total cost, and the kind of work each tool can and cannot do reliably.',
+      },
+      {
+        heading: 'What AI coding agents actually do',
+        body: 'Unlike AI assistants that generate code snippets on request, agentic coding tools operate autonomously across multiple files. They read an entire codebase, understand how components relate, plan an implementation, write the code, run tests, interpret failures, fix them, and iterate until the task is complete — with limited human intervention. The practical business implication is significant: a developer working with a capable coding agent can, in some cases, complete in an hour what previously took a day. Across a development team at scale, this compounds fast. But the gains are not uniform across tools or task types — which is where the comparison matters.',
+      },
+      {
+        heading: 'OpenAI Codex',
+        body: 'Codex — relaunched by OpenAI in 2025 as a cloud-based agentic coding platform — runs entirely within OpenAI\'s sandboxed infrastructure. Tasks are submitted in natural language, executed in a secure cloud environment, and returned with results. No local setup beyond credentials. No compute burden on the developer\'s machine. For teams already embedded in the OpenAI ecosystem — using ChatGPT Enterprise, the GPT-4 or o-series APIs, or OpenAI\'s developer platform — Codex integrates cleanly into existing workflows. It performs strongly on greenfield work: generating new features, writing tests, producing boilerplate, and completing well-defined tasks in mainstream languages including Python, JavaScript, TypeScript, and SQL. For business leaders who want AI coding capability without asking their developers to change how they work, Codex has the lowest friction starting point.',
+      },
+      {
+        heading: 'Where Codex falls short',
+        body: 'The cloud-based architecture that makes Codex easy to start with is also its primary constraint. Every task — including your code, your architecture, your business logic — is processed through OpenAI\'s cloud. For businesses in regulated industries where data sovereignty requirements are explicit (financial services, healthcare, legal, government-adjacent), this needs careful legal and compliance review before deployment. At scale, API costs accumulate faster than most teams anticipate. And because Codex runs in a sandboxed environment isolated from your actual infrastructure, it can struggle with tasks that require understanding the full depth of an established, interconnected codebase — the kind that most mature businesses actually have. It is strongest on isolated, well-defined tasks. It is weakest when the work requires navigating a system with years of accumulated complexity.',
+      },
+      {
+        heading: 'Claude Code',
+        body: 'Claude Code — Anthropic\'s terminal-based coding agent — operates on a fundamentally different architecture. It runs locally, inside your development environment via the command line, with direct access to your actual file system. This means Claude Code reads your real codebase in full, without abstraction or summarisation, and makes changes that account for how the system actually works — not an approximation of it. The 200,000-token context window is the deepest available among the mainstream agents, and in practice it is what enables Claude Code to handle large, highly interconnected codebases where other tools lose the thread. Developers using Claude Code report a qualitative difference in the tool\'s ability to explain its reasoning — what it is doing, why, and what the risks are — which matters in environments where auditability and careful decision-making are non-negotiable. In independent benchmarks and practitioner evaluations across 2025 and 2026, Claude Code has consistently placed at or near the top for complex, multi-file, context-heavy coding tasks.',
+      },
+      {
+        heading: 'Where Claude Code falls short',
+        body: 'Claude Code is a command-line tool. That is not a trivial limitation. Developers who are not comfortable working in a terminal will find it inaccessible — and it cannot currently be used meaningfully by non-developers to self-serve on technical tasks. For businesses hoping AI coding agents will give non-technical staff the ability to build and modify software independently, Claude Code is not the answer. It also requires a Claude subscription or Anthropic API access, and because it runs locally, a developer\'s machine carries the execution burden. On fast, isolated, low-complexity tasks where Codex often performs comparably, the terminal-based friction can outweigh the capability advantage. Claude Code rewards technical teams willing to invest time learning its patterns; it does not reward organisations looking for immediate, low-effort deployment.',
+      },
+      {
+        heading: 'OpenHands: the open-source case',
+        body: 'OpenHands — formerly OpenDevin, now one of the most actively developed open-source coding agents — represents a third category. Unlike Codex (commercial, cloud-only) or Claude Code (commercial, local CLI), OpenHands is open-source, self-hostable, and compatible with multiple LLM backends including Claude, GPT-4, and locally-run models such as Llama and Mistral. For businesses where data sovereignty is non-negotiable — where the requirement is that code never leaves the organisation\'s own infrastructure — OpenHands is the most credible option. It can be deployed on-premises or within a private cloud, operates through a browser-based web interface that is more accessible than a CLI, and carries no per-seat licensing cost beyond the underlying model API. The open-source nature also means the product is not subject to pricing changes or platform decisions by a single vendor — a risk that matters more as AI tooling becomes core infrastructure.',
+      },
+      {
+        heading: 'Where OpenHands falls short',
+        body: 'OpenHands requires meaningful technical investment to configure and maintain. Unlike Codex or Claude Code — which a developer can be productive with inside an hour — OpenHands requires infrastructure provisioning, model configuration, ongoing maintenance, and the technical capacity to troubleshoot when things break. There is no enterprise support tier, no SLA, and no accountability when the tool fails during a critical delivery. Output quality is directly dependent on the backend model chosen: OpenHands running on a frontier model performs well; running on a weaker local model performs significantly worse. This variability is a real risk in production environments where consistency matters. For smaller technical teams without dedicated DevOps capacity, the operational overhead can easily exceed the savings from avoiding per-seat licensing.',
+      },
+      {
+        heading: 'Which tool fits which situation',
+        body: 'The decision is less about which tool is best and more about which constraints dominate your situation. If your team is already on OpenAI\'s platform and the work is primarily greenfield development or well-scoped tasks, Codex offers the lowest friction path to meaningful productivity gains — with a compliance review required if your industry has data sovereignty obligations. If your team is technically strong, comfortable in the terminal, and working with large, complex, established codebases where reasoning quality matters, Claude Code is the highest-ceiling option and the one most likely to perform well on the difficult tasks your developers actually face. If your organisation has hard data sovereignty requirements that preclude sending code to any third-party cloud, and you have the internal infrastructure and DevOps capacity to self-host, OpenHands is the only viable option among the three.',
+      },
+      {
+        heading: 'The one question that settles it',
+        body: 'Before evaluating features, answer this: where does your code need to live? If the answer is "our own infrastructure only," the decision is made — OpenHands, with all its setup complexity, is the path. If external cloud is permissible, the decision shifts to developer workflow. CLI-comfortable technical teams working on complex systems should evaluate Claude Code. Teams wanting the lowest-friction deployment on OpenAI\'s infrastructure should evaluate Codex. Most businesses will benefit from running a time-boxed evaluation — two to four weeks, a real project, a defined success metric — before committing. Build the evaluation capability, not just the tool preference. The AI coding agent market is moving fast enough that the right choice in 2026 may not be the right choice in 2027.',
+      },
+    ],
+  },
+  {
     slug: 'shadow-ai-mid-market',
     title: 'Shadow AI: The Governance Crisis Every Mid-Market Business Already Has',
     metaTitle: 'Shadow AI: The Mid-Market Governance Crisis (And How to Fix It)',
