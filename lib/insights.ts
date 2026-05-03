@@ -621,6 +621,10 @@ export const articles: Article[] = [
     date: '2026-02-18',
     readTime: '6 min read',
     category: 'AI Strategy',
+    heroImage: {
+      src: '/images/insights/boardroom.png',
+      alt: 'Illustration of a professional presenting an AI business case board showing six sections — business opportunity, use case, value, feasibility, investment, and impact',
+    },
     keyTakeaways: [
       'Boards do not reject AI investment cases because they doubt AI — 91% of senior executives believe AI is critical to success within five years. They reject cases that don\'t speak board language: risk, return, accountability.',
       'Conservative financial modelling is the most-approved approach: a board that approves a 20% gain and gets 25% becomes an advocate; one that approves 40% and gets 25% feels misled.',
