@@ -575,6 +575,10 @@ export const articles: Article[] = [
     date: '2026-03-24',
     readTime: '5 min read',
     category: 'Leadership',
+    heroImage: {
+      src: '/images/insights/ceo-ai-questions.png',
+      alt: 'Illustration of a business leader standing before a winding path with a question mark overhead, flanked by AI investment considerations — strategy, ROI, risk, readiness, people, growth, efficiency, innovation',
+    },
     keyTakeaways: [
       'Gartner reports an average return of $3.70 for every $1 invested in AI — but the variance is enormous, and the businesses winning are those moving with clarity, not speed.',
       'Vague objectives produce vague results — every successful AI programme begins with a specific, measurable business problem, not "we need AI".',
