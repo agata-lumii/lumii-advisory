@@ -391,6 +391,10 @@ export const articles: Article[] = [
     date: '2026-04-22',
     readTime: '10 min read',
     category: 'Comparison',
+    heroImage: {
+      src: '/images/insights/chatgpt-claude.png',
+      alt: 'Illustration of a professional at a desk facing two diverging paths — one leading to the ChatGPT logo, one to the Anthropic Claude logo',
+    },
     keyTakeaways: [
       'Claude leads independent benchmarks for coding, long-document analysis, and nuanced writing; ChatGPT leads for general-purpose multimodal work, real-time web search, and the broadest third-party integration ecosystem.',
       'For most mid-market businesses the right answer is "both" — different tools for different jobs — but if you must pick one, the choice depends on whether your dominant use case is reasoning over long documents (Claude) or general-purpose productivity (ChatGPT).',
