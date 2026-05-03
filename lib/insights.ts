@@ -334,6 +334,10 @@ export const articles: Article[] = [
     date: '2026-04-25',
     readTime: '8 min read',
     category: 'Comparison',
+    heroImage: {
+      src: '/images/insights/chatgpt-copilot.png',
+      alt: 'Illustration of a professional at a desk comparing Microsoft Copilot and ChatGPT Enterprise side by side on two floating screens',
+    },
     keyTakeaways: [
       'Copilot lives inside your existing Microsoft 365 apps — Word, Excel, Teams, Outlook. ChatGPT Enterprise is a standalone AI workspace your team visits.',
       'Copilot wins for in-app assistance: drafting in Word, analysis in Excel, meeting notes in Teams. ChatGPT Enterprise wins for general-purpose AI capability: broader reasoning, larger context window, more flexible custom AI tooling.',
