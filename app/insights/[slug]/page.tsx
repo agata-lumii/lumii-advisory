@@ -92,70 +92,103 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <ReadingProgress />
-      {/* Hero */}
-      <section className="bg-near-black pt-40 pb-20 px-8 lg:px-12">
-        <div className="max-w-[860px] mx-auto">
-          <div className="flex items-center gap-4 mb-8">
-            <Link
-              href="/insights"
-              className="font-body text-[11px] tracking-[0.2em] uppercase text-gold/70 hover:text-gold transition-colors"
-            >
-              ← Insights
-            </Link>
-            <span className="text-warm-white/20">·</span>
-            <span className="font-body text-[11px] tracking-[0.15em] uppercase text-warm-white/40">
-              {article.category}
-            </span>
-          </div>
-          <h1 className="font-display font-light text-[clamp(36px,4.5vw,60px)] leading-[1.15] text-warm-white mb-6 tracking-[-0.01em]">
-            {article.title}
-          </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 font-light mb-10">
-            {article.excerpt}
-          </p>
-          <div className="flex items-center gap-6 pt-6 border-t border-warm-white/10">
-            <span className="font-body text-[12px] text-warm-white/40">{formatDate(article.date)}</span>
-            <span className="text-warm-white/20">·</span>
-            <span className="font-body text-[12px] text-warm-white/40">{article.readTime}</span>
-            <div className="flex gap-2 ml-auto">
-              {article.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="font-body text-[10px] tracking-[0.12em] uppercase text-warm-white/30 border border-warm-white/10 px-3 py-1"
-                >
-                  {tag}
-                </span>
-              ))}
+      {/* Hero — split layout when an article has a heroImage, single-column otherwise */}
+      {article.heroImage ? (
+        <section className="bg-near-black">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+            {/* Left: dark text column */}
+            <div className="pt-40 lg:pt-44 pb-16 lg:pb-20 px-8 lg:px-12 order-2 lg:order-1">
+              <div className="max-w-[640px] lg:ml-auto lg:mr-12">
+                <div className="flex items-center gap-4 mb-8">
+                  <Link
+                    href="/insights"
+                    className="font-body text-[11px] tracking-[0.2em] uppercase text-gold/70 hover:text-gold transition-colors"
+                  >
+                    ← Insights
+                  </Link>
+                  <span className="text-warm-white/20">·</span>
+                  <span className="font-body text-[11px] tracking-[0.15em] uppercase text-warm-white/40">
+                    {article.category}
+                  </span>
+                </div>
+                <h1 className="font-display font-light text-[clamp(34px,4vw,54px)] leading-[1.15] text-warm-white mb-6 tracking-[-0.01em]">
+                  {article.title}
+                </h1>
+                <p className="font-body text-[16px] leading-[1.75] text-warm-white/60 font-light mb-10">
+                  {article.excerpt}
+                </p>
+                <div className="flex items-center gap-6 pt-6 border-t border-warm-white/10 flex-wrap">
+                  <span className="font-body text-[12px] text-warm-white/40">{formatDate(article.date)}</span>
+                  <span className="text-warm-white/20">·</span>
+                  <span className="font-body text-[12px] text-warm-white/40">{article.readTime}</span>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {article.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="font-body text-[10px] tracking-[0.12em] uppercase text-warm-white/30 border border-warm-white/10 px-3 py-1"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Hero image (optional) */}
-      {article.heroImage && (
-        <section className="bg-warm-white pt-[clamp(40px,5vw,72px)] px-8 lg:px-12">
-          <div className="max-w-[1080px] mx-auto">
-            <figure className="relative w-full aspect-[3/2] overflow-hidden bg-ivory">
+            {/* Right: hero image on cream surface */}
+            <div className="relative bg-ivory min-h-[44vh] lg:min-h-[640px] order-1 lg:order-2 overflow-hidden">
               <Image
                 src={article.heroImage.src}
                 alt={article.heroImage.alt}
                 fill
                 priority
-                sizes="(max-width: 1080px) 100vw, 1080px"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-            </figure>
-            {article.heroImage.caption && (
-              <figcaption className="font-body text-[12px] text-ash font-light italic mt-3 text-center">
-                {article.heroImage.caption}
-              </figcaption>
-            )}
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className="bg-near-black pt-40 pb-20 px-8 lg:px-12">
+          <div className="max-w-[860px] mx-auto">
+            <div className="flex items-center gap-4 mb-8">
+              <Link
+                href="/insights"
+                className="font-body text-[11px] tracking-[0.2em] uppercase text-gold/70 hover:text-gold transition-colors"
+              >
+                ← Insights
+              </Link>
+              <span className="text-warm-white/20">·</span>
+              <span className="font-body text-[11px] tracking-[0.15em] uppercase text-warm-white/40">
+                {article.category}
+              </span>
+            </div>
+            <h1 className="font-display font-light text-[clamp(36px,4.5vw,60px)] leading-[1.15] text-warm-white mb-6 tracking-[-0.01em]">
+              {article.title}
+            </h1>
+            <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 font-light mb-10">
+              {article.excerpt}
+            </p>
+            <div className="flex items-center gap-6 pt-6 border-t border-warm-white/10">
+              <span className="font-body text-[12px] text-warm-white/40">{formatDate(article.date)}</span>
+              <span className="text-warm-white/20">·</span>
+              <span className="font-body text-[12px] text-warm-white/40">{article.readTime}</span>
+              <div className="flex gap-2 ml-auto">
+                {article.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-body text-[10px] tracking-[0.12em] uppercase text-warm-white/30 border border-warm-white/10 px-3 py-1"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       )}
 
       {/* Article body */}
-      <section className={`bg-warm-white px-8 lg:px-12 ${article.heroImage ? 'pt-[clamp(40px,5vw,72px)] pb-[clamp(60px,8vw,100px)]' : 'py-[clamp(60px,8vw,100px)]'}`}>
+      <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
         <div className="max-w-[720px] mx-auto">
           {/* TL;DR — Key Takeaways */}
           {article.keyTakeaways && article.keyTakeaways.length > 0 && (
