@@ -151,6 +151,10 @@ export const articles: Article[] = [
     date: '2026-04-27',
     readTime: '6 min read',
     category: 'Comparison',
+    heroImage: {
+      src: '/images/insights/ai-engagement-models-compared.png',
+      alt: 'Illustration of a professional standing before four illuminated doorways of different shapes, representing the choice between AI engagement models — workshops, sprints, and retainers',
+    },
     keyTakeaways: [
       'Workshops are the right choice when leadership alignment is the primary blocker — typically a single day, fixed scope, with a clear outcome and modest commitment.',
       'Project Sprints suit organisations with one specific high-value AI use case and a 6–12 week window to deliver it — fixed scope, fixed price, clear deliverable.',
