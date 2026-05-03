@@ -277,6 +277,10 @@ export const articles: Article[] = [
     date: '2026-04-26',
     readTime: '7 min read',
     category: 'Comparison',
+    heroImage: {
+      src: '/images/insights/gemini-copilot.png',
+      alt: 'Illustration of a professional at a laptop comparing Gemini and Copilot side by side on two floating screens',
+    },
     keyTakeaways: [
       'Gemini for Workspace and Microsoft 365 Copilot solve the same problem inside different software stacks — neither makes sense to deploy independently of the underlying productivity suite.',
       'Gemini\'s standout differentiators are the 2-million-token context window in Gemini 2.5 Pro and NotebookLM for document-heavy research; Copilot\'s standout is the depth of integration across the Microsoft enterprise stack including SharePoint and Teams.',
