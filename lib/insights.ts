@@ -531,6 +531,10 @@ export const articles: Article[] = [
     date: '2026-03-12',
     readTime: '7 min read',
     category: 'AI Strategy',
+    heroImage: {
+      src: '/images/insights/ai-readiness.png',
+      alt: 'Illustration of a business leader standing at the edge of a gap — chaotic complexity on the left, structured AI-driven growth on the right, connected by a narrow path',
+    },
     keyTakeaways: [
       '78% of organisations now use AI in at least one business function — but most stay stuck at pilot, never reaching enterprise-wide value.',
       'Three failure modes repeat across every stalled programme: technology-first thinking, data debt, and the capability gap.',
