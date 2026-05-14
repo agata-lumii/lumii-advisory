@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import AboutSection from '@/components/AboutSection'
 import CTABanner from '@/components/CTABanner'
 import SectionHeader from '@/components/SectionHeader'
