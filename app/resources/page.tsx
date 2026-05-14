@@ -15,6 +15,17 @@ export const metadata: Metadata = {
 
 const resources = [
   {
+    type: 'Free Ebook',
+    title: 'Find Your Light in the Age of AI',
+    description:
+      'The 90-day AI strategy system for business leaders — from AI curiosity to confident, commercially-grounded execution. Six chapters covering readiness, use case selection, business case, pilot design, scaling, and a week-by-week action plan.',
+    tags: ['90-Day System', 'Strategy', 'Leadership', 'Free'],
+    href: '/resources/ebook',
+    cta: 'Download Free',
+    highlight: true,
+    bullets: ['6-part framework for AI leaders', '90-day week-by-week roadmap', 'Readiness diagnostic included', 'By Agata Adamczak, Lumii Advisory'],
+  },
+  {
     type: 'Reference Guide',
     title: 'AI Team Structure',
     description:

@@ -31,12 +31,18 @@ const resourceLinks = [
   },
   {
     number: '05',
+    href: '/resources/ebook',
+    label: 'Free Ebook',
+    title: 'Find Your Light in the Age of AI',
+  },
+  {
+    number: '06',
     href: '/ai-case-studies',
     label: 'Case Studies',
     title: 'AI in Action',
   },
   {
-    number: '06',
+    number: '07',
     href: '/faq',
     label: 'FAQ',
     title: 'Common Questions',
