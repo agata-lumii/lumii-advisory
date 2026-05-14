@@ -79,6 +79,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Ebook banner */}
+      <section className="bg-near-black py-[clamp(60px,8vw,90px)] px-8 lg:px-12">
+        <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div>
+            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-3">
+              Free Ebook
+            </p>
+            <h2 className="font-display font-light text-[clamp(24px,2.5vw,36px)] text-warm-white leading-[1.2] mb-3">
+              Find Your Light in the Age of AI.
+            </h2>
+            <p className="font-body text-[15px] text-warm-white/60 font-light leading-[1.8] max-w-[520px]">
+              The 90-day AI strategy system for business leaders — from first principles to a scaled capability. Free download, no subscription.
+            </p>
+          </div>
+          <Link
+            href="/resources/ebook"
+            className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
+          >
+            Download Free →
+          </Link>
+        </div>
+      </section>
+
       <VerticalsSection />
       <AboutSection />
       <CTABanner />

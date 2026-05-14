@@ -310,6 +310,29 @@ export default function WorkWithUsPage() {
         </div>
       </section>
 
+      {/* Not ready yet — ebook strip */}
+      <section className="bg-ivory border-t border-parchment py-[clamp(60px,7vw,90px)] px-8 lg:px-12">
+        <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div>
+            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-3">
+              Not ready to engage yet?
+            </p>
+            <h2 className="font-display font-light text-[clamp(22px,2.5vw,34px)] text-near-black leading-[1.25] mb-3">
+              Start with the free ebook.
+            </h2>
+            <p className="font-body text-[14px] text-slate-warm font-light leading-[1.8] max-w-[500px]">
+              <em className="italic">Find Your Light in the Age of AI</em> — the 90-day AI strategy system for business leaders. Download free, keep forever.
+            </p>
+          </div>
+          <Link
+            href="/resources/ebook"
+            className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
+          >
+            Download Free →
+          </Link>
+        </div>
+      </section>
+
       <CTABanner />
     </>
   )

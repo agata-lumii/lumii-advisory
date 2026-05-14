@@ -28,12 +28,20 @@ export default function CTABanner() {
           <p className="font-body text-[17px] leading-[1.75] text-near-black/70 font-light max-w-[560px] mx-auto mb-10">
             Whether you're at the start of your digital transformation or deep into it — a single conversation with Lumii can change the trajectory.
           </p>
-          <Link
-            href="/contact"
-            className="font-body text-[12px] tracking-[0.12em] uppercase text-warm-white bg-near-black px-10 py-4 hover:-translate-y-px transition-all duration-200 inline-block"
-          >
-            Book a Discovery Call
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="font-body text-[12px] tracking-[0.12em] uppercase text-warm-white bg-near-black px-10 py-4 hover:-translate-y-px transition-all duration-200 inline-block"
+            >
+              Book a Discovery Call
+            </Link>
+            <Link
+              href="/resources/ebook"
+              className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black border border-near-black px-10 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
+            >
+              Get the Free Ebook
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

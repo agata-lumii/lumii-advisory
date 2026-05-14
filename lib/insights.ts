@@ -541,6 +541,12 @@ export const articles: Article[] = [
       'Scaling AI is not a technology problem — it is an organisational problem solved by active sponsorship, fit-for-purpose data, and ongoing capability building.',
     ],
     tags: ['AI Readiness', 'Pilot to Scale', 'Transformation'],
+    cta: {
+      label: 'Free Ebook',
+      title: 'Find Your Light in the Age of AI',
+      description: 'The 90-day AI strategy system — from readiness diagnostic to scaled capability. Free download.',
+      href: '/resources/ebook',
+    },
     content: [
       {
         body: 'Seventy-eight percent of organisations are now using AI in at least one business function. Yet only a fraction have moved beyond isolated pilots to enterprise-wide value. The gap between "we have an AI pilot running" and "AI is driving measurable business outcomes at scale" is where most transformation programmes quietly die.',
@@ -589,6 +595,12 @@ export const articles: Article[] = [
       'AI programmes without a single accountable internal owner fail; the technology rarely is the issue.',
     ],
     tags: ['AI Strategy', 'C-Suite', 'Investment'],
+    cta: {
+      label: 'Free Ebook',
+      title: 'Find Your Light in the Age of AI',
+      description: 'The 90-day AI strategy system for business leaders — six chapters, a week-by-week roadmap, free download.',
+      href: '/resources/ebook',
+    },
     content: [
       {
         body: "AI investment is accelerating across every sector. Gartner estimates that organisations now return an average of $3.70 for every $1 invested in AI — but that average conceals enormous variance. The businesses seeing the highest returns aren't the ones moving fastest. They're the ones moving with clarity. Before committing significant budget to AI, every CEO should be able to answer these five questions.",
@@ -639,6 +651,12 @@ export const articles: Article[] = [
       'Phasing the investment in three gates — focused pilot, scaled deployment, enterprise rollout — reduces commitment at each decision point and dramatically improves approval rates.',
     ],
     tags: ['Business Case', 'Board', 'ROI', 'AI Investment'],
+    cta: {
+      label: 'Free Ebook',
+      title: 'Find Your Light in the Age of AI',
+      description: 'The complete 90-day AI strategy system — including how to build the board-ready business case. Free download.',
+      href: '/resources/ebook',
+    },
     content: [
       {
         body: "Board approval for AI investment is harder to secure than most technology leaders expect. Not because boards are sceptical of AI — 91% of senior executives believe AI will be critical to business success within five years. It's because most business cases fail to speak the board's language: risk, return, and accountability.",
@@ -687,6 +705,12 @@ export const articles: Article[] = [
       '"Wait and see" is not the safe option — capability, talent, customer expectations, and operating cost all compound against businesses that delay.',
     ],
     tags: ['AI Adoption', 'Competitive Advantage', 'Strategy'],
+    cta: {
+      label: 'Free Ebook',
+      title: 'Find Your Light in the Age of AI',
+      description: 'Stop waiting. The 90-day AI strategy system gives you a clear path from zero to scaled capability. Free download.',
+      href: '/resources/ebook',
+    },
     content: [
       {
         body: 'Deciding to "wait and see" on AI feels like prudence. It looks responsible on a budget sheet. And in a world where the AI landscape changes every quarter, the logic of waiting for the technology to mature feels reasonable. But for many businesses, it is the most expensive strategic decision they will make this decade.',
@@ -732,6 +756,12 @@ export const articles: Article[] = [
       'Successful firms position AI as a force multiplier for expertise — not a replacement for it. Internal efficiency wins beat client-facing applications when starting out.',
     ],
     tags: ['Professional Services', 'Legal', 'Consulting', 'AI Implementation'],
+    cta: {
+      label: 'Free Ebook',
+      title: 'Find Your Light in the Age of AI',
+      description: 'The 90-day AI strategy system for business leaders — built for firms that need a clear, practical path. Free download.',
+      href: '/resources/ebook',
+    },
     content: [
       {
         body: "Professional services firms — law, consulting, accounting, advisory, architecture, engineering — sit on some of the highest-value AI use cases of any sector. Knowledge-intensive, document-heavy, and billing by the hour, these businesses have enormous amounts to gain from AI. And enormous amounts to lose if they get it wrong. The challenge isn't the technology. It's knowing where to start and how to implement without disrupting the trust that defines the business.",

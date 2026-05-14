@@ -106,7 +106,7 @@ export default function FAQPage() {
 
       {/* Still have questions */}
       <section className="bg-ivory py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-[1180px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-warm-white border border-parchment p-10">
             <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-4">
               Still have a question?
@@ -122,6 +122,23 @@ export default function FAQPage() {
               className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-3 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
             >
               Book a Discovery Call →
+            </Link>
+          </div>
+          <div className="bg-warm-white border border-parchment p-10">
+            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-4">
+              Free Ebook
+            </p>
+            <h2 className="font-display font-light text-[28px] text-near-black leading-[1.3] mb-4">
+              Start with the 90-day guide.
+            </h2>
+            <p className="font-body text-[14px] text-slate-warm font-light leading-[1.8] mb-8">
+              <em className="italic">Find Your Light in the Age of AI</em> — six chapters covering readiness, use case selection, business case, pilot design, and scaling. Free download.
+            </p>
+            <Link
+              href="/resources/ebook"
+              className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-3 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
+            >
+              Download Free →
             </Link>
           </div>
           <div className="bg-warm-white border border-parchment p-10">
