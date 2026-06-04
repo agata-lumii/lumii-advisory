@@ -25,7 +25,7 @@
 - [Retailers & D2C Brands](https://lumiiadvisory.com/who-we-help/retailers): Platform strategy, CRO, personalisation, and loyalty
 - [Professional Services Firms](https://lumiiadvisory.com/who-we-help/professional-services): AI for consultancies, law firms, and accounting practices
 - [Hospitality & Hotels](https://lumiiadvisory.com/who-we-help/hospitality): Booking optimisation, reputation management, and guest CRM
-- [Financial Services & FinTech](https://lumiiadvisory.com/who-we-help/financial-services): AI strategy, customer onboarding, and compliance-aware automation
+- [Financial Services & FinTech](https://lumiiadvisory.com/who-we-help/financial-services): Comprehensive AI use-case guide for Australian banks, super funds, wealth managers and FinTechs. Covers five high-ROI use cases — customer onboarding/KYC, fraud and AML, credit decisioning, customer service augmentation, compliance reporting — with proof points, APRA expectations, and a 6-question FAQ on AI in regulated financial services
 - [Healthcare & Allied Health](https://lumiiadvisory.com/who-we-help/healthcare): Patient journeys, online booking, AI admin tools, and CRM
 - [Startups & Scale-ups](https://lumiiadvisory.com/who-we-help/startups): Pre-Series B foundations for digital, data, and AI
 - [RTOs & Education Providers](https://lumiiadvisory.com/who-we-help/education): Enrolment journeys, student lifecycle CRM, and lead-gen content

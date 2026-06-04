@@ -25,8 +25,45 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
   const vertical = getVerticalBySlug(params.slug)
   if (!vertical) notFound()
 
+  // Inject FAQPage + Article schema only on AEO-priority verticals
+  // that have rich answer-first content. Others render as-is.
+  const hasRichContent = Boolean(vertical.directAnswer && vertical.useCases && vertical.faqs)
+
+  const faqSchema = hasRichContent
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: vertical.faqs!.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }
+    : null
+
+  const articleSchema = hasRichContent
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: vertical.metaTitle,
+        description: vertical.metaDescription,
+        author: { '@type': 'Person', name: 'Agata Adamczak', url: 'https://lumiiadvisory.com/about' },
+        publisher: { '@type': 'Organization', name: 'Lumii Advisory', url: 'https://lumiiadvisory.com' },
+        datePublished: vertical.lastUpdated,
+        dateModified: vertical.lastUpdated,
+        url: `https://lumiiadvisory.com/who-we-help/${vertical.slug}`,
+        mainEntityOfPage: `https://lumiiadvisory.com/who-we-help/${vertical.slug}`,
+      }
+    : null
+
   return (
     <>
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
+      {articleSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      )}
       {/* ── HERO ── */}
       <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
@@ -69,6 +106,114 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </section>
+
+      {/* ── DIRECT ANSWER — answer-first content for AEO-priority verticals ── */}
+      {hasRichContent && (
+        <section className="bg-warm-white py-[clamp(70px,8vw,110px)] px-8 lg:px-12">
+          <div className="max-w-[860px] mx-auto">
+            <p className="font-body text-[12px] tracking-[0.22em] uppercase text-gold mb-6">
+              The Direct Answer
+            </p>
+            <h2 className="font-display font-light text-[clamp(28px,3vw,42px)] leading-[1.15] text-near-black mb-8 tracking-[-0.005em]">
+              How is AI being used in {vertical.category.toLowerCase()} today?
+            </h2>
+            <p className="font-body text-[18px] leading-[1.85] text-near-black font-light">
+              {vertical.directAnswer}
+            </p>
+            {vertical.lastUpdated && (
+              <p className="font-body text-[12px] tracking-[0.15em] uppercase text-ash mt-10 pt-8 border-t border-parchment">
+                Last updated{' '}
+                {new Date(vertical.lastUpdated).toLocaleDateString('en-AU', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })}{' '}
+                · By Agata Adamczak, Founder of Lumii Advisory
+              </p>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* ── HIGH-VALUE USE CASES — deep, answer-first sections ── */}
+      {hasRichContent && (
+        <section className="bg-stone py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
+          <div className="max-w-[1180px] mx-auto">
+            <div className="text-center mb-20 max-w-[820px] mx-auto">
+              <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-5">
+                The Highest-Value Use Cases
+              </p>
+              <h2 className="font-display font-light text-[clamp(36px,4.2vw,56px)] leading-[1.08] text-near-black mb-6 tracking-[-0.01em]">
+                Where AI delivers the strongest return in{' '}
+                <em className="italic text-gold">{vertical.category.toLowerCase()}.</em>
+              </h2>
+              <p className="font-body text-[17px] leading-[1.8] text-slate-warm font-light">
+                Each use case is structured for measurable outcomes — with the proof point and the practical pattern that works inside a regulated environment.
+              </p>
+            </div>
+
+            <div className="space-y-16 lg:space-y-24">
+              {vertical.useCases!.map((uc) => (
+                <article
+                  key={uc.number}
+                  id={uc.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}
+                  className="grid grid-cols-1 lg:grid-cols-[0.42fr_1.58fr] gap-10 lg:gap-16 items-start"
+                >
+                  <div className="lg:sticky lg:top-32">
+                    <span className="font-display text-[72px] lg:text-[88px] font-light text-gold/30 leading-none block mb-4">
+                      {uc.number}
+                    </span>
+                    <div className="w-10 h-px bg-gold mb-6" />
+                    <h3 className="font-display font-light text-[clamp(26px,2.8vw,36px)] leading-[1.18] text-near-black tracking-[-0.005em] mb-4">
+                      {uc.title}
+                    </h3>
+                    <p className="font-body text-[15px] leading-[1.7] text-slate-warm font-light italic">
+                      {uc.question}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-body text-[17px] leading-[1.9] text-near-black/85 font-light mb-8">
+                      {uc.body}
+                    </p>
+                    {uc.stat && (
+                      <div className="bg-near-black p-7 lg:p-9 mb-8">
+                        <p className="font-display text-[clamp(36px,4vw,52px)] font-light text-gold leading-none mb-4">
+                          {uc.stat.value}
+                        </p>
+                        <p className="font-body text-[15px] leading-[1.7] text-warm-white/80 font-light mb-3">
+                          {uc.stat.label}
+                        </p>
+                        {uc.stat.source && (
+                          <p className="font-body text-[11px] tracking-[0.18em] uppercase text-warm-white/45">
+                            Source: {uc.stat.source}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                    <div className="bg-warm-white border-l-2 border-gold/60 p-7 lg:p-8">
+                      <p className="font-body text-[11px] tracking-[0.22em] uppercase text-gold mb-4">
+                        The pattern that works
+                      </p>
+                      <ul className="space-y-3 list-none p-0 m-0">
+                        {uc.examples.map((ex, j) => (
+                          <li key={j} className="flex items-start gap-3">
+                            <span className="font-display text-[13px] text-gold/70 flex-shrink-0 mt-1">
+                              {String(j + 1).padStart(2, '0')}
+                            </span>
+                            <p className="font-body text-[15px] leading-[1.7] text-near-black font-light">
+                              {ex}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── THE CHALLENGE ── */}
       <section className="bg-ivory py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
@@ -210,6 +355,35 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ — answer-first Q&A for AEO-priority verticals ── */}
+      {hasRichContent && (
+        <section className="bg-ivory py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
+          <div className="max-w-[860px] mx-auto">
+            <div className="mb-14">
+              <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-5">
+                Frequently Asked
+              </p>
+              <h2 className="font-display font-light text-[clamp(34px,4vw,52px)] leading-[1.1] text-near-black tracking-[-0.01em]">
+                AI in {vertical.category.toLowerCase()},{' '}
+                <em className="italic text-gold">answered.</em>
+              </h2>
+            </div>
+            <div className="divide-y divide-parchment">
+              {vertical.faqs!.map((f, i) => (
+                <div key={i} className="py-8 lg:py-10">
+                  <h3 className="font-display font-light text-[clamp(20px,2vw,26px)] leading-[1.3] text-near-black mb-5 tracking-[-0.005em]">
+                    {f.q}
+                  </h3>
+                  <p className="font-body text-[16px] leading-[1.85] text-slate-warm font-light">
+                    {f.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <CTABanner />
     </>

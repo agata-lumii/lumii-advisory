@@ -1,3 +1,22 @@
+export interface UseCase {
+  number: string
+  title: string
+  question: string
+  body: string
+  stat?: {
+    value: string
+    label: string
+    source?: string
+    sourceUrl?: string
+  }
+  examples: string[]
+}
+
+export interface VerticalFAQ {
+  q: string
+  a: string
+}
+
 export interface Vertical {
   number: string
   slug: string
@@ -10,6 +29,15 @@ export interface Vertical {
   services: string[]
   metaTitle: string
   metaDescription: string
+  // Optional rich content for AEO-priority verticals.
+  // When present, the [slug] page renders the answer-first layout:
+  // direct answer paragraph, deep use cases, FAQ block with FAQPage
+  // schema, and an Article schema. Verticals without these fields
+  // continue to render the existing summary layout.
+  directAnswer?: string
+  useCases?: UseCase[]
+  faqs?: VerticalFAQ[]
+  lastUpdated?: string
 }
 
 // Shared AI stats used across all vertical landing pages
@@ -168,9 +196,125 @@ export const verticals: Vertical[] = [
       'Compliance-aware automation and workflow design',
     ],
     services: ['Digital Strategy', 'AI Enablement', 'Customer Experience', 'MarTech Advisory'],
-    metaTitle: 'AI Consulting for Financial Services & FinTech Australia | Lumii',
+    metaTitle: 'AI for Financial Services Australia: Use Cases, ROI & Governance | Lumii',
     metaDescription:
-      'AI strategy, customer onboarding, MarTech & compliance-aware automation for Australian banks, super funds, wealth managers and challenger fintechs.',
+      'How Australian banks, super funds, wealth managers and FinTechs are using AI in 2026 — five high-ROI use cases, APRA expectations, and where mid-market firms should start.',
+    lastUpdated: '2026-06-05',
+    directAnswer:
+      'Financial services firms in Australia are using AI across five primary areas: customer onboarding and KYC automation, fraud detection and AML monitoring, credit and lending decisioning, customer service and advice augmentation, and compliance reporting. The highest-ROI use cases for mid-market financial services firms in 2026 are the ones that reduce manual review time on regulated processes while preserving full audit trails. The barrier to value is rarely the technology — it is the governance framework, the data quality, and the internal capability required to deploy AI inside a compliance-bound environment.',
+    useCases: [
+      {
+        number: '01',
+        title: 'Customer onboarding and KYC',
+        question: 'How can financial services firms use AI to improve customer onboarding?',
+        body: "AI is now the dominant tooling layer for KYC and customer onboarding in financial services. AI-assisted identity verification, document review, and risk scoring compress what used to be a multi-day manual process into hours — sometimes minutes. The technology pattern is well-established: an OCR and computer-vision layer for document capture, a structured AI review layer for inconsistency detection, a risk model layer for sanctions and PEP screening, and a human-in-the-loop sign-off for higher-risk profiles. For Australian institutions, the AUSTRAC AML/CTF obligations remain non-negotiable — but they are now substantially easier to discharge with the right AI layer in front of the human reviewer rather than behind them.",
+        stat: {
+          value: '60–80%',
+          label: 'reduction in time-to-account for institutions using AI-assisted onboarding',
+          source: 'McKinsey Financial Services AI Report, 2025',
+        },
+        examples: [
+          'Automated document capture and OCR with AI-driven inconsistency detection',
+          'Real-time sanctions, PEP and adverse media screening across third-party data',
+          'AI-assisted risk scoring with explainable rationale for compliance review',
+          'Human-in-the-loop sign-off retained for medium and high-risk customer profiles',
+        ],
+      },
+      {
+        number: '02',
+        title: 'Fraud detection and AML monitoring',
+        question: 'Where does AI deliver the highest return in fraud and AML?',
+        body: "The strongest measurable return on AI investment in financial services consistently comes from fraud detection and AML transaction monitoring. Pattern-recognition models trained on transaction histories outperform rule-based systems on two dimensions that matter most: detection rate and false-positive rate. The financial impact is significant — false positives are expensive both directly (analyst review time) and indirectly (customer friction and abandonment). Institutions that have migrated their transaction monitoring to ML-augmented systems consistently report 40 to 60 percent reductions in false positives without a measurable reduction in genuine detection rates. For mid-market firms, the right entry point is not building a model — it is selecting and integrating a regulated regtech vendor with mature, audit-ready AI inside it.",
+        stat: {
+          value: '50%+',
+          label: 'reduction in false positives at institutions using ML-augmented transaction monitoring',
+          source: 'SAS Anti-Money Laundering Technology Report, 2024',
+        },
+        examples: [
+          'Transaction monitoring augmented with anomaly-detection models',
+          'Network-graph analysis for layering and structuring detection',
+          'AI-prioritised analyst queue (highest-risk alerts surfaced first)',
+          'Continuous model performance monitoring with audit-ready logs',
+        ],
+      },
+      {
+        number: '03',
+        title: 'Credit and lending decisioning',
+        question: 'Can AI improve credit decisioning without creating regulatory risk?',
+        body: "AI in credit decisioning is genuinely transformative — and genuinely high-risk if deployed without the right governance. The risk vector is not technology failure; it is bias, explainability, and regulatory exposure. The good news is that the regulatory direction is now clear: APRA, ASIC, and the OAIC have all signalled that AI use in credit decisioning is acceptable provided it is explainable, auditable, and subject to human review for adverse outcomes. The high-value pattern for mid-market lenders is AI-augmented decisioning rather than fully autonomous decisioning — the model surfaces a recommendation with a clear rationale, and a human credit officer signs off. Decision time compresses from days to hours; explainability and audit trail remain intact.",
+        stat: {
+          value: '3–5×',
+          label: 'faster time-to-decision at lenders using AI-augmented credit assessment',
+          source: 'BCG Banking AI Adoption Survey, 2025',
+        },
+        examples: [
+          'Augmented credit scoring with explainable rationale at the application level',
+          'Alternative data signals (transaction history, business activity) for thin-file applicants',
+          'Pre-approval and indicative offer generation in minutes rather than days',
+          'Documented bias testing and adverse outcome review cadence',
+        ],
+      },
+      {
+        number: '04',
+        title: 'Customer service and advice augmentation',
+        question: 'How should financial services firms use AI in customer service?',
+        body: "The pattern that consistently delivers commercial value in customer service is AI as agent augmentation — not AI as agent replacement. The augmentation layer summarises customer history before a call, drafts response options during the call, and produces the wrap-up notes after the call. The result is faster handle times, more consistent responses, and significantly lower agent training burden. Klarna's widely-reported deployment of AI in customer service produced approximately $40M USD in annualised savings while improving customer satisfaction scores — but the implementation that worked was the one that kept humans accountable for advice and judgement, with AI handling the cognitive overhead around them. For Australian financial services, the regulatory boundary is sharp: AI can summarise and draft, but advice and recommendation remain the regulated remit of a qualified human.",
+        stat: {
+          value: '$40M+',
+          label: 'annualised savings from AI in customer service at Klarna with measured CSAT improvement',
+          source: 'Klarna 2024 Annual Report',
+        },
+        examples: [
+          'Pre-call AI-generated customer summary with relevant history and account state',
+          'In-call response drafting and policy lookup with citation back to source documents',
+          'Post-call wrap-up notes and CRM updates generated automatically',
+          'Clear regulatory boundary: AI summarises, humans advise',
+        ],
+      },
+      {
+        number: '05',
+        title: 'Compliance and regulatory reporting',
+        question: 'Where does AI fit in compliance and regulatory reporting?',
+        body: "Compliance is one of the most labour-intensive functions in any financial services firm — and one of the most amenable to AI augmentation. The high-value use cases are regulatory change monitoring (AI tracking and summarising regulatory updates from APRA, ASIC, AUSTRAC and offshore equivalents), automated report drafting (initial preparation of periodic returns with human sign-off), and audit-trail generation (AI-structured documentation of decisions, model performance, and exception handling). Done well, this can free 30 to 50 percent of compliance team time for higher-value work. The risk to manage is hallucination on regulatory interpretation — which is why the deployment pattern that holds up is AI as a first draft and a human as the regulated decision-maker.",
+        stat: {
+          value: '30–50%',
+          label: 'reduction in routine compliance hours through AI-augmented reporting workflows',
+          source: 'Thomson Reuters State of Corporate Compliance, 2025',
+        },
+        examples: [
+          'Regulatory change monitoring with AI-generated impact assessments',
+          'First-draft generation of periodic regulatory returns and disclosures',
+          'AI-structured audit trail and model performance documentation',
+          'Sanctions and watchlist monitoring with continuous coverage updates',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'Is AI safe to use in regulated Australian financial services?',
+        a: "Yes, provided it is deployed within a governance framework. APRA, ASIC, AUSTRAC and the OAIC have each signalled that AI use is acceptable in financial services provided it is explainable, auditable, subject to human oversight for material decisions, and supported by appropriate model risk management. The Australian regulatory direction is consistent with EU and UK approaches — AI is permitted, AI without governance is not. The successful deployment pattern is AI inside a defined operating system: sanctioned tools, classified data, documented model performance, and a named accountable executive. Lumii's AI Operating System framework details the five components required.",
+      },
+      {
+        q: 'What does APRA expect of financial institutions using AI?',
+        a: "APRA's prudential expectations for AI use mirror its broader expectations for technology risk: clear governance, documented risk management, human accountability for material decisions, ongoing model performance monitoring, and operational resilience. CPS 230 (Operational Risk Management) and CPS 234 (Information Security) both apply to AI-supported processes. Institutions are expected to be able to demonstrate that the AI systems they use are appropriately designed, validated, monitored, and governed — and that the outcomes those systems produce are reviewable. The expectation is not that AI must be avoided; it is that AI must be managed with the same rigour as any other material risk function.",
+      },
+      {
+        q: 'What is the ROI of AI in mid-market financial services?',
+        a: "The return depends entirely on which use case is deployed and how rigorously it is implemented. The highest-ROI use cases for mid-market firms are typically fraud detection and AML monitoring (40 to 60 percent reduction in false positives), customer onboarding (60 to 80 percent reduction in time-to-account), and compliance reporting (30 to 50 percent reduction in routine hours). The ROI on AI in credit decisioning and customer service is real but takes longer to materialise — typically 12 to 18 months — because the implementation work is greater. Gartner's broader benchmark of $3.70 returned per $1 invested in AI holds in financial services, but the variance is wide and entirely a function of execution discipline.",
+      },
+      {
+        q: 'Can AI replace human credit and risk decision-makers?',
+        a: "Not under current Australian regulatory expectations, and the institutions getting AI right are not trying to. The pattern that holds up under both commercial and regulatory scrutiny is AI-augmented decisioning rather than fully autonomous decisioning: the model surfaces a recommendation with a clear rationale, and a qualified human signs off. This preserves explainability, auditability, and the regulatory accountability chain — while still delivering most of the speed and consistency benefits AI promises. The institutions trying to remove humans from material credit and risk decisions are typically the ones encountering both regulatory friction and unexpected model-failure exposure.",
+      },
+      {
+        q: 'How do I deploy AI without breaching customer privacy obligations?',
+        a: "Australian Privacy Principles (APPs) under the Privacy Act 1988 apply to all AI deployments handling personal information. The practical controls that matter are: a data classification policy that defines what data can be sent to which AI tools, sanctioned tool list with reviewed terms of service (notably around training data use), consent and disclosure language that reflects AI processing, retention and deletion controls that extend to AI-generated artifacts, and a breach response process that contemplates AI-related incidents. Most enterprise AI platforms now offer the contractual and technical controls required for APP-compliant deployment — but those controls only work inside an overall governance framework. This is the Guardrails layer of the AI Operating System.",
+      },
+      {
+        q: 'Where should a mid-market financial services firm start with AI?',
+        a: "The two best starting points are usually customer onboarding (fast measurable value, well-mapped technology, contained regulatory complexity) or compliance reporting (high cost out, contained customer exposure, fast pay-back). Both deliver visible commercial value within a quarter and build the internal capability — governance, model management, change leadership — that the harder use cases (credit decisioning, advice augmentation) will require. Before any tool selection, run a structured AI readiness assessment to establish where governance, data, capability, and use-case discipline currently sit. Premature tool deployment is the most common failure mode in mid-market financial services AI programmes.",
+      },
+    ],
   },
   {
     number: '08',
