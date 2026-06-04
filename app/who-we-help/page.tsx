@@ -191,15 +191,23 @@ export default function WhoWeHelpPage() {
               </div>
             </div>
 
-            {/* Visual right side — workshop illustration */}
-            <div className="relative w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
-              <div className="relative aspect-[5/4] w-full">
+            {/* Visual right side — workshop illustration with feathered edges */}
+            <div className="relative w-full max-w-[600px] mx-auto lg:ml-auto lg:mr-0">
+              <div
+                className="relative aspect-[5/4] w-full"
+                style={{
+                  WebkitMaskImage:
+                    'radial-gradient(ellipse 75% 75% at center, #000 45%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.45) 78%, rgba(0,0,0,0) 95%)',
+                  maskImage:
+                    'radial-gradient(ellipse 75% 75% at center, #000 45%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.45) 78%, rgba(0,0,0,0) 95%)',
+                }}
+              >
                 <Image
                   src="/images/workshop.png"
                   alt="Illustration of a team at a workshop table with a laptop, surrounded by gold-line icons of growth, people and targets — Lumii's Find Your Light AI workshops"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 90vw, 560px"
+                  sizes="(max-width: 1024px) 90vw, 600px"
                   className="object-contain"
                 />
               </div>
