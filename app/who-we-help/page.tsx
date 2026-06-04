@@ -162,7 +162,7 @@ export default function WhoWeHelpPage() {
       {/* Hero */}
       <section className="bg-stone pt-40 pb-24 px-8 lg:px-12 overflow-hidden">
         <div className="max-w-[1180px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center">
             <div>
               <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-8">
                 Find Your Light
@@ -192,7 +192,7 @@ export default function WhoWeHelpPage() {
             </div>
 
             {/* Visual right side — workshop illustration with feathered edges */}
-            <div className="relative w-full max-w-[600px] mx-auto lg:ml-auto lg:mr-0">
+            <div className="relative w-full max-w-[1200px] mx-auto lg:ml-auto lg:mr-0 lg:-mr-12">
               <div
                 className="relative aspect-[5/4] w-full"
                 style={{
@@ -207,7 +207,7 @@ export default function WhoWeHelpPage() {
                   alt="Illustration of a team at a workshop table with a laptop, surrounded by gold-line icons of growth, people and targets — Lumii's Find Your Light AI workshops"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 90vw, 600px"
+                  sizes="(max-width: 1024px) 90vw, 1200px"
                   className="object-contain"
                 />
               </div>
