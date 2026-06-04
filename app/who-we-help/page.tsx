@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import CTABanner from '@/components/CTABanner'
 import { verticals } from '@/lib/verticals'
 
@@ -190,27 +191,17 @@ export default function WhoWeHelpPage() {
               </div>
             </div>
 
-            {/* Visual right side — stylised illustration */}
-            <div className="hidden lg:block relative">
-              <div className="relative aspect-square max-w-[480px] ml-auto">
-                {/* Decorative grid of glowing icons */}
-                <div className="absolute inset-0 grid grid-cols-2 gap-6">
-                  {[
-                    { icon: industryIcons.marketers, label: 'Insights' },
-                    { icon: industryIcons['sales-teams'], label: 'Outcomes' },
-                    { icon: industryIcons.startups, label: 'Capability' },
-                    { icon: industryIcons.healthcare, label: 'Care' },
-                  ].map((item, i) => (
-                    <div key={i} className="bg-warm-white border border-parchment p-8 flex flex-col items-center justify-center text-center group hover:border-gold/40 transition-colors duration-300">
-                      <div className="w-12 h-12 text-gold mb-3">{item.icon}</div>
-                      <p className="font-body text-[12px] tracking-[0.18em] uppercase text-ash">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-                {/* Central glow */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-20 h-20 rounded-full bg-gold/20 blur-2xl" />
-                </div>
+            {/* Visual right side — workshop illustration */}
+            <div className="relative w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
+              <div className="relative aspect-[5/4] w-full">
+                <Image
+                  src="/images/workshop.png"
+                  alt="Illustration of a team at a workshop table with a laptop, surrounded by gold-line icons of growth, people and targets — Lumii's Find Your Light AI workshops"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 560px"
+                  className="object-contain"
+                />
               </div>
             </div>
           </div>
