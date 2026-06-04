@@ -163,7 +163,7 @@ export default function WhoWeHelpPage() {
         <div className="max-w-[1180px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center">
             <div>
-              <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
+              <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-8">
                 Find Your Light
               </p>
               <h1 className="font-display font-light text-[clamp(48px,6vw,88px)] leading-[1.02] text-near-black mb-8 tracking-[-0.015em]">
@@ -177,13 +177,13 @@ export default function WhoWeHelpPage() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
                 <Link
                   href="/work-with-us"
-                  className="font-body text-[12px] tracking-[0.12em] uppercase text-warm-white bg-near-black px-9 py-4 hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap"
+                  className="font-body text-[14px] tracking-[0.1em] uppercase text-warm-white bg-near-black px-9 py-4 hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap"
                 >
                   Explore Workshops →
                 </Link>
                 <Link
                   href="/resources/ebook"
-                  className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black border-b border-near-black/40 hover:border-near-black pb-1 transition-colors duration-200 inline-block whitespace-nowrap"
+                  className="font-body text-[13px] tracking-[0.1em] uppercase text-near-black border-b border-near-black/40 hover:border-near-black pb-1 transition-colors duration-200 inline-block whitespace-nowrap"
                 >
                   Download the Ebook ↓
                 </Link>
@@ -203,7 +203,7 @@ export default function WhoWeHelpPage() {
                   ].map((item, i) => (
                     <div key={i} className="bg-warm-white border border-parchment p-8 flex flex-col items-center justify-center text-center group hover:border-gold/40 transition-colors duration-300">
                       <div className="w-12 h-12 text-gold mb-3">{item.icon}</div>
-                      <p className="font-body text-[10px] tracking-[0.2em] uppercase text-ash">{item.label}</p>
+                      <p className="font-body text-[12px] tracking-[0.18em] uppercase text-ash">{item.label}</p>
                     </div>
                   ))}
                 </div>
@@ -217,11 +217,24 @@ export default function WhoWeHelpPage() {
         </div>
       </section>
 
+      {/* Brands advised strip — social proof under hero */}
+      <section className="bg-warm-white border-y border-parchment py-10 lg:py-12 px-8 lg:px-12">
+        <div className="max-w-[1180px] mx-auto">
+          <p className="font-body text-[12px] tracking-[0.2em] uppercase text-ash mb-5 flex items-center gap-4">
+            <span className="w-6 h-px bg-gold block" />
+            Brands Agata has advised
+          </p>
+          <p className="font-display text-[16px] lg:text-[18px] italic font-light text-charcoal leading-[1.9]">
+            Canva · MYER · Optus · Harvey Norman · Medibank · Nike · Adidas · ASOS · Net-a-Porter · Australia Post · David Jones · Avis Budget Group · Reckitt
+          </p>
+        </div>
+      </section>
+
       {/* Why Find Your Light? */}
       <section className="bg-warm-white py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           <div className="text-center mb-16">
-            <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-5">
+            <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-5">
               Why Find Your Light
             </p>
             <h2 className="font-display font-light text-[clamp(36px,4vw,56px)] leading-[1.1] text-near-black tracking-[-0.01em] max-w-[820px] mx-auto">
@@ -236,10 +249,10 @@ export default function WhoWeHelpPage() {
                   {pillar.number}
                 </span>
                 <div className="w-8 h-px bg-gold/40 mb-5" />
-                <h3 className="font-display text-[20px] font-light text-near-black mb-3 leading-[1.3]">
+                <h3 className="font-display text-[22px] font-light text-near-black mb-3 leading-[1.3]">
                   {pillar.title}
                 </h3>
-                <p className="font-body text-[14px] leading-[1.75] text-slate-warm font-light">
+                <p className="font-body text-[15px] leading-[1.75] text-slate-warm font-light">
                   {pillar.body}
                 </p>
               </div>
@@ -252,14 +265,14 @@ export default function WhoWeHelpPage() {
       <section className="bg-ivory py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           <div className="text-center mb-14">
-            <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-5">
+            <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-5">
               Choose Your Industry
             </p>
             <h2 className="font-display font-light text-[clamp(36px,4.5vw,60px)] leading-[1.08] text-near-black mb-6 tracking-[-0.01em]">
               Workshops designed for<br />
               <em className="italic text-gold">your world.</em>
             </h2>
-            <p className="font-body text-[16px] leading-[1.8] text-slate-warm font-light max-w-[620px] mx-auto">
+            <p className="font-body text-[17px] leading-[1.8] text-slate-warm font-light max-w-[620px] mx-auto">
               Practical AI training tailored to the workflows, tools, and pressures of your sector. Click your industry to explore use cases and book a workshop.
             </p>
           </div>
@@ -274,17 +287,17 @@ export default function WhoWeHelpPage() {
                 <div className="w-14 h-14 text-gold mb-7 group-hover:scale-105 transition-transform duration-300">
                   {industryIcons[v.slug] ?? industryIcons.startups}
                 </div>
-                <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold/70 mb-2">
+                <p className="font-body text-[12px] tracking-[0.18em] uppercase text-gold/80 mb-2">
                   {v.category}
                 </p>
-                <h3 className="font-display font-light text-[24px] leading-[1.25] text-near-black mb-3 tracking-[-0.005em]">
+                <h3 className="font-display font-light text-[26px] leading-[1.25] text-near-black mb-3 tracking-[-0.005em]">
                   {v.heading}
                 </h3>
-                <p className="font-body text-[13px] leading-[1.7] text-slate-warm font-light mb-8 flex-1">
+                <p className="font-body text-[15px] leading-[1.7] text-slate-warm font-light mb-8 flex-1">
                   {v.subheading}
                 </p>
                 <div className="flex items-center justify-between pt-5 border-t border-parchment">
-                  <span className="font-body text-[11px] tracking-[0.15em] uppercase text-near-black group-hover:text-gold transition-colors duration-200">
+                  <span className="font-body text-[13px] tracking-[0.12em] uppercase text-near-black group-hover:text-gold transition-colors duration-200">
                     Learn More
                   </span>
                   <span className="font-display text-gold group-hover:translate-x-1 transition-transform duration-200">
@@ -298,19 +311,19 @@ export default function WhoWeHelpPage() {
           {/* Inline contact CTA below the grid */}
           <div className="mt-16 bg-near-black p-10 lg:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-3">
+              <p className="font-body text-[12px] tracking-[0.22em] uppercase text-gold mb-3">
                 Don't see your industry?
               </p>
-              <h3 className="font-display font-light text-[clamp(22px,2.5vw,30px)] text-warm-white leading-[1.25] mb-3">
+              <h3 className="font-display font-light text-[clamp(24px,2.5vw,32px)] text-warm-white leading-[1.25] mb-3">
                 We design custom workshops for any team.
               </h3>
-              <p className="font-body text-[14px] text-warm-white/60 font-light leading-[1.8] max-w-[480px]">
+              <p className="font-body text-[15px] text-warm-white/65 font-light leading-[1.8] max-w-[480px]">
                 Tell us about your business and we'll build a bespoke session around the use cases that matter most to you.
               </p>
             </div>
             <Link
               href="/contact?interest=workshop"
-              className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
+              className="font-body text-[14px] tracking-[0.1em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
             >
               Get in Touch →
             </Link>
@@ -323,13 +336,13 @@ export default function WhoWeHelpPage() {
         <div className="max-w-[1180px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
             <div className="lg:sticky lg:top-32">
-              <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-6">
+              <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-6">
                 Every Workshop Includes
               </p>
               <h2 className="font-display font-light text-[clamp(32px,3.5vw,48px)] leading-[1.1] text-near-black mb-6 tracking-[-0.01em]">
                 Six things you can <em className="italic text-gold">count on.</em>
               </h2>
-              <p className="font-body text-[15px] leading-[1.85] text-slate-warm font-light">
+              <p className="font-body text-[16px] leading-[1.85] text-slate-warm font-light">
                 Whatever your industry, every Find Your Light workshop is built on the same foundation — practical, applied, and designed for long-term capability building.
               </p>
             </div>
@@ -337,15 +350,15 @@ export default function WhoWeHelpPage() {
               {inclusions.map((item, i) => (
                 <div key={item.title} className="flex flex-col">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-display text-[16px] font-light text-gold tracking-[0.05em]">
+                    <span className="font-display text-[18px] font-light text-gold tracking-[0.05em]">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <div className="w-6 h-px bg-gold/40" />
                   </div>
-                  <h3 className="font-display text-[18px] font-light text-near-black mb-2 leading-[1.3]">
+                  <h3 className="font-display text-[20px] font-light text-near-black mb-2 leading-[1.3]">
                     {item.title}
                   </h3>
-                  <p className="font-body text-[13px] leading-[1.75] text-slate-warm font-light">
+                  <p className="font-body text-[15px] leading-[1.75] text-slate-warm font-light">
                     {item.body}
                   </p>
                 </div>
@@ -364,7 +377,7 @@ export default function WhoWeHelpPage() {
           <blockquote className="font-display italic font-light text-[clamp(24px,3vw,40px)] leading-[1.35] text-near-black tracking-[-0.005em] mb-8">
             "The Find Your Light workshop gave our team the clarity and confidence to start using AI in ways that save time and create impact — from day one."
           </blockquote>
-          <p className="font-body text-[11px] tracking-[0.2em] uppercase text-ash">
+          <p className="font-body text-[12px] tracking-[0.18em] uppercase text-ash">
             Head of Marketing · APAC Retail Brand
           </p>
         </div>
@@ -375,26 +388,26 @@ export default function WhoWeHelpPage() {
         <div className="max-w-[1180px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
             <div>
-              <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-6">
+              <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-6">
                 Ready to begin
               </p>
               <h2 className="font-display font-light text-[clamp(36px,4.5vw,60px)] leading-[1.08] text-warm-white tracking-[-0.01em]">
                 Ready to equip your team with <em className="italic text-gold">AI skills that shine?</em>
               </h2>
-              <p className="font-body text-[16px] leading-[1.8] text-warm-white/60 font-light mt-6 max-w-[520px]">
+              <p className="font-body text-[17px] leading-[1.8] text-warm-white/65 font-light mt-6 max-w-[520px]">
                 Let's find the right workshop for your industry and your team. A 30-minute call is the fastest way to scope what makes sense.
               </p>
             </div>
             <div className="flex flex-col items-start lg:items-end gap-5">
               <Link
                 href="/contact"
-                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap"
+                className="font-body text-[14px] tracking-[0.1em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap"
               >
                 Book a Discovery Call →
               </Link>
               <Link
                 href="/work-with-us"
-                className="font-body text-[12px] tracking-[0.12em] uppercase text-warm-white border-b border-warm-white/40 hover:border-warm-white pb-1 transition-colors duration-200 inline-block whitespace-nowrap"
+                className="font-body text-[13px] tracking-[0.1em] uppercase text-warm-white border-b border-warm-white/40 hover:border-warm-white pb-1 transition-colors duration-200 inline-block whitespace-nowrap"
               >
                 Explore All Workshops →
               </Link>
