@@ -18,7 +18,14 @@ export default function Hero() {
             AI Strategy · Digital Transformation
           </p>
           <h1 className="font-display font-light text-[clamp(40px,4.6vw,68px)] leading-[1.08] text-warm-white mb-8 tracking-[-0.01em]">
-            Most businesses don't have an AI tool problem. They have an <em className="italic text-gold">AI operating system</em> problem.
+            Most businesses don't have an AI tool problem. They have an{' '}
+            <Link
+              href="/ai-operating-system"
+              className="italic text-gold hover:text-[#d4b47a] underline decoration-gold/30 underline-offset-[6px] decoration-1 hover:decoration-gold/60 transition-colors"
+            >
+              AI operating system
+            </Link>{' '}
+            problem.
           </h1>
           <p className="font-body text-[17px] leading-[1.8] text-warm-white/80 max-w-[500px] mb-5 font-light">
             Lumii builds the structure, workflows, and internal capability that make AI adoption actually reach the P&L — not just the pilot deck.

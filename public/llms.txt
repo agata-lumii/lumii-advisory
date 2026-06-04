@@ -2,6 +2,10 @@
 
 > Lumii Advisory is an independent AI strategy consultancy for mid-market businesses, led by founder Agata Adamczak from Sydney, Australia. We help leadership teams identify where AI creates real commercial value and implement it with clarity — vendor-neutral, senior-led, outcome-accountable. Eighteen years inside global technology businesses including Botify (first ANZ employee), Dotdigital, BrightEdge, Performics, and iCrossing.
 
+## The Lumii Framework
+
+- [The AI Operating System](https://lumiiadvisory.com/ai-operating-system): The five-component framework — Thesis, Guardrails, Workflows, People, Measurement — that turns isolated AI tools into a coordinated business-wide capability. The defining Lumii thesis: businesses fail at AI because they buy tools, not because they need better tools. Includes definition, contrarian frame, 90-day build path, and FAQ
+
 ## About
 
 - [About Agata Adamczak](https://lumiiadvisory.com/about): Founder credentials, career history, and brands advised — Canva, MYER, Optus, Harvey Norman, Medibank, Nike, Adidas, ASOS, Net-a-Porter, Australia Post, David Jones, Avis Budget Group, Reckitt

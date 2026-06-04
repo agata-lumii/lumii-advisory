@@ -15,6 +15,7 @@ const sections = [
     title: 'Main Pages',
     links: [
       { href: '/', label: 'Home' },
+      { href: '/ai-operating-system', label: 'The AI Operating System' },
       { href: '/services', label: 'Services' },
       { href: '/work-with-us', label: 'Work With Us' },
       { href: '/how-we-work', label: 'How We Work' },
