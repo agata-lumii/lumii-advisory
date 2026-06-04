@@ -104,8 +104,11 @@ export default function HowWeWorkPage() {
             A process built for<br />
             <em className="italic text-gold">real results.</em>
           </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[580px] font-light">
+          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[580px] font-light mb-8">
             Most AI programmes fail not because the technology is wrong, but because the process is. We have designed our engagement methodology to eliminate the most common failure modes — from technology-first thinking to capability gaps to missing business cases.
+          </p>
+          <p className="font-body text-[15px] leading-[1.8] text-warm-white/50 max-w-[580px] font-light">
+            The methodology below is how we deliver. The model that underpins it — the <Link href="/ai-operating-system" className="text-gold hover:text-warm-white underline decoration-gold/40 underline-offset-[4px] hover:decoration-warm-white/60 transition-colors">AI Operating System framework</Link> — is what we install.
           </p>
         </div>
       </section>

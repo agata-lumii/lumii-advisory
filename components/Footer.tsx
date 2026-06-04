@@ -154,6 +154,14 @@ export default function Footer() {
             <ul className="space-y-4 list-none p-0 m-0">
               <li>
                 <Link
+                  href="/ai-operating-system"
+                  className="font-body text-[13px] text-gold font-light hover:text-warm-white transition-colors duration-200"
+                >
+                  The Framework
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/about"
                   className="font-body text-[13px] text-warm-white/55 font-light hover:text-warm-white transition-colors duration-200"
                 >

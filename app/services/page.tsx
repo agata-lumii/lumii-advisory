@@ -110,6 +110,29 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Framework anchor — the model underneath all five disciplines */}
+      <section className="bg-warm-white py-[clamp(70px,8vw,110px)] px-8 lg:px-12 border-y border-parchment">
+        <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="max-w-[640px]">
+            <p className="font-body text-[12px] tracking-[0.22em] uppercase text-gold mb-4">
+              The Framework Behind These Services
+            </p>
+            <h2 className="font-display font-light text-[clamp(26px,2.8vw,38px)] leading-[1.2] text-near-black mb-4 tracking-[-0.005em]">
+              Five disciplines. One operating system.
+            </h2>
+            <p className="font-body text-[16px] text-slate-warm font-light leading-[1.8]">
+              Every Lumii engagement is anchored in the same model: the AI Operating System. The five components — Thesis, Guardrails, Workflows, People, Measurement — define what we build, regardless of which discipline you start with.
+            </p>
+          </div>
+          <Link
+            href="/ai-operating-system"
+            className="font-body text-[13px] tracking-[0.1em] uppercase text-warm-white bg-near-black px-8 py-4 hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
+          >
+            Read The Framework →
+          </Link>
+        </div>
+      </section>
+
       {/* Engagement Models */}
       <section className="bg-ivory py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">

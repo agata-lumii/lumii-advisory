@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import SectionHeader from './SectionHeader'
 
 export default function AboutSection() {
@@ -65,6 +66,16 @@ export default function AboutSection() {
               </p>
               <p>
                 That's why Lumii exists. After eighteen years on the vendor side, I left to do this properly — giving ambitious mid-market businesses access to the calibre of strategic thinking usually reserved for enterprise giants. No vendor agenda. No generic playbooks. Every engagement led by me, personally.
+              </p>
+              <p>
+                The result is a named, defensible framework: the{' '}
+                <Link
+                  href="/ai-operating-system"
+                  className="text-near-black underline decoration-gold/40 underline-offset-[4px] hover:decoration-gold transition-colors"
+                >
+                  AI Operating System
+                </Link>
+                . Five components — Thesis, Guardrails, Workflows, People, Measurement — that turn isolated AI tools into a coordinated business capability. It is the model behind every Lumii engagement.
               </p>
             </div>
 

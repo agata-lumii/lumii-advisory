@@ -143,6 +143,16 @@ export default function Navbar() {
           </Link>
         </li>
 
+        {/* The Framework — flagship POV page */}
+        <li>
+          <Link
+            href="/ai-operating-system"
+            className="font-body text-[12px] tracking-[0.12em] uppercase font-semibold text-charcoal hover:text-near-black transition-colors duration-200 leading-none"
+          >
+            The Framework
+          </Link>
+        </li>
+
         {/* Work With Us */}
         <li>
           <Link
@@ -327,6 +337,10 @@ export default function Navbar() {
 
           <Link href="/services" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
             Services
+          </Link>
+
+          <Link href="/ai-operating-system" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
+            The Framework
           </Link>
 
           <Link href="/work-with-us" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">

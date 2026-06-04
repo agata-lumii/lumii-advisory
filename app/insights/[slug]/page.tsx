@@ -267,6 +267,32 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             </div>
           ))}
 
+          {/* Framework anchor — links the article to the canonical
+              /ai-operating-system page for topic-cluster building and
+              LLM citation. Shown when the article is flagged. */}
+          {article.frameworkAnchor && (
+            <aside className="mt-14 bg-near-black p-8 lg:p-10" aria-label="The Lumii AI Operating System">
+              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-4">
+                The Lumii Framework · {article.frameworkAnchor.component}
+              </p>
+              <h3 className="font-display font-light text-[clamp(22px,2.4vw,30px)] text-warm-white leading-[1.25] mb-4">
+                {article.frameworkAnchor.component === 'Framework'
+                  ? 'This is one piece of the larger model.'
+                  : `This article sits inside the "${article.frameworkAnchor.component}" component.`}
+              </h3>
+              <p className="font-body text-[15px] text-warm-white/65 font-light leading-[1.8] mb-6 max-w-[560px]">
+                {article.frameworkAnchor.note ??
+                  'The Lumii AI Operating System framework defines the five components that turn isolated AI tools into a coordinated business capability — Thesis, Guardrails, Workflows, People, and Measurement.'}
+              </p>
+              <Link
+                href="/ai-operating-system"
+                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-7 py-3 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block"
+              >
+                Read The Framework →
+              </Link>
+            </aside>
+          )}
+
           {/* Author attribution */}
           <div className="mt-16 pt-10 border-t border-parchment flex items-start gap-6">
             <div className="w-12 h-12 bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">

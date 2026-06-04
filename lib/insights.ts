@@ -18,6 +18,13 @@ export interface Article {
   content: { heading?: string; body?: string; image?: ArticleImage }[]
   tags: string[]
   cta?: { label: string; title: string; description: string; href: string }
+  // When true, the article renders an inline callout box linking to
+  // /ai-operating-system — the canonical framework page. Used to build
+  // the topic cluster around the AI Operating System concept.
+  frameworkAnchor?: {
+    component: 'Thesis' | 'Guardrails' | 'Workflows' | 'People' | 'Measurement' | 'Framework'
+    note?: string
+  }
 }
 
 export const articles: Article[] = [
@@ -111,6 +118,7 @@ export const articles: Article[] = [
       alt: 'Sketch of an employee working on a laptop with a large shadow figure looming behind her — illustrating shadow AI in the workplace',
     },
     tags: ['Shadow AI', 'Governance', 'AI Risk', 'Data Privacy', 'Compliance'],
+    frameworkAnchor: { component: 'Guardrails' },
     cta: {
       label: 'Free Assessment',
       title: 'AI Readiness Diagnostic',
@@ -230,6 +238,7 @@ export const articles: Article[] = [
       'Advisory Retainers are for organisations running an active AI programme who want senior counsel embedded across multiple decisions over time — typically monthly engagement.',
     ],
     tags: ['Engagement Models', 'AI Consulting', 'Comparison', 'Workshops', 'Retainer'],
+    frameworkAnchor: { component: 'Framework' },
     cta: {
       label: 'Ways to Engage',
       title: 'Three ways to work with Lumii',
@@ -469,6 +478,7 @@ export const articles: Article[] = [
       'Within five years, AI will be embedded across every department with local champions reporting to a CAIO at board level — the businesses building this capability now have a compounding structural advantage.',
     ],
     tags: ['AI Team', 'Future of Work', 'CAIO', 'AI Architect', 'Hiring'],
+    frameworkAnchor: { component: 'People' },
     cta: {
       label: 'Free Resource',
       title: 'AI Team Structure Guide',
@@ -541,6 +551,7 @@ export const articles: Article[] = [
       'Scaling AI is not a technology problem — it is an organisational problem solved by active sponsorship, fit-for-purpose data, and ongoing capability building.',
     ],
     tags: ['AI Readiness', 'Pilot to Scale', 'Transformation'],
+    frameworkAnchor: { component: 'Framework' },
     cta: {
       label: 'Free Ebook',
       title: 'Find Your Light in the Age of AI',
@@ -595,6 +606,7 @@ export const articles: Article[] = [
       'AI programmes without a single accountable internal owner fail; the technology rarely is the issue.',
     ],
     tags: ['AI Strategy', 'C-Suite', 'Investment'],
+    frameworkAnchor: { component: 'Thesis' },
     cta: {
       label: 'Free Ebook',
       title: 'Find Your Light in the Age of AI',
@@ -651,6 +663,7 @@ export const articles: Article[] = [
       'Phasing the investment in three gates — focused pilot, scaled deployment, enterprise rollout — reduces commitment at each decision point and dramatically improves approval rates.',
     ],
     tags: ['Business Case', 'Board', 'ROI', 'AI Investment'],
+    frameworkAnchor: { component: 'Thesis' },
     cta: {
       label: 'Free Ebook',
       title: 'Find Your Light in the Age of AI',
@@ -705,6 +718,7 @@ export const articles: Article[] = [
       '"Wait and see" is not the safe option — capability, talent, customer expectations, and operating cost all compound against businesses that delay.',
     ],
     tags: ['AI Adoption', 'Competitive Advantage', 'Strategy'],
+    frameworkAnchor: { component: 'Framework' },
     cta: {
       label: 'Free Ebook',
       title: 'Find Your Light in the Age of AI',
@@ -803,6 +817,7 @@ export const articles: Article[] = [
       'Data readiness is not a prerequisite to starting AI — it is a parallel workstream. The businesses that progress fastest scope first use cases to data they already have in reasonable shape, not perfect.',
     ],
     tags: ['Data Strategy', 'Data Governance', 'AI Readiness', 'Implementation'],
+    frameworkAnchor: { component: 'Workflows' },
     content: [
       {
         body: "Ask most mid-market businesses if their data is AI-ready, and 9 in 10 will say no — or worse, say yes when it isn't. Poor data is the single most common reason AI programmes fail. Not the wrong AI tool, not insufficient budget, not lack of leadership support — poor data. The good news is that data readiness is not a binary state. It is a spectrum, and it is something you can actively improve.",

@@ -208,8 +208,11 @@ export default function WorkWithUsPage() {
             Three ways to<br />
             <em className="italic text-gold">work with us.</em>
           </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[620px] font-light">
+          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[620px] font-light mb-6">
             Whether you need a single day of clarity, a focused sprint to ship an outcome, or a long-term advisor alongside your leadership team — pick the shape that fits. Every engagement is bespoke, senior-led, and accountable to measurable results.
+          </p>
+          <p className="font-body text-[15px] leading-[1.8] text-warm-white/50 max-w-[620px] font-light">
+            All three engagements install components of the <Link href="/ai-operating-system" className="text-gold hover:text-warm-white underline decoration-gold/40 underline-offset-[4px] hover:decoration-warm-white/60 transition-colors">AI Operating System framework</Link> — the model that turns AI investment into commercial outcomes.
           </p>
         </div>
       </section>
