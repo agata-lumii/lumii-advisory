@@ -54,9 +54,33 @@ const services = [
   },
 ]
 
+// Service JSON-LD for AI/LLM discovery and search rich results
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@graph': services.map((s) => ({
+    '@type': 'Service',
+    '@id': `https://lumiiadvisory.com/services#${s.name.toLowerCase().replace(/\s+/g, '-')}`,
+    name: s.name,
+    description: s.description,
+    serviceType: s.name,
+    provider: { '@id': 'https://lumiiadvisory.com/#organization' },
+    areaServed: [
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Place', name: 'Asia-Pacific' },
+    ],
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Mid-market businesses',
+    },
+    category: 'AI Strategy and Digital Transformation Consulting',
+    url: `https://lumiiadvisory.com/services`,
+  })),
+}
+
 export default function ServicesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
       {/* Hero banner */}
       <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">

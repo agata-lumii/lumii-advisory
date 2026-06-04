@@ -91,13 +91,26 @@ export default function FAQPage() {
                     </svg>
                   </span>
                 </button>
-                {openIndex === idx && (
-                  <div className="pb-8 pr-12">
-                    <p className="font-body text-[15px] leading-[1.85] text-slate-warm font-light">
-                      {item.answer}
-                    </p>
-                  </div>
-                )}
+                {/*
+                  Render the answer in the DOM at all times so search engines
+                  and AI crawlers can read it without executing JS. Visual
+                  expand/collapse handled via max-height + opacity transitions.
+                */}
+                <div
+                  id={`faq-answer-${idx}`}
+                  role="region"
+                  aria-labelledby={`faq-question-${idx}`}
+                  aria-hidden={openIndex !== idx}
+                  className={`overflow-hidden transition-all duration-300 ease-out ${
+                    openIndex === idx
+                      ? 'max-h-[1600px] opacity-100 pb-8 pr-12'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <p className="font-body text-[15px] leading-[1.85] text-slate-warm font-light">
+                    {item.answer}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

@@ -158,9 +158,46 @@ const faqs = [
   },
 ]
 
+// Service JSON-LD for the three engagement tiers — picks up "AI Workshops",
+// "AI Project Sprints", and "Advisory Retainer" as distinct offerings.
+const engagementSchema = {
+  '@context': 'https://schema.org',
+  '@graph': tiers.map((t) => ({
+    '@type': 'Service',
+    '@id': `https://lumiiadvisory.com/work-with-us#${t.anchor}`,
+    name: `${t.title} — Lumii Advisory`,
+    description: t.summary,
+    serviceType: t.title,
+    provider: { '@id': 'https://lumiiadvisory.com/#organization' },
+    areaServed: [
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Place', name: 'Asia-Pacific' },
+    ],
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Mid-market business leaders',
+    },
+    category: 'AI Strategy Consulting',
+    url: `https://lumiiadvisory.com/work-with-us#${t.anchor}`,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `${t.title} formats`,
+      itemListElement: t.formats.map((f) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: f.name,
+          description: f.description,
+        },
+      })),
+    },
+  })),
+}
+
 export default function WorkWithUsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(engagementSchema) }} />
       {/* Dark hero */}
       <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">

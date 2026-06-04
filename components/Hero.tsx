@@ -14,16 +14,16 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
+          <p className="font-body text-[12px] tracking-[0.25em] uppercase text-gold mb-8">
             AI Strategy · Digital Transformation
           </p>
-          <h1 className="font-display font-light text-[clamp(48px,5vw,76px)] leading-[1.08] text-warm-white mb-8 tracking-[-0.01em]">
-            I help businesses<br />put AI to <em className="italic text-gold">work.</em>
+          <h1 className="font-display font-light text-[clamp(40px,4.6vw,68px)] leading-[1.08] text-warm-white mb-8 tracking-[-0.01em]">
+            Most businesses don't have an AI tool problem. They have an <em className="italic text-gold">AI operating system</em> problem.
           </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/80 max-w-[480px] mb-5 font-light">
-            Lumii Advisory is an independent AI strategy consultancy for mid-market businesses. I help leadership teams identify where AI creates real value — and implement it with confidence.
+          <p className="font-body text-[17px] leading-[1.8] text-warm-white/80 max-w-[500px] mb-5 font-light">
+            Lumii builds the structure, workflows, and internal capability that make AI adoption actually reach the P&L — not just the pilot deck.
           </p>
-          <p className="font-body text-[15px] leading-[1.75] text-warm-white/50 max-w-[460px] mb-12 font-light">
+          <p className="font-body text-[15px] leading-[1.75] text-warm-white/55 max-w-[480px] mb-12 font-light">
             Eighteen years inside global technology businesses taught me how these decisions should be made. Lumii exists to do that properly — senior-led, vendor-neutral, and accountable to outcomes.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
