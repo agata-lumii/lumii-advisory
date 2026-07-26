@@ -286,7 +286,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               </p>
               <Link
                 href="/ai-operating-system"
-                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-7 py-3 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block"
+                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-7 py-3 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 inline-block"
               >
                 Read The Framework →
               </Link>

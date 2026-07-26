@@ -5,7 +5,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SectionHeader from './SectionHeader'
 
-export default function AboutSection() {
+interface Props {
+  /**
+   * Homepage variant: the story in two paragraphs, with the brands strip and
+   * the full career detail left to /about.
+   */
+  condensed?: boolean
+}
+
+export default function AboutSection({ condensed }: Props) {
   return (
     <section className="bg-ivory py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
       <div className="max-w-[1180px] mx-auto">
@@ -22,7 +30,7 @@ export default function AboutSection() {
             <div className="relative aspect-[3/4] w-full max-w-[500px]">
               <Image
                 src="/images/agata-about-full.png"
-                alt="Agata Adamczak, Founder of Lumii Advisory"
+                alt="Portrait of Agata Adamczak, founder of Lumii Advisory and author of the AI Operating System framework"
                 fill
                 className="object-cover object-top"
               />
@@ -53,42 +61,60 @@ export default function AboutSection() {
             />
             <div className="mt-8 space-y-5 font-body text-[15px] leading-[1.85] text-slate-warm font-light">
               <p>
-                Eighteen years at the intersection of technology, strategy, and growth — spanning search, performance media, MarTech, eCommerce, and AI. I've led sales and consulting teams across the UK, US, and APAC, partnering with enterprise clients on their most complex transformation challenges.
+                Eighteen years at the intersection of technology, strategy, and growth. As the{' '}
+                <span className="text-near-black">first employee in ANZ for Botify</span>, I built
+                and scaled the regional operation from zero. Before and alongside that, I led
+                enterprise consultation and go-to-market at BrightEdge, Performics, iCrossing, OFX,
+                Pattern, and most recently Dotdigital — a career spent inside boardrooms from Sydney
+                to London to New York.
               </p>
               <p>
-                As the <span className="text-near-black">first employee in ANZ for Botify</span>, I built and scaled the regional operation from zero. Before and alongside that, I led enterprise consultation and go-to-market at BrightEdge, Performics, iCrossing, OFX, Pattern, and most recently Dotdigital — a career spent inside boardrooms from Sydney to London to New York.
+                Across every one of those roles the pattern held: the technology was rarely the
+                problem. The strategy, the clarity, and the capability to execute — that is where
+                the gap always lived. Then came AI, and the gap got wider.
               </p>
-              <p>
-                Across every role, the pattern was the same: the technology was rarely the problem. The strategy, the clarity, and the capability to execute — that's where the real gap lived.
-              </p>
-              <p>
-                Then came AI. A genuinely transformative moment — one that will define which businesses lead the next decade. The opportunity is extraordinary. But so is the noise.
-              </p>
-              <p>
-                That's why Lumii exists. After eighteen years on the vendor side, I left to do this properly — giving ambitious mid-market businesses access to the calibre of strategic thinking usually reserved for enterprise giants. No vendor agenda. No generic playbooks. Every engagement led by me, personally.
-              </p>
-              <p>
-                The result is a named, defensible framework: the{' '}
-                <Link
-                  href="/ai-operating-system"
-                  className="text-near-black underline decoration-gold/40 underline-offset-[4px] hover:decoration-gold transition-colors"
-                >
-                  AI Operating System
-                </Link>
-                . Five components — Thesis, Guardrails, Workflows, People, Measurement — that turn isolated AI tools into a coordinated business capability. It is the model behind every Lumii engagement.
-              </p>
+              {!condensed && (
+                <p>
+                  That is why Lumii exists. I left the vendor side to do this properly, and the
+                  result is a named, defensible framework: the{' '}
+                  <Link
+                    href="/ai-operating-system"
+                    className="text-near-black underline decoration-gold/40 underline-offset-[4px] hover:decoration-gold transition-colors"
+                  >
+                    AI Operating System
+                  </Link>
+                  . No vendor agenda, no generic playbooks, and every engagement led by me
+                  personally.
+                </p>
+              )}
             </div>
 
+            {condensed && (
+              <div className="mt-8">
+                <Link
+                  href="/about"
+                  className="font-body text-[11px] tracking-[0.15em] uppercase text-gold hover:text-charcoal transition-colors duration-200"
+                >
+                  More about my background →
+                </Link>
+              </div>
+            )}
+
             {/* Brands advised strip */}
-            <div className="mt-10 pt-10 border-t border-parchment">
-              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-5 flex items-center gap-4">
-                <span className="w-6 h-px bg-gold block" />
-                Brands advised during tenure
-              </p>
-              <p className="font-display text-[15px] italic font-light text-charcoal leading-[2]">
-                Canva · MYER · Optus · Harvey Norman · Medibank · Nike · Adidas · ASOS · Net-a-Porter · Australia Post · David Jones · Avis Budget Group · Reckitt
-              </p>
-            </div>
+            {!condensed && (
+              <div className="mt-10 pt-10 border-t border-parchment">
+                <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-5 flex items-center gap-4">
+                  <span className="w-6 h-px bg-gold block" />
+                  Brands I advised while employed elsewhere
+                </p>
+                <p className="font-display text-[15px] italic font-light text-charcoal leading-[2]">
+                  Canva · MYER · Optus · Harvey Norman · Medibank · Nike · Adidas · ASOS · Net-a-Porter · Australia Post · David Jones · Avis Budget Group · Reckitt
+                </p>
+                <p className="font-body text-[12px] text-ash font-light leading-[1.7] mt-4">
+                  Advised in my roles at Botify, Dotdigital, BrightEdge and others — not Lumii clients.
+                </p>
+              </div>
+            )}
 
             {/* Stats row */}
             <div className="grid grid-cols-3 gap-8 mt-10 pt-10 border-t border-parchment">

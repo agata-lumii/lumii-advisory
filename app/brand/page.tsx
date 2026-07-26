@@ -96,7 +96,7 @@ export default function BrandPage() {
               <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-6">Body — DM Sans</p>
               <p className="font-body text-[64px] font-light text-near-black leading-[1] mb-4">Aa</p>
               <p className="font-body text-[17px] text-slate-warm font-light leading-[1.8] mb-6">
-                We help ambitious businesses find the signal in the noise — turning digital complexity into strategy.
+                I help mid-market businesses find the signal in the noise — turning digital complexity into strategy.
               </p>
               <div className="space-y-3 font-body text-near-black">
                 <p className="text-[17px] font-light leading-[1.75]">Body / 300 — Lead paragraph text</p>
@@ -125,7 +125,7 @@ export default function BrandPage() {
               {/* Primary */}
               <div>
                 <p className="font-body text-[10px] tracking-[0.2em] uppercase text-ash mb-4">Primary CTA</p>
-                <button className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-9 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200">
+                <button className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-9 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200">
                   Book a Discovery Call
                 </button>
                 <p className="font-body text-[11px] text-ash mt-3">Gold bg · Near-black text · Uppercase · Letter-spacing 0.12em</p>

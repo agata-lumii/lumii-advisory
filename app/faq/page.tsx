@@ -40,7 +40,7 @@ export default function FAQPage() {
             <em className="italic text-gold">hear most often.</em>
           </h1>
           <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[560px] font-light">
-            Straightforward answers to the questions leadership teams ask before, during, and after their first conversation with us.
+            Straightforward answers to the questions leadership teams ask before, during, and after their first conversation with me.
           </p>
         </div>
       </section>
@@ -162,7 +162,7 @@ export default function FAQPage() {
               Where does your business sit?
             </h2>
             <p className="font-body text-[14px] text-slate-warm font-light leading-[1.8] mb-8">
-              Take our AI Readiness Checklist — 35 questions across 7 dimensions — and get a clear, scored picture of your organisation's AI maturity in 15 minutes.
+              Take the AI Readiness Checklist — 35 questions across 7 dimensions — and get a clear, scored picture of your organisation's AI maturity in 15 minutes.
             </p>
             <Link
               href="/resources/ai-readiness-checklist"

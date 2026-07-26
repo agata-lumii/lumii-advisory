@@ -83,10 +83,10 @@ function ContactFormInner() {
       <div className="py-12">
         <div className="w-12 h-px bg-gold mb-8" />
         <p className="font-display text-[32px] italic font-light text-near-black leading-[1.3] mb-4">
-          Thank you — we'll be in touch soon.
+          Thank you — I'll be in touch soon.
         </p>
         <p className="font-body text-[15px] text-slate-warm font-light leading-[1.75]">
-          We aim to respond within one business day. In the meantime, feel free to connect on LinkedIn.
+          I aim to respond within one business day. In the meantime, feel free to connect on LinkedIn.
         </p>
       </div>
     )
@@ -188,7 +188,7 @@ function ContactFormInner() {
       <button
         type="submit"
         disabled={submitting}
-        className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 mt-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+        className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 mt-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
       >
         {submitting ? 'Sending…' : 'Send Message'}
       </button>

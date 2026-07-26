@@ -3,29 +3,7 @@
 import { motion } from 'framer-motion'
 import SectionHeader from './SectionHeader'
 import ProcessStep from './ProcessStep'
-
-const steps = [
-  {
-    num: '01',
-    title: 'Illuminate',
-    body: 'We start by gaining deep clarity on where you are. A comprehensive audit of your digital landscape, customer experience, technology stack, and competitive position — revealing what\'s working, what isn\'t, and where the real opportunities lie.',
-  },
-  {
-    num: '02',
-    title: 'Align',
-    body: 'Strategy only works when the whole organisation is pointing in the same direction. We facilitate alignment across leadership, marketing, sales, and technology — translating insight into a shared roadmap everyone can execute against.',
-  },
-  {
-    num: '03',
-    title: 'Activate',
-    body: 'We move from strategy to action — implementing, integrating, testing, and iterating. We work alongside your team, not just above them, to ensure the plan gets built and the capability stays when we leave.',
-  },
-  {
-    num: '04',
-    title: 'Accelerate',
-    body: 'Great strategy evolves. We establish the measurement frameworks, feedback loops, and review cadences that let you keep improving — so the value compounds long after the initial engagement ends.',
-  },
-]
+import { methodSteps, frameworkHierarchyLine } from '@/lib/method'
 
 export default function ProcessSection() {
   return (
@@ -35,16 +13,25 @@ export default function ProcessSection() {
           {/* Steps */}
           <div>
             <SectionHeader
-              tag="How We Work"
+              tag="How I work"
               heading={
                 <>
                   The Lumii <em className="italic text-gold">method.</em>
                 </>
               }
             />
+            <p className="font-body text-[15px] text-slate-warm font-light leading-[1.8] mt-6 pl-6 border-l border-gold/40">
+              {frameworkHierarchyLine}
+            </p>
             <div className="mt-14 space-y-12">
-              {steps.map((step, i) => (
-                <ProcessStep key={step.num} {...step} index={i} />
+              {methodSteps.map((step, i) => (
+                <ProcessStep
+                  key={step.num}
+                  num={step.num}
+                  title={step.title}
+                  body={step.bodyLong}
+                  index={i}
+                />
               ))}
             </div>
           </div>

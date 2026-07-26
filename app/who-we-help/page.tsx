@@ -314,15 +314,15 @@ export default function WhoWeHelpPage() {
                 Don't see your industry?
               </p>
               <h3 className="font-display font-light text-[clamp(24px,2.5vw,32px)] text-warm-white leading-[1.25] mb-3">
-                We design custom workshops for any team.
+                I design custom workshops for any team.
               </h3>
               <p className="font-body text-[15px] text-warm-white/65 font-light leading-[1.8] max-w-[480px]">
-                Tell us about your business and we'll build a bespoke session around the use cases that matter most to you.
+                Tell me about your business and I'll build a bespoke session around the use cases that matter most to you.
               </p>
             </div>
             <Link
               href="/contact?interest=workshop"
-              className="font-body text-[14px] tracking-[0.1em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
+              className="font-body text-[14px] tracking-[0.1em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
             >
               Get in Touch →
             </Link>
@@ -400,7 +400,7 @@ export default function WhoWeHelpPage() {
             <div className="flex flex-col items-start lg:items-end gap-5">
               <Link
                 href="/contact"
-                className="font-body text-[14px] tracking-[0.1em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap"
+                className="font-body text-[14px] tracking-[0.1em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap"
               >
                 Book a Discovery Call →
               </Link>

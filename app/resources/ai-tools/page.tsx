@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     absolute: 'AI Tools Directory for Mid-Market Businesses (2026)',
   },
   description:
-    'The AI tools we actually recommend — by use case, by stack, by budget. Vendor-neutral, hands-on reviews. Updated quarterly.',
+    'The AI tools I actually recommend — by use case, by stack, by budget. Vendor-neutral, hands-on reviews. Updated quarterly.',
   alternates: {
     canonical: 'https://lumiiadvisory.com/resources/ai-tools',
   },

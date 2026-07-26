@@ -18,14 +18,14 @@ const sections = [
       { href: '/ai-operating-system', label: 'The AI Operating System' },
       { href: '/services', label: 'Services' },
       { href: '/work-with-us', label: 'Work With Us' },
-      { href: '/how-we-work', label: 'How We Work' },
+      { href: '/how-we-work', label: 'How I work' },
       { href: '/about', label: 'About Agata' },
       { href: '/contact', label: 'Contact' },
       { href: '/faq', label: 'FAQ' },
     ],
   },
   {
-    title: 'Who We Help',
+    title: 'Who I help',
     links: [
       { href: '/who-we-help', label: 'Overview' },
       ...verticals.map((v) => ({

@@ -36,7 +36,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
             <Link
               href="/contact"
-              className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-9 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block"
+              className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-9 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 inline-block"
             >
               Book a Discovery Call
             </Link>
@@ -60,7 +60,7 @@ export default function Hero() {
       <div className="relative min-h-[50vh] lg:min-h-full order-first lg:order-last">
         <Image
           src="/images/agata-about-hero.png"
-          alt="Agata Adamczak — Founder, Lumii Advisory"
+          alt="Agata Adamczak, founder of Lumii Advisory and AI strategy consultant based in Sydney, Australia"
           fill
           priority
           className="object-cover"

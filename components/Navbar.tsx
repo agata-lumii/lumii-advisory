@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { verticals } from '@/lib/verticals'
+import { disciplines } from '@/lib/disciplines'
 
 const resourceLinks = [
   {
@@ -54,14 +55,25 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [whoDropdownOpen, setWhoDropdownOpen] = useState(false)
   const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false)
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
   const [mobileWhoOpen, setMobileWhoOpen] = useState(false)
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
 
   const whoRef = useRef<HTMLLIElement>(null)
   const resourcesRef = useRef<HTMLLIElement>(null)
+  const servicesRef = useRef<HTMLLIElement>(null)
   const whoTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const resourcesTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const servicesTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
+  const openServices = () => {
+    if (servicesTimer.current) clearTimeout(servicesTimer.current)
+    setServicesDropdownOpen(true)
+  }
+  const closeServices = () => {
+    servicesTimer.current = setTimeout(() => setServicesDropdownOpen(false), 120)
+  }
   const openWho = () => {
     if (whoTimer.current) clearTimeout(whoTimer.current)
     setWhoDropdownOpen(true)
@@ -92,6 +104,9 @@ export default function Navbar() {
       if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) {
         setResourcesDropdownOpen(false)
       }
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesDropdownOpen(false)
+      }
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
@@ -101,6 +116,7 @@ export default function Navbar() {
     setMenuOpen(false)
     setWhoDropdownOpen(false)
     setResourcesDropdownOpen(false)
+    setServicesDropdownOpen(false)
   }
 
   const chevron = (open: boolean) => (
@@ -133,14 +149,56 @@ export default function Navbar() {
       {/* Desktop nav */}
       <ul className="hidden md:flex gap-7 list-none m-0 p-0 items-center">
 
-        {/* Services */}
-        <li>
-          <Link
-            href="/services"
-            className="font-body text-[12px] tracking-[0.12em] uppercase font-semibold text-charcoal hover:text-near-black transition-colors duration-200 leading-none"
+        {/* Services dropdown */}
+        <li ref={servicesRef} className="relative" onMouseLeave={closeServices}>
+          <button
+            onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+            onMouseEnter={openServices}
+            className="inline-flex items-center gap-1.5 font-body text-[12px] tracking-[0.12em] uppercase font-semibold text-charcoal hover:text-near-black transition-colors duration-200 cursor-pointer bg-transparent border-0 p-0 leading-none"
           >
             Services
-          </Link>
+            {chevron(servicesDropdownOpen)}
+          </button>
+
+          {servicesDropdownOpen && (
+            <div
+              className="absolute top-full left-1/2 -translate-x-1/2 w-[420px] pt-3 z-50"
+              onMouseEnter={openServices}
+              onMouseLeave={closeServices}
+            >
+              <div className="bg-warm-white border border-parchment shadow-[0_8px_40px_rgba(30,28,26,0.10)]">
+                <div className="flex items-center justify-between px-8 py-5 border-b border-parchment">
+                  <span className="font-body text-[10px] tracking-[0.25em] uppercase text-ash">
+                    Six disciplines
+                  </span>
+                  <Link
+                    href="/services"
+                    onClick={() => setServicesDropdownOpen(false)}
+                    className="font-body text-[10px] tracking-[0.15em] uppercase text-gold hover:text-charcoal transition-colors duration-200"
+                  >
+                    View all →
+                  </Link>
+                </div>
+                <div className="p-px bg-parchment/40 grid gap-px">
+                  {disciplines.map((d) => (
+                    <Link
+                      key={d.number}
+                      href={d.href ?? '/services'}
+                      onClick={() => setServicesDropdownOpen(false)}
+                      className="group flex items-baseline gap-4 bg-warm-white px-6 py-3.5 hover:bg-ivory transition-colors duration-150"
+                    >
+                      <span className="font-display text-[13px] text-gold/70 tracking-[0.1em] shrink-0">
+                        {d.number}
+                      </span>
+                      <span className="font-body text-[13px] text-charcoal group-hover:text-near-black transition-colors">
+                        {d.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </li>
 
         {/* The Framework — flagship POV page */}
@@ -169,7 +227,7 @@ export default function Navbar() {
             href="/how-we-work"
             className="font-body text-[12px] tracking-[0.12em] uppercase font-semibold text-charcoal hover:text-near-black transition-colors duration-200 leading-none"
           >
-            How We Work
+            How I work
           </Link>
         </li>
 
@@ -180,7 +238,7 @@ export default function Navbar() {
             onMouseEnter={openWho}
             className="inline-flex items-center gap-1.5 font-body text-[12px] tracking-[0.12em] uppercase font-semibold text-charcoal hover:text-near-black transition-colors duration-200 cursor-pointer bg-transparent border-0 p-0 leading-none"
           >
-            Who We Help
+            Who I help
             {chevron(whoDropdownOpen)}
           </button>
 
@@ -190,7 +248,7 @@ export default function Navbar() {
               className="bg-warm-white border border-parchment shadow-[0_8px_40px_rgba(30,28,26,0.10)]"
             >
               <div className="flex items-center justify-between px-8 py-5 border-b border-parchment">
-                <span className="font-body text-[10px] tracking-[0.25em] uppercase text-ash">Who We Help</span>
+                <span className="font-body text-[10px] tracking-[0.25em] uppercase text-ash">Who I help</span>
                 <Link
                   href="/who-we-help"
                   onClick={() => setWhoDropdownOpen(false)}
@@ -335,9 +393,37 @@ export default function Navbar() {
       {menuOpen && (
         <div className="absolute top-full left-0 right-0 bg-warm-white border-t border-parchment py-6 px-8 md:hidden flex flex-col max-h-[80vh] overflow-y-auto">
 
-          <Link href="/services" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
-            Services
-          </Link>
+          {/* Services accordion */}
+          <div>
+            <button
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              className="w-full flex items-center justify-between font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3 bg-transparent border-0 text-left cursor-pointer"
+            >
+              Services
+              {chevron(mobileServicesOpen)}
+            </button>
+            {mobileServicesOpen && (
+              <div className="pl-4 mb-2 border-l border-parchment flex flex-col gap-1">
+                {disciplines.map((d) => (
+                  <Link
+                    key={d.number}
+                    href={d.href ?? '/services'}
+                    onClick={closeAll}
+                    className="font-body text-[13px] text-slate-warm hover:text-near-black transition-colors py-2"
+                  >
+                    {d.name}
+                  </Link>
+                ))}
+                <Link
+                  href="/services"
+                  onClick={closeAll}
+                  className="font-body text-[11px] tracking-[0.15em] uppercase text-gold py-2"
+                >
+                  View all services →
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link href="/ai-operating-system" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
             The Framework
@@ -348,7 +434,7 @@ export default function Navbar() {
           </Link>
 
           <Link href="/how-we-work" onClick={closeAll} className="font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3">
-            How We Work
+            How I work
           </Link>
 
           {/* Who We Help accordion */}
@@ -357,7 +443,7 @@ export default function Navbar() {
               onClick={() => setMobileWhoOpen(!mobileWhoOpen)}
               className="w-full flex items-center justify-between font-body text-[12px] tracking-[0.12em] uppercase text-slate-warm hover:text-near-black transition-colors py-3 bg-transparent border-0 text-left cursor-pointer"
             >
-              Who We Help
+              Who I help
               {chevron(mobileWhoOpen)}
             </button>
             {mobileWhoOpen && (

@@ -18,8 +18,8 @@ const sections = [
     body: 'These terms govern your use of lumiiadvisory.com and the materials, resources and content available on it. They sit alongside any separate engagement letter or statement of work signed for advisory services. If a signed engagement document conflicts with these terms, the signed document takes precedence for that engagement.',
   },
   {
-    heading: '2. Who we are',
-    body: 'Lumii Advisory is a sole-trader consulting business operated by Agata Adamczak, based in Sydney, NSW, Australia. References to "Lumii", "we", "our" and "us" mean Lumii Advisory.',
+    heading: '2. Who I am',
+    body: 'Lumii Advisory is a sole-trader consulting business operated by Agata Adamczak, based in Sydney, NSW, Australia. References to "Lumii", "I", "my" and "me" mean Lumii Advisory.',
   },
   {
     heading: '3. Use of the website',
@@ -27,7 +27,7 @@ const sections = [
   },
   {
     heading: '4. Content & intellectual property',
-    body: 'All content on lumiiadvisory.com — including written articles, frameworks, checklists, guides, branding, design and code — is the intellectual property of Lumii Advisory unless otherwise indicated. You may quote short excerpts with attribution and a link back. You may not republish, resell, or use our content to train AI models without our written consent.',
+    body: 'All content on lumiiadvisory.com — including written articles, frameworks, checklists, guides, branding, design and code — is the intellectual property of Lumii Advisory unless otherwise indicated. You may quote short excerpts with attribution and a link back. You may not republish, resell, or use my content to train AI models without my written consent.',
   },
   {
     heading: '5. Resources and downloads',
@@ -39,7 +39,7 @@ const sections = [
   },
   {
     heading: '7. No warranty',
-    body: 'The site and its content are provided "as is". We take care to ensure information is accurate at the time of publishing, but the AI and digital landscape changes rapidly and we make no warranty about ongoing accuracy, completeness, or fitness for any specific purpose. Use of the content is at your own discretion and risk.',
+    body: 'The site and its content are provided "as is". I take care to ensure information is accurate at the time of publishing, but the AI and digital landscape changes rapidly and I make no warranty about ongoing accuracy, completeness, or fitness for any specific purpose. Use of the content is at your own discretion and risk.',
   },
   {
     heading: '8. Liability',
@@ -47,13 +47,13 @@ const sections = [
   },
   {
     heading: '9. Third-party links',
-    body: "The site contains links to third-party tools, articles, and services. These are provided for convenience only. We don't control these third parties and are not responsible for their content, practices, or privacy policies.",
+    body: "The site contains links to third-party tools, articles, and services. These are provided for convenience only. I do not control these third parties and am not responsible for their content, practices, or privacy policies.",
   },
   {
     heading: '10. Privacy',
     body: (
       <>
-        Our handling of personal information is set out in our{' '}
+        My handling of personal information is set out in my{' '}
         <Link href="/privacy-policy" className="text-gold hover:text-near-black underline">
           Privacy Policy
         </Link>
@@ -67,7 +67,7 @@ const sections = [
   },
   {
     heading: '12. Updates',
-    body: 'We may update these terms from time to time. The current version is always available at this URL with a "last updated" date below. Continuing to use the site after a change means you accept the updated terms.',
+    body: 'I may update these terms from time to time. The current version is always available at this URL with a "last updated" date below. Continuing to use the site after a change means you accept the updated terms.',
   },
   {
     heading: '13. Contact',

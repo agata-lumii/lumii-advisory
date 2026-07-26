@@ -271,7 +271,7 @@ export const articles: Article[] = [
       },
       {
         heading: 'How Lumii structures these',
-        body: 'At Lumii these are the three ways we engage. Workshops are typically one day with the executive team, fixed scope, fixed price. Project sprints are 6 to 12 weeks with a clear deliverable, fixed scope, fixed price. Advisory retainers are monthly engagements at a defined time commitment, with the relationship adjusted as the programme evolves. Every engagement starts with a 30-minute discovery call to make sure we are matching the right shape to the right situation — because the shape decision is what determines whether the work compounds or burns.',
+        body: 'At Lumii these are the three ways I engage. Workshops are typically one day with the executive team, fixed scope, fixed price. Project sprints are 6 to 12 weeks with a clear deliverable, fixed scope, fixed price. Advisory retainers are monthly engagements at a defined time commitment, with the relationship adjusted as the programme evolves. Every engagement starts with a 30-minute discovery call to make sure I am matching the right shape to the right situation — because the shape decision is what determines whether the work compounds or burns.',
       },
     ],
   },
@@ -526,7 +526,7 @@ export const articles: Article[] = [
       },
       {
         heading: 'The First Practical Step',
-        body: "You do not need a full AI function to get started. Most businesses at the early stages of AI adoption need one thing above all else: an internal owner. A single person — whether that is an existing head of technology, a senior operations leader, or a newly hired Head of AI — who has the mandate, the time, and the accountability to drive the programme forward. From that foundation, the team grows as the programme grows. The mistake is not moving too slowly. The mistake is having no one responsible at all. See our full AI Team Structure guide for a role-by-role breakdown of every position, when to hire it, and what the AI org looks like at each stage of maturity.",
+        body: "You do not need a full AI function to get started. Most businesses at the early stages of AI adoption need one thing above all else: an internal owner. A single person — whether that is an existing head of technology, a senior operations leader, or a newly hired Head of AI — who has the mandate, the time, and the accountability to drive the programme forward. From that foundation, the team grows as the programme grows. The mistake is not moving too slowly. The mistake is having no one responsible at all. See the Lumii AI Team Structure guide for a role-by-role breakdown of every position, when to hire it, and what the AI org looks like at each stage of maturity.",
       },
     ],
   },
@@ -564,7 +564,7 @@ export const articles: Article[] = [
       },
       {
         heading: 'The Three Failure Modes',
-        body: 'After working across dozens of organisations, we see the same failure modes repeating. The first is the technology-first trap: a business buys an AI tool because it won the analyst quadrant, deploys it in one team, and declares victory. Months later, usage has dropped and no one can articulate the business outcome it was supposed to drive.',
+        body: 'After working across dozens of organisations, I see the same failure modes repeating. The first is the technology-first trap: a business buys an AI tool because it won the analyst quadrant, deploys it in one team, and declares victory. Months later, usage has dropped and no one can articulate the business outcome it was supposed to drive.',
       },
       {
         body: "The second is the data debt problem. AI systems are only as good as the data that powers them. Businesses that haven't invested in data governance, quality, and accessibility find that their AI tools produce outputs no one trusts. The third — and most insidious — is the capability gap. Rolling out Microsoft Copilot to 400 staff without training or clear use cases results in 400 people using it to draft emails and nothing more.",
@@ -581,7 +581,7 @@ export const articles: Article[] = [
         body: 'Before investing further in AI tooling, conduct an honest readiness assessment across six dimensions: strategy and leadership alignment, data infrastructure quality, technology integration capability, workforce skills and literacy, process suitability for AI, and governance frameworks. Knowing where you actually stand — not where you hope to stand — is the only way to build an AI programme that lasts.',
       },
       {
-        body: "If you're not sure where your business sits on that spectrum, our AI Readiness Checklist is a useful starting point. It takes 15 minutes and gives you a clear, actionable picture of your current position and where to focus first.",
+        body: "If you're not sure where your business sits on that spectrum, the Lumii AI Readiness Checklist is a useful starting point. It takes 15 minutes and gives you a clear, actionable picture of your current position and where to focus first.",
       },
     ],
   },
@@ -676,7 +676,7 @@ export const articles: Article[] = [
       },
       {
         heading: 'The Three Things Boards Actually Want to Know',
-        body: "After helping numerous organisations present AI investment cases to their boards, we've found that the approval questions almost always boil down to three things: What is the financial return and how confident are we in those numbers? What could go wrong and how are we managing it? Who is accountable for delivery?",
+        body: "After helping numerous organisations present AI investment cases to their boards, I have found that the approval questions almost always boil down to three things: What is the financial return and how confident are we in those numbers? What could go wrong and how are we managing it? Who is accountable for delivery?",
       },
       {
         body: "A well-structured AI business case addresses all three directly. It does not lead with technology capabilities or competitor benchmarks — it leads with business outcomes, expressed in the language of your P&L.",
@@ -697,7 +697,7 @@ export const articles: Article[] = [
         body: 'Structure your investment ask in phases. Phase 1 is typically a focused pilot with a defined success metric and a modest budget. Phase 2 is scaled deployment contingent on Phase 1 results. Phase 3 is enterprise-wide with the full business case. This approach reduces the financial commitment at each decision gate and gives the board confidence that you are not betting the farm on a single implementation.',
       },
       {
-        body: "The most successful AI business cases we've seen are not the most technically sophisticated. They are the most commercially rigorous — connecting AI investment directly to the strategic priorities the board already cares about, with clear accountability and credible numbers. That is a language every board speaks.",
+        body: "The most successful AI business cases I have seen are not the most technically sophisticated. They are the most commercially rigorous — connecting AI investment directly to the strategic priorities the board already cares about, with clear accountability and credible numbers. That is a language every board speaks.",
       },
     ],
   },
@@ -782,7 +782,7 @@ export const articles: Article[] = [
       },
       {
         heading: 'The Highest-Value Use Cases',
-        body: 'Across professional services, we consistently see the strongest ROI in four areas. Document analysis and synthesis: AI can review, summarise, and extract key clauses from contracts, reports, and filings in minutes rather than hours. Research and precedent: AI search dramatically reduces the time junior staff spend on preliminary research, freeing them for higher-value analysis. Proposal and content generation: AI-assisted drafting accelerates proposal development, first-draft report writing, and client communications. Financial analysis: AI-powered analytics surfaces insights in large datasets that would previously require days of analyst time.',
+        body: 'Across professional services, I consistently see the strongest ROI in four areas. Document analysis and synthesis: AI can review, summarise, and extract key clauses from contracts, reports, and filings in minutes rather than hours. Research and precedent: AI search dramatically reduces the time junior staff spend on preliminary research, freeing them for higher-value analysis. Proposal and content generation: AI-assisted drafting accelerates proposal development, first-draft report writing, and client communications. Financial analysis: AI-powered analytics surfaces insights in large datasets that would previously require days of analyst time.',
       },
       {
         heading: 'The Trust Problem',
@@ -846,6 +846,255 @@ export const articles: Article[] = [
       },
       {
         body: 'Data readiness is not a prerequisite to starting — it is a parallel workstream. The businesses that make the most progress on AI are those that identify their first use case, start the work, and invest in data quality in the areas where it matters most, rather than trying to solve every data problem before taking a single step forward.',
+      },
+    ],
+  },
+  {
+    slug: 'choosing-an-ai-strategy-consultant',
+    title: 'How to Choose an AI Strategy Consultant: 7 Questions to Ask Before You Hire',
+    metaTitle: 'How to Choose an AI Strategy Consultant (7 Questions)',
+    metaDescription:
+      'The AI consulting market is flooded with overnight experts. 7 questions that separate AI strategy consultants who deliver from those who don\'t. 6-min read.',
+    excerpt:
+      "Everyone is an \"AI strategist\" now. Before you hire someone to guide decisions that affect your budget, your data, and your team, here are the questions worth asking — and the answers that should give you pause.",
+    date: '2026-05-20',
+    readTime: '6 min read',
+    category: 'AI Strategy',
+    keyTakeaways: [
+      'The AI consulting market has filled with generalists who rebranded overnight — ask for a specific track record in your industry, not a list of AI buzzwords.',
+      'A good AI consultant starts with your business problem. If the first conversation is about a platform or tool rather than your operations, that\'s a signal.',
+      'Agree on how success will be measured before the engagement starts — "a roadmap" is not an outcome. A number tied to your P&L is.',
+    ],
+    tags: ['AI Strategy', 'Consulting', 'Hiring'],
+    frameworkAnchor: { component: 'Thesis' },
+    cta: {
+      label: 'Free Resource',
+      title: 'AI Readiness Checklist',
+      description: 'Assess your organisation across 7 dimensions in 15 minutes before your first consulting conversation.',
+      href: '/resources/ai-readiness-checklist',
+    },
+    content: [
+      {
+        body: "The AI consulting market has exploded — and so has the range of quality inside it. Marketing agencies, generalist management consultants, and individual contractors have all added \"AI strategy\" to their service list in the last eighteen months. Some of them are genuinely excellent. Many are running the same playbook they used for digital transformation or social media, with \"AI\" swapped in. Before you hire anyone to guide decisions that touch your budget, your data, and your team's day-to-day work, these are the questions worth asking.",
+      },
+      {
+        heading: '1. What is their track record — and in what kind of business?',
+        body: "AI strategy advice that works for a 5,000-person enterprise with a dedicated data science team often fails completely in a 50-person business with one overworked IT generalist. Ask for examples of work with businesses your size, in your sector, facing problems similar to yours. A consultant who has only worked with large enterprises — or only with start-ups — may not translate well to your context.",
+      },
+      {
+        heading: '2. Do they start with your business problem or their toolkit?',
+        body: "This is the single biggest tell. A consultant who opens with \"have you tried [Tool X]?\" before understanding your operations, your customers, or your data is selling a product, not giving advice. The right starting point is always your business problem — reducing response times, improving conversion, freeing up your team's time — with tools selected afterwards, based on fit.",
+      },
+      {
+        heading: '3. How do they handle your data — and who actually sees it?',
+        body: "Any serious AI engagement will touch sensitive information: customer data, financial figures, internal processes. Ask directly how data is handled during the engagement, what tools they use to analyse it, and whether any of your information is used to train external AI models. A consultant who hasn't thought about this hasn't thought about AI risk — which is half the job.",
+      },
+      {
+        heading: '4. What does the engagement actually produce?',
+        body: "\"A roadmap\" can mean a single slide or a genuinely actionable plan with prioritised use cases, owners, timelines, and cost estimates. Ask to see an example of a deliverable from a past engagement (with client details removed). If they can't show you anything concrete, you're buying a conversation, not a plan.",
+      },
+      {
+        heading: '5. How will success be measured — and when?',
+        body: "Agree on this before the engagement starts, not at the final presentation. Good AI consulting ties outcomes to numbers that matter to your business: hours saved per week, response time reduced, cost per transaction, conversion uplift. If the answer is vague (\"increased AI maturity\"), push for specifics.",
+      },
+      {
+        heading: '6. Who actually does the work — and what happens after they leave?',
+        body: "In larger firms, the partner who pitches the engagement is rarely the person doing the work. Ask who you'll actually be working with day to day. Just as importantly, ask what happens when the engagement ends — does the knowledge stay with your team, or does it walk out the door with the consultant? The best engagements leave your team more capable than they found it, with documentation, training, and a plan your people can run without ongoing dependency.",
+      },
+      {
+        body: "None of these questions require technical expertise to ask. They require the same rigour you'd apply to hiring a senior staff member — because in practice, that's what a good AI strategy consultant becomes for the duration of the engagement. The right person will welcome every one of these questions. That, itself, is often the clearest signal of all.",
+      },
+    ],
+  },
+  {
+    slug: 'what-is-ai-enablement',
+    title: 'What Is AI Enablement? A Plain-English Definition for Business Leaders',
+    metaTitle: 'What Is AI Enablement? Definition & Examples for Business',
+    metaDescription:
+      'AI enablement is the work of building the capability for your team to use AI effectively — distinct from AI strategy and AI tools. What it includes, in plain English. 5-min read.',
+    excerpt:
+      '"AI enablement" gets used to describe everything from buying software licences to running a single training session. Here\'s what it actually means, what it includes, and why skipping it is the most common reason AI rollouts fail.',
+    date: '2026-05-27',
+    readTime: '5 min read',
+    category: 'AI Strategy',
+    keyTakeaways: [
+      'AI enablement is the work of building organisational capability to use AI effectively — it sits between AI strategy (the plan) and AI tools (the technology).',
+      'It has four parts: identifying the right use cases, selecting and integrating the right tools, training people to use them well, and putting basic governance in place.',
+      'Most disappointing AI rollouts are tooling without enablement — licences handed to staff with no training, no use cases, and no guidance produce email drafts, not transformation.',
+    ],
+    tags: ['AI Enablement', 'AI Strategy', 'Definitions'],
+    frameworkAnchor: { component: 'People' },
+    content: [
+      {
+        body: '"AI enablement" is one of those phrases that gets attached to almost anything — a software rollout, a single lunch-and-learn, a line item in a consulting proposal. Stripped of the jargon, AI enablement means one specific thing: building the organisational capability for your people to use AI effectively in their day-to-day work. It sits between strategy (deciding what to do) and tools (the software itself) — and it is the part most businesses skip.',
+      },
+      {
+        heading: 'The Four Parts of AI Enablement',
+        body: "First, use case identification: working out where AI actually helps in your business — which tasks, which teams, which workflows — rather than applying it everywhere at once. Second, tool selection and integration: choosing the right AI tools for those use cases and connecting them into how your team already works, rather than adding a disconnected app nobody opens. Third, training and capability building: teaching people not just how to use a tool, but how to think about when and how to use it well — including its limits. Fourth, governance: simple, practical guardrails covering what data can be used, how outputs are checked, and who is accountable.",
+      },
+      {
+        heading: 'Why "Buy the Tool" Is Not Enablement',
+        body: "Many businesses roll out Microsoft Copilot, ChatGPT Enterprise, or a similar platform to their whole team and consider that \"AI enablement\" done. Adoption data consistently tells a different story: without training and clear use cases, most staff use these tools for the most obvious tasks — drafting emails, summarising documents — and usage plateaus quickly. The licence cost is paid every month regardless of whether the capability is being built.",
+      },
+      {
+        heading: 'What Good Enablement Looks Like in Practice',
+        body: "A marketing team given AI enablement doesn't just get access to a writing tool — they get three or four specific, documented use cases (first-draft campaign briefs, social content variations, performance report summaries), a short working session on how to prompt effectively for each one, and a simple checklist for reviewing AI output before it goes external. That's a few days of focused work that compounds into ongoing time savings, rather than a licence that quietly goes unused.",
+      },
+      {
+        heading: 'How Enablement Differs from Strategy and Governance',
+        body: "AI strategy answers \"what should we do and why\" at the organisational level — it's the plan. AI governance answers \"what are we and aren't we allowed to do\" — it's the guardrails. AI enablement is the bridge between the two: it's the practical, hands-on work of turning a strategic decision and a governance framework into something your team can actually do on a Tuesday afternoon.",
+      },
+      {
+        body: "If your business has bought AI tools but adoption has stalled, the gap is rarely the tool. It's enablement — the use cases, the training, and the guardrails that turn access into capability. That's usually a focused, short piece of work, not a multi-month transformation programme.",
+      },
+    ],
+  },
+  {
+    slug: 'ai-readiness-assessment-explained',
+    title: 'What Is an AI Readiness Assessment? Process, Timeline, and What You Get',
+    metaTitle: 'What Is an AI Readiness Assessment? Process & Output Explained',
+    metaDescription:
+      'An AI readiness assessment evaluates your business across strategy, data, technology, people, and governance. What it covers, how long it takes, and what you walk away with. 6-min read.',
+    excerpt:
+      'Before spending on AI tools, most businesses would benefit from a clear, honest answer to one question: are we actually ready? Here\'s what an AI readiness assessment covers, how long it takes, and what the output looks like.',
+    date: '2026-06-03',
+    readTime: '6 min read',
+    category: 'Implementation',
+    keyTakeaways: [
+      'An AI readiness assessment evaluates a business across six dimensions: strategy alignment, data infrastructure, technology, workforce capability, process fit, and governance.',
+      'A well-run assessment takes two to four weeks and produces a scorecard, prioritised use cases, and a roadmap — not a generic slide deck.',
+      'Skipping this step is the most common reason AI pilots stall: businesses invest in tools before knowing whether the organisation around them can use them.',
+    ],
+    tags: ['AI Readiness', 'Assessment', 'Implementation'],
+    frameworkAnchor: { component: 'Framework' },
+    cta: {
+      label: 'Free Resource',
+      title: 'AI Readiness Checklist',
+      description: 'Get a quick read on where your organisation stands across 7 dimensions in 15 minutes.',
+      href: '/resources/ai-readiness-checklist',
+    },
+    content: [
+      {
+        body: "Most businesses considering AI investment ask \"which tool should we buy?\" before asking the more useful question: \"is our organisation actually ready to get value from AI?\" An AI readiness assessment answers the second question first — and the answer usually reshapes the first.",
+      },
+      {
+        heading: 'The Six Dimensions It Covers',
+        body: "A thorough assessment looks at: strategy and leadership alignment (is there a clear business reason for AI, and does leadership agree on it?); data infrastructure (is the data needed for priority use cases accessible, accurate, and sufficient?); technology and integration (can AI tools actually connect to the systems your team uses daily?); workforce skills and literacy (do people have the basic AI literacy to use new tools effectively?); process suitability (which workflows are actually good candidates for AI, versus which feel like they should be but aren't); and governance (are there any guardrails for data use, output review, and accountability?).",
+      },
+      {
+        heading: 'What the Process Looks Like',
+        body: "In practice, this typically involves a small number of structured conversations with leadership and team representatives across the business, a review of the systems and data sources relevant to candidate use cases, and a short workshop to pressure-test and prioritise the findings. For most mid-market businesses, this takes two to four weeks — not months. It is deliberately scoped to be fast enough that it doesn't become its own project.",
+      },
+      {
+        heading: 'What You Get at the End',
+        body: "The output should be three things you can act on immediately: a readiness scorecard showing where the organisation stands across the six dimensions, with the gaps that matter most clearly flagged; a shortlist of prioritised use cases — specific, scoped opportunities ranked by feasibility and impact, not a generic list of \"things AI can do\"; and a roadmap with a realistic sequence and timeline for the first 90 days, six months, and beyond.",
+      },
+      {
+        heading: 'Why This Step Gets Skipped — and What It Costs',
+        body: "Readiness assessments get skipped for an understandable reason: they feel like a delay when there's pressure to \"do something with AI\" now. But the businesses that skip this step and go straight to tool deployment are disproportionately the ones that end up stuck at pilot stage six months later — with licences paid for, low adoption, and no clear next step. A two-to-four-week assessment is a small fraction of the cost of a stalled twelve-month programme.",
+      },
+      {
+        body: "If you're weighing up whether a formal assessment is the right next step, the free Lumii AI Readiness Checklist gives you a quick, honest first read across the same dimensions — enough to know whether a deeper assessment would be useful, and where it should focus.",
+      },
+    ],
+  },
+  {
+    slug: 'how-small-business-start-with-ai',
+    title: 'How Should a Small Business Start With AI? A 90-Day Plan',
+    metaTitle: 'How Should a Small Business Start With AI? A 90-Day Plan',
+    metaDescription:
+      'Small and mid-size businesses don\'t need a 50-page AI strategy — they need one well-chosen use case, executed well, in the first 90 days. A practical plan. 7-min read.',
+    excerpt:
+      'Most small and mid-size businesses don\'t need an AI strategy document. They need a focused first 90 days that builds momentum, confidence, and a template for what comes next. Here\'s what that looks like.',
+    date: '2026-06-10',
+    readTime: '7 min read',
+    category: 'AI Strategy',
+    keyTakeaways: [
+      'Small businesses don\'t need a comprehensive AI strategy to start — they need one well-chosen use case, executed well, in the first 90 days.',
+      'The highest-return starting points are usually customer-facing communication, content production, and administrative or back-office tasks — not "AI everything, everywhere".',
+      'Training and a simple usage policy matter more than tool selection in the first 90 days. Most early failures are adoption failures, not technology failures.',
+    ],
+    tags: ['Small Business', 'AI Strategy', 'Getting Started'],
+    frameworkAnchor: { component: 'Workflows' },
+    content: [
+      {
+        body: "If you run a small or mid-size business and feel like everyone else has an \"AI strategy\" except you, the good news is: most of them don't either, regardless of what their LinkedIn posts suggest. What actually moves the needle for a smaller business isn't a strategy document — it's a focused first 90 days that proves AI can save real time on a real task, builds internal confidence, and gives you a template to repeat.",
+      },
+      {
+        heading: 'Days 1–14: Pick One Thing',
+        body: "Resist the urge to tackle AI \"across the business\" at once. Instead, pick one task that is time-consuming, repetitive, and currently done manually by someone whose time is valuable. Good candidates: drafting first responses to common customer enquiries, writing first drafts of marketing content, summarising meeting notes into action items, or preparing first drafts of reports and proposals. The best first use case is specific enough that you'll know within weeks whether it's working.",
+      },
+      {
+        heading: 'Days 15–30: Set Up and Test',
+        body: "Choose a mainstream AI tool that fits the task — for most small businesses, this means ChatGPT, Microsoft Copilot (if you're already on Microsoft 365), or Google Gemini (if you're on Google Workspace), rather than a niche specialist tool. Have the one or two people doing the task test it on real examples for two weeks. The goal isn't perfection — it's learning what the tool is good at, where it needs a human check, and how it fits into the existing workflow.",
+      },
+      {
+        heading: 'Days 31–60: Build the Habit and Write It Down',
+        body: "This is where most small businesses fall short — not because the tool doesn't work, but because using it doesn't become a habit. Write a one-page guide for the task: what to ask the AI for, what to check before using the output, and what not to use it for. Share it with anyone else doing similar work. A simple, written-down process is the difference between \"someone tried ChatGPT once\" and an actual capability.",
+      },
+      {
+        heading: 'Days 61–90: Measure, Then Pick the Next One',
+        body: "By day 90, you should have a rough but honest answer to: how much time is this saving, and is the quality acceptable? If the answer is positive, document it and use the same playbook — pick one task, test it, write it down, measure it — for the next opportunity. If the answer is mixed, that's useful information too: either the task wasn't the right fit, or the team needs more support to use the tool well. Either way, you now have a repeatable process, which is worth more than a long list of untested ideas.",
+      },
+      {
+        heading: 'What to Avoid in the First 90 Days',
+        body: "Avoid buying multiple AI tools before you've gotten value from one. Avoid rolling out AI access to the whole team with no guidance — this is how you end up paying for licences nobody uses. And avoid choosing a use case based on what sounds impressive rather than what actually saves time. A boring win — three hours a week back on report drafting — is worth more in the first 90 days than an ambitious project that's still \"in progress\" a year later.",
+      },
+      {
+        body: "The businesses that build real AI capability over time are rarely the ones that started with the biggest plan. They're the ones that got one thing working, learned from it, and repeated. Ninety days is enough time to find out which kind of business you're going to be.",
+      },
+    ],
+  },
+  {
+    slug: 'ai-consulting-engagement-cost',
+    title: 'How Much Does AI Strategy Consulting Cost? Pricing Models Explained',
+    metaTitle: 'How Much Does AI Strategy Consulting Cost? Pricing Guide',
+    metaDescription:
+      'AI strategy consulting fees range from a few thousand dollars for a workshop to six figures for enterprise programmes. What drives the cost, and how to pick the right model. 6-min read.',
+    excerpt:
+      '"It depends" is the honest answer to what AI consulting costs — but it depends on specific, knowable things. Here\'s how the main pricing models work, and how to think about which one fits your situation.',
+    date: '2026-06-15',
+    readTime: '6 min read',
+    category: 'Implementation',
+    keyTakeaways: [
+      'AI strategy consulting typically falls into three pricing models: fixed-fee workshops (days), scoped projects (weeks to months), and ongoing advisory retainers.',
+      'A focused 1–2 day workshop producing a roadmap is usually the lowest-risk entry point — typically a few thousand to low tens of thousands of dollars.',
+      'The right model depends on what you\'re solving for: a workshop for clarity and direction, a project for a defined deliverable, a retainer for ongoing complexity.',
+    ],
+    tags: ['AI Strategy', 'Consulting', 'Pricing'],
+    frameworkAnchor: { component: 'Thesis' },
+    cta: {
+      label: 'Read Next',
+      title: 'AI Workshops vs Sprints vs Retainers',
+      description: 'A closer look at the three engagement models and which fits your situation.',
+      href: '/insights/ai-engagement-models-compared',
+    },
+    content: [
+      {
+        body: "\"How much does AI consulting cost?\" doesn't have a single answer — but it isn't a mystery either. Fees are driven by a small number of factors: the scope of the engagement, how long it runs, who's involved, and what you walk away with. Understanding the main pricing models makes it much easier to work out what you actually need, and to spot when a quote doesn't match the scope.",
+      },
+      {
+        heading: 'Model 1: Fixed-Fee Workshops',
+        body: "A workshop is typically a one- or two-day, structured session with leadership and key team members, producing a clear output — an AI opportunity map, a prioritised roadmap, or a readiness scorecard. Because the time commitment is fixed and the deliverable is defined upfront, this is usually priced as a flat fee, in the range of a few thousand to the low tens of thousands of dollars depending on the consultant's experience and how much preparation is involved. This is the lowest-risk entry point — useful when you need clarity and direction before committing to anything larger.",
+      },
+      {
+        heading: 'Model 2: Scoped Projects',
+        body: "A project has a defined deliverable that takes longer than a workshop to produce — an AI readiness assessment, a use-case business case for the board, or a pilot implementation plan. These typically run from a few weeks to a few months and are priced either as a fixed project fee (based on the scope agreed upfront) or on a time-and-materials basis with a not-to-exceed cap. Costs vary widely based on complexity, but mid-market engagements of this kind commonly fall in the mid five figures to low six figures.",
+      },
+      {
+        heading: 'Model 3: Ongoing Advisory Retainers',
+        body: "A retainer is ongoing counsel — typically a set number of days or hours per month, used for things like reviewing AI tool decisions, advising on governance as new use cases emerge, or providing strategic input as your AI programme matures. Retainers are priced monthly and make sense once a business has moved past the initial roadmap and needs continued, informed input without re-scoping a new project every time a question comes up.",
+      },
+      {
+        heading: 'What Actually Drives the Number',
+        body: "Within each model, the same factors move the price: the seniority and experience of the people doing the work, how much of your organisation is involved (a session with three leaders costs less to prepare for than one involving ten departments), how much original analysis is required versus applying an existing framework, and whether the engagement includes implementation support or stops at the plan.",
+      },
+      {
+        heading: 'How to Choose the Right Model for You',
+        body: "If you're not sure where AI fits for your business and want clarity before spending more, start with a workshop — it's the cheapest way to get an informed outside view and a concrete next step. If you already know roughly where you want to focus but need a rigorous plan, business case, or readiness picture, a scoped project is the better fit. If you're past the planning stage and want ongoing access to expertise as decisions come up, a retainer is more cost-effective than repeatedly commissioning small projects.",
+      },
+      {
+        body: "The biggest cost risk in AI consulting isn't choosing the wrong price point — it's mismatching the model to the problem. A six-figure transformation project is a poor fit for a business that hasn't yet decided where AI fits. A single workshop is a poor fit for a business that needs hands-on support implementing a complex, multi-system rollout. Start with what you're actually trying to answer, and the right model — and the right price range — tends to follow.",
       },
     ],
   },

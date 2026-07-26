@@ -42,7 +42,7 @@ export default function ContactPage() {
                 Start the conversation.
               </h2>
               <p className="font-body text-[16px] leading-[1.8] text-slate-warm font-light mb-12">
-                Fill in the form and we'll be in touch within one business day. Alternatively, connect directly via the details below.
+                Fill in the form and I'll be in touch within one business day. Alternatively, connect directly via the details below.
               </p>
 
               {/* Contact details */}

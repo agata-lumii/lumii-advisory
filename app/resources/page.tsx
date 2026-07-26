@@ -71,11 +71,11 @@ const moreResources = [
     cta: 'Explore the Guides',
   },
   {
-    type: 'Case Studies',
-    title: 'AI in Action',
+    type: 'Analysis',
+    title: 'AI adoption, analysed',
     description:
-      'How Klarna, Goldman Sachs, Microsoft, Walmart and others achieved measurable AI results — with the strategies, timelines, and outcomes behind each.',
-    tags: ['Real Results', '8+ Companies', 'All Industries', 'Free'],
+      'How Klarna, Goldman Sachs, Microsoft, Walmart and others have publicly deployed AI — the strategies, timelines, and outcomes behind each, broken down for mid-market relevance. Published programmes I analyse, not Lumii clients.',
+    tags: ['Analysis', '8+ Companies', 'Sourced', 'Free'],
     href: '/ai-case-studies',
     cta: 'View Case Studies',
   },

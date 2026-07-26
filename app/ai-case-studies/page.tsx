@@ -183,8 +183,11 @@ export default function AICaseStudiesPage() {
           <h1 className="font-display font-light text-[clamp(48px,5vw,78px)] leading-[1.08] text-warm-white mb-8 tracking-[-0.01em] max-w-[820px]">
             AI in action. <em className="italic text-gold">Real results.</em>
           </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/55 font-light max-w-[600px] mb-16">
+          <p className="font-body text-[17px] leading-[1.8] text-warm-white/55 font-light max-w-[600px] mb-6">
             The AI transformation is already underway. These are real examples of how leading global businesses — across every sector — are using AI to cut costs, accelerate growth, and build lasting competitive advantage.
+          </p>
+          <p className="font-body text-[14px] leading-[1.8] text-warm-white/40 font-light max-w-[600px] mb-16 italic">
+            Every programme below is publicly reported and sourced. These are companies I analyse — not Lumii clients.
           </p>
 
           {/* Three headline stats */}
@@ -313,7 +316,7 @@ export default function AICaseStudiesPage() {
               </p>
               <Link
                 href="/contact"
-                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block"
+                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 inline-block"
               >
                 Start the Conversation
               </Link>
@@ -321,7 +324,7 @@ export default function AICaseStudiesPage() {
             <div className="bg-near-black p-12 lg:p-14">
               <div className="w-10 h-px bg-gold mb-8" />
               <blockquote className="font-display text-[clamp(22px,2.5vw,30px)] italic font-light text-warm-white leading-[1.45] mb-10">
-                &ldquo;AI is the greatest unlock of our era — but only when used with purpose. We help you identify where AI genuinely accelerates your business, and build the capability to use it well.&rdquo;
+                &ldquo;AI is the greatest unlock of our era — but only when used with purpose. I help you identify where AI genuinely accelerates your business, and build the capability to use it well.&rdquo;
               </blockquote>
               <p className="font-display text-[18px] italic font-light text-gold">Agata Adamczak</p>
               <p className="font-body text-[11px] tracking-[0.15em] uppercase text-ash mt-1">Founder, Lumii Advisory</p>

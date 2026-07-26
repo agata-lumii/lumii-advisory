@@ -56,8 +56,33 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
       }
     : null
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `https://lumiiadvisory.com/who-we-help/${vertical.slug}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumiiadvisory.com' },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Who I help',
+        item: 'https://lumiiadvisory.com/who-we-help',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: vertical.heading,
+        item: `https://lumiiadvisory.com/who-we-help/${vertical.slug}`,
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
@@ -70,7 +95,7 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
           {/* Breadcrumb */}
           <div className="flex items-center gap-3 mb-12">
             <Link href="/who-we-help" className="font-body text-[11px] tracking-[0.2em] uppercase text-ash hover:text-warm-white transition-colors duration-200">
-              Who We Help
+              Who I help
             </Link>
             <span className="text-ash/40 text-[11px]">/</span>
             <span className="font-body text-[11px] tracking-[0.2em] uppercase text-gold">{vertical.category}</span>
@@ -276,7 +301,7 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
           </div>
           <Link
             href="/ai-case-studies"
-            className="flex-shrink-0 font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 whitespace-nowrap"
+            className="flex-shrink-0 font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 whitespace-nowrap"
           >
             AI Case Studies →
           </Link>
@@ -288,7 +313,7 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
         <div className="max-w-[1180px] mx-auto">
           <SectionTag>Relevant Services</SectionTag>
           <h2 className="font-display font-light text-[clamp(36px,4vw,54px)] leading-[1.12] text-near-black tracking-[-0.01em] mb-12">
-            The disciplines we bring to <em className="italic text-gold">{vertical.category.toLowerCase()}.</em>
+            The disciplines I bring to <em className="italic text-gold">{vertical.category.toLowerCase()}.</em>
           </h2>
           <div className="flex flex-wrap gap-4">
             {vertical.services.map((service) => (
@@ -347,7 +372,7 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
               </p>
               <Link
                 href="/contact"
-                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-3.5 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
+                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-3.5 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
               >
                 Book a Discovery Call
               </Link>

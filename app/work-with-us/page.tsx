@@ -138,15 +138,15 @@ const tiers: Tier[] = [
 const faqs = [
   {
     q: 'Do you share pricing upfront?',
-    a: 'Not at the tier level. Every engagement is shaped around the business in front of us — scope, seniority of stakeholders, timeline, and outcomes all shift the number. We give a clear, fixed proposal after an initial discovery conversation so you can make a confident decision.',
+    a: 'Not at the tier level. Every engagement is shaped around the business in front of me — scope, seniority of stakeholders, timeline, and outcomes all shift the number. I give a clear, fixed proposal after an initial discovery conversation so you can make a confident decision.',
   },
   {
     q: 'How do we get started?',
-    a: 'Every engagement begins with a 30-minute discovery call — no obligation, no slide deck. We listen, ask hard questions, and tell you honestly whether we\'re the right fit. If we are, we\'ll follow up within a few days with a scoped proposal.',
+    a: 'Every engagement begins with a 30-minute discovery call — no obligation, no slide deck. I listen, ask hard questions, and tell you honestly whether I am the right fit. If I am, I\'ll follow up within a few days with a scoped proposal.',
   },
   {
     q: 'Do you work across Australia and internationally?',
-    a: 'Yes. We\'re based in Sydney and work with clients across Australia and the Asia-Pacific region. Workshops and strategy sessions can be delivered in-person in major APAC cities or virtually across time zones.',
+    a: 'Yes. I am based in Sydney and work with clients across Australia and the Asia-Pacific region. Workshops and strategy sessions can be delivered in-person in major APAC cities or virtually across time zones.',
   },
   {
     q: 'Can engagements evolve over time?',
@@ -154,7 +154,7 @@ const faqs = [
   },
   {
     q: 'Who actually delivers the work?',
-    a: 'Agata Adamczak leads every engagement personally. For larger programmes we bring in a curated network of senior specialists — but you always have a single senior consultant accountable end-to-end.',
+    a: 'Agata Adamczak leads every engagement personally. For larger programmes I bring in a curated network of senior specialists — but you always have a single senior consultant accountable end-to-end.',
   },
 ]
 
@@ -252,7 +252,7 @@ export default function WorkWithUsPage() {
 
                 <Link
                   href={`/contact?interest=${tier.enquiryValue}`}
-                  className="inline-block mt-10 font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-[#d4b47a] hover:-translate-y-px transition-all duration-200"
+                  className="inline-block mt-10 font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200"
                 >
                   {tier.enquiryLabel} →
                 </Link>
@@ -300,12 +300,12 @@ export default function WorkWithUsPage() {
               {
                 title: 'Vendor-neutral.',
                 description:
-                  'No platform commissions, no reseller agreements, no hidden incentives. Our advice is shaped by your business, not our rate card.',
+                  'No platform commissions, no reseller agreements, no hidden incentives. My advice is shaped by your business, not my rate card.',
               },
               {
                 title: 'Outcome-accountable.',
                 description:
-                  'Every engagement ties to a commercial outcome you can point at. If we can\'t find one, we\'ll tell you before you sign.',
+                  'Every engagement ties to a commercial outcome you can point at. If I can\'t find one, I\'ll tell you before you sign.',
               },
             ].map((p) => (
               <div key={p.title}>
@@ -333,7 +333,7 @@ export default function WorkWithUsPage() {
                 <em className="italic text-gold">get in touch.</em>
               </>
             }
-            lead="A few of the questions we hear most often. If yours isn't here, just ask."
+            lead="A few of the questions I hear most often. If yours isn't here, just ask."
           />
           <div className="mt-16 space-y-8">
             {faqs.map((faq) => (

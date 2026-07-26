@@ -119,7 +119,7 @@ export default function AboutPage() {
               {[
                 {
                   label: 'Radical honesty',
-                  text: "I'll always tell you what you need to hear, not what you want to hear. If a tool isn't right for you, I'll say so. If a strategy isn't working, we'll change it.",
+                  text: "I'll always tell you what you need to hear, not what you want to hear. If a tool isn't right for you, I'll say so. If a strategy isn't working, I'll change it.",
                 },
                 {
                   label: 'Relentless curiosity',

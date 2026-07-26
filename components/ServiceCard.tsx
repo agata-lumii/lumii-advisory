@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const SERVICE_ICONS: Record<string, React.ReactNode> = {
   'Digital Strategy': (
@@ -40,6 +41,14 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
       <path d="M7 7l2.8 2.8M18.2 18.2L21 21M7 21l2.8-2.8M18.2 9.8L21 7" />
     </svg>
   ),
+  'AI Visibility': (
+    <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+      <circle cx="8" cy="14" r="2.5" />
+      <path d="M14 9.5a6.5 6.5 0 0 1 0 9" />
+      <path d="M18 5.5a12 12 0 0 1 0 17" />
+      <path d="M22 2.5a17 17 0 0 1 0 23" />
+    </svg>
+  ),
 }
 
 interface Props {
@@ -47,17 +56,22 @@ interface Props {
   name: string
   description: string
   tags: string[]
+  href?: string
 }
 
-export default function ServiceCard({ number, name, description, tags }: Props) {
+export default function ServiceCard({ number, name, description, tags, href }: Props) {
+  const Wrapper = href ? Link : 'div'
+  const wrapperProps = href ? { href } : {}
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-near-black p-10 lg:p-12 transition-colors duration-300 hover:bg-[#252320] cursor-pointer group"
+      className="bg-near-black transition-colors duration-300 hover:bg-[#252320] group"
     >
+      <Wrapper {...(wrapperProps as { href: string })} className="block p-10 lg:p-12 h-full">
       <div className="flex items-start justify-between mb-7">
         <span className="font-display text-[13px] text-gold tracking-[0.1em]">{number}</span>
         <div className="w-8 h-8 text-gold/30 group-hover:text-gold/60 transition-colors duration-300 shrink-0">
@@ -83,6 +97,12 @@ export default function ServiceCard({ number, name, description, tags }: Props) 
           </span>
         ))}
       </div>
+      {href && (
+        <span className="font-body text-[11px] tracking-[0.15em] uppercase text-gold group-hover:tracking-[0.22em] transition-all duration-300 mt-7 inline-block">
+          Read more →
+        </span>
+      )}
+      </Wrapper>
     </motion.div>
   )
 }

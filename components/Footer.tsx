@@ -36,18 +36,19 @@ export default function Footer() {
             <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-6">Services</p>
             <ul className="space-y-4 list-none p-0 m-0">
               {[
-                'Digital Strategy',
-                'Customer Experience',
-                'Ecommerce',
-                'MarTech Advisory',
-                'AI Enablement',
+                { name: 'AI Enablement', href: '/services' },
+                { name: 'AI Visibility', href: '/services/ai-visibility' },
+                { name: 'Digital Strategy', href: '/services' },
+                { name: 'Customer Experience', href: '/services' },
+                { name: 'Ecommerce', href: '/services' },
+                { name: 'MarTech Advisory', href: '/services' },
               ].map((s) => (
-                <li key={s}>
+                <li key={s.name}>
                   <Link
-                    href="/services"
+                    href={s.href}
                     className="font-body text-[13px] text-warm-white/55 font-light hover:text-warm-white transition-colors duration-200"
                   >
-                    {s}
+                    {s.name}
                   </Link>
                 </li>
               ))}
@@ -56,7 +57,7 @@ export default function Footer() {
 
           {/* Who We Help */}
           <div>
-            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-6">Who We Help</p>
+            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-6">Who I help</p>
             <ul className="space-y-4 list-none p-0 m-0">
               {[
                 'Marketers',
@@ -173,7 +174,7 @@ export default function Footer() {
                   href="/how-we-work"
                   className="font-body text-[13px] text-warm-white/55 font-light hover:text-warm-white transition-colors duration-200"
                 >
-                  How We Work
+                  How I work
                 </Link>
               </li>
               <li>

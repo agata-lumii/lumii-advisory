@@ -4,131 +4,116 @@ import SectionHeader from '@/components/SectionHeader'
 import ServiceCard from '@/components/ServiceCard'
 import ProcessSection from '@/components/ProcessSection'
 import CTABanner from '@/components/CTABanner'
+import { disciplines, disciplinesConnectiveTissue } from '@/lib/disciplines'
 
 export const metadata: Metadata = {
   title: {
     absolute: 'AI Consulting & Digital Strategy Services Sydney | Lumii',
   },
   description:
-    'AI strategy, MarTech, ecommerce & CX consulting for Australian mid-market businesses. Sprint, project & retainer engagements. Book a free call.',
+    'AI enablement, AI visibility, MarTech, ecommerce & CX consulting for Australian mid-market businesses. Sprint, project & retainer engagements. Book a free call.',
   alternates: {
     canonical: 'https://lumiiadvisory.com/services',
   },
 }
 
-const services = [
-  {
-    number: '01',
-    name: 'Digital Strategy',
-    description:
-      'A clear, prioritised roadmap that aligns your digital investments to business outcomes. We audit, advise, and architect transformation plans that are ambitious but executable. Every engagement begins with understanding your business model, your competitive landscape, and your growth constraints — then building the plan that closes the gap.',
-    tags: ['Roadmapping', 'Audits', 'Transformation', 'Digital Maturity', 'KPI Frameworks'],
-  },
-  {
-    number: '02',
-    name: 'Customer Experience',
-    description:
-      'Seamless, intentional journeys that convert browsers into buyers and buyers into advocates. We map, redesign, and optimise the moments that matter most — from first touchpoint to long-term retention. We combine qualitative research with quantitative data to identify the friction points costing you revenue.',
-    tags: ['Journey Mapping', 'CX Design', 'NPS & VOC', 'Persona Research', 'Experience Audits'],
-  },
-  {
-    number: '03',
-    name: 'Ecommerce',
-    description:
-      'From platform strategy to conversion optimisation, we help you build, scale, and refine ecommerce operations that consistently outperform benchmarks. Whether you\'re launching a D2C brand, migrating platforms, or optimising an established store, we bring the strategic and technical clarity to make it happen.',
-    tags: ['Platform Strategy', 'CRO', 'D2C', 'Migration', 'Performance Optimisation'],
-  },
-  {
-    number: '04',
-    name: 'MarTech Advisory',
-    description:
-      'The right stack, properly integrated. We help you evaluate, select, implement, and get genuine value from your marketing technology investments — no vendor agenda, no hidden commissions. Just honest, expert guidance on what your business actually needs, and how to make it work together.',
-    tags: ['Stack Audit', 'CDP / CRM', 'Automation', 'Attribution', 'Integration Architecture'],
-  },
-  {
-    number: '05',
-    name: 'AI Enablement',
-    description:
-      'Practical, responsible AI integration that saves time, improves decisions, and creates competitive advantage. We identify the use cases, implement the tools, and build the capability within your team to use AI effectively and sustainably. Not just tools — a genuine capability lift.',
-    tags: ['AI Readiness', 'Use Case Design', 'Training', 'Generative AI', 'Workflow Automation'],
-  },
-]
+const SITE_URL = 'https://lumiiadvisory.com'
 
 // Service JSON-LD for AI/LLM discovery and search rich results
 const servicesSchema = {
   '@context': 'https://schema.org',
-  '@graph': services.map((s) => ({
-    '@type': 'Service',
-    '@id': `https://lumiiadvisory.com/services#${s.name.toLowerCase().replace(/\s+/g, '-')}`,
-    name: s.name,
-    description: s.description,
-    serviceType: s.name,
-    provider: { '@id': 'https://lumiiadvisory.com/#organization' },
-    areaServed: [
-      { '@type': 'Country', name: 'Australia' },
-      { '@type': 'Place', name: 'Asia-Pacific' },
-    ],
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Mid-market businesses',
-    },
-    category: 'AI Strategy and Digital Transformation Consulting',
-    url: `https://lumiiadvisory.com/services`,
-  })),
+  '@graph': disciplines.map((d) => {
+    const slug = d.name.toLowerCase().replace(/\s+/g, '-')
+    const pageUrl = d.href?.startsWith('/services/')
+      ? `${SITE_URL}${d.href}`
+      : `${SITE_URL}/services`
+
+    return {
+      '@type': 'Service',
+      '@id': `${SITE_URL}/services#${slug}`,
+      name: d.name,
+      description: d.descriptionLong,
+      serviceType: d.name,
+      provider: { '@id': `${SITE_URL}/#organization` },
+      areaServed: [
+        { '@type': 'Country', name: 'Australia' },
+        { '@type': 'Place', name: 'Asia-Pacific' },
+      ],
+      audience: {
+        '@type': 'Audience',
+        audienceType: 'Mid-market businesses',
+      },
+      category: 'AI Strategy and Digital Transformation Consulting',
+      url: pageUrl,
+    }
+  }),
 }
 
 export default function ServicesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
+
       {/* Hero banner */}
       <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
-            What We Do
+            What I do
           </p>
           <h1 className="font-display font-light text-[clamp(52px,5.5vw,82px)] leading-[1.08] text-warm-white mb-8 tracking-[-0.01em] max-w-[820px]">
-            Five disciplines.<br />
+            Six disciplines.<br />
             <em className="italic text-gold">One direction.</em>
           </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[580px] font-light">
-            We work across the full spectrum of digital transformation — from strategy to execution, technology to culture — always with one eye on your customer and one on your bottom line.
+          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[620px] font-light">
+            AI enablement leads, and AI visibility follows it. The other four are the
+            foundations that decide whether either of them works.
           </p>
         </div>
       </section>
 
-      {/* Services grid */}
+      {/* Disciplines grid */}
       <section className="bg-near-black px-8 lg:px-12 pb-[clamp(80px,10vw,140px)]">
         <div className="max-w-[1180px] mx-auto">
+          <p className="font-body text-[16px] leading-[1.85] text-warm-white/55 font-light max-w-[720px] mb-14 pl-6 border-l border-gold/40">
+            {disciplinesConnectiveTissue}
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(180,175,168,0.12)] border border-[rgba(180,175,168,0.12)]">
-            {services.map((s) => (
-              <ServiceCard key={s.number} {...s} />
+            {disciplines.map((d) => (
+              <ServiceCard
+                key={d.number}
+                number={d.number}
+                name={d.name}
+                description={d.descriptionLong}
+                tags={d.tagsLong}
+                href={d.href}
+              />
             ))}
-            {/* Empty spacer for grid alignment */}
-            <div className="bg-near-black hidden lg:block" />
           </div>
         </div>
       </section>
 
-      {/* Framework anchor — the model underneath all five disciplines */}
+      {/* Framework anchor — the model underneath all six disciplines */}
       <section className="bg-warm-white py-[clamp(70px,8vw,110px)] px-8 lg:px-12 border-y border-parchment">
         <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="max-w-[640px]">
             <p className="font-body text-[12px] tracking-[0.22em] uppercase text-gold mb-4">
-              The Framework Behind These Services
+              The framework behind these services
             </p>
             <h2 className="font-display font-light text-[clamp(26px,2.8vw,38px)] leading-[1.2] text-near-black mb-4 tracking-[-0.005em]">
-              Five disciplines. One operating system.
+              Six disciplines. One operating system.
             </h2>
             <p className="font-body text-[16px] text-slate-warm font-light leading-[1.8]">
-              Every Lumii engagement is anchored in the same model: the AI Operating System. The five components — Thesis, Guardrails, Workflows, People, Measurement — define what we build, regardless of which discipline you start with.
+              Every Lumii engagement is anchored in the same model: the AI Operating
+              System. The five components — Thesis, Guardrails, Workflows, People,
+              Measurement — define what I build, regardless of which discipline you
+              start with.
             </p>
           </div>
           <Link
             href="/ai-operating-system"
             className="font-body text-[13px] tracking-[0.1em] uppercase text-warm-white bg-near-black px-8 py-4 hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
           >
-            Read The Framework →
+            Read the framework →
           </Link>
         </div>
       </section>
@@ -137,14 +122,14 @@ export default function ServicesPage() {
       <section className="bg-ivory py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           <SectionHeader
-            tag="How We Engage"
+            tag="How I engage"
             heading={
               <>
                 The right model for<br />
                 <em className="italic text-gold">your situation.</em>
               </>
             }
-            lead="Every business is different. We offer a range of engagement models to suit your stage, budget, and ambitions — from a focused advisory sprint to a long-term transformation partnership."
+            lead="Every business is different. I offer a range of engagement models to suit your stage, budget, and ambitions — from a focused advisory sprint to a long-term transformation partnership."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             {[
@@ -152,14 +137,14 @@ export default function ServicesPage() {
                 title: 'Strategy Sprint',
                 duration: '2–4 weeks',
                 description:
-                  'An intensive, focused engagement to solve a specific strategic challenge — ideal for businesses that need clarity quickly. We deliver a clear diagnosis and actionable roadmap.',
+                  'An intensive, focused engagement to solve a specific strategic challenge — for businesses that need clarity quickly. I deliver a clear diagnosis and an actionable roadmap.',
                 ideal: 'Ideal for: New initiatives, stack evaluations, pre-investment planning',
               },
               {
                 title: 'Transformation Partnership',
                 duration: '3–6 months',
                 description:
-                  'A deeper, sustained engagement covering strategy, planning, implementation oversight, and capability building. We become a genuine extension of your leadership team.',
+                  'A deeper, sustained engagement covering strategy, planning, implementation oversight, and capability building. I become a genuine extension of your leadership team.',
                 ideal: 'Ideal for: Major digital transformations, platform migrations, AI programmes',
               },
               {
@@ -191,34 +176,13 @@ export default function ServicesPage() {
               href="/work-with-us"
               className="inline-block font-body text-[12px] tracking-[0.12em] uppercase text-near-black border border-near-black px-10 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200"
             >
-              Explore ways to work with us →
+              Explore ways to work together →
             </Link>
           </div>
         </div>
       </section>
 
       <ProcessSection />
-
-      {/* How We Work callout */}
-      <section className="bg-near-black py-[clamp(48px,6vw,72px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div>
-            <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-3">Our Methodology</p>
-            <h2 className="font-display font-light text-[clamp(26px,3vw,38px)] leading-[1.2] text-warm-white">
-              Want to understand how we actually work?
-            </h2>
-            <p className="font-body text-[14px] leading-[1.8] text-warm-white/55 font-light mt-2 max-w-[480px]">
-              Our four-phase process — Discovery, Strategy, Pilot, and Scale — is designed to reduce implementation risk and build lasting AI capability inside your organisation.
-            </p>
-          </div>
-          <Link
-            href="/how-we-work"
-            className="font-body text-[12px] tracking-[0.12em] uppercase text-warm-white border border-warm-white/30 px-8 py-4 hover:border-warm-white hover:bg-warm-white hover:text-near-black transition-all duration-200 whitespace-nowrap flex-shrink-0"
-          >
-            See How We Work →
-          </Link>
-        </div>
-      </section>
 
       <CTABanner />
     </>

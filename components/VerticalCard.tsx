@@ -10,9 +10,12 @@ interface Props {
   body: string
   outcomes: string[]
   index: number
+  /** Homepage variant: lead with two outcomes and send the rest to the sector page. */
+  compact?: boolean
 }
 
-export default function VerticalCard({ number, slug, category, heading, body, outcomes, index }: Props) {
+export default function VerticalCard({ number, slug, category, heading, body, outcomes, index, compact }: Props) {
+  const shownOutcomes = compact ? outcomes.slice(0, 2) : outcomes
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -29,7 +32,7 @@ export default function VerticalCard({ number, slug, category, heading, body, ou
         <h3 className="font-display text-[26px] font-light text-near-black leading-[1.25] mb-4 relative z-10">{heading}</h3>
         <p className="font-body text-[14px] text-slate-warm font-light leading-[1.75] mb-8">{body}</p>
         <ul className="space-y-2.5 mb-8">
-          {outcomes.map((o, i) => (
+          {shownOutcomes.map((o, i) => (
             <li key={i} className="font-body text-[13px] text-charcoal font-light leading-[1.6] flex items-start gap-3">
               <span className="text-gold flex-shrink-0 mt-0.5">—</span>
               {o}
