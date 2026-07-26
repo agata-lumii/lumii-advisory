@@ -31,3 +31,6 @@ next-env.d.ts
 
 # Claude Code
 .claude/
+
+# Git credentials (used by the automated Sunday publisher — never commit)
+.git-credentials
