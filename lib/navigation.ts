@@ -68,7 +68,7 @@ const speaking: NavGroup = {
       links: [
         { href: '/ai-keynote-speaker#topic-visibility', label: 'Find Your Brand’s Light in the Age of AI' },
         { href: '/ai-keynote-speaker#topic-work', label: 'AI at Work: What Changes on Monday?' },
-        { href: '/ai-keynote-speaker#topic-leadership', label: 'The AI-Ready Organisation' },
+        { href: '/ai-keynote-speaker#topic-light', label: 'Find Your Light: What AI Gives Back' },
         { href: '/ai-keynote-speaker#topic-briefing', label: 'Stop Prompting. Start Briefing.' },
       ],
     },

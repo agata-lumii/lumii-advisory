@@ -3,7 +3,7 @@ import Image from 'next/image'
 import OfferIntro from '@/components/lumii/OfferIntro'
 import { ContentCard, PageCta, TextLink } from '@/components/lumii/primitives'
 import { FaqSection, JsonLd, SITE_URL } from '@/components/lumii/seo'
-import { OFFER_URLS, PRICING_ANSWER, SERVICE_AREA, speakingTopics, topicTitle } from '@/lib/offers'
+import { OFFER_URLS, PRICING_ANSWER, SERVICE_AREA, speakingFormats, speakingTopics, topicTitle } from '@/lib/offers'
 
 const PAGE_URL = `${SITE_URL}${OFFER_URLS.keynotes}`
 const TITLE = 'AI Keynote Speaker Sydney: Talks & Panels | Agata Adamczak'
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 }
 
 const DEFINITION =
-  'Agata Adamczak is a Sydney-based AI speaker and the founder of Lumii Advisory. Her keynotes and panel talks bring a clear, practical perspective on AI into the room — how work is changing, what leaders need to put in place, how to brief AI well, and how brands get found in AI search — drawing on nearly 20 years across data, digital strategy, search and AI visibility.'
+  'Agata Adamczak is a Sydney-based AI speaker and the founder of Lumii Advisory. Her keynotes and panel talks bring a clear, practical perspective on AI into the room — what AI gives back to people, how everyday work is changing, how to brief AI well, and how brands get found in AI search — drawing on nearly 20 years across data, digital strategy, search and AI visibility.'
 
 const faqs = [
   {
@@ -37,6 +37,10 @@ const faqs = [
   {
     q: 'Does Agata speak on panels as well as giving keynotes?',
     a: 'Yes. Agata speaks on panels as well as giving talks — for example on a Havas panel at Amazon’s office — and can join a panel discussion shaped around your event.',
+  },
+  {
+    q: 'How long is an AI keynote?',
+    a: 'A keynote typically runs 30–45 minutes plus Q&A, and an interactive session 60–90 minutes with hands-on exercises. A keynote can also be paired with a workshop for the same team — for example, over a half day. Every session is shaped around your agenda.',
   },
   {
     q: 'Can a keynote be combined with hands-on AI training?',
@@ -160,55 +164,101 @@ export default function AiKeynotePage() {
             people and your event.
           </p>
         </div>
-        <div className="topics-grid">
+        <div className="case-list">
           {speakingTopics.map((topic) => (
-            <article className="topic" id={topic.id} key={topic.id}>
-              <span className="eyebrow">{topic.label}</span>
-              <h3>
-                {topic.title[0]}
-                <br />
-                {topic.title[1]}
-              </h3>
-              <p>{topic.body}</p>
-              <p className="topic-audience">
-                <strong>For:</strong> {topic.audience}
-              </p>
-              <TextLink href="/contact?interest=speaking" arrow="↗">
-                Discuss this topic
-              </TextLink>
+            <article className="case" id={topic.id} key={topic.id}>
+              <div>
+                <p className="eyebrow">{topic.label}</p>
+                <h3 className="case-headline">
+                  {topic.title[0]}
+                  <br />
+                  {topic.title[1]}
+                </h3>
+                <p className="consequence">{topic.question}</p>
+              </div>
+              <div>
+                <p className="eyebrow">ATTENDEES LEAVE KNOWING</p>
+                <ul className="takeaways">
+                  {topic.takeaways.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+                <div className="detail-list stack-top">
+                  <div>
+                    <p className="eyebrow">FOR</p>
+                    <p>{topic.audience.charAt(0).toUpperCase() + topic.audience.slice(1)}.</p>
+                  </div>
+                  <div>
+                    <p className="eyebrow">BEST AS</p>
+                    <p>{topic.bestAs}</p>
+                  </div>
+                </div>
+                <p className="topic-links">
+                  <TextLink href="/contact?interest=speaking" arrow="↗">
+                    Discuss this topic
+                  </TextLink>
+                  {topic.next ? <TextLink href={topic.next.href}>{topic.next.label}</TextLink> : null}
+                </p>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section" aria-labelledby="formats-title">
+      <section className="section split tint" aria-labelledby="formats-title">
+        <div>
+          <p className="eyebrow">FORMATS</p>
+          <h2 id="formats-title">Shaped around your event.</h2>
+          <p className="page-lead stack-top">
+            Get people thinking with a talk, get them doing with a workshop — or both.
+          </p>
+        </div>
+        <div className="panel table-scroll">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th scope="col">Format</th>
+                <th scope="col">Length</th>
+              </tr>
+            </thead>
+            <tbody>
+              {speakingFormats.map((f) => (
+                <tr key={f.name}>
+                  <td>{f.name}</td>
+                  <td>{f.length}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="booking-title">
         <div className="section-top">
           <div>
-            <p className="eyebrow">SHAPE YOUR EVENT</p>
-            <h2 id="formats-title">Get people thinking. Get people doing.</h2>
+            <p className="eyebrow">HOW A BOOKING WORKS</p>
+            <h2 id="booking-title">Three steps.</h2>
           </div>
         </div>
         <div className="card-grid three">
           <ContentCard
-            label="GET PEOPLE THINKING"
-            title="Keynotes & panels"
-            description="Clear perspectives on AI, the changing way we work and what it means for the people in your business."
+            label="01"
+            title="A short call first"
+            description="About your audience, your event and what you want people to leave with."
             as="h3"
           />
           <ContentCard
-            label="GET PEOPLE DOING"
-            title="Hands-on team training"
-            description="Give AI a place in your offsite agenda with practical exploration, shared learning and work your team recognises."
-            href={OFFER_URLS.workshops}
-            action="AI workshops for offsites"
+            label="02"
+            title="Shaped around your people"
+            description="The session uses examples from your audience’s industry and roles."
             as="h3"
           />
           <ContentCard
-            label="BRANDS & AI SEARCH"
-            title="AI visibility advisory"
-            description="For brands that want to know how they show up when buyers ask AI to shortlist their options."
-            href={OFFER_URLS.visibility}
-            action="Explore AI visibility"
+            label="03"
+            title="Something to take away"
+            description="Attendees get the free AI readiness checklist and ebook, with the option to continue through a workshop or the course series."
+            href="/resources"
+            action="See the free resources"
             as="h3"
           />
         </div>

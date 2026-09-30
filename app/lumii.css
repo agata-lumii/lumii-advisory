@@ -258,3 +258,8 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.85em;background:#eee
 .prose ol,.callout ol,.result-list:is(ol){list-style:decimal}
 .prose li::marker,.callout li::marker,.result-list li::marker{color:var(--muted)}
 .rule-top{border-top:1px solid var(--line)}
+ul.takeaways{list-style:none;margin:14px 0 0;padding:0}
+ul.takeaways li{position:relative;padding:12px 0 12px 26px;border-top:1px solid var(--line);font-size:1.02rem;line-height:1.6}
+ul.takeaways li:before{content:'✳';position:absolute;left:0;top:12px;color:var(--ink);font-size:.9rem}
+.topic-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:24px}
+.case .consequence{font-size:1.15rem;margin-top:14px}
