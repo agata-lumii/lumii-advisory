@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import LegalPage from '@/components/lumii/LegalPage'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -54,7 +55,7 @@ const sections = [
     body: (
       <>
         My handling of personal information is set out in my{' '}
-        <Link href="/privacy-policy" className="text-gold hover:text-near-black underline">
+        <Link href="/privacy-policy">
           Privacy Policy
         </Link>
         .
@@ -74,7 +75,7 @@ const sections = [
     body: (
       <>
         Questions about these terms? Email{' '}
-        <a href="mailto:hello@lumiiadvisory.com" className="text-gold hover:text-near-black underline">
+        <a href="mailto:hello@lumiiadvisory.com">
           hello@lumiiadvisory.com
         </a>
         .
@@ -85,43 +86,11 @@ const sections = [
 
 export default function TermsOfServicePage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-near-black pt-20 pb-20 px-8 lg:px-12">
-        <div className="max-w-[860px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-6">Legal</p>
-          <h1 className="font-display font-light text-[clamp(40px,5vw,68px)] leading-[1.08] text-warm-white mb-6 tracking-[-0.01em]">
-            Terms of Service
-          </h1>
-          <p className="font-body text-[16px] leading-[1.8] text-warm-white/60 max-w-[640px] font-light">
-            The terms governing your use of lumiiadvisory.com and any content or resources available on it. Plain
-            English. No surprises.
-          </p>
-          <p className="font-body text-[12px] tracking-[0.15em] uppercase text-ash mt-8">Last updated: April 2026</p>
-        </div>
-      </section>
-
-      {/* Body */}
-      <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-        <div className="max-w-[760px] mx-auto space-y-12">
-          {sections.map((s) => (
-            <div key={s.heading}>
-              <h2 className="font-display font-light text-[clamp(22px,2.4vw,28px)] text-near-black leading-[1.3] mb-4">
-                {s.heading}
-              </h2>
-              <div className="font-body text-[15px] leading-[1.85] text-slate-warm font-light">{s.body}</div>
-            </div>
-          ))}
-          <div className="pt-10 border-t border-parchment">
-            <Link
-              href="/contact"
-              className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black border border-near-black px-8 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
-            >
-              Get in touch →
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+    <LegalPage
+      title="Terms of service"
+      lead="The terms governing your use of lumiiadvisory.com and any content or resources available on it. Plain English. No surprises."
+      updated="April 2026"
+      sections={sections}
+    />
   )
 }

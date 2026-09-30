@@ -56,7 +56,8 @@ const schema = [
     description: DEFINITION,
     url: PAGE_URL,
     inLanguage: 'en-AU',
-    provider: { '@id': `${SITE_URL}/#organization` },
+    // Named inline as well: Google's Course check wants the provider name here.
+    provider: { '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: 'Lumii Advisory', sameAs: SITE_URL },
     about: ['AI enablement', 'Generative AI at work', 'AI literacy'],
     teaches: learningSteps.map((s) => `${s.title}: ${s.body}`),
     audience: { '@type': 'BusinessAudience', audienceType: 'Businesses and their teams' },

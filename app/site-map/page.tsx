@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { PageIntro } from '@/components/lumii/primitives'
 import { verticals } from '@/lib/verticals'
 import { articles } from '@/lib/insights'
 import { platforms } from '@/lib/ai-tools'
@@ -19,6 +20,10 @@ const sections = [
     links: [
       { href: '/', label: 'Home' },
       { href: '/work-with-us', label: 'Ways to work together' },
+      { href: '/ai-courses', label: 'AI courses' },
+      { href: '/ai-workshops', label: 'AI workshops & team training' },
+      { href: '/ai-keynote-speaker', label: 'AI keynotes & panels' },
+      { href: '/ai-enablement', label: 'AI enablement consulting' },
       { href: '/services/ai-visibility', label: 'AI visibility advisory' },
       { href: '/ai-operating-system', label: 'The framework & approach' },
       { href: '/about', label: 'About Agata' },
@@ -78,46 +83,28 @@ const sections = [
 
 export default function SiteMapPage() {
   return (
-    <>
-      <section className="bg-near-black pt-20 pb-24 px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
-            Navigation
-          </p>
-          <h1 className="font-display font-light text-[clamp(48px,5.5vw,80px)] leading-[1.08] text-warm-white mb-6 tracking-[-0.01em]">
-            Site Map
-          </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[560px] font-light">
-            A complete directory of every page on the Lumii Advisory website.
-          </p>
+    <div className="lumii">
+      <PageIntro
+        label="NAVIGATION"
+        title="Site map"
+        lead="A complete directory of every page on the Lumii Advisory website."
+      />
+      <section className="section">
+        <div className="card-grid three">
+          {sections.map((section) => (
+            <div key={section.title} className="sitemap-group">
+              <p className="eyebrow">{section.title.toUpperCase()}</p>
+              <ul>
+                {section.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
-
-      <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {sections.map((section) => (
-              <div key={section.title}>
-                <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-6">
-                  {section.title}
-                </p>
-                <ul className="space-y-3 list-none p-0 m-0">
-                  {section.links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="font-body text-[14px] text-slate-warm font-light hover:text-near-black transition-colors duration-200"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   )
 }

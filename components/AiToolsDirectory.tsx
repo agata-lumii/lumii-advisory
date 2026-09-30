@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import Link from 'next/link'
 import type { AiTool } from '@/lib/ai-tools-directory'
 import { CATEGORIES } from '@/lib/ai-tools-directory'
 
@@ -110,11 +109,7 @@ const CATEGORY_META: Record<string, CategoryMeta> = {
   },
 }
 
-const PRICING_META: Record<string, { label: string; bg: string; color: string; border: string }> = {
-  Free:     { label: 'Free',     bg: '#F0FAF5', color: '#2A7A50', border: '#B0DFC8' },
-  Freemium: { label: 'Freemium', bg: '#FBF5EA', color: '#A07030', border: '#DEC88A' },
-  Paid:     { label: 'Paid',     bg: '#F2F2F2', color: '#5A5652', border: '#C8C4BC' },
-}
+const PRICING_LABEL: Record<string, string> = { Free: 'Free', Freemium: 'Freemium', Paid: 'Paid' }
 
 export default function AiToolsDirectory({ tools }: { tools: AiTool[] }) {
   const [active, setActive] = useState('All')
@@ -141,195 +136,83 @@ export default function AiToolsDirectory({ tools }: { tools: AiTool[] }) {
   }, [tools])
 
   return (
-    <section className="bg-ivory py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-      <div className="max-w-[1180px] mx-auto">
-
-        {/* Search + count */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-10">
-          <div className="relative">
-            <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-ash" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="7" /><path d="m21 21-4.35-4.35" />
-            </svg>
-            <input
-              type="text"
-              placeholder="Search tools…"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              className="font-body text-[14px] text-near-black placeholder:text-ash bg-warm-white border border-parchment focus:border-gold/60 outline-none pl-10 pr-4 py-3 w-full sm:w-[300px] transition-colors duration-200"
-            />
-          </div>
-          <p className="font-body text-[12px] text-ash font-light">
-            {filtered.length} tool{filtered.length !== 1 ? 's' : ''}
-            {active !== 'All' && ` in ${active}`}
-            {search && ` matching "${search}"`}
-          </p>
+    <section className="section" aria-labelledby="directory-title">
+      <div className="section-top">
+        <div>
+          <p className="eyebrow">THE DIRECTORY</p>
+          <h2 id="directory-title">Browse by what you want to do.</h2>
         </div>
+      </div>
 
-        {/* Category filter pills */}
-        <div className="flex flex-wrap gap-2 mb-12">
-          {/* All pill */}
+      <div className="directory-toolbar">
+        <div className="field">
+          <label htmlFor="tool-search">Search tools</label>
+          <input
+            id="tool-search"
+            type="search"
+            placeholder="Try “meeting notes” or “video”"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </div>
+        <p className="form-note" aria-live="polite">
+          {filtered.length} tool{filtered.length !== 1 ? 's' : ''}
+          {active !== 'All' && ` in ${active}`}
+          {search && ` matching “${search}”`}
+        </p>
+      </div>
+
+      <div className="library-filters" role="group" aria-label="Filter tools by category">
+        <button type="button" className="library-filter" aria-pressed={active === 'All'} onClick={() => setActive('All')}>
+          All <span>{counts['All']}</span>
+        </button>
+        {CATEGORIES.map(cat => (
           <button
-            onClick={() => setActive('All')}
-            className={`inline-flex items-center gap-2 font-body text-[11px] tracking-[0.06em] uppercase px-4 py-2.5 border transition-all duration-150 ${
-              active === 'All'
-                ? 'bg-near-black text-warm-white border-near-black'
-                : 'bg-warm-white text-slate-warm border-parchment hover:border-charcoal/40 hover:text-charcoal'
-            }`}
+            key={cat}
+            type="button"
+            className="library-filter"
+            aria-pressed={active === cat}
+            onClick={() => setActive(cat)}
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0">
-              <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" />
-              <rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" />
-            </svg>
-            All
-            <span className={`text-[10px] ${active === 'All' ? 'text-warm-white/50' : 'text-ash'}`}>
-              {counts['All']}
+            <span className="filter-icon" style={{ color: CATEGORY_META[cat]?.color }} aria-hidden="true">
+              {CATEGORY_META[cat]?.icon}
             </span>
+            {cat} <span>{counts[cat]}</span>
           </button>
+        ))}
+      </div>
 
-          {CATEGORIES.map(cat => {
-            const meta = CATEGORY_META[cat]
-            const isActive = active === cat
+      {filtered.length === 0 ? (
+        <p className="form-note">No tools match your search. Try a different term or category.</p>
+      ) : (
+        <div className="tool-grid">
+          {filtered.map(tool => {
+            const meta = CATEGORY_META[tool.category]
             return (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                style={isActive ? { backgroundColor: meta.color, borderColor: meta.color, color: '#FDFCFA' } : {}}
-                className={`inline-flex items-center gap-2 font-body text-[11px] tracking-[0.06em] uppercase px-4 py-2.5 border transition-all duration-150 ${
-                  isActive
-                    ? ''
-                    : 'bg-warm-white text-slate-warm border-parchment hover:border-charcoal/30 hover:text-charcoal'
-                }`}
-              >
-                <span
-                  className="w-3.5 h-3.5 shrink-0"
-                  style={{ color: isActive ? '#FDFCFA' : meta.color }}
-                >
-                  {meta.icon}
-                </span>
-                {cat}
-                <span className={`text-[10px] ${isActive ? 'opacity-60' : 'text-ash'}`}>
-                  {counts[cat]}
-                </span>
-              </button>
+              <article className="tool-card" key={tool.name}>
+                <p className="tool-category">
+                  <span className="filter-icon" style={{ color: meta?.color }} aria-hidden="true">
+                    {meta?.icon}
+                  </span>
+                  {tool.category}
+                </p>
+                <h3 className="tool-name">{tool.name}</h3>
+                <span className="tag">{PRICING_LABEL[tool.pricing] ?? tool.pricing}</span>
+                <p>{tool.tagline}</p>
+                <p className="best-for">Best for</p>
+                <p>{tool.bestFor}</p>
+                <a className="text-link" href={tool.website} target="_blank" rel="noopener noreferrer">
+                  Visit {tool.name} <span aria-hidden="true">↗</span>
+                </a>
+              </article>
             )
           })}
         </div>
+      )}
 
-        {/* Tool grid */}
-        {filtered.length === 0 ? (
-          <p className="font-body text-[14px] text-ash font-light py-16 text-center">
-            No tools match your search. Try a different term or category.
-          </p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map(tool => {
-              const catMeta = CATEGORY_META[tool.category] ?? { color: '#B8B4AC', bg: '#F9F7F4' }
-              const priceMeta = PRICING_META[tool.pricing]
-              return (
-                <div
-                  key={tool.name}
-                  className="bg-warm-white border border-parchment flex flex-col overflow-hidden hover:shadow-[0_4px_24px_rgba(30,28,26,0.08)] hover:-translate-y-0.5 transition-all duration-200 group"
-                >
-                  {/* Coloured top stripe */}
-                  <div className="h-1 w-full shrink-0" style={{ backgroundColor: catMeta.color }} />
-
-                  {/* Card body */}
-                  <div className="p-6 flex flex-col gap-4 flex-1">
-
-                    {/* Header row: name + pricing badge */}
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-display font-light text-[22px] text-near-black leading-[1.15]">
-                          {tool.name}
-                        </h3>
-                        {/* Category badge with icon */}
-                        <div className="flex items-center gap-1.5 mt-1.5">
-                          <span className="w-3 h-3 shrink-0" style={{ color: catMeta.color }}>
-                            {catMeta.icon}
-                          </span>
-                          <p className="font-body text-[10px] tracking-[0.18em] uppercase" style={{ color: catMeta.color }}>
-                            {tool.category}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Pricing badge */}
-                      <span
-                        className="font-body text-[10px] tracking-[0.08em] uppercase px-2.5 py-1 border shrink-0 mt-0.5"
-                        style={{ backgroundColor: priceMeta.bg, color: priceMeta.color, borderColor: priceMeta.border }}
-                      >
-                        {priceMeta.label}
-                      </span>
-                    </div>
-
-                    {/* Large decorative icon in background */}
-                    <div className="relative">
-                      <div
-                        className="absolute -top-8 -right-2 w-16 h-16 opacity-[0.07] pointer-events-none"
-                        style={{ color: catMeta.color }}
-                        aria-hidden
-                      >
-                        {catMeta.icon}
-                      </div>
-                    </div>
-
-                    {/* Tagline */}
-                    <p className="font-body text-[13px] leading-[1.75] text-slate-warm font-light flex-1">
-                      {tool.tagline}
-                    </p>
-
-                    {/* Best for */}
-                    <div
-                      className="rounded-none px-4 py-3 mt-auto"
-                      style={{ backgroundColor: catMeta.bg }}
-                    >
-                      <p
-                        className="font-body text-[9px] tracking-[0.2em] uppercase mb-1"
-                        style={{ color: catMeta.color }}
-                      >
-                        Best for
-                      </p>
-                      <p className="font-body text-[12px] leading-[1.65] text-charcoal font-light">
-                        {tool.bestFor}
-                      </p>
-                    </div>
-
-                    {/* Link */}
-                    <Link
-                      href={tool.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-body text-[11px] tracking-[0.1em] uppercase inline-flex items-center gap-1.5 transition-colors duration-200 hover:opacity-70"
-                      style={{ color: catMeta.color }}
-                    >
-                      Visit website
-                      <span aria-hidden="true">→</span>
-                    </Link>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        )}
-
-        {/* Legend */}
-        <div className="flex flex-wrap items-center gap-6 mt-10 pt-8 border-t border-parchment">
-          <p className="font-body text-[11px] text-ash uppercase tracking-[0.15em]">Pricing</p>
-          {Object.values(PRICING_META).map(p => (
-            <span
-              key={p.label}
-              className="font-body text-[10px] tracking-[0.08em] uppercase px-2.5 py-1 border"
-              style={{ backgroundColor: p.bg, color: p.color, borderColor: p.border }}
-            >
-              {p.label}
-            </span>
-          ))}
-          <p className="font-body text-[11px] text-ash font-light italic ml-auto hidden sm:block">
-            Pricing tiers are indicative — always verify directly with the vendor.
-          </p>
-        </div>
-
-      </div>
+      <p className="form-note stack-top">
+        Pricing tiers are indicative — always verify directly with the vendor.
+      </p>
     </section>
   )
 }

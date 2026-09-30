@@ -1,86 +1,85 @@
 import type { Metadata } from 'next'
 import CTABanner from '@/components/CTABanner'
 import AiToolsDirectory from '@/components/AiToolsDirectory'
+import { TextLink } from '@/components/lumii/primitives'
+import { Breadcrumbs, JsonLd, SITE_URL, StatRow } from '@/components/lumii/seo'
 import { AI_TOOLS, CATEGORIES } from '@/lib/ai-tools-directory'
+
+const PAGE_URL = `${SITE_URL}/resources/ai-tools`
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'AI Tools Directory for Mid-Market Businesses (2026)',
+    absolute: 'AI Tools Directory for Business Teams (2026) | Lumii Advisory',
   },
   description:
     'The AI tools I actually recommend — by use case, by stack, by budget. Vendor-neutral, hands-on reviews. Updated quarterly.',
-  alternates: {
-    canonical: 'https://lumiiadvisory.com/resources/ai-tools',
-  },
+  alternates: { canonical: PAGE_URL },
 }
 
-const STAT_ROWS = [
-  { label: 'Tools listed', value: String(AI_TOOLS.length) },
-  { label: 'Categories', value: String(CATEGORIES.length) },
-  {
-    label: 'Free or freemium',
-    value:
-      String(AI_TOOLS.filter(t => t.pricing === 'Free' || t.pricing === 'Freemium').length) + '+',
-  },
-]
-
 export default function AiToolsPage() {
+  const freeCount = AI_TOOLS.filter((t) => t.pricing === 'Free' || t.pricing === 'Freemium').length
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-near-black pt-20 pb-24 px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
-            Resources · AI Tools Directory
-          </p>
-          <h1 className="font-display font-light text-[clamp(48px,5.5vw,80px)] leading-[1.08] text-warm-white mb-6 tracking-[-0.01em] max-w-[760px]">
-            Every AI tool worth<br />
-            <em className="italic text-gold">knowing about.</em>
-          </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[580px] font-light mb-14">
-            Organised by what you actually want to do — write, create, research, build, analyse. Each tool includes a plain-English summary, pricing tier, and a direct link.
-          </p>
-
-          {/* Stats row */}
-          <div className="flex flex-wrap gap-10">
-            {STAT_ROWS.map(({ label, value }) => (
-              <div key={label}>
-                <p className="font-display font-light text-[clamp(36px,4vw,52px)] text-gold leading-none mb-1">
-                  {value}
-                </p>
-                <p className="font-body text-[12px] tracking-[0.15em] uppercase text-warm-white/40">
-                  {label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+    <div className="lumii">
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'AI tools directory for business teams',
+          url: PAGE_URL,
+          numberOfItems: AI_TOOLS.length,
+          itemListElement: AI_TOOLS.map((tool, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: tool.name,
+            url: tool.website,
+          })),
+        }}
+      />
+      <section className="page-intro section">
+        <Breadcrumbs
+          trail={[
+            { name: 'Resources', href: '/resources' },
+            { name: 'AI tools directory', href: '/resources/ai-tools' },
+          ]}
+        />
+        <p className="eyebrow">AI TOOLS DIRECTORY</p>
+        <h1>
+          Every AI tool worth
+          <br />
+          knowing about.
+        </h1>
+        <p className="page-lead">
+          Organised by what you actually want to do — write, create, research, build, analyse. Each
+          tool includes a plain-English summary, pricing tier, and a direct link.
+        </p>
+        <StatRow
+          stats={[
+            { value: String(AI_TOOLS.length), label: 'Tools listed' },
+            { value: String(CATEGORIES.length), label: 'Categories' },
+            { value: `${freeCount}+`, label: 'Free or freemium' },
+          ]}
+        />
       </section>
 
-      {/* Directory */}
       <AiToolsDirectory tools={AI_TOOLS} />
 
-      {/* Note */}
-      <section className="bg-warm-white py-14 px-8 lg:px-12 border-t border-parchment">
-        <div className="max-w-[1180px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <p className="font-body text-[13px] text-slate-warm font-light leading-[1.8] max-w-[560px]">
-              This directory is curated and updated regularly. Pricing and features change frequently — links take you directly to each tool's website for the most accurate information. Missing a tool you rely on?{' '}
-              <a href="/contact" className="text-gold hover:text-near-black transition-colors duration-200 underline underline-offset-2">
-                Let us know.
-              </a>
-            </p>
-          </div>
-          <a
-            href="/learn"
-            className="font-body text-[12px] tracking-[0.1em] uppercase text-warm-white bg-near-black px-8 py-4 hover:-translate-y-px transition-all duration-200 inline-block shrink-0"
-          >
-            Deep-dive guides →
-          </a>
+      <section className="section secondary-offer" aria-label="About this directory">
+        <div>
+          <p className="eyebrow">ABOUT THE DIRECTORY</p>
+          <h2>Curated, and kept current.</h2>
+        </div>
+        <div>
+          <p>
+            This directory is curated and updated regularly. Pricing and features change frequently —
+            links take you directly to each tool’s website for the most accurate information. Missing a
+            tool you rely on? <a href="/contact">Let me know.</a>
+          </p>
+          <TextLink href="/learn">Deep-dive platform guides</TextLink>
+          <TextLink href="/ai-courses">Learn to use AI well with your team</TextLink>
         </div>
       </section>
 
       <CTABanner variant="reading" />
-    </>
+    </div>
   )
 }

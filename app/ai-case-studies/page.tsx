@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import CTABanner from '@/components/CTABanner'
-import SectionTag from '@/components/SectionTag'
+import { TextLink } from '@/components/lumii/primitives'
+import { Breadcrumbs, StatRow } from '@/components/lumii/seo'
 import CompanyLogo from '@/components/CompanyLogo'
 
 export const metadata: Metadata = {
@@ -172,168 +172,124 @@ const additionalStats = [
 
 export default function AICaseStudiesPage() {
   return (
-    <>
-      {/* ── HERO ── */}
-      <section className="bg-near-black pt-20 pb-28 px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8 flex items-center gap-4">
-            <span className="w-8 h-px bg-gold block" />
-            AI in Business
-          </p>
-          <h1 className="font-display font-light text-[clamp(48px,5vw,78px)] leading-[1.08] text-warm-white mb-8 tracking-[-0.01em] max-w-[820px]">
-            AI in action. <em className="italic text-gold">Real results.</em>
-          </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/55 font-light max-w-[600px] mb-6">
-            The AI transformation is already underway. These are real examples of how leading global businesses — across every sector — are using AI to cut costs, accelerate growth, and build lasting competitive advantage.
-          </p>
-          <p className="font-body text-[14px] leading-[1.8] text-warm-white/40 font-light max-w-[600px] mb-16 italic">
-            Every programme below is publicly reported and sourced. These are companies I analyse — not Lumii clients.
-          </p>
-
-          {/* Three headline stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[rgba(180,175,168,0.12)]">
-            {stats.map((s) => (
-              <div key={s.value} className="bg-near-black px-8 py-8 border border-[rgba(180,175,168,0.12)]">
-                <p className="font-display text-[clamp(36px,4vw,56px)] font-light text-gold leading-none mb-3">{s.value}</p>
-                <p className="font-body text-[13px] text-warm-white/60 font-light leading-[1.55] mb-3">{s.label}</p>
-                <a href={s.url} target="_blank" rel="noopener noreferrer" className="font-body text-[10px] tracking-[0.15em] uppercase text-ash/50 hover:text-ash transition-colors duration-200">
-                  {s.source} ↗
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
+    <div className="lumii">
+      <section className="page-intro section">
+        <Breadcrumbs
+          trail={[
+            { name: 'Resources', href: '/resources' },
+            { name: 'AI adoption, analysed', href: '/ai-case-studies' },
+          ]}
+        />
+        <p className="eyebrow">PUBLISHED PROGRAMMES, ANALYSED</p>
+        <h1>
+          AI in action.
+          <br />
+          Real results.
+        </h1>
+        <p className="page-lead">
+          The AI transformation is already underway. These are real examples of how leading global
+          businesses — across every sector — are using AI to cut costs, accelerate growth, and build
+          lasting competitive advantage.
+        </p>
+        <p className="intro-meta">
+          Every programme below is publicly reported and sourced. These are companies I analyse — not
+          Lumii clients.
+        </p>
+        <StatRow stats={stats.map((s) => ({ value: s.value, label: s.label, source: s.source, url: s.url }))} />
       </section>
 
-      {/* ── CASE STUDIES ── */}
-      <section className="bg-warm-white py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <div className="mb-16">
-            <SectionTag>Case Studies</SectionTag>
-            <h2 className="font-display font-light text-[clamp(36px,4vw,58px)] leading-[1.12] text-near-black tracking-[-0.01em]">
-              Eight businesses. <em className="italic text-gold">Transformative results.</em>
-            </h2>
+      <section className="section" aria-labelledby="cases-title">
+        <div className="section-top">
+          <div>
+            <p className="eyebrow">CASE STUDIES</p>
+            <h2 id="cases-title">Eight businesses. Transformative results.</h2>
           </div>
-
-          <div className="space-y-8">
-            {caseStudies.map((cs, i) => (
-              <div key={cs.company} className="bg-ivory border border-parchment overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-0">
-                  {/* Left: company identity */}
-                  <div className="bg-near-black p-10 flex flex-col justify-between">
-                    <div>
-                      {/* Company logo */}
-                      <div
-                        className="w-16 h-16 flex items-center justify-center mb-6 p-3"
-                        style={{ backgroundColor: cs.logoBg }}
-                      >
-                        <CompanyLogo company={cs.company} className="w-full h-full" />
-                      </div>
-                      <h3 className="font-display text-[28px] font-light text-warm-white leading-[1.2] mb-2">{cs.company}</h3>
-                      <p className="font-body text-[11px] tracking-[0.2em] uppercase text-ash">{cs.category}</p>
-                    </div>
-                    <div className="mt-10 flex flex-wrap gap-2">
-                      {cs.tags.map((tag) => (
-                        <span key={tag} className="font-body text-[10px] tracking-[0.1em] uppercase text-ash/60 border border-[rgba(180,175,168,0.2)] px-3 py-1.5">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Right: content */}
-                  <div className="p-10 lg:p-12">
-                    <div className="w-8 h-px bg-gold mb-6" />
-                    <h4 className="font-display text-[clamp(20px,2vw,26px)] font-light text-near-black leading-[1.35] mb-6">
-                      {cs.headline}
-                    </h4>
-                    <p className="font-body text-[15px] text-slate-warm font-light leading-[1.8] mb-8">
-                      {cs.result}
-                    </p>
-
-                    {/* Metrics row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-parchment mb-8">
-                      {cs.metrics.map((m) => (
-                        <div key={m.label}>
-                          <p className="font-display text-[clamp(24px,2.5vw,32px)] font-light text-near-black leading-none mb-2">{m.value}</p>
-                          <p className="font-body text-[12px] text-slate-warm font-light leading-[1.5]">{m.label}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <a
-                      href={cs.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-body text-[10px] tracking-[0.2em] uppercase text-ash hover:text-charcoal transition-colors duration-200"
-                    >
-                      Source: {cs.source} ↗
-                    </a>
-                  </div>
+        </div>
+        <div className="case-list">
+          {caseStudies.map((cs) => (
+            <article className="case" key={cs.company}>
+              <div className="case-identity">
+                <div className="case-logo" style={{ backgroundColor: cs.logoBg }}>
+                  <CompanyLogo company={cs.company} className="w-full h-full" />
+                </div>
+                <h3>{cs.company}</h3>
+                <p className="eyebrow">{cs.category.toUpperCase()}</p>
+                <div className="tag-list">
+                  {cs.tags.map((tag) => (
+                    <span className="tag" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ADDITIONAL STATS ── */}
-      <section className="bg-near-black py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <SectionTag>The Data</SectionTag>
-          <h2 className="font-display font-light text-[clamp(36px,4vw,58px)] leading-[1.12] text-warm-white tracking-[-0.01em] mb-16">
-            The numbers behind the <em className="italic text-gold">transformation.</em>
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(180,175,168,0.1)]">
-            {additionalStats.map((s) => (
-              <div key={s.value} className="bg-near-black border border-[rgba(180,175,168,0.1)] px-8 py-10">
-                <p className="font-display text-[clamp(32px,3vw,44px)] font-light text-gold leading-none mb-4">{s.value}</p>
-                <p className="font-body text-[13px] text-warm-white/60 font-light leading-[1.6] mb-4">{s.label}</p>
-                <p className="font-body text-[10px] tracking-[0.12em] uppercase text-ash/40">{s.source}</p>
+              <div>
+                <h4 className="case-headline">{cs.headline}</h4>
+                <p className="form-note case-result">{cs.result}</p>
+                <div className="stat-row">
+                  {cs.metrics.map((m) => (
+                    <div className="stat" key={m.label}>
+                      <strong className="small">{m.value}</strong>
+                      <span>{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <a className="text-link stack-top" href={cs.url} target="_blank" rel="noopener noreferrer">
+                  Source: {cs.source} <span aria-hidden="true">↗</span>
+                </a>
               </div>
-            ))}
-          </div>
-          <p className="font-body text-[12px] text-warm-white/25 font-light mt-8 leading-[1.6]">
-            Sources: McKinsey Global Institute (2023, 2025) · Goldman Sachs Research (2023) · Gartner (2024) · PwC Global AI Jobs Barometer (2025) · Salesforce State of Sales (2024) · IBM CEO Study (2025) · Stanford HAI AI Index (2025) · World Economic Forum Future of Jobs (2025)
-          </p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* ── LUMII BRIDGE ── */}
-      <section className="bg-ivory py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div>
-              <SectionTag>What This Means for You</SectionTag>
-              <h2 className="font-display font-light text-[clamp(36px,4vw,54px)] leading-[1.12] text-near-black tracking-[-0.01em] mb-8">
-                The gap between early movers and everyone else is <em className="italic text-gold">widening.</em>
-              </h2>
-              <p className="font-body text-[16px] leading-[1.85] text-slate-warm font-light mb-6">
-                Klarna, Goldman Sachs, Walmart, and Microsoft didn&rsquo;t get these results by accident. They had a clear strategy, the right partners, and the organisational willingness to move. The technology itself was the easy part.
-              </p>
-              <p className="font-body text-[16px] leading-[1.85] text-slate-warm font-light mb-10">
-                That&rsquo;s the work Lumii does — helping ambitious businesses cut through the noise, identify the right use cases, and implement AI with purpose. Not for the sake of it. For the results.
-              </p>
-              <Link
-                href="/contact"
-                className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 inline-block"
-              >
-                Start the Conversation
-              </Link>
-            </div>
-            <div className="bg-near-black p-12 lg:p-14">
-              <div className="w-10 h-px bg-gold mb-8" />
-              <blockquote className="font-display text-[clamp(22px,2.5vw,30px)] italic font-light text-warm-white leading-[1.45] mb-10">
-                &ldquo;AI is the greatest unlock of our era — but only when used with purpose. I help you identify where AI genuinely accelerates your business, and build the capability to use it well.&rdquo;
-              </blockquote>
-              <p className="font-display text-[18px] italic font-light text-gold">Agata Adamczak</p>
-              <p className="font-body text-[11px] tracking-[0.15em] uppercase text-ash mt-1">Founder, Lumii Advisory</p>
-            </div>
-          </div>
+      <section className="section method" aria-labelledby="data-title">
+        <p className="eyebrow">THE DATA</p>
+        <h2 id="data-title">The numbers behind the transformation.</h2>
+        <div className="card-grid four stack-top">
+          {additionalStats.map((s) => (
+            <article className="content-card" key={s.value}>
+              <p className="eyebrow">{s.source.toUpperCase()}</p>
+              <h3>{s.value}</h3>
+              <p>{s.label}</p>
+            </article>
+          ))}
+        </div>
+        <p className="section-description stack-top">
+          Sources: McKinsey Global Institute (2023, 2025) · Goldman Sachs Research (2023) · Gartner
+          (2024) · PwC Global AI Jobs Barometer (2025) · Salesforce State of Sales (2024) · IBM CEO
+          Study (2025) · Stanford HAI AI Index (2025) · World Economic Forum Future of Jobs (2025)
+        </p>
+      </section>
+
+      <section className="section secondary-offer" aria-labelledby="gap-title">
+        <div>
+          <p className="eyebrow">WHAT THIS MEANS FOR YOU</p>
+          <h2 id="gap-title">The gap between early movers and everyone else is widening.</h2>
+        </div>
+        <div>
+          <p>
+            Klarna, Goldman Sachs, Walmart, and Microsoft didn’t get these results by accident. They
+            had a clear strategy, the right partners, and the organisational willingness to move. The
+            technology itself was the easy part.
+          </p>
+          <p>
+            That’s the work Lumii does — helping businesses cut through the noise, identify the right
+            use cases, and build the capability to use AI with purpose.
+          </p>
+          <blockquote className="callout">
+            <p>
+              “AI is the greatest unlock of our era — but only when used with purpose. I help you
+              identify where AI genuinely accelerates your business, and build the capability to use it
+              well.”
+            </p>
+            <p className="eyebrow">AGATA ADAMCZAK, FOUNDER</p>
+          </blockquote>
+          <TextLink href="/ai-enablement">How AI enablement works</TextLink>
+          <TextLink href="/ai-courses">AI courses for your team</TextLink>
         </div>
       </section>
 
       <CTABanner variant="reading" />
-    </>
+    </div>
   )
 }

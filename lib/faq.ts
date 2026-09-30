@@ -23,6 +23,31 @@ export const faqs: FAQItem[] = [
     answer:
       "Yes — often more so. Smaller teams have the most to gain from AI in terms of leverage. A 10-person team where each person saves five hours per week with AI tools is effectively adding the capacity of more than one full-time employee. The key difference for smaller businesses is prioritisation: you don't need to do everything, you need to identify the two or three AI applications that will have an outsized impact on your specific constraints — whether that's time, cost, or scale.",
   },
+  // Courses, workshops and keynotes (Oct 2026): the offers people search for.
+  {
+    category: 'Courses, Workshops & Keynotes',
+    question: 'Do you run AI workshops for teams in Sydney?',
+    answer:
+      'Yes. Lumii is based in Sydney and runs hands-on AI workshops for teams across Australia and the Asia-Pacific, including as part of team offsites and planning days. Each workshop is shaped around your people, their roles and what you want to change, so the team works through real briefs and leaves with next steps they can apply at work.',
+  },
+  {
+    category: 'Courses, Workshops & Keynotes',
+    question: 'What is the difference between an AI course and an AI workshop?',
+    answer:
+      'An AI workshop is a hands-on session within an event such as a team offsite: practical exploration and shared learning on work your team recognises. Find Your Light with AI is Lumii’s course series, built to take a team from seeing the opportunity, to applying AI to real work, to building confident habits for checking outputs and protecting information.',
+  },
+  {
+    category: 'Courses, Workshops & Keynotes',
+    question: 'Do you give AI keynotes for conferences and offsites?',
+    answer:
+      'Yes. Agata Adamczak gives AI keynotes and panel talks on four topics — Find Your Brand’s Light in the Age of AI; AI at Work: What Changes on Monday?; The AI-Ready Organisation; and Stop Prompting. Start Briefing. — each shaped around your audience and your event.',
+  },
+  {
+    category: 'Courses, Workshops & Keynotes',
+    question: 'Can AI training be tailored to our team and industry?',
+    answer:
+      'Yes. Every course and workshop starts with your team’s roles, current use of AI and the work you want to improve, and the examples and exercises follow from that conversation — for marketing, sales, retail, professional services and other industries.',
+  },
   {
     category: 'Working with Lumii',
     question: 'What types of businesses does Lumii Advisory work with?',

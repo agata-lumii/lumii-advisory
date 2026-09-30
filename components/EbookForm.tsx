@@ -59,96 +59,69 @@ export default function EbookForm() {
     }
   }
 
-  const inputClass =
-    'w-full font-body text-[15px] font-light text-near-black bg-transparent border-0 border-b border-parchment focus:border-charcoal focus:outline-none py-4 transition-colors duration-200 placeholder:text-ash'
-  const labelClass = 'font-body text-[10px] tracking-[0.2em] uppercase text-ash mb-1 block'
-
   if (submitted) {
     return (
-      <div className="py-8">
-        <div className="w-8 h-px bg-gold mb-7" />
-        <p className="font-display text-[28px] italic font-light text-near-black leading-[1.3] mb-4">
-          Your download is ready.
+      <div className="form-success" role="status">
+        <h2>Your download is ready.</h2>
+        <p className="form-note">
+          The ebook should be downloading now. If it doesn’t start automatically, use the button
+          below.
         </p>
-        <p className="font-body text-[15px] text-slate-warm font-light leading-[1.75] mb-8">
-          The ebook should be downloading now. If it doesn't start automatically, use the button below.
+        <p className="stack-top">
+          <a
+            className="button"
+            href="/downloads/lumii-advisory-ai-ebook.pdf"
+            download="Find Your Light in the Age of AI — Lumii Advisory.pdf"
+          >
+            Download again <span aria-hidden="true">↓</span>
+          </a>
         </p>
-        <a
-          href="/downloads/lumii-advisory-ai-ebook.pdf"
-          download="Find Your Light in the Age of AI — Lumii Advisory.pdf"
-          className="inline-block font-body text-[12px] tracking-[0.1em] uppercase text-warm-white bg-near-black px-8 py-4 hover:-translate-y-px transition-all duration-200"
-        >
-          Download Again →
-        </a>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      <div>
-        <label className={labelClass}>Full Name</label>
-        <input
-          {...register('name', { required: true })}
-          placeholder="Jane Smith"
-          className={inputClass}
-        />
-        {errors.name && (
-          <p className="font-body text-[11px] text-red-500 mt-1">Required</p>
-        )}
+    <form onSubmit={handleSubmit(onSubmit)} className="form" noValidate>
+      <div className="field">
+        <label htmlFor="ebook-name">Full name</label>
+        <input id="ebook-name" autoComplete="name" {...register('name', { required: true })} placeholder="Jane Smith" />
+        {errors.name && <p className="field-error">Required</p>}
       </div>
-      <div>
-        <label className={labelClass}>Email</label>
+      <div className="field">
+        <label htmlFor="ebook-email">Email</label>
         <input
-          {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })}
+          id="ebook-email"
           type="email"
+          autoComplete="email"
+          {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })}
           placeholder="jane@company.com"
-          className={inputClass}
         />
-        {errors.email && (
-          <p className="font-body text-[11px] text-red-500 mt-1">Valid email required</p>
-        )}
+        {errors.email && <p className="field-error">Valid email required</p>}
       </div>
-      <div>
-        <label className={labelClass}>Company</label>
-        <input
-          {...register('company', { required: true })}
-          placeholder="Your Company"
-          className={inputClass}
-        />
-        {errors.company && (
-          <p className="font-body text-[11px] text-red-500 mt-1">Required</p>
-        )}
-      </div>
-      <div>
-        <label className={labelClass}>Country</label>
-        <input
-          {...register('country', { required: true })}
-          placeholder="Australia"
-          className={inputClass}
-        />
-        {errors.country && (
-          <p className="font-body text-[11px] text-red-500 mt-1">Required</p>
-        )}
+      <div className="form-row">
+        <div className="field">
+          <label htmlFor="ebook-company">Company</label>
+          <input id="ebook-company" autoComplete="organization" {...register('company', { required: true })} placeholder="Your company" />
+          {errors.company && <p className="field-error">Required</p>}
+        </div>
+        <div className="field">
+          <label htmlFor="ebook-country">Country</label>
+          <input id="ebook-country" autoComplete="country-name" {...register('country', { required: true })} placeholder="Australia" />
+          {errors.country && <p className="field-error">Required</p>}
+        </div>
       </div>
 
       {error && (
-        <p className="font-body text-[13px] text-red-500 font-light">
-          Something went wrong — please try again or email us at hello@lumiiadvisory.com
+        <p className="field-error" role="alert">
+          Something went wrong — please try again or email me at hello@lumiiadvisory.com
         </p>
       )}
 
-      <div className="pt-2">
-        <button
-          type="submit"
-          disabled={submitting}
-          className="w-full font-body text-[12px] tracking-[0.12em] uppercase text-warm-white bg-near-black px-10 py-4 hover:bg-charcoal hover:-translate-y-px transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-        >
-          {submitting ? 'Sending…' : 'Get Free Access →'}
+      <div>
+        <button type="submit" className="button yellow" disabled={submitting}>
+          {submitting ? 'Sending…' : 'Get the free ebook'} <span aria-hidden="true">↓</span>
         </button>
-        <p className="font-body text-[11px] text-ash font-light mt-3 text-center">
-          No spam. Unsubscribe any time.
-        </p>
+        <p className="form-note stack-top">No spam. Unsubscribe any time.</p>
       </div>
     </form>
   )

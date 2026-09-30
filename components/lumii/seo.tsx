@@ -23,7 +23,14 @@ export interface Crumb {
  * Visible breadcrumb trail plus matching BreadcrumbList schema, generated
  * from the same list so the two can't drift apart. "Home" is implied.
  */
-export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
+export function Breadcrumbs({
+  trail,
+  lastLabel,
+}: {
+  trail: Crumb[]
+  /** Shorter visible label for the current page; the schema keeps its full name. */
+  lastLabel?: string
+}) {
   const all = [{ name: 'Home', href: '/' }, ...trail]
   const schema = {
     '@context': 'https://schema.org',
@@ -43,7 +50,7 @@ export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
           {all.map((crumb, i) =>
             i === all.length - 1 ? (
               <li key={crumb.href} aria-current="page">
-                {crumb.name.toUpperCase()}
+                {(lastLabel ?? crumb.name).toUpperCase()}
               </li>
             ) : (
               <li key={crumb.href}>
