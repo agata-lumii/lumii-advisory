@@ -375,6 +375,17 @@ export const verticals: Vertical[] = [
   },
 ]
 
+/**
+ * Industry pages retired on 30 Sept 2026: thin, near-duplicate pages that now
+ * 301 to /who-we-help (see next.config.mjs). Their content stays here so a
+ * page can be restored and expanded later — remove its slug from this list
+ * and its redirect together.
+ */
+export const RETIRED_VERTICAL_SLUGS = ['estate-agents', 'hospitality', 'healthcare', 'startups', 'education']
+
+/** Industry pages that are published. Use this, not `verticals`, for links and routes. */
+export const liveVerticals = verticals.filter((v) => !RETIRED_VERTICAL_SLUGS.includes(v.slug))
+
 export function getVerticalBySlug(slug: string): Vertical | undefined {
   return verticals.find((v) => v.slug === slug)
 }

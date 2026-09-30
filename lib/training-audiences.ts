@@ -104,12 +104,17 @@ export function getTrainingAudience(slug: string): TrainingAudience | undefined 
   return trainingAudiences.find((audience) => audience.slug === slug)
 }
 
-/** Other industries: pages retained unchanged and linked from /who-we-help. */
-export const otherIndustries = [
-  { slug: 'estate-agents', name: 'Real estate' },
-  { slug: 'hospitality', name: 'Hospitality' },
-  { slug: 'financial-services', name: 'Financial services' },
-  { slug: 'healthcare', name: 'Healthcare' },
-  { slug: 'startups', name: 'Startups & scale-ups' },
-  { slug: 'education', name: 'Education & training' },
+/** Other industries with their own page, linked from /who-we-help. */
+export const otherIndustries = [{ slug: 'financial-services', name: 'AI in financial services' }]
+
+/**
+ * Industries whose pages were retired (they 301 to /who-we-help). Named on
+ * that page so it stays relevant for anyone arriving from the old address.
+ */
+export const otherIndustryNames = [
+  'real estate',
+  'hospitality',
+  'healthcare and allied health',
+  'startups and scale-ups',
+  'education and training providers',
 ]

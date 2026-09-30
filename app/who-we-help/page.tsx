@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ContentCard, PageCta, PageIntro, TextLink } from '@/components/lumii/primitives'
-import { otherIndustries, trainingAudiences } from '@/lib/training-audiences'
+import { otherIndustries, otherIndustryNames, trainingAudiences } from '@/lib/training-audiences'
 
 const PAGE_URL = 'https://lumiiadvisory.com/who-we-help'
 
@@ -39,9 +39,9 @@ export default function WhoWeHelpPage() {
         ))}
       </section>
 
-      {/* Retained industry pages stay live and linked while their performance
-          is assessed; hiding them from the main navigation is not deletion. */}
-      <section className="section secondary-offer">
+      {/* Five thin industry pages were retired on 30 Sept 2026 and redirect here,
+          so this section names those industries. */}
+      <section className="section secondary-offer" id="other-industries">
         <div>
           <p className="eyebrow">OTHER INDUSTRIES</p>
           <h2>
@@ -52,14 +52,18 @@ export default function WhoWeHelpPage() {
         </div>
         <div>
           <p>
-            Explore Lumii’s wider industry perspectives, or tell me about the training your team
-            needs.
+            The same practical approach works across industries. As well as the teams above, I work
+            with businesses in {otherIndustryNames.slice(0, -1).join(', ')} and{' '}
+            {otherIndustryNames[otherIndustryNames.length - 1]} — starting with the work your people
+            actually do.
           </p>
+          <p>Tell me about the training your team needs, or read a deeper industry perspective.</p>
           {otherIndustries.map((industry) => (
             <TextLink key={industry.slug} href={`/who-we-help/${industry.slug}`}>
               {industry.name}
             </TextLink>
           ))}
+          <TextLink href="/contact?interest=courses">Tell me about your team</TextLink>
         </div>
       </section>
 

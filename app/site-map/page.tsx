@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageIntro } from '@/components/lumii/primitives'
-import { verticals } from '@/lib/verticals'
+import { liveVerticals } from '@/lib/verticals'
 import { articles } from '@/lib/insights'
 import { platforms } from '@/lib/ai-tools'
 import { getTrainingAudience } from '@/lib/training-audiences'
@@ -35,7 +35,7 @@ const sections = [
     title: 'Training for your team',
     links: [
       { href: '/who-we-help', label: 'Overview' },
-      ...verticals.map((v) => ({
+      ...liveVerticals.map((v) => ({
         href: `/who-we-help/${v.slug}`,
         label: getTrainingAudience(v.slug)?.name ?? v.heading,
       })),

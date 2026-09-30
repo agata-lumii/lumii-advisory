@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import CTABanner from '@/components/CTABanner'
 import { ContentCard, TextLink } from '@/components/lumii/primitives'
 import { Breadcrumbs, FaqSection, JsonLd, StatRow } from '@/components/lumii/seo'
-import { verticals, getVerticalBySlug, sharedAIStats } from '@/lib/verticals'
+import { liveVerticals, getVerticalBySlug, sharedAIStats } from '@/lib/verticals'
 import { getTrainingAudience } from '@/lib/training-audiences'
 import TrainingAudiencePage from '@/components/lumii/TrainingAudiencePage'
 
@@ -21,7 +21,8 @@ function breadcrumbSchema(slug: string, name: string) {
 }
 
 export async function generateStaticParams() {
-  return verticals.map((v) => ({ slug: v.slug }))
+  // Retired industry pages are redirected in next.config.mjs, so aren't built.
+  return liveVerticals.map((v) => ({ slug: v.slug }))
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
