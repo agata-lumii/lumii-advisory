@@ -28,6 +28,14 @@ const nextConfig = {
       { source: '/services', destination: '/work-with-us', statusCode: 301 },
       // Sept 2026 redesign: the method now lives on the framework page.
       { source: '/how-we-work', destination: '/ai-operating-system', statusCode: 301 },
+      // 30 Sept 2026: thin, near-duplicate industry pages retired in favour of
+      // the Who I help overview. Keep in sync with RETIRED_VERTICAL_SLUGS in
+      // lib/verticals.ts. Exact paths only; financial-services stays live.
+      ...['estate-agents', 'hospitality', 'healthcare', 'startups', 'education'].map((slug) => ({
+        source: `/who-we-help/${slug}`,
+        destination: '/who-we-help',
+        statusCode: 301,
+      })),
     ]
   },
 

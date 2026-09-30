@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { verticals } from '@/lib/verticals'
+import { liveVerticals } from '@/lib/verticals'
 import { articles } from '@/lib/insights'
 import { platforms } from '@/lib/ai-tools'
 
@@ -120,7 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const verticalRoutes: MetadataRoute.Sitemap = verticals.map((v) => ({
+  const verticalRoutes: MetadataRoute.Sitemap = liveVerticals.map((v) => ({
     url: `${BASE_URL}/who-we-help/${v.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

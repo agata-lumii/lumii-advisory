@@ -35,12 +35,8 @@ Pricing: every course, workshop and talk is scoped first, with a fixed price con
 
 ## Other industries
 
-- [Real Estate Agencies](https://lumiiadvisory.com/who-we-help/estate-agents): AI lead qualification, listing automation, and CRM strategy
-- [Hospitality & Hotels](https://lumiiadvisory.com/who-we-help/hospitality): Booking optimisation, reputation management, and guest CRM
 - [Financial Services & FinTech](https://lumiiadvisory.com/who-we-help/financial-services): Comprehensive AI use-case guide for Australian banks, super funds, wealth managers and FinTechs. Covers five high-ROI use cases — customer onboarding/KYC, fraud and AML, credit decisioning, customer service augmentation, compliance reporting — with proof points, APRA expectations, and a 6-question FAQ on AI in regulated financial services
-- [Healthcare & Allied Health](https://lumiiadvisory.com/who-we-help/healthcare): Patient journeys, online booking, AI admin tools, and CRM
-- [Startups & Scale-ups](https://lumiiadvisory.com/who-we-help/startups): Pre-Series B foundations for digital, data, and AI
-- [RTOs & Education Providers](https://lumiiadvisory.com/who-we-help/education): Enrolment journeys, student lifecycle CRM, and lead-gen content
+- [Other industries](https://lumiiadvisory.com/who-we-help#other-industries): Lumii also runs AI training for real estate, hospitality, healthcare and allied health, startups and scale-ups, and education and training providers, shaped around the work each team does
 
 ## Resources
 
