@@ -48,8 +48,8 @@ export default function TrainingAudiencePage({ audience }: { audience: TrainingA
             Clear briefs, careful review and responsible information handling run through the
             learning. The aim is to build ways of working your people can apply and keep improving.
           </p>
-          <TextLink href="/#courses">Explore the course series</TextLink>
-          <TextLink href="/#offsite-training">Make it part of your offsite</TextLink>
+          <TextLink href="/ai-courses">Explore the course series</TextLink>
+          <TextLink href="/ai-workshops">Make it part of your offsite</TextLink>
         </div>
       </section>
 

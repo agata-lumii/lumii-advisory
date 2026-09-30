@@ -1,12 +1,16 @@
 # Lumii Advisory
 
-> Lumii Advisory is a founder-led AI enablement business in Sydney, Australia, led by Agata Adamczak. Lumii offers practical AI courses for businesses (Find Your Light with AI), speaking and panels, and hands-on offsite team training, with AI advisory and AI visibility services for businesses that need deeper support. Its work is built on the Lumii AI Operating System. Agata has nearly 20 years across data, digital strategy, search and AI visibility, including senior roles at Botify (first ANZ hire; Solutions Consulting Director, JAPAC), Dotdigital, BrightEdge, Pattern, Performics and iCrossing.
+> Lumii Advisory is a founder-led AI enablement business in Sydney, Australia, led by Agata Adamczak. Lumii runs practical AI courses for businesses (Find Your Light with AI), hands-on AI workshops and team training for offsites, and AI keynotes and panel talks, with AI advisory and AI visibility services for businesses that need deeper support. Its work is built on the Lumii AI Operating System. Agata has nearly 20 years across data, digital strategy, search and AI visibility, including senior roles at Botify (first ANZ hire; Solutions Consulting Director, JAPAC), Dotdigital, BrightEdge, Pattern, Performics and iCrossing.
 
-## Courses, speaking and training
+## AI courses, workshops, keynotes and enablement
 
-- [Find Your Light with AI](https://lumiiadvisory.com/#courses): Lumii's AI course series for businesses — see the opportunity, apply AI to real work, and build confident habits for checking outputs and protecting information
-- [Speaking & offsite training](https://lumiiadvisory.com/#speaking): Talks, panels and hands-on offsite AI training. Four speaking topics: Find Your Brand's Light in the Age of AI; AI at Work: What Changes on Monday?; The AI-Ready Organisation; Stop Prompting. Start Briefing.
-- [Ways to work together](https://lumiiadvisory.com/work-with-us): Courses, speaking and offsite training, plus AI advisory for readiness, workflow design and adoption
+- [AI courses for businesses — Find Your Light with AI](https://lumiiadvisory.com/ai-courses): Lumii's AI course series for business teams, led by Agata Adamczak in Sydney. Three stages: see the opportunity, apply AI to real work, build confident habits for checking outputs and protecting information. Shaped around marketing, sales, retail, professional services and other teams.
+- [AI workshops and team training for offsites](https://lumiiadvisory.com/ai-workshops): Hands-on AI workshops built into a team offsite or training day. The team works through real briefs, questions what AI produces and leaves with next steps. Includes the practical session "Stop Prompting. Start Briefing."
+- [AI keynote speaker — Agata Adamczak](https://lumiiadvisory.com/ai-keynote-speaker): AI keynotes and panel talks for conferences, offsites and events. Four topics: Find Your Brand's Light in the Age of AI; AI at Work: What Changes on Monday?; The AI-Ready Organisation; Stop Prompting. Start Briefing.
+- [AI enablement consultant, Sydney](https://lumiiadvisory.com/ai-enablement): What AI enablement is (building organisational capability to use AI effectively — between AI strategy and AI tools), its four parts (use cases, tools, training, governance), and how Lumii delivers it through courses, workshops and advisory.
+- [Ways to work together](https://lumiiadvisory.com/work-with-us): Courses, keynotes and offsite workshops, plus AI advisory for readiness, workflow design and adoption.
+
+Pricing: every course, workshop and talk is scoped first, with a fixed price confirmed after an initial conversation. Lumii is based in Sydney and works with teams across Australia and the Asia-Pacific.
 
 ## The Lumii Framework
 

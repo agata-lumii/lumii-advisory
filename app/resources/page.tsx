@@ -95,7 +95,7 @@ export default function ResourcesPage() {
             The free ebook helps you think through AI adoption. Find Your Light with AI is Lumii’s
             course series for businesses ready to build practical skills together.
           </p>
-          <TextLink href="/#courses">Explore Find Your Light with AI</TextLink>
+          <TextLink href="/ai-courses">Explore Find Your Light with AI</TextLink>
           <TextLink href="/ai-operating-system">Read the framework</TextLink>
           <TextLink href="/faq">Read common questions</TextLink>
         </div>

@@ -5,68 +5,20 @@ import { articles } from '@/lib/insights'
 import { TextLink } from '@/components/lumii/primitives'
 import EnquiryChoices from '@/components/lumii/EnquiryChoices'
 import { AboutHeading, AboutStory } from '@/components/lumii/AboutAgata'
+import { learningSteps, speakingTopics as topics } from '@/lib/offers'
+
+// Visible headline is the approved "Find your light. Put AI to work." The
+// title tag carries the searches the page should rank for.
+const TITLE = 'AI Courses, Workshops & Keynotes in Sydney | Lumii Advisory'
+const DESCRIPTION =
+  'Find your light. Put AI to work. Practical AI courses, hands-on AI workshops for team offsites, and AI keynotes, led by Agata Adamczak in Sydney.'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Lumii | Find Your Light with AI' },
-  description:
-    'Practical AI courses, inspiring talks and hands-on offsite training for businesses ready to change how they work.',
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
   alternates: { canonical: 'https://lumiiadvisory.com' },
-  openGraph: {
-    title: 'Lumii | Find Your Light with AI',
-    description:
-      'Practical AI courses, inspiring talks and hands-on offsite training for businesses ready to change how they work.',
-    url: 'https://lumiiadvisory.com',
-  },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: 'https://lumiiadvisory.com' },
 }
-
-const learningSteps = [
-  {
-    number: '01',
-    title: 'See the opportunity',
-    body: 'Understand what AI can do, where it falls short and which tasks are worth approaching differently.',
-  },
-  {
-    number: '02',
-    title: 'Apply it to real work',
-    body: 'Move from isolated prompts to useful briefs and repeatable workflows, grounded in the work your team already does.',
-  },
-  {
-    number: '03',
-    title: 'Build confident habits',
-    body: 'Practise checking outputs, protecting information and deciding where human judgement matters.',
-  },
-]
-
-const topics = [
-  {
-    id: 'topic-visibility',
-    label: '01 / BRANDS & AI VISIBILITY',
-    title: ['Find Your Brand’s Light', 'in the Age of AI'],
-    body: 'When people ask AI what to choose, how does your brand make the shortlist? Explore what helps brands get found, understood and recommended across AI discovery platforms.',
-    audience: 'marketing, brand and commercial teams',
-  },
-  {
-    id: 'topic-work',
-    label: '02 / EVERYDAY WORK',
-    title: ['AI at Work:', 'What Changes on Monday?'],
-    body: 'Move the conversation from impressive demos to everyday decisions. Explore how AI can support research, planning and communication, and where human judgement remains essential.',
-    audience: 'company offsites and cross-functional teams',
-  },
-  {
-    id: 'topic-leadership',
-    label: '03 / LEADERSHIP & ADOPTION',
-    title: ['The AI-Ready', 'Organisation'],
-    body: 'What needs to change after the licences are bought? A practical look at the priorities, ownership, guardrails and measures that help leaders turn scattered experiments into everyday capability.',
-    audience: 'executives, people leaders and transformation teams',
-  },
-  {
-    id: 'topic-briefing',
-    label: '04 / PRACTICAL TEAM TRAINING',
-    title: ['Stop Prompting.', 'Start Briefing.'],
-    body: 'Better work starts with a better brief. Learn how to give AI the context, direction and standards it needs, then challenge and refine what comes back. Built for participation and practice.',
-    audience: 'teams ready to build practical AI skills',
-  },
-]
 
 const FEATURED_ARTICLE_SLUG = 'what-is-ai-enablement'
 

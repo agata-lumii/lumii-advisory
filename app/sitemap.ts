@@ -19,6 +19,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.95,
     },
+    // Offer landing pages (Oct 2026), one per search intent.
+    {
+      url: `${BASE_URL}/ai-courses`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/ai-workshops`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/ai-keynote-speaker`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/ai-enablement`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
     // /services and /how-we-work were retired in the Sept 2026 redesign and
     // 301 to /work-with-us and /ai-operating-system (see next.config.mjs).
     {

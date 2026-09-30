@@ -24,9 +24,8 @@ const offers = [
     title: 'Find Your Light with AI',
     description:
       'Build the confidence, judgement and everyday habits to use AI well. Start with the tasks your people do, then practise turning useful ideas into repeatable workflows.',
-    href: '/#courses',
+    href: '/ai-courses',
     action: 'Explore the course series',
-    serviceType: 'AI Training Courses',
   },
   {
     id: 'speaking',
@@ -34,9 +33,8 @@ const offers = [
     title: 'A perspective worth bringing into the room.',
     description:
       'Talks and panels on AI at work, leadership and how brands get discovered. Choose from four topics, then shape the discussion around your audience.',
-    href: '/#speaking',
+    href: '/ai-keynote-speaker',
     action: 'Explore speaking topics',
-    serviceType: 'AI Speaking and Panels',
   },
   {
     id: 'offsite-training',
@@ -44,33 +42,29 @@ const offers = [
     title: 'Put the learning into practice.',
     description:
       'Make room in your offsite for hands-on AI exploration. Work through briefs, question the outputs and identify what your team can apply when they return to work.',
-    href: '/#offsite-training',
+    href: '/ai-workshops',
     action: 'Plan your offsite session',
-    serviceType: 'Offsite AI Team Training',
   },
 ]
 
 const advisoryDescription =
   'Some challenges need more than a course or a workshop. Lumii also supports AI readiness, workflow design and adoption through scoped projects and ongoing advisory.'
 
-// Carries forward the Service catalogue that previously lived here and on the
-// retired /services page, now describing the offers that exist.
+// Each offer's full Service node lives on its own landing page. This page
+// lists them (ItemList) and carries the one service without its own page.
 const servicesSchema = {
   '@context': 'https://schema.org',
   '@graph': [
-    ...offers.map((offer) => ({
-      '@type': 'Service',
-      '@id': `${PAGE_URL}#${offer.id}`,
-      name: offer.id === 'courses' ? 'Find Your Light with AI' : offer.title,
-      description: offer.description,
-      serviceType: offer.serviceType,
-      provider: { '@id': `${SITE_URL}/#organization` },
-      areaServed: [
-        { '@type': 'Country', name: 'Australia' },
-        { '@type': 'Place', name: 'Asia-Pacific' },
-      ],
-      url: `${PAGE_URL}#${offer.id}`,
-    })),
+    {
+      '@type': 'ItemList',
+      name: 'Ways to work with Lumii',
+      itemListElement: [
+        ...offers.map((offer) => ({ name: offer.title, href: offer.href })),
+        { name: 'AI advisory', href: '/work-with-us#advisory' },
+        { name: 'AI enablement consulting', href: '/ai-enablement' },
+        { name: 'AI visibility advisory', href: '/services/ai-visibility' },
+      ].map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.name, url: `${SITE_URL}${item.href}` })),
+    },
     {
       '@type': 'Service',
       '@id': `${PAGE_URL}#advisory`,
@@ -79,13 +73,12 @@ const servicesSchema = {
       serviceType: 'AI Advisory',
       provider: { '@id': `${SITE_URL}/#organization` },
       areaServed: [
+        { '@type': 'City', name: 'Sydney' },
         { '@type': 'Country', name: 'Australia' },
         { '@type': 'Place', name: 'Asia-Pacific' },
       ],
       url: `${PAGE_URL}#advisory`,
     },
-    // Full description lives on its own page; referenced here by @id.
-    { '@id': `${SITE_URL}/services/ai-visibility#service` },
   ],
 }
 

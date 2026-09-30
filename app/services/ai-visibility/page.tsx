@@ -362,7 +362,7 @@ export default function AiVisibilityPage() {
             <p>
               Related talk for marketing, brand and commercial teams:{' '}
               <Link
-                href="/#topic-visibility"
+                href="/ai-keynote-speaker#topic-visibility"
                 className="text-near-black underline decoration-gold/40 underline-offset-[4px] hover:decoration-gold transition-colors"
               >
                 Find Your Brand&rsquo;s Light in the Age of AI

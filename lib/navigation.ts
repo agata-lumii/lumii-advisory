@@ -30,7 +30,7 @@ const courses: NavGroup = {
     eyebrow: 'FIND YOUR LIGHT WITH AI',
     title: 'Learning that shows up in the work.',
     text: 'Practical AI skills, useful workflows and the judgement to use them well.',
-    link: { href: '/#courses', label: 'Explore the course series →' },
+    link: { href: '/ai-courses', label: 'Explore the course series →' },
   },
   columns: [
     {
@@ -60,23 +60,23 @@ const speaking: NavGroup = {
     eyebrow: 'BRING AI INTO THE ROOM',
     title: 'A fresh perspective. A practical next step.',
     text: 'Talks, panels and hands-on training shaped around your people.',
-    link: { href: '/#speaking', label: 'Speaking & offsite training →' },
+    link: { href: '/ai-keynote-speaker', label: 'Speaking & offsite training →' },
   },
   columns: [
     {
       eyebrow: 'SPEAKING TOPICS',
       links: [
-        { href: '/#topic-visibility', label: 'Find Your Brand’s Light in the Age of AI' },
-        { href: '/#topic-work', label: 'AI at Work: What Changes on Monday?' },
-        { href: '/#topic-leadership', label: 'The AI-Ready Organisation' },
-        { href: '/#topic-briefing', label: 'Stop Prompting. Start Briefing.' },
+        { href: '/ai-keynote-speaker#topic-visibility', label: 'Find Your Brand’s Light in the Age of AI' },
+        { href: '/ai-keynote-speaker#topic-work', label: 'AI at Work: What Changes on Monday?' },
+        { href: '/ai-keynote-speaker#topic-leadership', label: 'The AI-Ready Organisation' },
+        { href: '/ai-keynote-speaker#topic-briefing', label: 'Stop Prompting. Start Briefing.' },
       ],
     },
     {
       eyebrow: 'PLAN YOUR EVENT',
       links: [
-        { href: '/#speaking', label: 'Speaking & panels' },
-        { href: '/#offsite-training', label: 'Hands-on team training' },
+        { href: '/ai-keynote-speaker', label: 'Keynotes & panels' },
+        { href: '/ai-workshops', label: 'AI workshops for teams' },
         { href: '/about', label: 'Meet Agata' },
         { href: '/#enquire', label: 'Discuss your event →', interest: 'event' },
       ],
@@ -126,6 +126,7 @@ const about: NavGroup = {
     {
       eyebrow: 'LUMII ADVISORY',
       links: [
+        { href: '/ai-enablement', label: 'AI enablement consulting' },
         { href: '/ai-operating-system', label: 'The framework & approach' },
         { href: '/work-with-us', label: 'Ways to work together' },
         { href: '/services/ai-visibility', label: 'AI visibility advisory' },
@@ -149,8 +150,10 @@ export const footerColumns: { eyebrow: string; links: NavLink[] }[] = [
   {
     eyebrow: 'WORK WITH LUMII',
     links: [
-      { href: '/#courses', label: 'Find Your Light with AI' },
-      { href: '/#speaking', label: 'Speaking & offsites' },
+      { href: '/ai-courses', label: 'AI courses' },
+      { href: '/ai-workshops', label: 'AI workshops & team training' },
+      { href: '/ai-keynote-speaker', label: 'AI keynotes & panels' },
+      { href: '/ai-enablement', label: 'AI enablement consulting' },
       { href: '/work-with-us', label: 'Ways to work together' },
       { href: '/services/ai-visibility', label: 'AI visibility advisory' },
     ],

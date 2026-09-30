@@ -353,12 +353,12 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
                 {
                   title: 'Find Your Light with AI',
                   description: 'Practical AI skills, useful workflows and the judgement to use them well.',
-                  href: '/#courses',
+                  href: '/ai-courses',
                 },
                 {
                   title: 'Speaking & offsite training',
                   description: 'Talks, panels and hands-on training shaped around your people.',
-                  href: '/#speaking',
+                  href: '/ai-keynote-speaker',
                 },
                 {
                   title: 'Advisory',

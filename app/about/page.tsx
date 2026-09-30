@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { AboutHeading, AboutStory } from '@/components/lumii/AboutAgata'
 import { PageCta, TextLink } from '@/components/lumii/primitives'
+import { JsonLd, SITE_URL } from '@/components/lumii/seo'
 
 export const metadata: Metadata = {
   title: { absolute: 'About Agata Adamczak | Lumii Advisory' },
@@ -12,6 +13,15 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="lumii">
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ProfilePage',
+          url: `${SITE_URL}/about`,
+          mainEntity: { '@id': `${SITE_URL}/#agata` },
+          about: { '@id': `${SITE_URL}/#agata` },
+        }}
+      />
       <section className="about section" id="about" aria-labelledby="about-title">
         <AboutHeading headingLevel="h1" showMoreLink={false} />
         <AboutStory />
