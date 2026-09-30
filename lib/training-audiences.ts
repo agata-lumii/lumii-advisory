@@ -104,14 +104,12 @@ export function getTrainingAudience(slug: string): TrainingAudience | undefined 
   return trainingAudiences.find((audience) => audience.slug === slug)
 }
 
-/** Other industries with their own page, linked from /who-we-help. */
-export const otherIndustries = [{ slug: 'financial-services', name: 'AI in financial services' }]
-
 /**
  * Industries whose pages were retired (they 301 to /who-we-help). Named on
  * that page so it stays relevant for anyone arriving from the old address.
  */
 export const otherIndustryNames = [
+  'financial services',
   'real estate',
   'hospitality',
   'healthcare and allied health',
