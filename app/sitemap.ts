@@ -19,12 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.95,
     },
-    {
-      url: `${BASE_URL}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
+    // /services and /how-we-work were retired in the Sept 2026 redesign and
+    // 301 to /work-with-us and /ai-operating-system (see next.config.mjs).
     {
       url: `${BASE_URL}/services/ai-visibility`,
       lastModified: new Date(),
@@ -42,12 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/how-we-work`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
     {
       url: `${BASE_URL}/insights`,
@@ -120,6 +110,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const resourcesRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/resources/ebook`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
     {
       url: `${BASE_URL}/resources/ai-tools`,
       lastModified: new Date(),

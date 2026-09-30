@@ -131,7 +131,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-near-black pt-40 pb-20 px-8 lg:px-12">
+      <section className="bg-near-black pt-20 pb-20 px-8 lg:px-12">
         <div className="max-w-[860px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-6">Legal</p>
           <h1 className="font-display font-light text-[clamp(40px,5vw,68px)] leading-[1.08] text-warm-white mb-6 tracking-[-0.01em]">

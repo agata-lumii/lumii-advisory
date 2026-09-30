@@ -21,7 +21,7 @@ const config: Config = {
         'warm-white': '#FDFCFA',
       },
       fontFamily: {
-        display: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        display: ['var(--font-manrope)', 'Arial', 'sans-serif'],
         body: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
       maxWidth: {

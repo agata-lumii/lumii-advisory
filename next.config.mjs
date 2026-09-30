@@ -1,3 +1,8 @@
+// Netlify sets CONTEXT during builds. Only explicit preview contexts are
+// non-indexable; a missing value is treated as production (see lib/indexing.ts).
+const context = process.env.CONTEXT
+const isPreview = context === 'deploy-preview' || context === 'branch-deploy'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -10,12 +15,32 @@ const nextConfig = {
    * Every entry here must point at the closest equivalent live page — never at
    * the homepage — so link equity and AI-crawler context survive the move.
    *
-   * Currently empty: the rebuild has not retired any URL. /how-we-work,
-   * /services, /who-we-help/* and /ai-operating-system are all still live at
-   * their original paths.
+   * This is the site's only redirect layer: netlify.toml has none, and there
+   * is no _redirects file. Sources are exact paths, so /services/ai-visibility
+   * and every other /services/* or /who-we-help/* route is untouched.
+   *
+   * `statusCode: 301` rather than `permanent: true`, which would send 308.
+   * Retain these for at least a year, preferably indefinitely.
    */
   async redirects() {
-    return []
+    return [
+      // Sept 2026 redesign: services consolidated into Work With Us.
+      { source: '/services', destination: '/work-with-us', statusCode: 301 },
+      // Sept 2026 redesign: the method now lives on the framework page.
+      { source: '/how-we-work', destination: '/ai-operating-system', statusCode: 301 },
+    ]
+  },
+
+  // Deploy previews also send X-Robots-Tag, which covers non-HTML files too.
+  // robots.txt stays open so crawlers can actually read the noindex.
+  async headers() {
+    if (!isPreview) return []
+    return [
+      {
+        source: '/:path*',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+    ]
   },
 }
 

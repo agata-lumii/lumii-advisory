@@ -174,7 +174,7 @@ export default function AICaseStudiesPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="bg-near-black pt-40 pb-28 px-8 lg:px-12">
+      <section className="bg-near-black pt-20 pb-28 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8 flex items-center gap-4">
             <span className="w-8 h-px bg-gold block" />
@@ -333,7 +333,7 @@ export default function AICaseStudiesPage() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner variant="reading" />
     </>
   )
 }

@@ -16,19 +16,24 @@ type FormData = {
   message: string
 }
 
-// Valid interest values — keep in sync with the <select> options below
-const VALID_INTERESTS = [
-  'workshop',
-  'project',
-  'retainer',
-  'digital-strategy',
-  'cx',
-  'ecommerce',
-  'martech',
-  'ai',
-  'multiple',
-  'not-sure',
-]
+// Valid interest values — keep in sync with the <select> options below.
+// Sept 2026 redesign: courses, speaking and offsite training lead, with
+// advisory and AI visibility as secondary offers.
+const VALID_INTERESTS = ['courses', 'speaking', 'offsite', 'ai-visibility', 'advisory', 'not-sure']
+
+// Pre-redesign values that may still arrive from bookmarks, emails or old
+// links, mapped to the nearest current option.
+const LEGACY_INTERESTS: Record<string, string> = {
+  workshop: 'courses',
+  ai: 'courses',
+  project: 'advisory',
+  retainer: 'advisory',
+  'digital-strategy': 'advisory',
+  cx: 'advisory',
+  ecommerce: 'advisory',
+  martech: 'advisory',
+  multiple: 'not-sure',
+}
 
 function ContactFormInner() {
   const searchParams = useSearchParams()
@@ -42,11 +47,12 @@ function ContactFormInner() {
     formState: { errors },
   } = useForm<FormData>()
 
-  // Pre-fill interest from ?interest= URL param (e.g. /contact?interest=workshop)
+  // Pre-fill interest from ?interest= URL param (e.g. /contact?interest=courses)
   useEffect(() => {
     const raw = searchParams?.get('interest')
-    if (raw && VALID_INTERESTS.includes(raw)) {
-      setValue('interest', raw)
+    const value = raw ? (LEGACY_INTERESTS[raw] ?? raw) : null
+    if (value && VALID_INTERESTS.includes(value)) {
+      setValue('interest', value)
     }
   }, [searchParams, setValue])
 
@@ -149,20 +155,16 @@ function ContactFormInner() {
           className={`${inputClass} cursor-pointer`}
         >
           <option value="">Select an area...</option>
-          <optgroup label="Ways to Engage">
-            <option value="workshop">Workshop (Half-Day or Full-Day)</option>
-            <option value="project">Project Sprint</option>
-            <option value="retainer">Advisory Retainer</option>
+          <optgroup label="Courses, speaking &amp; training">
+            <option value="courses">Find Your Light with AI courses</option>
+            <option value="speaking">Speaking &amp; panels</option>
+            <option value="offsite">Offsite team training</option>
           </optgroup>
-          <optgroup label="Discipline">
-            <option value="digital-strategy">Digital Strategy</option>
-            <option value="cx">Customer Experience</option>
-            <option value="ecommerce">Ecommerce</option>
-            <option value="martech">MarTech Advisory</option>
-            <option value="ai">AI Enablement</option>
+          <optgroup label="Advisory">
+            <option value="ai-visibility">AI visibility advisory</option>
+            <option value="advisory">AI advisory (readiness, workflows, adoption)</option>
           </optgroup>
-          <option value="multiple">Multiple Areas</option>
-          <option value="not-sure">Not Sure Yet</option>
+          <option value="not-sure">Not sure yet</option>
         </select>
         {errors.interest && (
           <p className="font-body text-[11px] text-red-500 mt-1">Please select an option</p>
@@ -172,7 +174,7 @@ function ContactFormInner() {
         <label className={labelClass}>Message</label>
         <textarea
           {...register('message', { required: true })}
-          placeholder="Tell us about your business and what you're looking to achieve..."
+          placeholder="Tell me about your team, your event, or what you want to change..."
           rows={5}
           className={`${inputClass} resize-none`}
         />
@@ -182,7 +184,7 @@ function ContactFormInner() {
       </div>
       {error && (
         <p className="font-body text-[13px] text-red-500 font-light">
-          Something went wrong — please try again or email us directly at hello@lumiiadvisory.com
+          Something went wrong — please try again or email me directly at hello@lumiiadvisory.com
         </p>
       )}
       <button

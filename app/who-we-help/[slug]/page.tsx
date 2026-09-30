@@ -4,12 +4,36 @@ import Link from 'next/link'
 import CTABanner from '@/components/CTABanner'
 import SectionTag from '@/components/SectionTag'
 import { verticals, getVerticalBySlug, sharedAIStats } from '@/lib/verticals'
+import { getTrainingAudience } from '@/lib/training-audiences'
+import TrainingAudiencePage from '@/components/lumii/TrainingAudiencePage'
+
+function breadcrumbSchema(slug: string, name: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `https://lumiiadvisory.com/who-we-help/${slug}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumiiadvisory.com' },
+      { '@type': 'ListItem', position: 2, name: 'Training for your team', item: 'https://lumiiadvisory.com/who-we-help' },
+      { '@type': 'ListItem', position: 3, name, item: `https://lumiiadvisory.com/who-we-help/${slug}` },
+    ],
+  }
+}
 
 export async function generateStaticParams() {
   return verticals.map((v) => ({ slug: v.slug }))
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  // Priority audiences use the Sept 2026 training pages.
+  const audience = getTrainingAudience(params.slug)
+  if (audience) {
+    return {
+      title: { absolute: `AI Training for ${audience.name} | Lumii Advisory` },
+      description: audience.description,
+      alternates: { canonical: `https://lumiiadvisory.com/who-we-help/${audience.slug}` },
+    }
+  }
   const vertical = getVerticalBySlug(params.slug)
   if (!vertical) return {}
   return {
@@ -22,6 +46,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default function VerticalPage({ params }: { params: { slug: string } }) {
+  const audience = getTrainingAudience(params.slug)
+  if (audience) {
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(audience.slug, audience.name)) }}
+        />
+        <TrainingAudiencePage audience={audience} />
+      </>
+    )
+  }
+
   const vertical = getVerticalBySlug(params.slug)
   if (!vertical) notFound()
 
@@ -56,32 +93,11 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
       }
     : null
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    '@id': `https://lumiiadvisory.com/who-we-help/${vertical.slug}#breadcrumb`,
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://lumiiadvisory.com' },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Who I help',
-        item: 'https://lumiiadvisory.com/who-we-help',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: vertical.heading,
-        item: `https://lumiiadvisory.com/who-we-help/${vertical.slug}`,
-      },
-    ],
-  }
-
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(vertical.slug, vertical.heading)) }}
       />
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -90,7 +106,7 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       )}
       {/* ── HERO ── */}
-      <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
+      <section className="bg-near-black pt-20 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           {/* Breadcrumb */}
           <div className="flex items-center gap-3 mb-12">
@@ -319,7 +335,7 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
             {vertical.services.map((service) => (
               <Link
                 key={service}
-                href="/services"
+                href="/work-with-us#advisory"
                 className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black border border-near-black px-8 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200"
               >
                 {service}
@@ -332,21 +348,22 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
               Three shapes to engage with Lumii — chosen around where you are.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-10">
+              {/* Current offers (Sept 2026 redesign), in its approved wording. */}
               {[
                 {
-                  title: 'Workshops',
-                  description: 'A half or full day to align leadership on what AI means for your business.',
-                  href: '/work-with-us#workshops',
+                  title: 'Find Your Light with AI',
+                  description: 'Practical AI skills, useful workflows and the judgement to use them well.',
+                  href: '/#courses',
                 },
                 {
-                  title: 'Project Sprints',
-                  description: 'A fixed-scope engagement to deliver one measurable outcome in 6–12 weeks.',
-                  href: '/work-with-us#projects',
+                  title: 'Speaking & offsite training',
+                  description: 'Talks, panels and hands-on training shaped around your people.',
+                  href: '/#speaking',
                 },
                 {
-                  title: 'Advisory Retainer',
-                  description: 'Ongoing senior counsel as your AI and digital strategy evolves.',
-                  href: '/work-with-us#retainer',
+                  title: 'Advisory',
+                  description: 'AI readiness, workflow design and adoption through scoped projects and ongoing advisory.',
+                  href: '/work-with-us#advisory',
                 },
               ].map((opt) => (
                 <Link
@@ -410,7 +427,7 @@ export default function VerticalPage({ params }: { params: { slug: string } }) {
         </section>
       )}
 
-      <CTABanner />
+      <CTABanner variant="industry" />
     </>
   )
 }

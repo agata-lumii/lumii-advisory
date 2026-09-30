@@ -1,123 +1,369 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
-import Hero from '@/components/Hero'
-import ExperienceStrip from '@/components/ExperienceStrip'
-import ThesisSection from '@/components/ThesisSection'
-import OperatingSystemSection from '@/components/OperatingSystemSection'
-import ServicesSection from '@/components/ServicesSection'
-import ProcessStrip from '@/components/ProcessStrip'
-import VerticalsSection from '@/components/VerticalsSection'
-import CTABanner from '@/components/CTABanner'
+import { articles } from '@/lib/insights'
+import { TextLink } from '@/components/lumii/primitives'
+import EnquiryChoices from '@/components/lumii/EnquiryChoices'
+import { AboutHeading, AboutStory } from '@/components/lumii/AboutAgata'
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'AI Strategy Consultant Sydney | Mid-Market AI Advisory',
-  },
+  title: { absolute: 'Lumii | Find Your Light with AI' },
   description:
-    'Independent AI strategy consulting for mid-market businesses in Sydney & APAC. 18+ years’ enterprise expertise. Book a free 30-min discovery call.',
-  alternates: {
-    canonical: 'https://lumiiadvisory.com',
-  },
+    'Practical AI courses, inspiring talks and hands-on offsite training for businesses ready to change how they work.',
+  alternates: { canonical: 'https://lumiiadvisory.com' },
   openGraph: {
-    title: 'AI Strategy Consultant Sydney | Mid-Market AI Advisory | Lumii',
+    title: 'Lumii | Find Your Light with AI',
     description:
-      'Independent AI strategy consulting for mid-market businesses in Sydney & APAC. 18+ years’ enterprise expertise. Book a free 30-min discovery call.',
+      'Practical AI courses, inspiring talks and hands-on offsite training for businesses ready to change how they work.',
     url: 'https://lumiiadvisory.com',
   },
 }
 
+const learningSteps = [
+  {
+    number: '01',
+    title: 'See the opportunity',
+    body: 'Understand what AI can do, where it falls short and which tasks are worth approaching differently.',
+  },
+  {
+    number: '02',
+    title: 'Apply it to real work',
+    body: 'Move from isolated prompts to useful briefs and repeatable workflows, grounded in the work your team already does.',
+  },
+  {
+    number: '03',
+    title: 'Build confident habits',
+    body: 'Practise checking outputs, protecting information and deciding where human judgement matters.',
+  },
+]
+
+const topics = [
+  {
+    id: 'topic-visibility',
+    label: '01 / BRANDS & AI VISIBILITY',
+    title: ['Find Your Brand’s Light', 'in the Age of AI'],
+    body: 'When people ask AI what to choose, how does your brand make the shortlist? Explore what helps brands get found, understood and recommended across AI discovery platforms.',
+    audience: 'marketing, brand and commercial teams',
+  },
+  {
+    id: 'topic-work',
+    label: '02 / EVERYDAY WORK',
+    title: ['AI at Work:', 'What Changes on Monday?'],
+    body: 'Move the conversation from impressive demos to everyday decisions. Explore how AI can support research, planning and communication, and where human judgement remains essential.',
+    audience: 'company offsites and cross-functional teams',
+  },
+  {
+    id: 'topic-leadership',
+    label: '03 / LEADERSHIP & ADOPTION',
+    title: ['The AI-Ready', 'Organisation'],
+    body: 'What needs to change after the licences are bought? A practical look at the priorities, ownership, guardrails and measures that help leaders turn scattered experiments into everyday capability.',
+    audience: 'executives, people leaders and transformation teams',
+  },
+  {
+    id: 'topic-briefing',
+    label: '04 / PRACTICAL TEAM TRAINING',
+    title: ['Stop Prompting.', 'Start Briefing.'],
+    body: 'Better work starts with a better brief. Learn how to give AI the context, direction and standards it needs, then challenge and refine what comes back. Built for participation and practice.',
+    audience: 'teams ready to build practical AI skills',
+  },
+]
+
+const FEATURED_ARTICLE_SLUG = 'what-is-ai-enablement'
+
 export default function HomePage() {
+  const featured = articles.find((a) => a.slug === FEATURED_ARTICLE_SLUG)
+
   return (
-    <>
-      <Hero />
-      <ExperienceStrip />
-      <ThesisSection />
-      <OperatingSystemSection />
-      <ServicesSection />
-      <ProcessStrip />
-      <VerticalsSection
-        slugs={['marketers', 'sales-teams', 'professional-services', 'retailers']}
-      />
+    <div className="lumii">
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <p className="eyebrow">AI ENABLEMENT. HUMAN POTENTIAL.</p>
+          <h1 id="hero-title">
+            <span className="hero-line">
+              Find your <em>light.</em>
+            </span>{' '}
+            <span className="hero-line">Put AI to work.</span>
+          </h1>
+          <p className="hero-intro">
+            Practical AI courses, inspiring talks and hands-on offsite training for businesses ready
+            to change how they work.
+          </p>
+          <div className="hero-actions">
+            <a className="button yellow" href="#courses">
+              Find Your Light with AI <span aria-hidden="true">↗</span>
+            </a>
+            <a className="text-link" href="#speaking">
+              Bring AI to your next offsite <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p className="founder-note">WITH AGATA ADAMCZAK · FOUNDER, LUMII ADVISORY</p>
+        </div>
+        <div className="hero-visual">
+          <Image
+            src="/images/agata-linen-editorial.webp"
+            width={1122}
+            height={1402}
+            alt="Agata Adamczak, founder of Lumii Advisory"
+            priority
+          />
+          <span className="image-note">A little clarity. A lot of possibility.</span>
+        </div>
+      </section>
 
-      {/* Proof — enterprise AI programmes analysed. Not Lumii clients. */}
-      <section className="bg-warm-white py-[clamp(80px,10vw,130px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-24 items-center">
-          <div className="lg:order-last">
-            <div className="flex items-center gap-5 mb-6">
-              <span className="w-8 h-px bg-gold block" />
-              <p className="font-body text-[11px] tracking-[0.3em] uppercase text-ash">
-                AI adoption, analysed
-              </p>
+      <div className="strip">
+        <span>REAL WORK</span>
+        <span className="asterisk" aria-hidden="true">✳</span>
+        <span>FRESH THINKING</span>
+        <span className="asterisk" aria-hidden="true">✳</span>
+        <span>HUMAN CAPABILITY</span>
+        <span className="asterisk" aria-hidden="true">✳</span>
+        <span>AI IN ACTION</span>
+      </div>
+
+      <section className="intro section">
+        <p className="eyebrow">THE OPPORTUNITY</p>
+        <div>
+          <h2>
+            AI is moving fast.
+            <br />
+            Your people can <em>move with it.</em>
+          </h2>
+          <div className="intro-columns">
+            <p>
+              Buying the tools is the easy part. Building the confidence, judgement and everyday
+              habits to use them well takes something more.
+            </p>
+            <p>
+              Lumii brings AI into the work your people actually do. So learning has somewhere to go
+              when everyone gets back to their desk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="courses section" id="courses" aria-labelledby="courses-title">
+        <div className="section-top">
+          <p className="eyebrow">01 / COURSES FOR BUSINESSES</p>
+          <span className="micro">FROM CURIOSITY TO CAPABILITY</span>
+        </div>
+        <div className="course-layout">
+          <div className="course-cover">
+            <span className="course-label">THE LUMII COURSE SERIES</span>
+            <h2 id="courses-title">
+              Find Your
+              <br />
+              <em>Light</em>
+              <br />
+              with AI<span className="title-dot">.</span>
+            </h2>
+            <div className="course-bottom">
+              <span>
+                FOR PEOPLE.
+                <br />
+                FOR WORK.
+                <br />
+                FOR WHAT’S NEXT.
+              </span>
+              <span className="course-spark" aria-hidden="true">✳</span>
             </div>
-            <h2 className="font-display font-light text-[clamp(30px,3.4vw,46px)] leading-[1.15] text-near-black mb-6 tracking-[-0.005em]">
-              How the largest businesses in the world are{' '}
-              <em className="italic text-gold">actually</em> deploying AI.
-            </h2>
-            <p className="font-body text-[16px] text-slate-warm font-light leading-[1.85] mb-4">
-              Klarna, Goldman Sachs, Microsoft, Walmart and others have published what
-              their AI programmes did, what changed, and what it cost them. I read that
-              record closely and break down the patterns — what transferred, what
-              didn&rsquo;t, and what a mid-market business should take from each.
-            </p>
-            <p className="font-body text-[14px] text-ash font-light leading-[1.8] mb-9 italic">
-              These are published enterprise programmes I analyse — not Lumii clients.
-            </p>
-            <Link
-              href="/ai-case-studies"
-              className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black border border-near-black px-9 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
-            >
-              Read the analysis →
-            </Link>
           </div>
-
-          {/* Counterweight: the honest position */}
-          <div className="lg:order-first border-l border-gold/40 pl-8 lg:pl-10">
-            <blockquote className="font-display text-[clamp(24px,2.8vw,34px)] italic font-light text-near-black leading-[1.4] mb-7">
-              &ldquo;The technology was almost never the hard part. The structure around
-              it always was.&rdquo;
-            </blockquote>
-            <p className="font-body text-[13px] text-slate-warm font-light leading-[1.8]">
-              Eighteen years inside global technology businesses, watching enterprise
-              programmes succeed and fail at close range.
+          <div className="course-copy">
+            <h3>
+              Learning that shows up
+              <br />
+              in the work.
+            </h3>
+            <p>
+              For businesses taking AI enablement seriously. Give your team a clearer understanding
+              of AI, practical ways to apply it and the judgement to use it well.
             </p>
-            <p className="font-body text-[11px] tracking-[0.15em] uppercase text-ash mt-4">
-              Agata Adamczak — Founder, Lumii Advisory
-            </p>
-            <Link
-              href="/about"
-              className="font-body text-[11px] tracking-[0.15em] uppercase text-gold hover:text-charcoal transition-colors duration-200 mt-6 inline-block"
-            >
-              More about Agata →
-            </Link>
+            <div className="learning-list">
+              {learningSteps.map((step, i) => (
+                <details key={step.number} open={i === 0}>
+                  <summary>
+                    <span className="number">{step.number}</span> {step.title}{' '}
+                    <span className="plus" aria-hidden="true">+</span>
+                  </summary>
+                  <p>{step.body}</p>
+                </details>
+              ))}
+            </div>
+            <a className="button" href="#enquire" data-interest="courses">
+              Talk about courses for your team <span aria-hidden="true">↗</span>
+            </a>
+            <p className="subtle">Start with your people, their roles and what you want to change.</p>
+            <TextLink href="/who-we-help">Explore training for your team</TextLink>
           </div>
         </div>
       </section>
 
-      {/* Ebook banner */}
-      <section className="bg-near-black py-[clamp(60px,8vw,90px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <section className="speaking section" id="speaking" aria-labelledby="speaking-title">
+        <div className="section-top">
+          <p className="eyebrow">02 / SPEAKING &amp; OFFSITE TRAINING</p>
+          <span className="micro">A SPARK IN THE ROOM. A SHIFT IN THE WORK.</span>
+        </div>
+        <div className="speaking-heading">
+          <h2 id="speaking-title">
+            Make your next offsite
+            <br />
+            the start of <em>something.</em>
+          </h2>
+          <p>
+            Bring a fresh perspective on AI into the room. Give your people space to question,
+            experiment and connect it to their own work.
+          </p>
+        </div>
+        <div className="speaking-layout">
+          <figure className="event-image">
+            {/* Original supplied photo, unmodified. Lighting lift and 1170:784
+                ratio are applied in CSS only (see .event-image img). */}
+            <Image
+              src="/images/agata-speaking-panel.jpg"
+              width={1170}
+              height={784}
+              alt="Agata speaking on a Havas panel at Amazon’s office"
+            />
+            <figcaption>Agata on the panel · Havas event at Amazon</figcaption>
+          </figure>
+          <div className="event-options">
+            <article>
+              <span className="eyebrow">GET PEOPLE THINKING</span>
+              <h3>Speaking &amp; panels</h3>
+              <p>
+                Clear perspectives on AI, the changing way we work and what it means for the people
+                in your business.
+              </p>
+            </article>
+            <article id="offsite-training">
+              <span className="eyebrow">GET PEOPLE DOING</span>
+              <h3>Hands-on team training</h3>
+              <p>
+                Give AI a place in your offsite agenda with practical exploration, shared learning
+                and work your team recognises.
+              </p>
+            </article>
+            <a className="button yellow" href="#enquire" data-interest="event">
+              Let’s shape your event <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="topics section" aria-labelledby="topics-title">
+        <div className="section-top">
           <div>
-            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-3">
-              Free ebook
-            </p>
-            <h2 className="font-display font-light text-[clamp(24px,2.5vw,36px)] text-warm-white leading-[1.2] mb-3">
-              Find your light in the age of AI.
+            <p className="eyebrow">SPEAKING TOPICS</p>
+            <h2 id="topics-title">
+              Conversations that
+              <br />
+              <em>move people forward.</em>
             </h2>
-            <p className="font-body text-[15px] text-warm-white/60 font-light leading-[1.8] max-w-[520px]">
-              The 90-day AI strategy system for business leaders — from first principles
-              to a scaled capability. Free download, no subscription.
-            </p>
           </div>
-          <Link
-            href="/resources/ebook"
-            className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
-          >
-            Download free →
-          </Link>
+          <p className="topics-intro">
+            Start with the question your audience needs to answer. Shape the session around your
+            people and your event.
+          </p>
+        </div>
+        <div className="topics-grid">
+          {topics.map((topic) => (
+            <article className="topic" id={topic.id} key={topic.id}>
+              <span className="eyebrow">{topic.label}</span>
+              <h3>
+                {topic.title[0]}
+                <br />
+                {topic.title[1]}
+              </h3>
+              <p>{topic.body}</p>
+              <p className="topic-audience">
+                <strong>For:</strong> {topic.audience}
+              </p>
+              <a className="text-link" href="#enquire" data-interest="event">
+                Discuss this topic <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+          ))}
         </div>
       </section>
 
-      <CTABanner />
-    </>
+      <section className="about section" id="about" aria-labelledby="about-title">
+        <AboutHeading />
+        <AboutStory />
+      </section>
+
+      <section className="learn section" aria-labelledby="learn-title">
+        <div className="section-top">
+          <div>
+            <p className="eyebrow">KEEP EXPLORING</p>
+            <h2 id="learn-title">
+              Clarity starts with
+              <br />
+              <em>a good question.</em>
+            </h2>
+          </div>
+          <p className="learn-intro">
+            Explore practical resources and fresh perspectives to help you think through what AI
+            means for your business.
+          </p>
+        </div>
+        <div className="learn-grid">
+          <article className="learn-panel" id="resources">
+            <div className="learn-panel-top">
+              <span className="eyebrow">RESOURCES</span>
+              <TextLink href="/resources" arrow="↗">
+                View all resources
+              </TextLink>
+            </div>
+            <h3>A useful place to start.</h3>
+            <p>Guides, tools and checklists to help you take the next step.</p>
+            <Link className="learn-item" href="/resources/ebook">
+              <span>
+                <small>FREE EBOOK</small>Find Your Light in the Age of AI
+              </span>
+              <span aria-hidden="true">↗</span>
+            </Link>
+            <Link className="learn-item" href="/resources/ai-readiness-checklist">
+              <span>
+                <small>SELF-ASSESSMENT</small>AI Readiness Checklist
+              </span>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          </article>
+          <article className="learn-panel insights-panel" id="insights">
+            <div className="learn-panel-top">
+              <span className="eyebrow">INSIGHTS</span>
+              <TextLink href="/insights" arrow="↗">
+                View all insights
+              </TextLink>
+            </div>
+            <h3>Ideas worth acting on.</h3>
+            <p>Perspectives on AI adoption, leadership and the work of making change happen.</p>
+            {featured ? (
+              <Link className="learn-item featured-insight" href={`/insights/${featured.slug}`}>
+                <span>
+                  <small>{featured.category.toUpperCase()} · FEATURED READING</small>
+                  {featured.title}
+                </span>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ) : null}
+          </article>
+        </div>
+      </section>
+
+      <section className="enquire section" id="enquire" aria-labelledby="enquire-title">
+        <p className="eyebrow">LET’S PUT POSSIBILITY TO WORK</p>
+        <div className="enquire-layout">
+          <div>
+            <h2 id="enquire-title">Ready to make AI part of the way you work?</h2>
+            <p>
+              Tell me about your team or your next event.
+              <br />
+              We’ll work out where Lumii can help.
+            </p>
+          </div>
+          <EnquiryChoices />
+        </div>
+      </section>
+    </div>
   )
 }

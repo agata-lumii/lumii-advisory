@@ -1,37 +1,49 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
+import { DM_Sans, Manrope } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import './lumii.css'
+import SiteHeader from '@/components/SiteHeader'
+import SiteFooter from '@/components/SiteFooter'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { isIndexable } from '@/lib/indexing'
 
-const cormorant = Cormorant_Garamond({
+// Variable fonts: the redesign uses intermediate weights (450, 550, 650) and
+// retained pages still use DM Sans Light (300).
+const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  variable: '--font-manrope',
   display: 'swap',
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
   variable: '--font-dm-sans',
   display: 'swap',
 })
 
+// The original Lumii wordmark face, supplied with the design handoff.
+const wordmark = localFont({
+  src: './fonts/lumii-cormorant-garamond.woff2',
+  weight: '300',
+  variable: '--font-wordmark',
+  display: 'swap',
+})
+
+const indexable = isIndexable()
+
 export const metadata: Metadata = {
   title: {
-    default: 'Lumii Advisory | AI Strategy & Digital Transformation Consulting, Sydney',
+    default: 'Lumii | Find Your Light with AI',
     template: '%s | Lumii Advisory',
   },
   description:
-    'Lumii Advisory is a founder-led AI strategy consultancy based in Sydney, Australia, helping mid-market businesses adopt AI with clarity, rigour, and measurable commercial results.',
+    'Practical AI courses, inspiring talks and hands-on offsite training for businesses ready to change how they work.',
   metadataBase: new URL('https://lumiiadvisory.com'),
   openGraph: {
-    title: 'Lumii Advisory — AI Strategy & Digital Transformation',
+    title: 'Lumii | Find Your Light with AI',
     description:
-      'Founder-led AI strategy consulting for mid-market businesses in Sydney and APAC.',
+      'Practical AI courses, inspiring talks and hands-on offsite training for businesses ready to change how they work.',
     siteName: 'Lumii Advisory',
     type: 'website',
     locale: 'en_AU',
@@ -40,24 +52,27 @@ export const metadata: Metadata = {
         url: 'https://lumiiadvisory.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Lumii Advisory — AI Strategy & Digital Transformation',
+        alt: 'Lumii Advisory — Find Your Light with AI',
       },
     ],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
-  },
-  alternates: {
-    canonical: 'https://lumiiadvisory.com',
-  },
+  // Production is indexable. Netlify deploy previews and branch deploys are
+  // not, so a preview can never compete with the live site in search.
+  // No canonical is set here: a root canonical would be inherited by every
+  // page that doesn't set its own, marking it a duplicate of the homepage.
+  robots: indexable
+    ? {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+          'max-video-preview': -1,
+        },
+      }
+    : { index: false, follow: false },
 }
 
 const SITE_URL = 'https://lumiiadvisory.com'
@@ -79,8 +94,8 @@ const jsonLd = [
     },
     image: `${SITE_URL}/og-image.jpg`,
     description:
-      'Founder-led AI strategy consultancy in Sydney, Australia, helping mid-market businesses adopt AI with clarity and measurable results. Lumii Advisory builds the AI Operating System: five components — Thesis, Guardrails, Workflows, People, Measurement — that turn isolated AI tools into a coordinated business capability.',
-    slogan: 'AI is not a tool problem. It is an operating system problem.',
+      'Founder-led AI enablement business in Sydney, Australia. Lumii Advisory offers practical AI courses (Find Your Light with AI), speaking and hands-on offsite training, with AI advisory and AI visibility services for businesses that need deeper support. Its work is built on the Lumii AI Operating System: Thesis, Guardrails, Workflows, People and Measurement.',
+    slogan: 'Find your light. Put AI to work.',
     email: 'hello@lumiiadvisory.com',
     founder: { '@id': `${SITE_URL}/#agata` },
     foundingDate: '2025',
@@ -98,9 +113,10 @@ const jsonLd = [
       { '@type': 'Place', name: 'Asia-Pacific' },
     ],
     knowsAbout: [
-      'AI Strategy',
-      'AI Operating System',
+      'AI Training',
       'AI Enablement',
+      'AI Operating System',
+      'AI Strategy',
       'AI Visibility',
       'Brand Entity Optimisation',
       'Generative Engine Optimisation',
@@ -127,7 +143,7 @@ const jsonLd = [
     image: `${SITE_URL}/og-image.jpg`,
     logo: `${SITE_URL}/og-image.jpg`,
     description:
-      'Independent AI strategy and digital transformation consultancy based in Sydney, working with mid-market businesses across Australia and APAC.',
+      'Founder-led AI enablement business based in Sydney, offering AI courses, speaking, offsite team training and AI advisory across Australia and APAC.',
     email: 'hello@lumiiadvisory.com',
     priceRange: '$$$',
     address: {
@@ -146,14 +162,11 @@ const jsonLd = [
       { '@type': 'Place', name: 'Asia-Pacific' },
     ],
     serviceType: [
-      'AI Strategy Consulting',
-      'AI Enablement',
+      'AI Training Courses',
+      'AI Speaking and Panels',
+      'Offsite AI Team Training',
+      'AI Advisory',
       'AI Visibility',
-      'Brand Entity Optimisation',
-      'Digital Transformation',
-      'Customer Experience',
-      'Ecommerce',
-      'MarTech Advisory',
       'AI Readiness Assessment',
     ],
     parentOrganization: { '@id': `${SITE_URL}/#organization` },
@@ -185,15 +198,16 @@ const jsonLd = [
       occupationLocation: { '@type': 'City', name: 'Sydney' },
     },
     description:
-      'Founder of Lumii Advisory and an AI strategy consultant based in Sydney, Australia. Agata Adamczak helps mid-market businesses translate AI into measurable commercial outcomes, and is the author of the AI Operating System framework.',
+      'Founder of Lumii Advisory, based in Sydney, Australia. Agata Adamczak has nearly 20 years across data, digital strategy, search and AI visibility, and leads Lumii’s AI courses, talks and offsite training. She is the author of the Lumii AI Operating System framework.',
     url: `${SITE_URL}/about`,
-    image: `${SITE_URL}/og-image.jpg`,
+    image: `${SITE_URL}/images/agata-charcoal-editorial.webp`,
     worksFor: { '@id': `${SITE_URL}/#organization` },
     sameAs: ['https://www.linkedin.com/in/agata-a-47295a24/'],
     knowsAbout: [
-      'AI Strategy',
-      'AI Operating System',
+      'AI Training',
       'AI Enablement',
+      'AI Operating System',
+      'AI Strategy',
       'AI Visibility',
       'Brand Entity Optimisation',
       'Digital Transformation',
@@ -226,7 +240,17 @@ const jsonLd = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html
+      lang="en-AU"
+      className={`${manrope.variable} ${dmSans.variable} ${wordmark.variable}`}
+      // The inline script below adds a class before hydration.
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Marks JS as available before first paint, so the mobile menu starts
+            collapsed instead of flashing open. Without JS it stays usable. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body>
         <GoogleAnalytics />
         {jsonLd.map((schema, i) => (
@@ -236,9 +260,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SiteHeader />
+        <main id="main">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   )

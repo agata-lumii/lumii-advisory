@@ -24,7 +24,7 @@ export default function BrandPage() {
   return (
     <div className="bg-ivory min-h-screen">
       {/* Header */}
-      <div className="bg-near-black pt-40 pb-20 px-8 lg:px-12">
+      <div className="bg-near-black pt-20 pb-20 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
             Internal Reference

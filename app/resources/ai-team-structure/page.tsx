@@ -259,7 +259,7 @@ export default function AiTeamStructurePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
+      <section className="bg-near-black pt-20 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
             Resources · AI Team Structure
@@ -497,7 +497,7 @@ export default function AiTeamStructurePage() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner variant="reading" />
     </>
   )
 }

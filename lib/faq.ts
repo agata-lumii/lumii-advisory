@@ -9,7 +9,7 @@ export const faqs: FAQItem[] = [
     category: 'Getting Started',
     question: 'Where do we start if we have never used AI before?',
     answer:
-      'The best starting point is an AI readiness assessment — a structured review of your strategy, data, technology, people, and processes. This gives you an honest baseline: what is already in place, what gaps need to be closed first, and which AI use cases will deliver the highest return for your specific business. I typically complete this in four weeks and it becomes the foundation for everything that follows.',
+      'Start with your people and the work they already do. For many businesses that means a Find Your Light with AI course or an offsite session to build a shared, practical understanding, alongside the free AI Readiness Checklist to see where the business stands. Where the questions are bigger — data, governance, which use cases to prioritise — a structured AI readiness assessment gives you an honest baseline: what is already in place, what gaps need to be closed first, and which AI use cases will deliver the highest return for your specific business. I typically complete this in four weeks and it becomes the foundation for everything that follows.',
   },
   {
     category: 'Getting Started',
@@ -27,13 +27,13 @@ export const faqs: FAQItem[] = [
     category: 'Working with Lumii',
     question: 'What types of businesses does Lumii Advisory work with?',
     answer:
-      'I work with mid-market businesses and leadership teams across financial services, professional services, retail, healthcare, legal, marketing, education, technology, manufacturing, and HR. The businesses I work with are typically at an inflection point — recognising that AI and digital transformation are critical to their next phase of growth but unsure how to approach it in a way that is practical, risk-managed, and tied to real business outcomes.',
+      'I work with mid-market businesses and leadership teams across financial services, professional services, retail, healthcare, legal, marketing, education, technology, manufacturing, and HR. Support ranges from Find Your Light with AI courses, speaking and panels, and hands-on offsite training to AI advisory and AI visibility work. The businesses I work with are typically at an inflection point — recognising that AI and digital transformation are critical to their next phase of growth but unsure how to approach it in a way that is practical, risk-managed, and tied to real business outcomes.',
   },
   {
     category: 'Working with Lumii',
     question: 'How long does a typical engagement take?',
     answer:
-      'It depends on the scope. A Strategy Sprint — focused on a specific strategic challenge or AI readiness assessment — typically runs two to four weeks. A Transformation Partnership, covering strategy, planning, and implementation oversight, typically runs three to six months. Advisory Retainers are ongoing and structured on a monthly basis. I will always be clear about scope and timeline before an engagement begins.',
+      'It depends on what you need. Courses, talks and offsite sessions are shaped around your people and what you want to change, so the format and timing are agreed with you first. Advisory work is scoped to the problem: a focused project on a specific challenge or AI readiness assessment typically runs two to four weeks; a longer programme covering strategy, planning, and implementation oversight typically runs three to six months; and ongoing advisory is structured on a monthly basis. I will always be clear about scope and timeline before an engagement begins.',
   },
   {
     category: 'Working with Lumii',
@@ -63,7 +63,7 @@ export const faqs: FAQItem[] = [
     category: 'Measuring Success',
     question: 'How much does AI consulting typically cost?',
     answer:
-      "AI consulting fees vary significantly based on scope and complexity. A focused Strategy Sprint is typically a fixed-fee engagement in the range of $15,000–$35,000. A Transformation Partnership ranges from $60,000–$200,000+ depending on duration and depth. Advisory Retainers are structured as a monthly fee reflecting the level of access and support required. I always scope before pricing, and I am transparent about fees from the first conversation. What I can say is that the cost of a well-designed AI programme is typically a fraction of the cost of a poorly designed one.",
+      "It depends on what you need. Courses, talks and offsite training are scoped with you first, and I confirm a fixed price after an initial conversation. For advisory work, a focused project is typically a fixed-fee engagement in the range of $15,000–$35,000, and a longer programme ranges from $60,000–$200,000+ depending on duration and depth. Ongoing advisory is a monthly fee reflecting the level of access and support required. I always scope before pricing, and I am transparent about fees from the first conversation. What I can say is that the cost of a well-designed AI programme is typically a fraction of the cost of a poorly designed one.",
   },
   {
     category: 'Data & Risk',

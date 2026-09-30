@@ -261,7 +261,7 @@ export default function AIReadinessChecklist() {
   return (
     <>
       {/* Hero / intro */}
-      <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
+      <section className="bg-near-black pt-20 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
           <div>
             <div className="flex items-center gap-3 mb-8">

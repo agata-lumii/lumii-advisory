@@ -97,7 +97,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <section className="bg-near-black">
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
             {/* Left: dark text column */}
-            <div className="pt-40 lg:pt-44 pb-16 lg:pb-20 px-8 lg:px-12 order-2 lg:order-1">
+            <div className="pt-16 lg:pt-20 pb-16 lg:pb-20 px-8 lg:px-12 order-2 lg:order-1">
               <div className="max-w-[640px] lg:ml-auto lg:mr-12">
                 <div className="flex items-center gap-4 mb-8">
                   <Link
@@ -148,7 +148,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
         </section>
       ) : (
-        <section className="bg-near-black pt-40 pb-20 px-8 lg:px-12">
+        <section className="bg-near-black pt-20 pb-20 px-8 lg:px-12">
           <div className="max-w-[860px] mx-auto">
             <div className="flex items-center gap-4 mb-8">
               <Link
@@ -386,7 +386,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </section>
       )}
 
-      <CTABanner />
+      <CTABanner variant="reading" />
     </>
   )
 }

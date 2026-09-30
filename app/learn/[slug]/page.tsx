@@ -61,7 +61,7 @@ export default function PlatformPage({ params }: { params: { slug: string } }) {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
+      <section className="bg-near-black pt-20 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           {/* Breadcrumb */}
           <div className="flex items-center gap-3 mb-12">
@@ -358,7 +358,7 @@ export default function PlatformPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner variant="reading" />
     </>
   )
 }

@@ -91,9 +91,9 @@ const faqSchema = {
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  // Matches the @id emitted for this discipline on /services so both blocks
+  // /work-with-us references this node by the same @id, so both pages
   // resolve to a single Service entity rather than two competing ones.
-  '@id': `${SITE_URL}/services#ai-visibility`,
+  '@id': `${PAGE_URL}#service`,
   name: 'AI Visibility & Brand Entity Optimisation',
   alternateName: 'AI Visibility',
   description:
@@ -127,7 +127,7 @@ const breadcrumbSchema = {
   '@id': `${PAGE_URL}#breadcrumb`,
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
+    { '@type': 'ListItem', position: 2, name: 'Work with Lumii', item: `${SITE_URL}/work-with-us` },
     { '@type': 'ListItem', position: 3, name: 'AI Visibility', item: PAGE_URL },
   ],
 }
@@ -140,7 +140,7 @@ export default function AiVisibilityPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero — dark */}
-      <section className="bg-near-black pt-40 pb-28 px-8 lg:px-12">
+      <section className="bg-near-black pt-20 pb-28 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-10">
@@ -152,8 +152,8 @@ export default function AiVisibilityPage() {
               </li>
               <li aria-hidden="true">·</li>
               <li>
-                <Link href="/services" className="hover:text-warm-white transition-colors">
-                  Services
+                <Link href="/work-with-us" className="hover:text-warm-white transition-colors">
+                  Work with Lumii
                 </Link>
               </li>
               <li aria-hidden="true">·</li>
@@ -359,6 +359,16 @@ export default function AiVisibilityPage() {
               This is stage-appropriate work: build for AI-as-researcher today, and it
               compounds as AI moves toward acting on your buyers&rsquo; behalf.
             </p>
+            <p>
+              Related talk for marketing, brand and commercial teams:{' '}
+              <Link
+                href="/#topic-visibility"
+                className="text-near-black underline decoration-gold/40 underline-offset-[4px] hover:decoration-gold transition-colors"
+              >
+                Find Your Brand&rsquo;s Light in the Age of AI
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </section>
@@ -414,10 +424,10 @@ export default function AiVisibilityPage() {
               Book a discovery call
             </a>
             <Link
-              href="/services"
+              href="/work-with-us"
               className="font-body text-[12px] tracking-[0.12em] uppercase text-warm-white/60 py-4 border-b border-warm-white/20 hover:text-warm-white hover:border-warm-white/60 transition-all duration-200 whitespace-nowrap"
             >
-              All services →
+              Ways to work together →
             </Link>
           </div>
         </div>

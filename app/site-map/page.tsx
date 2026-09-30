@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { verticals } from '@/lib/verticals'
 import { articles } from '@/lib/insights'
 import { platforms } from '@/lib/ai-tools'
+import { getTrainingAudience } from '@/lib/training-audiences'
 
 export const metadata: Metadata = {
   title: 'Site Map',
   description: 'A complete directory of all pages on the Lumii Advisory website.',
+  // Intentional: a navigation aid, not a search landing page.
   robots: { index: false, follow: true },
+  alternates: { canonical: 'https://lumiiadvisory.com/site-map' },
 }
 
 const sections = [
@@ -15,22 +18,21 @@ const sections = [
     title: 'Main Pages',
     links: [
       { href: '/', label: 'Home' },
-      { href: '/ai-operating-system', label: 'The AI Operating System' },
-      { href: '/services', label: 'Services' },
-      { href: '/work-with-us', label: 'Work With Us' },
-      { href: '/how-we-work', label: 'How I work' },
+      { href: '/work-with-us', label: 'Ways to work together' },
+      { href: '/services/ai-visibility', label: 'AI visibility advisory' },
+      { href: '/ai-operating-system', label: 'The framework & approach' },
       { href: '/about', label: 'About Agata' },
       { href: '/contact', label: 'Contact' },
       { href: '/faq', label: 'FAQ' },
     ],
   },
   {
-    title: 'Who I help',
+    title: 'Training for your team',
     links: [
       { href: '/who-we-help', label: 'Overview' },
       ...verticals.map((v) => ({
         href: `/who-we-help/${v.slug}`,
-        label: v.heading,
+        label: getTrainingAudience(v.slug)?.name ?? v.heading,
       })),
     ],
   },
@@ -49,9 +51,10 @@ const sections = [
     links: [
       { href: '/resources', label: 'All Resources' },
       { href: '/resources/ai-readiness-checklist', label: 'AI Readiness Checklist' },
+      { href: '/resources/ebook', label: 'Find Your Light: free ebook' },
       { href: '/resources/ai-team-structure', label: 'AI Team Structure' },
       { href: '/resources/ai-tools', label: 'AI Tools Directory' },
-      { href: '/ai-case-studies', label: 'AI Case Studies' },
+      { href: '/ai-case-studies', label: 'AI adoption, analysed' },
     ],
   },
   {
@@ -76,7 +79,7 @@ const sections = [
 export default function SiteMapPage() {
   return (
     <>
-      <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
+      <section className="bg-near-black pt-20 pb-24 px-8 lg:px-12">
         <div className="max-w-[1180px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
             Navigation
