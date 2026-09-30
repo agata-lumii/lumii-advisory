@@ -263,3 +263,17 @@ ul.takeaways li{position:relative;padding:12px 0 12px 26px;border-top:1px solid 
 ul.takeaways li:before{content:'✳';position:absolute;left:0;top:12px;color:var(--ink);font-size:.9rem}
 .topic-links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:24px}
 .case .consequence{font-size:1.15rem;margin-top:14px}
+/* Keynote topics with posters, alternating sides */
+.topic-features{border-top:1px solid var(--ink)}
+.topic-feature{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(32px,6%,80px);align-items:start;padding:56px 0;border-bottom:1px solid var(--line);scroll-margin-top:96px}
+.topic-feature:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,420px)}
+.topic-feature:nth-child(even) .topic-poster{order:2}
+.topic-poster{margin:0;position:sticky;top:110px}
+.topic-poster img{display:block;width:100%;height:auto;box-shadow:0 18px 40px rgba(30,28,26,.12)}
+.topic-body{max-width:640px}
+.topic-feature .consequence{font-size:1.15rem;margin-top:14px}
+.topic-meta{margin:22px 0 0;display:grid;gap:6px;font-size:1rem;line-height:1.6}
+.topic-meta div{display:flex;gap:10px}
+.topic-meta dt{flex:0 0 72px;font-weight:600}
+.topic-meta dd{margin:0}
+@media(max-width:760px){.topic-feature,.topic-feature:nth-child(even){grid-template-columns:1fr;gap:28px;padding:40px 0}.topic-feature:nth-child(even) .topic-poster{order:0}.topic-poster{position:static;max-width:420px}}
