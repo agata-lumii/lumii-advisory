@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ContentCard, PageCta, PageIntro, TextLink } from '@/components/lumii/primitives'
-import { otherIndustries, otherIndustryNames, trainingAudiences } from '@/lib/training-audiences'
+import { otherIndustryNames, trainingAudiences } from '@/lib/training-audiences'
 
 const PAGE_URL = 'https://lumiiadvisory.com/who-we-help'
 
@@ -39,8 +39,8 @@ export default function WhoWeHelpPage() {
         ))}
       </section>
 
-      {/* Five thin industry pages were retired on 30 Sept 2026 and redirect here,
-          so this section names those industries. */}
+      {/* Six industry pages were retired on 30 Sept 2026 and redirect here, so
+          this section names those industries. */}
       <section className="section secondary-offer" id="other-industries">
         <div>
           <p className="eyebrow">OTHER INDUSTRIES</p>
@@ -57,13 +57,9 @@ export default function WhoWeHelpPage() {
             {otherIndustryNames[otherIndustryNames.length - 1]} — starting with the work your people
             actually do.
           </p>
-          <p>Tell me about the training your team needs, or read a deeper industry perspective.</p>
-          {otherIndustries.map((industry) => (
-            <TextLink key={industry.slug} href={`/who-we-help/${industry.slug}`}>
-              {industry.name}
-            </TextLink>
-          ))}
+          <p>Tell me about the training your team needs.</p>
           <TextLink href="/contact?interest=courses">Tell me about your team</TextLink>
+          <TextLink href="/ai-courses">Explore AI courses</TextLink>
         </div>
       </section>
 
