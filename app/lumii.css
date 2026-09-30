@@ -257,3 +257,4 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.85em;background:#eee
 .prose ul,.legal-body ul,.result-list:is(ul){list-style:disc}
 .prose ol,.callout ol,.result-list:is(ol){list-style:decimal}
 .prose li::marker,.callout li::marker,.result-list li::marker{color:var(--muted)}
+.rule-top{border-top:1px solid var(--line)}
