@@ -16,19 +16,24 @@ type FormData = {
   message: string
 }
 
-// Valid interest values — keep in sync with the <select> options below
-const VALID_INTERESTS = [
-  'workshop',
-  'project',
-  'retainer',
-  'digital-strategy',
-  'cx',
-  'ecommerce',
-  'martech',
-  'ai',
-  'multiple',
-  'not-sure',
-]
+// Valid interest values — keep in sync with the <select> options below.
+// Sept 2026 redesign: courses, speaking and offsite training lead, with
+// advisory and AI visibility as secondary offers.
+const VALID_INTERESTS = ['courses', 'speaking', 'offsite', 'ai-visibility', 'advisory', 'not-sure']
+
+// Pre-redesign values that may still arrive from bookmarks, emails or old
+// links, mapped to the nearest current option.
+const LEGACY_INTERESTS: Record<string, string> = {
+  workshop: 'courses',
+  ai: 'courses',
+  project: 'advisory',
+  retainer: 'advisory',
+  'digital-strategy': 'advisory',
+  cx: 'advisory',
+  ecommerce: 'advisory',
+  martech: 'advisory',
+  multiple: 'not-sure',
+}
 
 function ContactFormInner() {
   const searchParams = useSearchParams()
@@ -42,11 +47,12 @@ function ContactFormInner() {
     formState: { errors },
   } = useForm<FormData>()
 
-  // Pre-fill interest from ?interest= URL param (e.g. /contact?interest=workshop)
+  // Pre-fill interest from ?interest= URL param (e.g. /contact?interest=courses)
   useEffect(() => {
     const raw = searchParams?.get('interest')
-    if (raw && VALID_INTERESTS.includes(raw)) {
-      setValue('interest', raw)
+    const value = raw ? (LEGACY_INTERESTS[raw] ?? raw) : null
+    if (value && VALID_INTERESTS.includes(value)) {
+      setValue('interest', value)
     }
   }, [searchParams, setValue])
 
@@ -80,118 +86,79 @@ function ContactFormInner() {
 
   if (submitted) {
     return (
-      <div className="py-12">
-        <div className="w-12 h-px bg-gold mb-8" />
-        <p className="font-display text-[32px] italic font-light text-near-black leading-[1.3] mb-4">
-          Thank you — I'll be in touch soon.
-        </p>
-        <p className="font-body text-[15px] text-slate-warm font-light leading-[1.75]">
-          I aim to respond within one business day. In the meantime, feel free to connect on LinkedIn.
-        </p>
+      <div className="form-success" role="status">
+        <h2>Thank you — I’ll be in touch soon.</h2>
+        <p>I aim to respond within one business day. In the meantime, feel free to connect on LinkedIn.</p>
       </div>
     )
   }
 
-  const inputClass =
-    'w-full font-body text-[15px] font-light text-near-black bg-transparent border-0 border-b border-parchment focus:border-charcoal focus:outline-none py-4 transition-colors duration-200 placeholder:text-ash'
-  const labelClass = 'font-body text-[10px] tracking-[0.2em] uppercase text-ash mb-1 block'
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-        <div>
-          <label className={labelClass}>First Name</label>
-          <input
-            {...register('firstName', { required: true })}
-            placeholder="Jane"
-            className={inputClass}
-          />
-          {errors.firstName && (
-            <p className="font-body text-[11px] text-red-500 mt-1">Required</p>
-          )}
+    <form onSubmit={handleSubmit(onSubmit)} className="form" noValidate>
+      <div className="form-row">
+        <div className="field">
+          <label htmlFor="firstName">First name</label>
+          <input id="firstName" autoComplete="given-name" {...register('firstName', { required: true })} placeholder="Jane" />
+          {errors.firstName && <p className="field-error">Required</p>}
         </div>
-        <div>
-          <label className={labelClass}>Last Name</label>
-          <input
-            {...register('lastName', { required: true })}
-            placeholder="Smith"
-            className={inputClass}
-          />
-          {errors.lastName && (
-            <p className="font-body text-[11px] text-red-500 mt-1">Required</p>
-          )}
+        <div className="field">
+          <label htmlFor="lastName">Last name</label>
+          <input id="lastName" autoComplete="family-name" {...register('lastName', { required: true })} placeholder="Smith" />
+          {errors.lastName && <p className="field-error">Required</p>}
         </div>
       </div>
-      <div>
-        <label className={labelClass}>Email</label>
+      <div className="field">
+        <label htmlFor="email">Email</label>
         <input
-          {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })}
+          id="email"
           type="email"
+          autoComplete="email"
+          {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })}
           placeholder="jane@company.com"
-          className={inputClass}
         />
-        {errors.email && (
-          <p className="font-body text-[11px] text-red-500 mt-1">Valid email required</p>
-        )}
+        {errors.email && <p className="field-error">Valid email required</p>}
       </div>
-      <div>
-        <label className={labelClass}>Company</label>
-        <input
-          {...register('company')}
-          placeholder="Your Company"
-          className={inputClass}
-        />
+      <div className="field">
+        <label htmlFor="company">Company</label>
+        <input id="company" autoComplete="organization" {...register('company')} placeholder="Your company" />
       </div>
-      <div>
-        <label className={labelClass}>Area of Interest</label>
-        <select
-          {...register('interest', { required: true })}
-          className={`${inputClass} cursor-pointer`}
-        >
+      <div className="field">
+        <label htmlFor="interest">I’m interested in</label>
+        <select id="interest" {...register('interest', { required: true })}>
           <option value="">Select an area...</option>
-          <optgroup label="Ways to Engage">
-            <option value="workshop">Workshop (Half-Day or Full-Day)</option>
-            <option value="project">Project Sprint</option>
-            <option value="retainer">Advisory Retainer</option>
+          <optgroup label="Courses, speaking &amp; training">
+            <option value="courses">Find Your Light with AI courses</option>
+            <option value="speaking">Speaking &amp; panels</option>
+            <option value="offsite">Offsite team training</option>
           </optgroup>
-          <optgroup label="Discipline">
-            <option value="digital-strategy">Digital Strategy</option>
-            <option value="cx">Customer Experience</option>
-            <option value="ecommerce">Ecommerce</option>
-            <option value="martech">MarTech Advisory</option>
-            <option value="ai">AI Enablement</option>
+          <optgroup label="Advisory">
+            <option value="ai-visibility">AI visibility advisory</option>
+            <option value="advisory">AI advisory (readiness, workflows, adoption)</option>
           </optgroup>
-          <option value="multiple">Multiple Areas</option>
-          <option value="not-sure">Not Sure Yet</option>
+          <option value="not-sure">Not sure yet</option>
         </select>
-        {errors.interest && (
-          <p className="font-body text-[11px] text-red-500 mt-1">Please select an option</p>
-        )}
+        {errors.interest && <p className="field-error">Please select an option</p>}
       </div>
-      <div>
-        <label className={labelClass}>Message</label>
+      <div className="field">
+        <label htmlFor="message">Message</label>
         <textarea
+          id="message"
           {...register('message', { required: true })}
-          placeholder="Tell us about your business and what you're looking to achieve..."
+          placeholder="Tell me about your team, your event, or what you want to change..."
           rows={5}
-          className={`${inputClass} resize-none`}
         />
-        {errors.message && (
-          <p className="font-body text-[11px] text-red-500 mt-1">Required</p>
-        )}
+        {errors.message && <p className="field-error">Required</p>}
       </div>
       {error && (
-        <p className="font-body text-[13px] text-red-500 font-light">
-          Something went wrong — please try again or email us directly at hello@lumiiadvisory.com
+        <p className="field-error" role="alert">
+          Something went wrong — please try again or email me directly at hello@lumiiadvisory.com
         </p>
       )}
-      <button
-        type="submit"
-        disabled={submitting}
-        className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-10 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200 mt-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-      >
-        {submitting ? 'Sending…' : 'Send Message'}
-      </button>
+      <div>
+        <button type="submit" className="button" disabled={submitting}>
+          {submitting ? 'Sending…' : 'Send message'} <span aria-hidden="true">↗</span>
+        </button>
+      </div>
     </form>
   )
 }
@@ -199,7 +166,7 @@ function ContactFormInner() {
 // useSearchParams requires a Suspense boundary in Next.js App Router
 export default function ContactForm() {
   return (
-    <Suspense fallback={<div className="py-12 font-body text-[13px] text-ash">Loading form…</div>}>
+    <Suspense fallback={<p className="form-note">Loading form…</p>}>
       <ContactFormInner />
     </Suspense>
   )

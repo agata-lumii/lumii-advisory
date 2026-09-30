@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'AI Consulting FAQ: Costs, Process & Getting Started | Lumii',
+    absolute: 'AI Courses, Workshops & Consulting FAQ | Lumii Advisory',
   },
   description:
-    'Honest answers on AI consulting costs, timelines, data privacy & process. 12 questions mid-market leadership teams ask before engaging Lumii Advisory.',
+    'Answers on AI courses, team workshops, keynotes, AI enablement consulting, costs, timelines and data privacy from Lumii Advisory in Sydney.',
   alternates: {
     canonical: 'https://lumiiadvisory.com/faq',
   },

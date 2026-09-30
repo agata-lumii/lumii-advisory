@@ -1,379 +1,139 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import SectionHeader from '@/components/SectionHeader'
-import CTABanner from '@/components/CTABanner'
+import { ContentCard, PageCta, PageIntro, TextLink } from '@/components/lumii/primitives'
+
+const SITE_URL = 'https://lumiiadvisory.com'
+const PAGE_URL = `${SITE_URL}/work-with-us`
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'AI Workshops, Sprints & Advisory Retainers Sydney | Lumii',
-  },
+  title: { absolute: 'Courses, Speaking & AI Training | Lumii Advisory' },
   description:
-    'Three ways to engage: AI workshops (1 day), project sprints (6–12 weeks), or advisory retainers. Senior-led, vendor-neutral. Get a fixed proposal.',
-  alternates: {
-    canonical: 'https://lumiiadvisory.com/work-with-us',
-  },
+    'Find Your Light with AI courses, speaking, offsite training and focused AI advisory for businesses.',
+  alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'AI Workshops, Sprints & Advisory Retainers Sydney | Lumii',
+    title: 'Courses, Speaking & AI Training | Lumii Advisory',
     description:
-      'Three ways to engage: AI workshops, project sprints, or advisory retainers. Senior-led, vendor-neutral. Pick the shape that fits your business.',
-    url: 'https://lumiiadvisory.com/work-with-us',
+      'Find Your Light with AI courses, speaking, offsite training and focused AI advisory for businesses.',
+    url: PAGE_URL,
   },
 }
 
-type Tier = {
-  number: string
-  anchor: string
-  title: string
-  tagline: string
-  summary: string
-  formats: {
-    name: string
-    detail: string
-    description: string
-  }[]
-  idealFor: string
-  enquiryValue: 'workshop' | 'project' | 'retainer'
-  enquiryLabel: string
-}
-
-const tiers: Tier[] = [
+const offers = [
   {
-    number: '01',
-    anchor: 'workshops',
-    title: 'Workshops',
-    tagline: 'A single day to align leadership on what AI means for your business.',
-    summary:
-      'Structured, high-impact sessions designed to take a leadership team from curious to clear. Every workshop is tailored to your sector, your stack, and your commercial reality — no generic slide decks, no AI-vendor agenda. You leave with a shared language, a point of view, and a roadmap of next moves.',
-    formats: [
-      {
-        name: 'Half-Day Executive Briefing',
-        detail: '3 hours · up to 8 leaders · in-person or virtual',
-        description:
-          'A focused briefing on the AI landscape in your sector, your competitive exposure, and three quick-win use cases scoped to your business. Ideal for boards and executive teams who want clarity without committing to a programme.',
-      },
-      {
-        name: 'Full-Day Strategy Intensive',
-        detail: '6 hours · up to 12 people · in-person or virtual',
-        description:
-          'A deep working session covering AI readiness, use-case prioritisation, and a 90-day activation plan. Delivered as a board-ready document within five business days. The fastest route from exploration to action.',
-      },
-      {
-        name: 'Custom Multi-Day Programmes',
-        detail: 'Tailored duration · team-wide capability build',
-        description:
-          'For organisations investing in genuine AI capability across the leadership and operating teams. Structured curriculum, hands-on labs, and an engagement plan designed for lasting behaviour change.',
-      },
-    ],
-    idealFor:
-      'Leadership teams wanting clarity fast — before committing budget, before briefing agencies, before making platform decisions.',
-    enquiryValue: 'workshop',
-    enquiryLabel: 'Enquire about a workshop',
+    id: 'courses',
+    label: '01 / COURSES',
+    title: 'Find Your Light with AI',
+    description:
+      'Build the confidence, judgement and everyday habits to use AI well. Start with the tasks your people do, then practise turning useful ideas into repeatable workflows.',
+    href: '/ai-courses',
+    action: 'Explore the course series',
   },
   {
-    number: '02',
-    anchor: 'projects',
-    title: 'Project Sprints',
-    tagline: 'A defined outcome, delivered in 6–12 weeks.',
-    summary:
-      'Fixed-scope engagements for businesses that know the problem and want it solved properly. Each sprint is shaped around a single, measurable outcome — with a clear deliverable, a defined timeline, and a senior consultant accountable from first call to final handover. No scope creep. No open-ended meter running.',
-    formats: [
-      {
-        name: 'AI Readiness Diagnostic',
-        detail: '6 weeks',
-        description:
-          'A structured audit of your data, people, processes, and platforms against a proven AI maturity framework. You receive a scored assessment, an honest diagnosis, and a prioritised roadmap your leadership team can execute against.',
-      },
-      {
-        name: 'Use-Case Activation',
-        detail: '8–10 weeks',
-        description:
-          'End-to-end delivery of one high-value AI initiative — from scoping and design through pilot, measurement, and handover. Ideal for businesses that want to prove AI value before scaling investment.',
-      },
-      {
-        name: 'CX, Ecommerce or MarTech Transformation',
-        detail: '8–12 weeks',
-        description:
-          'A shaped transformation sprint within one discipline — journey redesign, platform migration, stack rationalisation, or attribution rebuild. Clear scope, clear timeline, clear outcome.',
-      },
-    ],
-    idealFor:
-      'Businesses with a defined problem and a mandate to solve it — ready to commit budget to a time-boxed outcome.',
-    enquiryValue: 'project',
-    enquiryLabel: 'Enquire about a project',
+    id: 'speaking',
+    label: '02 / SPEAKING',
+    title: 'A perspective worth bringing into the room.',
+    description:
+      'Talks and panels on AI at work, leadership and how brands get discovered. Choose from four topics, then shape the discussion around your audience.',
+    href: '/ai-keynote-speaker',
+    action: 'Explore speaking topics',
   },
   {
-    number: '03',
-    anchor: 'retainer',
-    title: 'Advisory Retainer',
-    tagline: 'Ongoing counsel as your AI and digital strategy evolves.',
-    summary:
-      'A long-term partnership giving you a senior strategic brain on speed-dial. Ideal for founders and leadership teams navigating a period of change — a platform migration, an AI rollout, a new growth thesis — who want experienced counsel without hiring a full-time executive.',
-    formats: [
-      {
-        name: 'Monthly Advisory',
-        detail: 'Ongoing · minimum 3-month commitment',
-        description:
-          'One to four days of senior advisory time per month. Monthly strategy session, async support between, and a quarterly board-ready review. Light-touch when you need it, deep when it matters.',
-      },
-      {
-        name: 'Fractional Leadership',
-        detail: 'Ongoing · 6–12 month engagements',
-        description:
-          'A part-time seat at your leadership table — as fractional Chief Digital Officer, AI Advisor, or Transformation Lead. For businesses that need senior capability but aren\'t ready for a full-time hire.',
-      },
-      {
-        name: 'Board & Committee Advisory',
-        detail: 'Ongoing · quarterly rhythm',
-        description:
-          'Independent AI and digital transformation counsel to boards, audit committees, and investment committees. Strategic reviews, risk assessments, and discipline-specific briefings as required.',
-      },
-    ],
-    idealFor:
-      'Founders and CEOs of growing mid-market businesses who want experienced counsel over time — not a one-off project.',
-    enquiryValue: 'retainer',
-    enquiryLabel: 'Enquire about a retainer',
+    id: 'offsite-training',
+    label: '03 / OFFSITE TRAINING',
+    title: 'Put the learning into practice.',
+    description:
+      'Make room in your offsite for hands-on AI exploration. Work through briefs, question the outputs and identify what your team can apply when they return to work.',
+    href: '/ai-workshops',
+    action: 'Plan your offsite session',
   },
 ]
 
-const faqs = [
-  {
-    q: 'Do you share pricing upfront?',
-    a: 'Not at the tier level. Every engagement is shaped around the business in front of me — scope, seniority of stakeholders, timeline, and outcomes all shift the number. I give a clear, fixed proposal after an initial discovery conversation so you can make a confident decision.',
-  },
-  {
-    q: 'How do we get started?',
-    a: 'Every engagement begins with a 30-minute discovery call — no obligation, no slide deck. I listen, ask hard questions, and tell you honestly whether I am the right fit. If I am, I\'ll follow up within a few days with a scoped proposal.',
-  },
-  {
-    q: 'Do you work across Australia and internationally?',
-    a: 'Yes. I am based in Sydney and work with clients across Australia and the Asia-Pacific region. Workshops and strategy sessions can be delivered in-person in major APAC cities or virtually across time zones.',
-  },
-  {
-    q: 'Can engagements evolve over time?',
-    a: 'Frequently, and by design. Many clients begin with a workshop or short sprint and move into a longer retainer once trust and context are established. The three tiers are starting points, not boxes.',
-  },
-  {
-    q: 'Who actually delivers the work?',
-    a: 'Agata Adamczak leads every engagement personally. For larger programmes I bring in a curated network of senior specialists — but you always have a single senior consultant accountable end-to-end.',
-  },
-]
+const advisoryDescription =
+  'Some challenges need more than a course or a workshop. Lumii also supports AI readiness, workflow design and adoption through scoped projects and ongoing advisory.'
 
-// Service JSON-LD for the three engagement tiers — picks up "AI Workshops",
-// "AI Project Sprints", and "Advisory Retainer" as distinct offerings.
-const engagementSchema = {
+// Each offer's full Service node lives on its own landing page. This page
+// lists them (ItemList) and carries the one service without its own page.
+const servicesSchema = {
   '@context': 'https://schema.org',
-  '@graph': tiers.map((t) => ({
-    '@type': 'Service',
-    '@id': `https://lumiiadvisory.com/work-with-us#${t.anchor}`,
-    name: `${t.title} — Lumii Advisory`,
-    description: t.summary,
-    serviceType: t.title,
-    provider: { '@id': 'https://lumiiadvisory.com/#organization' },
-    areaServed: [
-      { '@type': 'Country', name: 'Australia' },
-      { '@type': 'Place', name: 'Asia-Pacific' },
-    ],
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Mid-market business leaders',
+  '@graph': [
+    {
+      '@type': 'ItemList',
+      name: 'Ways to work with Lumii',
+      itemListElement: [
+        ...offers.map((offer) => ({ name: offer.title, href: offer.href })),
+        { name: 'AI advisory', href: '/work-with-us#advisory' },
+        { name: 'AI enablement consulting', href: '/ai-enablement' },
+        { name: 'AI visibility advisory', href: '/services/ai-visibility' },
+      ].map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.name, url: `${SITE_URL}${item.href}` })),
     },
-    category: 'AI Strategy Consulting',
-    url: `https://lumiiadvisory.com/work-with-us#${t.anchor}`,
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: `${t.title} formats`,
-      itemListElement: t.formats.map((f) => ({
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: f.name,
-          description: f.description,
-        },
-      })),
+    {
+      '@type': 'Service',
+      '@id': `${PAGE_URL}#advisory`,
+      name: 'AI Advisory',
+      description: advisoryDescription,
+      serviceType: 'AI Advisory',
+      provider: { '@id': `${SITE_URL}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: 'Sydney' },
+        { '@type': 'Country', name: 'Australia' },
+        { '@type': 'Place', name: 'Asia-Pacific' },
+      ],
+      url: `${PAGE_URL}#advisory`,
     },
-  })),
+  ],
 }
 
 export default function WorkWithUsPage() {
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(engagementSchema) }} />
-      {/* Dark hero */}
-      <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
-            Ways to Engage
-          </p>
-          <h1 className="font-display font-light text-[clamp(52px,5.5vw,82px)] leading-[1.08] text-warm-white mb-8 tracking-[-0.01em] max-w-[900px]">
-            Three ways to<br />
-            <em className="italic text-gold">work with us.</em>
-          </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[620px] font-light mb-6">
-            Whether you need a single day of clarity, a focused sprint to ship an outcome, or a long-term advisor alongside your leadership team — pick the shape that fits. Every engagement is bespoke, senior-led, and accountable to measurable results.
-          </p>
-          <p className="font-body text-[15px] leading-[1.8] text-warm-white/50 max-w-[620px] font-light">
-            All three engagements install components of the <Link href="/ai-operating-system" className="text-gold hover:text-warm-white underline decoration-gold/40 underline-offset-[4px] hover:decoration-warm-white/60 transition-colors">AI Operating System framework</Link> — the model that turns AI investment into commercial outcomes.
-          </p>
-        </div>
-      </section>
+    <div className="lumii">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+      <PageIntro
+        label="WORK WITH LUMII"
+        title={
+          <>
+            Start with the change
+            <br />
+            you want to make.
+          </>
+        }
+        lead="A more capable team. A useful conversation. A clearer way forward. Choose the kind of support that fits your business."
+      />
 
-      {/* Three tiers */}
-      <section className="bg-warm-white py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto space-y-[clamp(60px,8vw,100px)]">
-          {tiers.map((tier) => (
-            <article
-              key={tier.number}
-              id={tier.anchor}
-              className="scroll-mt-32 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-16 pb-[clamp(60px,8vw,100px)] border-b border-parchment last:border-b-0 last:pb-0"
-            >
-              {/* Left — tier header */}
-              <div>
-                <p className="font-display text-[14px] text-gold/70 tracking-[0.1em] mb-4">
-                  {tier.number} — Tier {Number(tier.number)}
-                </p>
-                <h2 className="font-display font-light text-[clamp(36px,4vw,54px)] leading-[1.1] text-near-black tracking-[-0.01em] mb-6">
-                  {tier.title}
-                </h2>
-                <p className="font-display italic text-[clamp(18px,2vw,22px)] font-light text-charcoal leading-[1.5] mb-6">
-                  {tier.tagline}
-                </p>
-                <p className="font-body text-[15px] leading-[1.8] text-slate-warm font-light">
-                  {tier.summary}
-                </p>
-
-                <div className="mt-10 pt-8 border-t border-parchment">
-                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-ash mb-3">
-                    Ideal for
-                  </p>
-                  <p className="font-body text-[14px] leading-[1.75] text-charcoal font-light italic">
-                    {tier.idealFor}
-                  </p>
-                </div>
-
-                <Link
-                  href={`/contact?interest=${tier.enquiryValue}`}
-                  className="inline-block mt-10 font-body text-[12px] tracking-[0.12em] uppercase text-near-black bg-gold px-8 py-4 hover:bg-gold-light hover:-translate-y-px transition-all duration-200"
-                >
-                  {tier.enquiryLabel} →
-                </Link>
-              </div>
-
-              {/* Right — formats */}
-              <div className="space-y-6">
-                {tier.formats.map((f) => (
-                  <div
-                    key={f.name}
-                    className="bg-ivory border border-parchment p-8 lg:p-10 hover:border-gold/40 transition-colors duration-300"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
-                      <h3 className="font-display text-[22px] font-light text-near-black leading-[1.25]">
-                        {f.name}
-                      </h3>
-                      <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold flex-shrink-0">
-                        {f.detail}
-                      </p>
-                    </div>
-                    <p className="font-body text-[14px] leading-[1.8] text-slate-warm font-light">
-                      {f.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Principles band */}
-      <section className="bg-near-black py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8 text-center">
-            What every engagement shares
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-            {[
-              {
-                title: 'Senior-led.',
-                description:
-                  'Agata leads every engagement personally. You never get a graduate analyst and a template — you get the founder, the strategy, and the accountability.',
-              },
-              {
-                title: 'Vendor-neutral.',
-                description:
-                  'No platform commissions, no reseller agreements, no hidden incentives. My advice is shaped by your business, not my rate card.',
-              },
-              {
-                title: 'Outcome-accountable.',
-                description:
-                  'Every engagement ties to a commercial outcome you can point at. If I can\'t find one, I\'ll tell you before you sign.',
-              },
-            ].map((p) => (
-              <div key={p.title}>
-                <div className="w-8 h-px bg-gold mb-6" />
-                <h3 className="font-display text-[24px] font-light text-warm-white leading-[1.25] mb-4">
-                  {p.title}
-                </h3>
-                <p className="font-body text-[14px] leading-[1.8] text-warm-white/60 font-light">
-                  {p.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-ivory py-[clamp(80px,10vw,140px)] px-8 lg:px-12">
-        <div className="max-w-[920px] mx-auto">
-          <SectionHeader
-            tag="Common Questions"
-            heading={
-              <>
-                Before you<br />
-                <em className="italic text-gold">get in touch.</em>
-              </>
-            }
-            lead="A few of the questions I hear most often. If yours isn't here, just ask."
+      <section className="section card-grid three">
+        {offers.map((offer) => (
+          <ContentCard
+            key={offer.id}
+            id={offer.id}
+            label={offer.label}
+            title={offer.title}
+            description={offer.description}
+            href={offer.href}
+            action={offer.action}
           />
-          <div className="mt-16 space-y-8">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="pb-8 border-b border-parchment last:border-b-0">
-                <h3 className="font-display text-[22px] font-light text-near-black leading-[1.3] mb-4">
-                  {faq.q}
-                </h3>
-                <p className="font-body text-[15px] leading-[1.85] text-slate-warm font-light">
-                  {faq.a}
-                </p>
-              </div>
-            ))}
-          </div>
+        ))}
+      </section>
+
+      <section className="section secondary-offer" id="advisory">
+        <div>
+          <p className="eyebrow">WHEN THE WORK GOES DEEPER</p>
+          <h2>Advisory, with a clear purpose.</h2>
+        </div>
+        <div>
+          <p>{advisoryDescription}</p>
+          <p>
+            Experience in digital strategy, customer experience, ecommerce and MarTech informs that
+            work. The starting point is the business problem, the people involved and the outcome
+            you need.
+          </p>
+          <p>For brands navigating AI discovery, explore dedicated AI visibility advisory.</p>
+          <TextLink href="/services/ai-visibility">Explore AI visibility advisory</TextLink>
+          <TextLink href="/contact?interest=advisory">Discuss an advisory engagement</TextLink>
         </div>
       </section>
 
-      {/* Not ready yet — ebook strip */}
-      <section className="bg-ivory border-t border-parchment py-[clamp(60px,7vw,90px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div>
-            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-3">
-              Not ready to engage yet?
-            </p>
-            <h2 className="font-display font-light text-[clamp(22px,2.5vw,34px)] text-near-black leading-[1.25] mb-3">
-              Start with the free ebook.
-            </h2>
-            <p className="font-body text-[14px] text-slate-warm font-light leading-[1.8] max-w-[500px]">
-              <em className="italic">Find Your Light in the Age of AI</em> — the 90-day AI strategy system for business leaders. Download free, keep forever.
-            </p>
-          </div>
-          <Link
-            href="/resources/ebook"
-            className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block whitespace-nowrap flex-shrink-0"
-          >
-            Download Free →
-          </Link>
-        </div>
-      </section>
-
-      <CTABanner />
-    </>
+      <PageCta />
+    </div>
   )
 }

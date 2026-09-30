@@ -19,12 +19,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.95,
     },
+    // Offer landing pages (Oct 2026), one per search intent.
     {
-      url: `${BASE_URL}/services`,
+      url: `${BASE_URL}/ai-courses`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.9,
+      priority: 0.95,
     },
+    {
+      url: `${BASE_URL}/ai-workshops`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/ai-keynote-speaker`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/ai-enablement`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    // /services and /how-we-work were retired in the Sept 2026 redesign and
+    // 301 to /work-with-us and /ai-operating-system (see next.config.mjs).
     {
       url: `${BASE_URL}/services/ai-visibility`,
       lastModified: new Date(),
@@ -42,12 +63,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/how-we-work`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
     {
       url: `${BASE_URL}/insights`,
@@ -120,6 +135,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const resourcesRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/resources/ebook`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
     {
       url: `${BASE_URL}/resources/ai-tools`,
       lastModified: new Date(),

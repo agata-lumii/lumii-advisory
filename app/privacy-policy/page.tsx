@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import LegalPage from '@/components/lumii/LegalPage'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ const sections = [
         Lumii Advisory (&ldquo;Lumii&rdquo;, &ldquo;I&rdquo;, &ldquo;my&rdquo; or &ldquo;me&rdquo;) is a sole-trader
         consulting business operated by Agata Adamczak, based in Sydney, NSW, Australia. This policy explains how I
         handle personal information collected through{' '}
-        <Link href="/" className="text-gold hover:text-near-black underline">
+        <Link href="/">
           lumiiadvisory.com
         </Link>{' '}
         and through my advisory engagements. I comply with the Australian Privacy Principles (APPs) under the{' '}
@@ -97,7 +98,7 @@ const sections = [
           <li>Stop receiving any optional communications.</li>
         </ul>
         Email{' '}
-        <a href="mailto:hello@lumiiadvisory.com" className="text-gold hover:text-near-black underline">
+        <a href="mailto:hello@lumiiadvisory.com">
           hello@lumiiadvisory.com
         </a>{' '}
         and I will respond within 30 days. If you are unhappy with my response, you have the right to lodge a
@@ -118,7 +119,7 @@ const sections = [
     body: (
       <>
         Questions about this policy or how I handle your data? Email{' '}
-        <a href="mailto:hello@lumiiadvisory.com" className="text-gold hover:text-near-black underline">
+        <a href="mailto:hello@lumiiadvisory.com">
           hello@lumiiadvisory.com
         </a>
         .
@@ -129,43 +130,11 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-near-black pt-40 pb-20 px-8 lg:px-12">
-        <div className="max-w-[860px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-6">Legal</p>
-          <h1 className="font-display font-light text-[clamp(40px,5vw,68px)] leading-[1.08] text-warm-white mb-6 tracking-[-0.01em]">
-            Privacy Policy
-          </h1>
-          <p className="font-body text-[16px] leading-[1.8] text-warm-white/60 max-w-[640px] font-light">
-            How Lumii Advisory collects, uses and protects your information. Plain English. Australian Privacy Act
-            compliant.
-          </p>
-          <p className="font-body text-[12px] tracking-[0.15em] uppercase text-ash mt-8">Last updated: April 2026</p>
-        </div>
-      </section>
-
-      {/* Body */}
-      <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-        <div className="max-w-[760px] mx-auto space-y-12">
-          {sections.map((s) => (
-            <div key={s.heading}>
-              <h2 className="font-display font-light text-[clamp(22px,2.4vw,28px)] text-near-black leading-[1.3] mb-4">
-                {s.heading}
-              </h2>
-              <div className="font-body text-[15px] leading-[1.85] text-slate-warm font-light">{s.body}</div>
-            </div>
-          ))}
-          <div className="pt-10 border-t border-parchment">
-            <Link
-              href="/contact"
-              className="font-body text-[12px] tracking-[0.12em] uppercase text-near-black border border-near-black px-8 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200 inline-block"
-            >
-              Get in touch →
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+    <LegalPage
+      title="Privacy policy"
+      lead="How Lumii Advisory collects, uses and protects your information. Plain English. Australian Privacy Act compliant."
+      updated="April 2026"
+      sections={sections}
+    />
   )
 }

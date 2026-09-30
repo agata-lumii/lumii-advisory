@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import Link from 'next/link'
+import { TextLink } from '@/components/lumii/primitives'
+import { Breadcrumbs, StatRow } from '@/components/lumii/seo'
 
 /* ─── Data ────────────────────────────────────────────────────────────────── */
 
@@ -257,370 +258,232 @@ export default function AIReadinessChecklist() {
   }
 
   const progressPct = Math.round((totalAnswered / TOTAL_QUESTIONS) * 100)
+  const weakDimensions = dimensionScores.filter((d) => d.pct < 50).sort((a, b) => a.pct - b.pct)
 
   return (
-    <>
-      {/* Hero / intro */}
-      <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
+    <div className="lumii">
+      <section className="page-intro section">
+        <Breadcrumbs
+          trail={[
+            { name: 'Resources', href: '/resources' },
+            { name: 'AI readiness checklist', href: '/resources/ai-readiness-checklist' },
+          ]}
+        />
+        <p className="eyebrow">FREE ASSESSMENT</p>
+        <h1>AI Readiness Checklist</h1>
+        <p className="page-lead">
+          Assess your organisation across 7 critical dimensions. Answer honestly — this is for your
+          eyes only. At the end you will receive a scored maturity result with guidance on where to
+          focus first.
+        </p>
+        <StatRow
+          stats={[
+            { value: '7', label: 'Dimensions' },
+            { value: '35', label: 'Questions' },
+            { value: '15 min', label: 'To complete' },
+          ]}
+        />
+      </section>
+
+      {/* Landing content — visible to search engines and AI tools */}
+      <section className="section tint print-hide" aria-labelledby="measures-title">
+        <div className="split">
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <Link
-                href="/resources"
-                className="font-body text-[11px] tracking-[0.2em] uppercase text-gold/70 hover:text-gold transition-colors"
-              >
-                ← Resources
-              </Link>
-            </div>
-            <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-4">
-              Free Assessment
+            <p className="eyebrow">ABOUT THIS ASSESSMENT</p>
+            <h2 id="measures-title">What the AI Readiness Checklist measures.</h2>
+          </div>
+          <div className="prose">
+            <p>
+              The Lumii AI Readiness Checklist gives business leaders an honest, evidence-based view of
+              their organisation’s readiness to adopt and benefit from artificial intelligence. It
+              assesses seven dimensions I’ve found to be the critical determinants of AI programme
+              success — spanning strategy, infrastructure, people, and governance.
             </p>
-            <h1 className="font-display font-light text-[clamp(40px,5vw,68px)] leading-[1.1] text-warm-white mb-6 tracking-[-0.01em]">
-              AI Readiness<br />
-              <em className="italic text-gold">Checklist</em>
-            </h1>
-            <p className="font-body text-[16px] leading-[1.8] text-warm-white/60 font-light">
-              Assess your organisation across 7 critical dimensions. Answer honestly — this is for your eyes only. At the end you will receive a scored maturity result with guidance on where to focus first.
+            <p>
+              Each dimension contains five questions rated on a four-point scale. Scores are totalled
+              across all 35 questions to produce a maturity band: AI Unaware, AI Aware, AI Active, or AI
+              Leader. Each band comes with a description of your current position and a set of
+              prioritised actions to move forward.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4">
-            {[
-              { value: '7', label: 'Dimensions' },
-              { value: '35', label: 'Questions' },
-              { value: '15 min', label: 'To complete' },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-warm-white/5 border border-warm-white/10 p-6 text-center">
-                <p className="font-display font-light text-[36px] text-gold leading-none mb-2">{stat.value}</p>
-                <p className="font-body text-[11px] tracking-[0.15em] uppercase text-warm-white/40">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+        </div>
+        <div className="card-grid two stack-top">
+          {DIMENSIONS.map((d) => (
+            <article className="content-card" key={d.id}>
+              <p className="eyebrow">{d.number}</p>
+              <h3>{d.title}</h3>
+              <p>{d.description}</p>
+              <p className="consequence">{d.consequence}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* SEO landing content — visible to search engines and AI tools */}
-      <section className="bg-ivory py-16 px-8 lg:px-12">
-        <div className="max-w-[860px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.25em] uppercase text-gold mb-4">About this assessment</p>
-          <h2 className="font-display font-light text-[clamp(24px,2.5vw,34px)] text-near-black leading-[1.25] mb-6">
-            What the AI Readiness Checklist measures
-          </h2>
-          <p className="font-body text-[15px] leading-[1.85] text-slate-warm font-light mb-6">
-            The Lumii AI Readiness Checklist is designed to give business leaders an honest, evidence-based view of their organisation's readiness to adopt and benefit from artificial intelligence. It assesses seven dimensions that our advisory practice has identified as the critical determinants of AI programme success — spanning strategy, infrastructure, people, and governance.
-          </p>
-          <p className="font-body text-[15px] leading-[1.85] text-slate-warm font-light mb-10">
-            Each dimension contains five questions rated on a four-point scale. Scores are totalled across all 35 questions to produce a maturity band: AI Unaware, AI Aware, AI Active, or AI Leader. Each band comes with a description of your current position and a set of prioritised actions to move forward.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            {DIMENSIONS.map((d) => (
-              <div key={d.id} className="bg-warm-white border border-parchment p-6">
-                <div className="flex items-start gap-4">
-                  <span className="font-display text-[13px] text-gold/50 tracking-[0.08em] flex-shrink-0 mt-0.5">{d.number}</span>
-                  <div>
-                    <p className="font-body text-[12px] tracking-[0.15em] uppercase text-near-black font-medium mb-2">{d.title}</p>
-                    <p className="font-body text-[13px] text-slate-warm font-light leading-[1.7] mb-3">{d.description}</p>
-                    <p className="font-display text-[13px] italic font-light text-gold leading-[1.55]">
-                      {d.consequence}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Progress bar */}
       {!submitted && (
-        <div className="sticky top-[64px] z-40 bg-warm-white/95 backdrop-blur-sm border-b border-parchment px-8 lg:px-12 py-3">
-          <div className="max-w-[860px] mx-auto flex items-center gap-4">
-            <div className="flex-1 bg-parchment h-1.5 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gold transition-all duration-500 rounded-full"
-                style={{ width: `${progressPct}%` }}
-              />
-            </div>
-            <span className="font-body text-[12px] text-ash whitespace-nowrap">
-              {totalAnswered} / {TOTAL_QUESTIONS} answered
-            </span>
+        <div className="quiz-progress print-hide" role="status" aria-live="polite">
+          <div className="progress-track" aria-hidden="true">
+            <div className="progress-fill" style={{ width: `${progressPct}%` }} />
           </div>
+          <span>
+            {totalAnswered} / {TOTAL_QUESTIONS} answered
+          </span>
         </div>
       )}
 
-      {/* Questions */}
       {!submitted && (
-        <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-          <div className="max-w-[860px] mx-auto space-y-16">
+        <section className="section" aria-label="Assessment questions">
+          <div className="quiz">
             {DIMENSIONS.map((dim) => (
-              <div key={dim.id}>
-                {/* Dimension header */}
-                <div className="flex items-start gap-4 mb-8 pb-6 border-b border-parchment">
-                  <span className="font-display text-[40px] leading-none text-gold/20 font-light select-none flex-shrink-0">
+              <fieldset key={dim.id} className="quiz-dimension">
+                <legend>
+                  <span className="quiz-number" aria-hidden="true">
                     {dim.number}
                   </span>
-                  <div>
-                    <h2 className="font-display font-light text-[clamp(22px,2.5vw,30px)] text-near-black leading-[1.2]">
-                      {dim.title}
-                    </h2>
-                    <p className="font-body text-[14px] text-slate-warm font-light leading-[1.75] mt-2">
-                      {dim.description}
-                    </p>
-                    <p className="font-display text-[14px] italic font-light text-gold leading-[1.6] mt-3">
-                      {dim.consequence}
-                    </p>
-                  </div>
-                </div>
+                  <span className="quiz-title">{dim.title}</span>
+                </legend>
+                <p className="form-note">{dim.description}</p>
+                <p className="consequence">{dim.consequence}</p>
 
-                {/* Questions */}
-                <div className="space-y-8">
-                  {dim.questions.map((question, qIdx) => {
-                    const current = scores[dim.id][qIdx]
-                    return (
-                      <div key={qIdx}>
-                        <p className="font-body text-[15px] text-near-black font-light leading-[1.7] mb-4">
-                          <span className="text-gold/60 mr-2 font-display text-[13px]">
-                            {String(qIdx + 1).padStart(2, '0')}
-                          </span>
-                          {question}
-                        </p>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                          {SCORE_OPTIONS.map((opt) => (
-                            <button
-                              key={opt.value}
-                              onClick={() => setScore(dim.id, qIdx, opt.value)}
-                              className={`py-3 px-4 font-body text-[11px] tracking-[0.1em] uppercase border transition-all duration-150 text-center ${
-                                current === opt.value
-                                  ? 'bg-near-black text-warm-white border-near-black'
-                                  : 'text-slate-warm border-parchment hover:border-charcoal hover:text-near-black'
-                              }`}
-                            >
-                              {opt.label}
-                            </button>
-                          ))}
-                        </div>
+                {dim.questions.map((question, qIdx) => {
+                  const current = scores[dim.id][qIdx]
+                  const qid = `${dim.id}-${qIdx}`
+                  return (
+                    <div className="quiz-question" key={qIdx} role="group" aria-labelledby={qid}>
+                      <p id={qid}>
+                        <span className="number">{String(qIdx + 1).padStart(2, '0')}</span> {question}
+                      </p>
+                      <div className="options">
+                        {SCORE_OPTIONS.map((opt) => (
+                          <button
+                            key={opt.value}
+                            type="button"
+                            className="option"
+                            aria-pressed={current === opt.value}
+                            onClick={() => setScore(dim.id, qIdx, opt.value)}
+                          >
+                            {opt.label}
+                          </button>
+                        ))}
                       </div>
-                    )
-                  })}
-                </div>
-              </div>
+                    </div>
+                  )
+                })}
+              </fieldset>
             ))}
 
-            {/* Submit */}
-            <div className="pt-8 border-t border-parchment flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <p className="font-body text-[14px] text-ash font-light">
+            <div className="quiz-submit">
+              <p className="form-note">
                 {allAnswered
                   ? 'All questions answered. Ready to see your results.'
                   : `${TOTAL_QUESTIONS - totalAnswered} question${TOTAL_QUESTIONS - totalAnswered !== 1 ? 's' : ''} remaining.`}
               </p>
-              <button
-                onClick={handleSubmit}
-                disabled={!allAnswered}
-                className={`font-body text-[12px] tracking-[0.1em] uppercase px-10 py-4 transition-all duration-200 ${
-                  allAnswered
-                    ? 'bg-near-black text-warm-white hover:-translate-y-px cursor-pointer'
-                    : 'bg-parchment text-ash cursor-not-allowed'
-                }`}
-              >
-                See My Results →
+              <button type="button" className="button" onClick={handleSubmit} disabled={!allAnswered}>
+                See my results <span aria-hidden="true">→</span>
               </button>
             </div>
           </div>
         </section>
       )}
 
-      {/* Results */}
       {submitted && (
         <div ref={resultsRef}>
-          {/* Overall score */}
-          <section className="bg-near-black py-[clamp(80px,10vw,140px)] px-8 lg:px-12 print:py-12">
-            <div className="max-w-[1180px] mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                <div>
-                  <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-6">
-                    Your Results
-                  </p>
-                  <div className="mb-6">
-                    <p className="font-body text-[14px] text-warm-white/50 uppercase tracking-[0.15em] mb-2">
-                      Maturity Level
+          <section className="section method" aria-labelledby="result-title">
+            <div className="split">
+              <div>
+                <p className="eyebrow">YOUR RESULTS · MATURITY LEVEL</p>
+                <h2 id="result-title">{maturity.label}</h2>
+                <p className="result-score">
+                  <strong>{totalScore}</strong> / {MAX_SCORE}
+                </p>
+                <div className="progress-track on-dark" aria-hidden="true">
+                  <div
+                    className={`progress-fill ${maturity.barColour}`}
+                    style={{ width: `${Math.round((totalScore / MAX_SCORE) * 100)}%` }}
+                  />
+                </div>
+                <p className="section-description stack-top">{maturity.description}</p>
+              </div>
+              <div>
+                <p className="eyebrow">BY DIMENSION</p>
+                {dimensionScores.map((d) => (
+                  <div className="dimension-score" key={d.id}>
+                    <p>
+                      <span>{d.title}</span>
+                      <span>
+                        {d.score}/{d.max}
+                      </span>
                     </p>
-                    <h2 className={`font-display font-light text-[clamp(42px,5vw,64px)] leading-[1.1] ${maturity.colour.replace('text-', 'text-')}`}>
-                      {maturity.label}
-                    </h2>
-                  </div>
-                  <div className="flex items-end gap-4 mb-8">
-                    <span className="font-display font-light text-[80px] leading-none text-warm-white">
-                      {totalScore}
-                    </span>
-                    <span className="font-body text-[18px] text-warm-white/40 pb-4">/ {MAX_SCORE}</span>
-                  </div>
-                  <div className="w-full bg-warm-white/10 h-2 rounded-full overflow-hidden mb-8">
-                    <div
-                      className={`h-full ${maturity.barColour} transition-all duration-1000 rounded-full`}
-                      style={{ width: `${Math.round((totalScore / MAX_SCORE) * 100)}%` }}
-                    />
-                  </div>
-                  <p className="font-body text-[15px] leading-[1.85] text-warm-white/70 font-light">
-                    {maturity.description}
-                  </p>
-                </div>
-
-                {/* Dimension breakdown */}
-                <div className="space-y-4">
-                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-6">
-                    By Dimension
-                  </p>
-                  {dimensionScores.map((d) => (
-                    <div key={d.id}>
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="font-body text-[12px] text-warm-white/70 uppercase tracking-[0.1em]">
-                          {d.title}
-                        </span>
-                        <span className="font-body text-[12px] text-warm-white/50">
-                          {d.score}/{d.max}
-                        </span>
-                      </div>
-                      <div className="w-full bg-warm-white/10 h-1.5 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gold transition-all duration-700 rounded-full"
-                          style={{ width: `${d.pct}%` }}
-                        />
-                      </div>
+                    <div className="progress-track on-dark" aria-hidden="true">
+                      <div className="progress-fill yellow" style={{ width: `${d.pct}%` }} />
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
-          {/* What this means for your business */}
-          <section className="bg-ivory py-[clamp(60px,8vw,100px)] px-8 lg:px-12 print:py-12">
-            <div className="max-w-[1180px] mx-auto">
-              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-4">
-                The Decision in Front of You
-              </p>
-              <h2 className="font-display font-light text-[clamp(28px,3vw,40px)] text-near-black leading-[1.2] mb-10">
-                What this means for your business
-              </h2>
+          <section className="section tint" aria-labelledby="means-title">
+            <p className="eyebrow">THE DECISION IN FRONT OF YOU</p>
+            <h2 id="means-title">What this means for your business.</h2>
+            <div className="card-grid three stack-top">
+              <article className="panel">
+                <p className="eyebrow">START NOW</p>
+                <h3 className="detail-title">Your highest-leverage moves</h3>
+                <ol className="result-list">
+                  {maturity.whatThisMeans.startNow.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ol>
+              </article>
+              <article className="panel">
+                <p className="eyebrow">STOP DOING</p>
+                <h3 className="detail-title">The behaviours holding you back</h3>
+                <ul className="result-list">
+                  {maturity.whatThisMeans.stopDoing.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+              <article className="callout dark" style={{ margin: 0 }}>
+                <p className="eyebrow">COST OF INACTION</p>
+                <h3>What 12 months of doing nothing looks like</h3>
+                <p>{maturity.whatThisMeans.costOfInaction}</p>
+              </article>
+            </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-                {/* Start now */}
-                <div className="bg-warm-white border border-parchment p-7 flex flex-col">
-                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-4 flex items-center gap-3">
-                    <span className="w-6 h-px bg-gold block" />
-                    Start Now
-                  </p>
-                  <p className="font-display text-[18px] font-light text-near-black leading-[1.3] mb-5">
-                    Your highest-leverage moves
-                  </p>
-                  <ul className="space-y-3 list-none p-0 m-0">
-                    {maturity.whatThisMeans.startNow.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <span className="font-display text-[12px] text-gold/60 tracking-[0.08em] flex-shrink-0 mt-1">
-                          {String(idx + 1).padStart(2, '0')}
-                        </span>
-                        <p className="font-body text-[14px] text-near-black font-light leading-[1.7]">
-                          {item}
-                        </p>
-                      </li>
+            {weakDimensions.length > 0 && (
+              <div className="panel stack-top">
+                <p className="eyebrow">AREAS NEEDING ATTENTION</p>
+                <p className="form-note">
+                  These dimensions scored below 50% and are your highest-priority areas:
+                </p>
+                <table className="data-table stack-top">
+                  <tbody>
+                    {weakDimensions.map((d) => (
+                      <tr key={d.id}>
+                        <td>{d.title}</td>
+                        <td>{d.pct}%</td>
+                      </tr>
                     ))}
-                  </ul>
-                </div>
-
-                {/* Stop doing */}
-                <div className="bg-warm-white border border-parchment p-7 flex flex-col">
-                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-charcoal mb-4 flex items-center gap-3">
-                    <span className="w-6 h-px bg-charcoal block" />
-                    Stop Doing
-                  </p>
-                  <p className="font-display text-[18px] font-light text-near-black leading-[1.3] mb-5">
-                    The behaviours holding you back
-                  </p>
-                  <ul className="space-y-3 list-none p-0 m-0">
-                    {maturity.whatThisMeans.stopDoing.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <span className="font-body text-[14px] text-charcoal/60 flex-shrink-0 mt-0.5">
-                          ×
-                        </span>
-                        <p className="font-body text-[14px] text-near-black font-light leading-[1.7]">
-                          {item}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Cost of inaction */}
-                <div className="bg-near-black border border-near-black p-7 flex flex-col">
-                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-4 flex items-center gap-3">
-                    <span className="w-6 h-px bg-gold block" />
-                    Cost of Inaction
-                  </p>
-                  <p className="font-display text-[18px] font-light text-warm-white leading-[1.3] mb-5">
-                    What 12 months of doing nothing looks like
-                  </p>
-                  <p className="font-body text-[14px] text-warm-white/75 font-light leading-[1.7]">
-                    {maturity.whatThisMeans.costOfInaction}
-                  </p>
-                </div>
+                  </tbody>
+                </table>
               </div>
+            )}
 
-              {/* Weak dimensions */}
-              {dimensionScores.filter((d) => d.pct < 50).length > 0 && (
-                <div className="bg-warm-white border border-parchment p-8 mb-10">
-                  <p className="font-body text-[11px] tracking-[0.2em] uppercase text-gold mb-4">
-                    Areas Needing Attention
-                  </p>
-                  <p className="font-body text-[14px] text-slate-warm font-light leading-[1.8] mb-6">
-                    The following dimensions scored below 50% and represent your highest-priority areas:
-                  </p>
-                  <div className="space-y-3">
-                    {dimensionScores
-                      .filter((d) => d.pct < 50)
-                      .sort((a, b) => a.pct - b.pct)
-                      .map((d) => (
-                        <div key={d.id} className="flex items-center justify-between py-2 border-b border-parchment last:border-0">
-                          <span className="font-body text-[14px] text-near-black">{d.title}</span>
-                          <span className="font-body text-[13px] text-ash">{d.pct}%</span>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Actions */}
-              <div className="flex flex-col sm:flex-row gap-4 print:hidden">
-                <button
-                  onClick={() => window.print()}
-                  className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200"
-                >
-                  Print / Save as PDF
-                </button>
-                <button
-                  onClick={handleReset}
-                  className="font-body text-[12px] tracking-[0.1em] uppercase text-ash border border-parchment px-8 py-4 hover:border-near-black hover:text-near-black transition-all duration-200"
-                >
-                  Start Again
-                </button>
-                <Link
-                  href="/contact"
-                  className="font-body text-[12px] tracking-[0.1em] uppercase text-warm-white bg-gold px-8 py-4 hover:-translate-y-px transition-all duration-200 inline-block text-center"
-                >
-                  Discuss Your Results with Agata →
-                </Link>
-              </div>
+            <div className="hero-actions row print-hide">
+              <button type="button" className="button" onClick={() => window.print()}>
+                Print / save as PDF <span aria-hidden="true">↓</span>
+              </button>
+              <button type="button" className="text-link" onClick={handleReset}>
+                Start again
+              </button>
+              <TextLink href="/contact?interest=advisory" className="button yellow" arrow="↗">
+                Discuss your results with Agata
+              </TextLink>
             </div>
           </section>
         </div>
       )}
-
-      {/* Print styles */}
-      <style jsx global>{`
-        @media print {
-          nav, footer, .print\\:hidden { display: none !important; }
-          body { font-size: 12px; }
-          section { break-inside: avoid; }
-        }
-      `}</style>
-    </>
+    </div>
   )
 }

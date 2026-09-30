@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import CTABanner from '@/components/CTABanner'
+import { TextLink } from '@/components/lumii/primitives'
+import { Breadcrumbs, JsonLd, SITE_URL } from '@/components/lumii/seo'
 
 export const metadata: Metadata = {
   title: {
@@ -256,248 +257,172 @@ const OWNERSHIP = [
 ]
 
 export default function AiTeamStructurePage() {
+  const url = `${SITE_URL}/resources/ai-team-structure`
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-near-black pt-40 pb-24 px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-gold mb-8">
-            Resources · AI Team Structure
-          </p>
-          <h1 className="font-display font-light text-[clamp(44px,5vw,76px)] leading-[1.08] text-warm-white mb-6 tracking-[-0.01em] max-w-[820px]">
-            How to structure your AI team —<br />
-            <em className="italic text-gold">from first hire to full function.</em>
-          </h1>
-          <p className="font-body text-[17px] leading-[1.8] text-warm-white/60 max-w-[580px] font-light mb-10">
-            Every AI role explained — what it does, when to hire it, who it reports to, and what your team should look like in 2, 3, and 5 years.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {['AI Team Structure', 'What AI Roles to Hire', 'Who Should Manage AI', 'CAIO', 'AI Architect', 'Future of Work'].map(tag => (
-              <span key={tag} className="font-body text-[10px] tracking-[0.12em] uppercase text-warm-white/30 border border-warm-white/10 px-3 py-1.5">
+    <div className="lumii">
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: 'How to structure your AI team — from first hire to full function',
+          description:
+            'The 8 roles every AI-capable business needs, the 5 you hire first, and where they sit in the org.',
+          author: { '@type': 'Person', '@id': `${SITE_URL}/#agata`, name: 'Agata Adamczak' },
+          publisher: { '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: 'Lumii Advisory' },
+          url,
+          mainEntityOfPage: url,
+          inLanguage: 'en-AU',
+        }}
+      />
+
+      <section className="page-intro section wide">
+        <Breadcrumbs
+          trail={[
+            { name: 'Resources', href: '/resources' },
+            { name: 'AI team structure', href: '/resources/ai-team-structure' },
+          ]}
+        />
+        <p className="eyebrow">REFERENCE GUIDE · AI TEAM STRUCTURE</p>
+        <h1>How to structure your AI team — from first hire to full function.</h1>
+        <p className="page-lead">
+          Every AI role explained — what it does, when to hire it, who it reports to, and what your
+          team should look like in 2, 3, and 5 years.
+        </p>
+        <div className="tag-list">
+          {['AI Team Structure', 'What AI Roles to Hire', 'Who Should Manage AI', 'CAIO', 'AI Architect', 'Future of Work'].map(
+            (tag) => (
+              <span className="tag" key={tag}>
                 {tag}
               </span>
-            ))}
-          </div>
+            ),
+          )}
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="bg-warm-white py-[clamp(60px,7vw,90px)] px-8 lg:px-12 border-b border-parchment">
-        <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 items-start">
+      <section className="section split" aria-labelledby="why-title">
+        <div>
+          <p className="eyebrow">WHY THIS MATTERS</p>
+          <h2 id="why-title">Most businesses don’t have an AI team. That’s about to change.</h2>
+          <div className="prose stack-top">
+            <p>
+              In 2023, most organisations had no dedicated AI roles. AI was owned by the CTO,
+              experimented with by enthusiasts, and governed by no one. That model is failing — and
+              businesses are noticing.
+            </p>
+            <p>
+              The companies seeing the strongest AI returns have one thing in common: a clearly defined
+              AI function with real accountability. This guide covers every role, when to hire it, and
+              how to structure it as your programme grows.
+            </p>
+          </div>
+        </div>
+        <div className="stat-row two">
+          {[
+            { stat: '73%', label: 'increase in CAIO and Head of AI roles on LinkedIn, 2022–2024' },
+            { stat: '1 in 3', label: 'Fortune 500 companies now have a dedicated Chief AI Officer' },
+            { stat: '4×', label: 'productivity growth in organisations with dedicated AI functions vs those without' },
+            { stat: '2026', label: 'year by which most mid-market businesses will need a formal AI owner' },
+          ].map((item) => (
+            <div className="stat" key={item.stat}>
+              <strong>{item.stat}</strong>
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section tint" aria-labelledby="roles-title">
+        <div className="section-top">
           <div>
-            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-6">Why This Matters</p>
-            <h2 className="font-display font-light text-[clamp(28px,3vw,42px)] text-near-black leading-[1.2] mb-6">
-              Most businesses don&apos;t have an AI team.<br />
-              <em className="italic text-gold">That&apos;s about to change.</em>
-            </h2>
-            <p className="font-body text-[15px] leading-[1.85] text-slate-warm font-light mb-5">
-              In 2023, most organisations had no dedicated AI roles. AI was owned by the CTO, experimented with by enthusiasts, and governed by no one. That model is failing — and businesses are noticing.
-            </p>
-            <p className="font-body text-[15px] leading-[1.85] text-slate-warm font-light">
-              The companies seeing the strongest AI returns have one thing in common: a clearly defined AI function with real accountability. This guide covers every role, when to hire it, and how to structure it as your programme grows.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { stat: '73%', label: 'increase in CAIO and Head of AI roles on LinkedIn, 2022–2024' },
-              { stat: '1 in 3', label: 'Fortune 500 companies now have a dedicated Chief AI Officer' },
-              { stat: '4×', label: 'productivity growth in organisations with dedicated AI functions vs those without' },
-              { stat: '2026', label: 'year by which most mid-market businesses will need a formal AI owner' },
-            ].map(item => (
-              <div key={item.stat} className="bg-ivory border border-parchment p-6">
-                <p className="font-display font-light text-[clamp(32px,3vw,44px)] text-gold leading-none mb-2">
-                  {item.stat}
-                </p>
-                <p className="font-body text-[12px] leading-[1.65] text-slate-warm font-light">
-                  {item.label}
-                </p>
-              </div>
-            ))}
+            <p className="eyebrow">THE AI ORG CHART</p>
+            <h2 id="roles-title">Every AI role — explained.</h2>
           </div>
         </div>
-      </section>
-
-      {/* Org chart — tiered role cards */}
-      <section className="bg-ivory py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <div className="mb-14">
-            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-4">The AI Org Chart</p>
-            <h2 className="font-display font-light text-[clamp(28px,3vw,42px)] text-near-black leading-[1.2]">
-              Every AI role — explained.
-            </h2>
-          </div>
-
-          <div className="space-y-10">
-            {TIERS.map(tier => (
-              <div key={tier.level}>
-                {/* Tier label */}
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: tier.color }} />
-                  <p className="font-body text-[11px] tracking-[0.2em] uppercase" style={{ color: tier.color }}>
-                    {tier.level}
+        {TIERS.map((tier) => (
+          <div key={tier.level} className="stack-top">
+            <h3 className="category-title">
+              <span className="brand-dot" style={{ background: 'var(--ink)' }} aria-hidden="true" />
+              {tier.level}
+            </h3>
+            <div className={`card-grid ${tier.roles.length >= 3 ? 'three' : 'two'} stack-top`}>
+              {tier.roles.map((role) => (
+                <article className="content-card" key={role.title}>
+                  <p className="eyebrow">
+                    {role.abbr} · REPORTS TO {role.reportsTo.toUpperCase()}
                   </p>
-                  <div className="flex-1 h-px bg-parchment" />
-                </div>
-
-                {/* Role cards */}
-                <div className={`grid gap-4 ${tier.roles.length === 1 ? 'grid-cols-1 max-w-[560px]' : tier.roles.length === 2 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
-                  {tier.roles.map(role => (
-                    <div
-                      key={role.title}
-                      className="bg-warm-white border border-parchment overflow-hidden hover:shadow-[0_4px_20px_rgba(30,28,26,0.07)] transition-shadow duration-200"
-                    >
-                      {/* Coloured top stripe */}
-                      <div className="h-[3px]" style={{ backgroundColor: tier.color }} />
-
-                      <div className="p-7">
-                        {/* Header */}
-                        <div className="flex items-start justify-between gap-3 mb-4">
-                          <div>
-                            <h3 className="font-display font-light text-[22px] text-near-black leading-[1.2]">
-                              {role.title}
-                            </h3>
-                            <p className="font-body text-[10px] tracking-[0.15em] uppercase text-ash mt-1">
-                              Reports to: {role.reportsTo}
-                            </p>
-                          </div>
-                          <div className="flex flex-col items-end gap-1.5 shrink-0">
-                            <span
-                              className="font-body text-[9px] tracking-[0.12em] uppercase px-2 py-1 border font-medium"
-                              style={{ color: tier.color, borderColor: tier.color, backgroundColor: tier.bg }}
-                            >
-                              {role.abbr}
-                            </span>
-                            {role.emerging && (
-                              <span className="font-body text-[9px] tracking-[0.1em] uppercase px-2 py-1 bg-gold/10 text-gold border border-gold/20">
-                                Emerging
-                              </span>
-                            )}
-                          </div>
-                        </div>
-
-                        <p className="font-body text-[13px] leading-[1.75] text-slate-warm font-light mb-5">
-                          {role.description}
-                        </p>
-
-                        {/* Responsibilities */}
-                        <div className="space-y-2 mb-5">
-                          {role.responsibilities.map((r, i) => (
-                            <div key={i} className="flex items-start gap-2.5">
-                              <span className="w-1 h-1 rounded-full mt-2 shrink-0" style={{ backgroundColor: tier.color }} />
-                              <p className="font-body text-[12px] leading-[1.65] text-charcoal font-light">{r}</p>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* When to hire */}
-                        <div className="pt-4 border-t border-parchment" style={{ backgroundColor: 'transparent' }}>
-                          <p className="font-body text-[9px] tracking-[0.18em] uppercase text-ash mb-1">When to hire</p>
-                          <p className="font-body text-[12px] text-charcoal font-light">{role.when}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+                  <h4 className="role-title">{role.title}</h4>
+                  {role.emerging ? <span className="tag">Emerging role</span> : null}
+                  <p>{role.description}</p>
+                  <ul className="deliverables">
+                    {role.responsibilities.map((r) => (
+                      <li key={r}>{r}</li>
+                    ))}
+                  </ul>
+                  <p className="form-note stack-top">
+                    <strong>When to hire:</strong> {role.when}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
+        ))}
+      </section>
+
+      <section className="section method" aria-labelledby="timeline-title">
+        <p className="eyebrow">EVOLUTION TIMELINE</p>
+        <h2 id="timeline-title">What your AI team looks like at every stage.</h2>
+        <div className="card-grid four stack-top">
+          {TIMELINE.map((stage, i) => (
+            <article className="content-card" key={stage.year}>
+              <p className="eyebrow">
+                {String(i + 1).padStart(2, '0')} · {stage.label.toUpperCase()}
+              </p>
+              <h3>{stage.year}</h3>
+              <ul className="deliverables on-dark">
+                {stage.roles.map((r) => (
+                  <li key={r}>{r}</li>
+                ))}
+              </ul>
+              <p className="stack-top">{stage.note}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="bg-near-black py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <div className="mb-14">
-            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Evolution Timeline</p>
-            <h2 className="font-display font-light text-[clamp(28px,3vw,42px)] text-warm-white leading-[1.2]">
-              What your AI team looks like<br />
-              <em className="italic text-gold">at every stage.</em>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-warm-white/10">
-            {TIMELINE.map((stage, i) => (
-              <div key={stage.year} className="bg-near-black p-8 relative">
-                {/* Stage number */}
-                <p className="font-display text-[clamp(52px,5vw,72px)] font-light leading-none mb-1"
-                  style={{ color: stage.color, opacity: 0.3 }}>
-                  {String(i + 1).padStart(2, '0')}
-                </p>
-                <p className="font-display font-light text-[22px] text-warm-white leading-none mb-1">
-                  {stage.year}
-                </p>
-                <p className="font-body text-[10px] tracking-[0.2em] uppercase mb-6" style={{ color: stage.color }}>
-                  {stage.label}
-                </p>
-                <div className="space-y-2.5 mb-6">
-                  {stage.roles.map(r => (
-                    <div key={r} className="flex items-start gap-2">
-                      <span className="w-1 h-1 rounded-full mt-1.5 shrink-0" style={{ backgroundColor: stage.color }} />
-                      <p className="font-body text-[12px] leading-[1.65] text-warm-white/60 font-light">{r}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="font-body text-[11px] leading-[1.7] text-warm-white/35 font-light italic">
-                  {stage.note}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who should own AI */}
-      <section className="bg-warm-white py-[clamp(60px,8vw,100px)] px-8 lg:px-12">
-        <div className="max-w-[1180px] mx-auto">
-          <div className="mb-14">
-            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-ash mb-4">Ownership Guide</p>
-            <h2 className="font-display font-light text-[clamp(28px,3vw,42px)] text-near-black leading-[1.2]">
-              Who should manage AI<br />
-              <em className="italic text-gold">in your business?</em>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {OWNERSHIP.map((item, i) => (
-              <div key={item.size} className="bg-ivory border border-parchment p-8 flex gap-6 items-start">
-                <div className="font-display text-[clamp(36px,3.5vw,52px)] font-light text-gold/30 leading-none shrink-0 w-14 text-right">
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <div>
-                  <p className="font-body text-[10px] tracking-[0.18em] uppercase text-ash mb-1.5">{item.size}</p>
-                  <h3 className="font-display font-light text-[20px] text-near-black leading-[1.25] mb-3">
-                    {item.owner}
-                  </h3>
-                  <p className="font-body text-[13px] leading-[1.75] text-slate-warm font-light">{item.detail}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Related article + CTA row */}
-      <section className="bg-ivory py-16 px-8 lg:px-12 border-t border-parchment">
-        <div className="max-w-[1180px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+      <section className="section" aria-labelledby="own-title">
+        <div className="section-top">
           <div>
-            <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-2">Related Reading</p>
-            <p className="font-display font-light text-[22px] text-near-black leading-snug mb-1">
-              The roles being created right now — and the jobs of the future
-            </p>
-            <p className="font-body text-[13px] text-slate-warm font-light">
-              Chief AI Officers, AI Architects, Prompt Engineers — a deep dive into the new AI org.
-            </p>
+            <p className="eyebrow">OWNERSHIP GUIDE</p>
+            <h2 id="own-title">Who should manage AI in your business?</h2>
           </div>
-          <Link
-            href="/insights/emerging-ai-roles-future"
-            className="font-body text-[12px] tracking-[0.1em] uppercase text-near-black border border-near-black px-8 py-4 hover:bg-near-black hover:text-warm-white transition-all duration-200 whitespace-nowrap shrink-0"
-          >
-            Read the Article →
-          </Link>
+        </div>
+        <div className="editorial-list">
+          {OWNERSHIP.map((item) => (
+            <article key={item.size}>
+              <p className="eyebrow">{item.size.toUpperCase()}</p>
+              <h3>{item.owner}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <CTABanner />
-    </>
+      <section className="section secondary-offer" aria-label="Related reading">
+        <div>
+          <p className="eyebrow">RELATED READING</p>
+          <h2>The roles being created right now.</h2>
+        </div>
+        <div>
+          <p>
+            Chief AI Officers, AI Architects, Prompt Engineers — a deep dive into the new AI org, and the
+            jobs coming in the next five years.
+          </p>
+          <TextLink href="/insights/emerging-ai-roles-future">Read the article</TextLink>
+          <TextLink href="/ai-enablement">How AI enablement builds the team’s capability</TextLink>
+        </div>
+      </section>
+
+      <CTABanner variant="reading" />
+    </div>
   )
 }
