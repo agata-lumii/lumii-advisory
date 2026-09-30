@@ -164,10 +164,19 @@ export default function AiKeynotePage() {
             people and your event.
           </p>
         </div>
-        <div className="case-list">
+        <div className="topic-features">
           {speakingTopics.map((topic) => (
-            <article className="case" id={topic.id} key={topic.id}>
-              <div>
+            <article className="topic-feature" id={topic.id} key={topic.id}>
+              <figure className="topic-poster">
+                <Image
+                  src={topic.poster.src}
+                  width={840}
+                  height={1050}
+                  sizes="(max-width: 760px) 100vw, 420px"
+                  alt={topic.poster.alt}
+                />
+              </figure>
+              <div className="topic-body">
                 <p className="eyebrow">{topic.label}</p>
                 <h3 className="case-headline">
                   {topic.title[0]}
@@ -175,24 +184,22 @@ export default function AiKeynotePage() {
                   {topic.title[1]}
                 </h3>
                 <p className="consequence">{topic.question}</p>
-              </div>
-              <div>
-                <p className="eyebrow">ATTENDEES LEAVE KNOWING</p>
+                <p className="eyebrow stack-top">ATTENDEES LEAVE KNOWING</p>
                 <ul className="takeaways">
                   {topic.takeaways.map((t) => (
                     <li key={t}>{t}</li>
                   ))}
                 </ul>
-                <div className="detail-list stack-top">
+                <dl className="topic-meta">
                   <div>
-                    <p className="eyebrow">FOR</p>
-                    <p>{topic.audience.charAt(0).toUpperCase() + topic.audience.slice(1)}.</p>
+                    <dt>For</dt>
+                    <dd>{topic.audience.charAt(0).toUpperCase() + topic.audience.slice(1)}.</dd>
                   </div>
                   <div>
-                    <p className="eyebrow">BEST AS</p>
-                    <p>{topic.bestAs}</p>
+                    <dt>Best as</dt>
+                    <dd>{topic.bestAs}</dd>
                   </div>
-                </div>
+                </dl>
                 <p className="topic-links">
                   <TextLink href="/contact?interest=speaking" arrow="↗">
                     Discuss this topic

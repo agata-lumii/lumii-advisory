@@ -47,6 +47,8 @@ export interface SpeakingTopic {
   takeaways: string[]
   bestAs: string
   next?: { href: string; label: string }
+  /** Poster for /ai-keynote-speaker, 840×1050 in public/images/keynotes. */
+  poster: { src: string; alt: string }
 }
 
 export const speakingTopics: SpeakingTopic[] = [
@@ -64,6 +66,10 @@ export const speakingTopics: SpeakingTopic[] = [
     ],
     bestAs: 'A keynote or panel talk for marketing, brand and commercial audiences.',
     next: { href: '/services/ai-visibility', label: 'Explore AI visibility advisory' },
+    poster: {
+      src: '/images/keynotes/find-your-brands-light-keynote.jpg',
+      alt: 'Keynote poster: Find Your Brand’s Light in the Age of AI, with Agata Adamczak standing by a window. When people ask AI what to choose, how does your brand make the shortlist?',
+    },
   },
   {
     id: 'topic-work',
@@ -79,6 +85,10 @@ export const speakingTopics: SpeakingTopic[] = [
     ],
     bestAs: 'An offsite opener, ideally followed by a hands-on workshop.',
     next: { href: '/ai-workshops', label: 'Add a hands-on workshop' },
+    poster: {
+      src: '/images/keynotes/ai-at-work-keynote.jpg',
+      alt: 'Keynote poster for company offsites: The real test of your AI offsite happens on Monday. AI at Work: What Changes on Monday? With Agata Adamczak.',
+    },
   },
   {
     // Signature keynote (Oct 2026), replacing "The AI-Ready Organisation".
@@ -96,6 +106,10 @@ export const speakingTopics: SpeakingTopic[] = [
     ],
     bestAs: 'An opening keynote for a conference or offsite, ideally followed by the Stop Prompting. Start Briefing. workshop.',
     next: { href: '/ai-courses', label: 'Keep it going with the course series' },
+    poster: {
+      src: '/images/keynotes/find-your-light-signature-keynote.jpg',
+      alt: 'Signature keynote poster: Find Your Light: What AI Gives Back, with Agata Adamczak on a yellow background. Leave with your own light list — and one change for Monday.',
+    },
   },
   {
     id: 'topic-briefing',
@@ -111,6 +125,10 @@ export const speakingTopics: SpeakingTopic[] = [
     ],
     bestAs: 'An interactive session or workshop rather than a stage talk — it’s built for participation and practice.',
     next: { href: '/ai-workshops', label: 'Run it as a team workshop' },
+    poster: {
+      src: '/images/keynotes/stop-prompting-start-briefing.jpg',
+      alt: 'Interactive session poster: Stop Prompting. Start Briefing. With Agata Adamczak laughing by a window. Better work starts with a better brief.',
+    },
   },
 ]
 
