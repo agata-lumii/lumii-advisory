@@ -1,5 +1,6 @@
 import type { TrainingAudience } from '@/lib/training-audiences'
 import { PageCta, PageIntro, TextLink } from './primitives'
+import { FaqSection } from './seo'
 
 /** Priority audience page from the Sept 2026 redesign (/who-we-help/[slug]). */
 export default function TrainingAudiencePage({ audience }: { audience: TrainingAudience }) {
@@ -30,6 +31,26 @@ export default function TrainingAudiencePage({ audience }: { audience: TrainingA
         </div>
       </section>
 
+      <section className="section rule-top" aria-labelledby="practice-title">
+        <div className="section-top">
+          <div>
+            <p className="eyebrow">IN PRACTICE · {audience.name.toUpperCase()}</p>
+            <h2 id="practice-title">What your team will practise.</h2>
+          </div>
+          <p className="topics-intro">
+            Everyday tasks from your team’s own work, practised with AI and checked to your standard.
+          </p>
+        </div>
+        <div className="detail-list">
+          {audience.practice.map((task, i) => (
+            <div key={task}>
+              <p className="eyebrow">{String(i + 1).padStart(2, '0')}</p>
+              <p className="detail-title">{task}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section secondary-offer">
         <div>
           <p className="eyebrow">BUILT AROUND YOUR TEAM</p>
@@ -52,6 +73,11 @@ export default function TrainingAudiencePage({ audience }: { audience: TrainingA
           <TextLink href="/ai-workshops">Make it part of your offsite</TextLink>
         </div>
       </section>
+
+      <FaqSection
+        faqs={audience.faqs}
+        title={`Questions about AI training for ${audience.name.toLowerCase()}.`}
+      />
 
       <PageCta
         description={`Tell me about your ${audience.name.toLowerCase()} and what you want the training to change.`}

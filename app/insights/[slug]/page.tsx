@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/lib/insights'
+import { relatedArticles } from '@/lib/insights-curation'
 import CTABanner from '@/components/CTABanner'
 import ReadingProgress from '@/components/ReadingProgress'
 import { TextLink } from '@/components/lumii/primitives'
@@ -57,7 +58,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   if (!article) notFound()
 
   const url = `${SITE_URL}/insights/${article.slug}`
-  const otherArticles = articles.filter((a) => a.slug !== article.slug).slice(0, 3)
+  // Most related first: the top three close the article, the next two sit
+  // mid-article, so no article is linked twice on the page.
+  const related = relatedArticles(article, 5)
+  const otherArticles = related.slice(0, 3)
+  const inlineRelated = related.slice(3, 5)
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -175,10 +180,10 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 </>
               )}
               {/* Related reading after the third block */}
-              {i === 2 && otherArticles.length > 0 && (
+              {i === 2 && inlineRelated.length > 0 && (
                 <aside className="callout" aria-label="Related reading">
                   <p className="eyebrow">RELATED READING</p>
-                  {otherArticles.slice(0, 2).map((a) => (
+                  {inlineRelated.map((a) => (
                     <p key={a.slug}>
                       <Link href={`/insights/${a.slug}`}>{a.title}</Link>
                     </p>

@@ -31,6 +31,40 @@ const CURATED_ORDER = [
   'ai-consulting-engagement-cost',
 ]
 
+/**
+ * Articles most related to `article`, best first: shared tags count most,
+ * then the same category, then the same AI Operating System component. Ties go
+ * to the newer article. Used for "Keep reading" and in-article related links.
+ */
+// "Comparison" describes an article's format, not its topic, and "AI" is on
+// nearly everything, so neither counts as a shared topic.
+const IGNORED_TAG = new Set(['comparison'])
+const IGNORED_WORD = new Set(['ai', 'comparison', 'and', 'the', 'of'])
+
+const topicTags = (a: Article) => a.tags.map((t) => t.toLowerCase()).filter((t) => !IGNORED_TAG.has(t))
+const topicWords = (a: Article) =>
+  new Set(topicTags(a).flatMap((t) => t.split(/\s+/)).filter((w) => !IGNORED_WORD.has(w)))
+
+export function relatedArticles(article: Article, count: number): Article[] {
+  const tags = new Set(topicTags(article))
+  const words = topicWords(article)
+  const score = (other: Article) =>
+    topicTags(other).filter((t) => tags.has(t)).length * 3 +
+    // Partial matches: "Governance" relates to "Data Governance".
+    Array.from(topicWords(other)).filter((w) => words.has(w)).length +
+    (other.category === article.category ? 2 : 0) +
+    (other.frameworkAnchor &&
+    other.frameworkAnchor.component === article.frameworkAnchor?.component
+      ? 1
+      : 0)
+  return articles
+    .filter((a) => a.slug !== article.slug)
+    .map((a) => ({ a, s: score(a) }))
+    .sort((x, y) => y.s - x.s || y.a.date.localeCompare(x.a.date))
+    .slice(0, count)
+    .map(({ a }) => a)
+}
+
 export function featuredArticles(): Article[] {
   return FEATURED_SLUGS.map((slug) => articles.find((a) => a.slug === slug)).filter(
     (a): a is Article => Boolean(a),

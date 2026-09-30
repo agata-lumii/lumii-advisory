@@ -6,6 +6,9 @@ import { FaqSection, JsonLd, SITE_URL } from '@/components/lumii/seo'
 import { OFFER_URLS, SERVICE_AREA } from '@/lib/offers'
 import { methodSteps, osComponents } from '@/lib/operating-system'
 
+/** "a, b and c" */
+const listOf = (items: string[]) => `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`
+
 const PAGE_URL = `${SITE_URL}${OFFER_URLS.enablement}`
 const TITLE = 'AI Enablement Consultant Sydney | Lumii Advisory'
 const DESCRIPTION =
@@ -153,44 +156,20 @@ export default function AiEnablementPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="os-title">
-        <div className="section-top">
-          <div>
-            <p className="eyebrow">THE LUMII AI OPERATING SYSTEM</p>
-            <h2 id="os-title">The framework behind the work.</h2>
-          </div>
-          <TextLink href="/ai-operating-system">Explore the framework</TextLink>
-        </div>
-        <div className="editorial-list">
-          {osComponents.map((component) => (
-            <article key={component.label}>
-              <p className="eyebrow">{component.label}</p>
-              <h3>{component.title}</h3>
-              <p>{component.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section method" aria-labelledby="method-title">
-        <p className="eyebrow">HOW WE PUT IT INTO PRACTICE</p>
-        <h2 id="method-title">
-          Illuminate. Align.
-          <br />
-          Activate. Accelerate.
-        </h2>
+      {/* A summary only: the framework and method are explained in full on
+          /ai-operating-system, so they aren't repeated here. */}
+      <section className="section method" aria-labelledby="os-title">
+        <p className="eyebrow">THE FRAMEWORK BEHIND THE WORK</p>
+        <h2 id="os-title">Built on the Lumii AI Operating System.</h2>
         <p className="section-description">
-          The scope changes with the engagement. The discipline stays the same.
+          Every engagement draws on the same five components —{' '}
+          {listOf(osComponents.map((c) => c.label.split(' / ')[1].toLowerCase()))} — and is put into
+          practice in four steps: {listOf(methodSteps.map((s) => s.title.toLowerCase()))}. The scope
+          changes with the engagement. The discipline stays the same.
         </p>
-        <div className="card-grid two">
-          {methodSteps.map((step) => (
-            <article className="content-card" key={step.number}>
-              <p className="eyebrow">{step.number}</p>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
-            </article>
-          ))}
-        </div>
+        <TextLink href="/ai-operating-system" className="button yellow">
+          Explore the framework and method
+        </TextLink>
       </section>
 
       <section className="section" aria-labelledby="start-title">
