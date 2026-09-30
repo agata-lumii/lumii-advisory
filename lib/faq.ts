@@ -40,7 +40,7 @@ export const faqs: FAQItem[] = [
     category: 'Courses, Workshops & Keynotes',
     question: 'Do you give AI keynotes for conferences and offsites?',
     answer:
-      'Yes. Agata Adamczak gives AI keynotes and panel talks on four topics — Find Your Brand’s Light in the Age of AI; AI at Work: What Changes on Monday?; The AI-Ready Organisation; and Stop Prompting. Start Briefing. — each shaped around your audience and your event.',
+      'Yes. Agata Adamczak gives AI keynotes and panel talks on four topics — Find Your Brand’s Light in the Age of AI; AI at Work: What Changes on Monday?; the signature keynote, Find Your Light: What AI Gives Back; and Stop Prompting. Start Briefing. — each shaped around your audience and your event.',
   },
   {
     category: 'Courses, Workshops & Keynotes',
